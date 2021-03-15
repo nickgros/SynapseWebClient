@@ -40,7 +40,7 @@ public class FacetsWidget implements IsWidget {
 	@Inject
 	public FacetsWidget(DivView view, SingleButtonView clearButton, PortalGinInjector ginInjector) {
 		this.view = view;
-		view.addStyleName("facetsWidget");
+		view.addStyleName("facetsWidget light-border");
 		this.clearButton = clearButton;
 		clearButton.setButtonText("Clear all");
 		clearButton.setButtonSize(ButtonSize.EXTRA_SMALL);

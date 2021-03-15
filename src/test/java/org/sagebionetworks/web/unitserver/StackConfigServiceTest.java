@@ -1,16 +1,18 @@
 package org.sagebionetworks.web.unitserver;
 
 import static org.junit.Assert.assertNotNull;
-import static org.mockito.Matchers.any;
+import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.Mockito.when;
+
 import javax.servlet.http.HttpServletRequest;
+
 import org.junit.Before;
 import org.junit.Test;
 import org.mockito.ArgumentCaptor;
 import org.mockito.Captor;
+import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.MockitoAnnotations;
-import org.mockito.internal.util.reflection.Whitebox;
 import org.sagebionetworks.client.SynapseClient;
 import org.sagebionetworks.client.exceptions.SynapseException;
 import org.sagebionetworks.repo.model.UserProfile;
@@ -24,6 +26,7 @@ import org.sagebionetworks.web.server.servlet.SynapseClientImpl;
 import org.sagebionetworks.web.server.servlet.SynapseProvider;
 import org.sagebionetworks.web.server.servlet.TokenProvider;
 import org.sagebionetworks.web.shared.exceptions.RestServiceException;
+import org.springframework.test.util.ReflectionTestUtils;
 
 public class StackConfigServiceTest {
 	@Mock
@@ -67,7 +70,7 @@ public class StackConfigServiceTest {
 		when(mockUserSessionData.getSession()).thenReturn(testSession);
 		when(mockSynapse.getMyProfile()).thenReturn(testProfile);
 
-		Whitebox.setInternalState(stackConfigService, "perThreadRequest", mockThreadLocal);
+		ReflectionTestUtils.setField(stackConfigService, "perThreadRequest", mockThreadLocal);
 		when(mockThreadLocal.get()).thenReturn(mockRequest);
 		when(mockRequest.getRemoteAddr()).thenReturn("127.0.0.1");
 

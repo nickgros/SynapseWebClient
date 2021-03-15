@@ -1,9 +1,9 @@
 package org.sagebionetworks.web.unitclient.presenter;
 
 import static junit.framework.Assert.assertEquals;
-import static org.mockito.Matchers.any;
-import static org.mockito.Matchers.anyString;
-import static org.mockito.Matchers.eq;
+import static org.mockito.ArgumentMatchers.any;
+import static org.mockito.ArgumentMatchers.anyString;
+import static org.mockito.ArgumentMatchers.eq;
 import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.never;
 import static org.mockito.Mockito.reset;
@@ -137,7 +137,7 @@ public class NewAccountPresenterTest {
 		verify(mockUserService).createUserStep2(eq(userName), eq(firstName.trim()), eq(lastName.trim()), eq(password), eq(accountCreationToken.getEmailValidationSignedToken()), any(AsyncCallback.class));
 
 		// should go to the login place with the new session token
-		ArgumentCaptor<Place> placeCaptor = new ArgumentCaptor<Place>();
+		ArgumentCaptor<Place> placeCaptor = ArgumentCaptor.forClass(Place.class);
 		verify(mockPlaceChanger).goTo(placeCaptor.capture());
 		assertEquals(testSessionToken, ((LoginPlace) placeCaptor.getValue()).toToken());
 	}

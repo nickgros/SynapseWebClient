@@ -1,9 +1,11 @@
 package org.sagebionetworks.web.unitserver;
 
-import static org.mockito.Matchers.anyString;
+import static org.mockito.ArgumentMatchers.any;
+import static org.mockito.ArgumentMatchers.anyString;
 import static org.mockito.Mockito.never;
 import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.when;
+
 import org.junit.Before;
 import org.junit.Test;
 import org.mockito.Mock;
@@ -49,7 +51,7 @@ public class DataAccessClientImplTest {
 		when(mockSubject.getId()).thenReturn(TARGET_SUBJECT_ID);
 		when(mockSubject.getType()).thenReturn(TARGET_SUBJECT_TYPE);
 		when(mockRestrictableObjectDescriptorResponse.getSubjects()).thenReturn(java.util.Collections.singletonList(mockSubject));
-		when(mockSynapse.getSubjects(anyString(), anyString())).thenReturn(mockRestrictableObjectDescriptorResponse);
+		when(mockSynapse.getSubjects(anyString(), any())).thenReturn(mockRestrictableObjectDescriptorResponse);
 	}
 
 	@Test

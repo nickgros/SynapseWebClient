@@ -1,8 +1,6 @@
 package org.sagebionetworks.web.unitclient.widget.entity.team;
 
 import static org.junit.Assert.assertEquals;
-import static org.mockito.Matchers.*;
-import static org.mockito.Matchers.anyString;
 import static org.mockito.Mockito.*;
 import org.junit.Before;
 import org.junit.Test;

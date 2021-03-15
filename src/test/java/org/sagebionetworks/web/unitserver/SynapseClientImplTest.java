@@ -24,6 +24,7 @@ import static org.sagebionetworks.repo.model.EntityBundle.ENTITY;
 import static org.sagebionetworks.repo.model.EntityBundle.ENTITY_PATH;
 import static org.sagebionetworks.repo.model.EntityBundle.HAS_CHILDREN;
 import static org.sagebionetworks.repo.model.EntityBundle.PERMISSIONS;
+
 import java.net.MalformedURLException;
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -35,7 +36,9 @@ import java.util.List;
 import java.util.NoSuchElementException;
 import java.util.Objects;
 import java.util.Set;
+
 import javax.servlet.http.HttpServletRequest;
+
 import org.json.JSONException;
 import org.junit.Before;
 import org.junit.Test;
@@ -44,7 +47,6 @@ import org.mockito.ArgumentCaptor;
 import org.mockito.Captor;
 import org.mockito.Mock;
 import org.mockito.Mockito;
-import org.mockito.internal.util.reflection.Whitebox;
 import org.mockito.runners.MockitoJUnitRunner;
 import org.sagebionetworks.client.SynapseClient;
 import org.sagebionetworks.client.exceptions.SynapseBadRequestException;
@@ -99,7 +101,6 @@ import org.sagebionetworks.repo.model.file.FileResultFailureCode;
 import org.sagebionetworks.repo.model.file.S3FileHandle;
 import org.sagebionetworks.repo.model.file.State;
 import org.sagebionetworks.repo.model.file.UploadDaemonStatus;
-import org.sagebionetworks.repo.model.file.UploadDestination;
 import org.sagebionetworks.repo.model.message.MessageToUser;
 import org.sagebionetworks.repo.model.message.NotificationSettingsSignedToken;
 import org.sagebionetworks.repo.model.message.Settings;
@@ -153,6 +154,7 @@ import org.sagebionetworks.web.shared.exceptions.UnauthorizedException;
 import org.sagebionetworks.web.shared.exceptions.UnknownErrorException;
 import org.sagebionetworks.web.shared.users.AclUtils;
 import org.sagebionetworks.web.shared.users.PermissionLevel;
+import org.springframework.test.util.ReflectionTestUtils;
 
 /**
  * Test for the SynapseClientImpl
@@ -460,7 +462,7 @@ public class SynapseClientImplTest {
 		batchCopyResultsList = new ArrayList<FileHandleCopyResult>();
 		when(mockBatchCopyResults.getCopyResults()).thenReturn(batchCopyResultsList);
 
-		Whitebox.setInternalState(synapseClient, "perThreadRequest", mockThreadLocal);
+		ReflectionTestUtils.setField(synapseClient, "perThreadRequest", mockThreadLocal);
 		userIp = "127.0.0.1";
 		when(mockThreadLocal.get()).thenReturn(mockRequest);
 		when(mockRequest.getRemoteAddr()).thenReturn(userIp);

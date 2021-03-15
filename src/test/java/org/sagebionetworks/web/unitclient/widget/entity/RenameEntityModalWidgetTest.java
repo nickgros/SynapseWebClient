@@ -4,6 +4,7 @@ import static org.mockito.Matchers.any;
 import static org.mockito.Matchers.anyBoolean;
 import static org.mockito.Matchers.anyString;
 import static org.mockito.Matchers.eq;
+import static org.mockito.Mockito.doAnswer;
 import static org.mockito.Mockito.never;
 import static org.mockito.Mockito.verify;
 import static org.sagebionetworks.web.client.widget.entity.RenameEntityModalWidgetImpl.LABLE_SUFFIX;
@@ -16,6 +17,7 @@ import org.mockito.ArgumentCaptor;
 import org.mockito.Captor;
 import org.mockito.Mock;
 import org.mockito.runners.MockitoJUnitRunner;
+import org.mockito.stubbing.Answer;
 import org.sagebionetworks.repo.model.Entity;
 import org.sagebionetworks.repo.model.table.TableEntity;
 import org.sagebionetworks.web.client.SynapseJavascriptClient;
@@ -87,7 +89,8 @@ public class RenameEntityModalWidgetTest {
 	public void testRenameHappy() {
 		String newName = "a new name";
 		widget.onRename(entity, mockCallback);
-		AsyncMockStubber.callSuccessWith(new TableEntity()).when(mockJsClient).updateEntity(any(Entity.class), anyString(), anyBoolean(), any(AsyncCallback.class));
+		Answer a = AsyncMockStubber.createSuccessAnswer(new TableEntity());
+		doAnswer(a).when(mockJsClient).updateEntity(any(Entity.class), anyString(), anyBoolean(), any(AsyncCallback.class));
 		verify(mockView).configureAndShow(anyString(), anyString(), anyString(), promptCallbackCaptor.capture());
 		promptCallbackCaptor.getValue().invoke(newName);
 

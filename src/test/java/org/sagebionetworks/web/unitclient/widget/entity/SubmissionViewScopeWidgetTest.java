@@ -1,11 +1,21 @@
 package org.sagebionetworks.web.unitclient.widget.entity;
 
-import static org.junit.Assert.*;
-import static org.mockito.Matchers.*;
-import static org.mockito.Mockito.*;
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertTrue;
+import static org.mockito.Mockito.any;
+import static org.mockito.Mockito.anyBoolean;
+import static org.mockito.Mockito.anyInt;
+import static org.mockito.Mockito.anyList;
+import static org.mockito.Mockito.anyString;
+import static org.mockito.Mockito.eq;
+import static org.mockito.Mockito.never;
+import static org.mockito.Mockito.verify;
+import static org.mockito.Mockito.when;
+
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
+
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -21,16 +31,14 @@ import org.sagebionetworks.repo.model.table.EntityView;
 import org.sagebionetworks.repo.model.table.SubmissionView;
 import org.sagebionetworks.web.client.SynapseJavascriptClient;
 import org.sagebionetworks.web.client.events.EntityUpdatedEvent;
-import org.sagebionetworks.web.client.utils.CallbackP;
 import org.sagebionetworks.web.client.widget.entity.controller.SynapseAlert;
-import org.sagebionetworks.web.client.widget.evaluation.EvaluationFinder;
 import org.sagebionetworks.web.client.widget.evaluation.EvaluationList;
 import org.sagebionetworks.web.client.widget.evaluation.SubmissionViewScopeEditor;
-import org.sagebionetworks.web.client.widget.evaluation.SubmissionViewScopeEditorView;
 import org.sagebionetworks.web.client.widget.table.modal.fileview.CreateTableViewWizardStep1;
 import org.sagebionetworks.web.client.widget.table.modal.fileview.SubmissionViewScopeWidget;
 import org.sagebionetworks.web.client.widget.table.modal.fileview.SubmissionViewScopeWidgetView;
 import org.sagebionetworks.web.test.helper.AsyncMockStubber;
+
 import com.google.gwt.event.shared.EventBus;
 import com.google.gwt.user.client.rpc.AsyncCallback;
 import com.google.gwt.user.client.ui.IsWidget;

@@ -1,5 +1,6 @@
 package org.sagebionetworks.web.unitserver.servlet;
 
+import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.Matchers.anyString;
 import static org.mockito.Matchers.eq;
 import static org.mockito.Mockito.verify;
@@ -131,7 +132,7 @@ public class DiscussionMessageServletTest {
 		when(mockSynapse.getThreadUrl(anyString())).thenThrow(new SynapseBadRequestException());
 		servlet.doGet(mockRequest, mockResponse);
 
-		verify(mockResponse).sendError(eq(HttpServletResponse.SC_BAD_REQUEST), anyString());
+		verify(mockResponse).sendError(eq(HttpServletResponse.SC_BAD_REQUEST), any());
 	}
 
 }

@@ -3,7 +3,6 @@ package org.sagebionetworks.web.unitclient.widget.accessrequirements.submission;
 import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.*;
 import static org.junit.Assert.*;
-import static org.mockito.Matchers.*;
 
 import static org.sagebionetworks.web.client.widget.entity.act.RejectReasonWidget.ERROR_MESSAGE;
 import static org.sagebionetworks.web.client.widget.entity.act.RejectReasonWidget.TEMPLATE_HEADER_SIGNATURE;

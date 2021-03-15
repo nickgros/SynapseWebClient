@@ -4,17 +4,19 @@ import static org.junit.Assert.assertEquals;
 import static org.mockito.Mockito.never;
 import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.when;
+
 import javax.servlet.http.HttpServletRequest;
+
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.mockito.Mock;
-import org.mockito.internal.util.reflection.Whitebox;
 import org.mockito.runners.MockitoJUnitRunner;
 import org.sagebionetworks.client.SynapseClient;
 import org.sagebionetworks.web.client.StackEndpoints;
 import org.sagebionetworks.web.server.servlet.SynapseClientBase;
 import org.sagebionetworks.web.server.servlet.SynapseProvider;
+import org.springframework.test.util.ReflectionTestUtils;
 
 @RunWith(MockitoJUnitRunner.class)
 public class SynapseClientBaseTest {
@@ -51,8 +53,8 @@ public class SynapseClientBaseTest {
 	public void setUp() throws Exception {
 		synapseClientBase = new SynapseClientBase();
 		when(mockSynapseProvider.createNewClient()).thenReturn(mockSynapseClient);
-		Whitebox.setInternalState(synapseClientBase, "synapseProvider", mockSynapseProvider);
-		Whitebox.setInternalState(synapseClientBase, "perThreadRequest", mockThreadLocal);
+		ReflectionTestUtils.setField(synapseClientBase, "synapseProvider", mockSynapseProvider);
+		ReflectionTestUtils.setField(synapseClientBase, "perThreadRequest", mockThreadLocal);
 		userIp = "127.0.0.1";
 		when(mockThreadLocal.get()).thenReturn(mockRequest);
 		when(mockRequest.getRemoteAddr()).thenReturn(userIp);

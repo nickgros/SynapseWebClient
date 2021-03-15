@@ -3,29 +3,31 @@ package org.sagebionetworks.web.unitserver;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertTrue;
-import static org.mockito.Matchers.anyBoolean;
-import static org.mockito.Matchers.anyInt;
-import static org.mockito.Matchers.anyList;
-import static org.mockito.Matchers.anyLong;
-import static org.mockito.Matchers.anyString;
-import static org.mockito.Matchers.eq;
+import static org.mockito.ArgumentMatchers.anyBoolean;
+import static org.mockito.ArgumentMatchers.anyInt;
+import static org.mockito.ArgumentMatchers.anyList;
+import static org.mockito.ArgumentMatchers.anyLong;
+import static org.mockito.ArgumentMatchers.anyString;
+import static org.mockito.ArgumentMatchers.eq;
 import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.never;
 import static org.mockito.Mockito.times;
 import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.when;
+
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 import java.util.Set;
+
 import javax.servlet.http.HttpServletRequest;
+
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.mockito.Mock;
 import org.mockito.Mockito;
-import org.mockito.internal.util.reflection.Whitebox;
-import org.mockito.runners.MockitoJUnitRunner;
+import org.mockito.junit.MockitoJUnitRunner;
 import org.sagebionetworks.client.SynapseClient;
 import org.sagebionetworks.client.exceptions.SynapseException;
 import org.sagebionetworks.client.exceptions.SynapseNotFoundException;
@@ -65,10 +67,10 @@ import org.sagebionetworks.web.shared.ChallengeTeamPagedResults;
 import org.sagebionetworks.web.shared.UserProfilePagedResults;
 import org.sagebionetworks.web.shared.exceptions.NotFoundException;
 import org.sagebionetworks.web.shared.exceptions.RestServiceException;
+import org.springframework.test.util.ReflectionTestUtils;
 
-@RunWith(MockitoJUnitRunner.class)
+@RunWith(MockitoJUnitRunner.Silent.class)
 public class ChallengeClientImplTest {
-
 
 	public static final String TEST_CHALLENGE_PROJECT_NAME = "test challenge project name";
 	public static final String MY_USER_PROFILE_OWNER_ID = "MyOwnerID";
@@ -167,7 +169,7 @@ public class ChallengeClientImplTest {
 		setupChallengeteamPagedResults();
 		when(mockSynapse.getChallenge(anyString())).thenReturn(testChallenge);
 
-		Whitebox.setInternalState(synapseClient, "perThreadRequest", mockThreadLocal);
+		ReflectionTestUtils.setField(synapseClient, "perThreadRequest", mockThreadLocal);
 		userIp = "127.0.0.1";
 		when(mockThreadLocal.get()).thenReturn(mockRequest);
 		when(mockRequest.getRemoteAddr()).thenReturn(userIp);
