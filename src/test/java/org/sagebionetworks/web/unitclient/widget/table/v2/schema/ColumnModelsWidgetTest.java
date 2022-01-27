@@ -40,7 +40,6 @@ import org.sagebionetworks.repo.model.table.ViewTypeMask;
 import org.sagebionetworks.schema.adapter.AdapterFactory;
 import org.sagebionetworks.schema.adapter.JSONObjectAdapterException;
 import org.sagebionetworks.schema.adapter.org.json.AdapterFactoryImpl;
-import org.sagebionetworks.web.client.PopupUtilsView;
 import org.sagebionetworks.web.client.PortalGinInjector;
 import org.sagebionetworks.web.client.SynapseClientAsync;
 import org.sagebionetworks.web.client.events.EntityUpdatedEvent;
@@ -113,8 +112,6 @@ public class ColumnModelsWidgetTest {
 	EventBus mockEventBus;
 	@Mock
 	SynapseAlert mockSynAlert;
-	@Mock
-	PopupUtilsView mockPopupUtilsView;
 	@Captor
 	ArgumentCaptor<ViewColumnModelRequest> viewColumnModelRequestCaptor;
 	@Captor
@@ -151,7 +148,7 @@ public class ColumnModelsWidgetTest {
 				return new ColumnModelTableRowViewerStub();
 			}
 		});
-		widget = new ColumnModelsWidget(mockBaseView, mockGinInjector, mockSynapseClient, mockEditor, mockJobTrackingWidget, mockFileViewDefaultColumns, mockSynAlert, mockPopupUtilsView);
+		widget = new ColumnModelsWidget(mockBaseView, mockGinInjector, mockSynapseClient, mockEditor, mockJobTrackingWidget, mockFileViewDefaultColumns, mockSynAlert);
 		when(mockEditor.validate()).thenReturn(true);
 		when(mockTableSchemaChangeRequest.getChanges()).thenReturn(Collections.singletonList(mockTableUpdateRequest));
 		AsyncMockStubber.callSuccessWith(mockTableSchemaChangeRequest).when(mockSynapseClient).getTableUpdateTransactionRequest(anyString(), anyList(), anyList(), any(AsyncCallback.class));
@@ -346,7 +343,6 @@ public class ColumnModelsWidgetTest {
 		verify(mockBaseView).setLoading();
 		verify(mockBaseView).hideEditor();
 		verify(mockSynAlert).clear();
-		verify(mockPopupUtilsView).notify(anyString(), anyString(), any());
 		verify(mockEventBus).fireEvent(any(EntityUpdatedEvent.class));
 	}
 
@@ -385,7 +381,6 @@ public class ColumnModelsWidgetTest {
 		verify(mockBaseView, never()).setLoading();
 		verify(mockBaseView, never()).hideEditor();
 		verify(mockSynAlert, never()).clear();
-		verify(mockPopupUtilsView, never()).notify(anyString(), anyString(), any());
 		// Save success should be called.
 		verify(mockSynAlert).showError(ColumnModelsWidget.SEE_THE_ERROR_S_ABOVE);
 	}
@@ -406,7 +401,6 @@ public class ColumnModelsWidgetTest {
 		verify(mockBaseView, times(1)).setLoading();
 		// The editor must not be hidden on an error.
 		verify(mockBaseView, never()).hideEditor();
-		verify(mockPopupUtilsView, never()).notify(anyString(), anyString(), any());
 		verify(mockSynAlert).handleException(ex);
 		verify(mockBaseView).resetSaveButton();
 		// only the original columns should be applied to the view.

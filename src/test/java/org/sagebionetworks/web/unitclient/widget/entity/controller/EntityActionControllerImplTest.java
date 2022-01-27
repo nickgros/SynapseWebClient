@@ -93,7 +93,6 @@ import org.sagebionetworks.web.client.SynapseProperties;
 import org.sagebionetworks.web.client.UserProfileClientAsync;
 import org.sagebionetworks.web.client.cookie.CookieProvider;
 import org.sagebionetworks.web.client.events.EntityUpdatedEvent;
-import org.sagebionetworks.web.client.jsinterop.ToastMessageOptions;
 import org.sagebionetworks.web.client.place.AccessRequirementsPlace;
 import org.sagebionetworks.web.client.place.Profile;
 import org.sagebionetworks.web.client.place.Synapse;
@@ -994,7 +993,7 @@ public class EntityActionControllerImplTest {
 		// Success
 		handler.onSuccess(mockSnapshotResponse);
 		verify(mockView, times(2)).hideCreateVersionDialog();
-		verify(mockPopupUtils).notify(any(), any(), any(ToastMessageOptions.class));
+		verify(mockPopupUtils).notify(any(), any(), any());
 		verify(mockEventBus).fireEvent(any(EntityUpdatedEvent.class));
 	}
 
@@ -1051,7 +1050,7 @@ public class EntityActionControllerImplTest {
 		handler.onComplete(mockTableUpdateTransactionResponse);
 		verify(mockView).hideCreateVersionDialog();
 		verify(mockEventBus).fireEvent(any(EntityUpdatedEvent.class));
-		verify(mockPopupUtils).notify(any(), any(), any(ToastMessageOptions.class));
+		verify(mockPopupUtils).notify(any(), any(), any());
 	}
 
 	@Test
@@ -1110,7 +1109,7 @@ public class EntityActionControllerImplTest {
 		handler.onComplete(mockTableUpdateTransactionResponse);
 		verify(mockView).hideCreateVersionDialog();
 		verify(mockEventBus).fireEvent(any(EntityUpdatedEvent.class));
-		verify(mockPopupUtils).notify(any(), any(), any(ToastMessageOptions.class));
+		verify(mockPopupUtils).notify(any(), any(), any());
 	}
 
 	@Test

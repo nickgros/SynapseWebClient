@@ -13,11 +13,6 @@ public class PopupUtilsViewImpl implements PopupUtilsView {
 	}
 
 	@Override
-	public void notify(String title, String message, DisplayUtils.NotificationVariant notificationVariant) {
-		DisplayUtils.notify(title, message, notificationVariant);
-	}
-
-	@Override
 	public void showInfo(String message) {
 		DisplayUtils.showInfo(message);
 	}

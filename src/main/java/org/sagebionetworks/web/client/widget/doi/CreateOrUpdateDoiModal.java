@@ -23,7 +23,6 @@ import org.sagebionetworks.repo.model.doi.v2.DoiResourceType;
 import org.sagebionetworks.repo.model.doi.v2.DoiResourceTypeGeneral;
 import org.sagebionetworks.repo.model.doi.v2.DoiTitle;
 import org.sagebionetworks.web.client.DateTimeUtils;
-import org.sagebionetworks.web.client.DisplayUtils;
 import org.sagebionetworks.web.client.EntityTypeUtils;
 import org.sagebionetworks.web.client.PopupUtilsView;
 import org.sagebionetworks.web.client.SynapseJavascriptClient;
@@ -56,8 +55,6 @@ public class CreateOrUpdateDoiModal implements CreateOrUpdateDoiModalView.Presen
 	private PopupUtilsView popupUtilsView;
 	private DateTimeUtils dateTimeUtils;
 
-	private boolean doiExists = false;
-
 	@Inject
 	public CreateOrUpdateDoiModal(CreateOrUpdateDoiModalView view, JobTrackingWidget jobTrackingWidget, SynapseJavascriptClient javascriptClient, SynapseAlert synapseAlert, PopupUtilsView popupUtilsView, EventBus eventBus, DateTimeUtils dateTimeUtils) {
 		this.view = view;
@@ -87,18 +84,17 @@ public class CreateOrUpdateDoiModal implements CreateOrUpdateDoiModalView.Presen
         doiRequest.addCallback(new FutureCallback<Doi>() {
             @Override
             public void onSuccess(@NullableDecl Doi doi) {
-                doiExists = true;
+                boolean doiExists = true;
                 setDoi(doi);
-                populateAndShowView();
+                populateAndShowView(doiExists);
             }
 
             @Override
             public void onFailure(Throwable t) {
-                doiExists = false;
+                boolean doiExists = false;
                 if (t instanceof NotFoundException) {
-					// Prefill the form with entity + user information
                     setDoi(createNewDoi(entity, entityVersion, userProfile));
-                    populateAndShowView();
+                    populateAndShowView(doiExists);
                 } else {
                     popupUtilsView.showErrorMessage(t.getMessage());
                 }
@@ -130,9 +126,9 @@ public class CreateOrUpdateDoiModal implements CreateOrUpdateDoiModalView.Presen
         }, directExecutor()));
     }
 
-	private void populateAndShowView() {
+	private void populateAndShowView(boolean doiExists) {
 		populateForms();
-		view.setOverwriteWarningVisible(doiExists);
+		view.showOverwriteWarning(doiExists);
 		view.show();
 	}
 
@@ -229,15 +225,6 @@ public class CreateOrUpdateDoiModal implements CreateOrUpdateDoiModalView.Presen
             public void onComplete(AsynchronousResponseBody response) {
                 popupUtilsView.showInfo(DOI_CREATED_MESSAGE + newDoi.getObjectId() +
                         (newDoi.getObjectVersion() == null ? "" : "." + newDoi.getObjectVersion() ));
-				String toastTitle, toastMessage;
-				if (doiExists) {
-					toastTitle = "DOI Updated";
-					toastMessage = "The DOI was successfully updated";
-				} else {
-					toastTitle = "DOI Created";
-					toastMessage = "You successfully minted a DOI for this " + EntityTypeUtils.getFriendlyEntityTypeName(entity);
-				}
-				popupUtilsView.notify(toastTitle, toastMessage, DisplayUtils.NotificationVariant.SUCCESS);
                 eventBus.fireEvent(new EntityUpdatedEvent());
                 view.setIsLoading(false);
                 view.hide();
