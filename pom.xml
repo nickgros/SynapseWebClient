@@ -300,6 +300,36 @@
 					<port>8989</port>
 				</configuration>
 			</plugin>
+            <plugin>
+                <groupId>org.codehaus.cargo</groupId>
+                <artifactId>cargo-maven3-plugin</artifactId>
+                <version>1.9.8</version>
+                <configuration>
+                    <container>
+                        <containerId>tomcat8x</containerId>
+                        <dependencies>
+                            <dependency>
+                                <groupId>javax.inject</groupId>
+                                <artifactId>javax.inject</artifactId>
+                            </dependency>
+                        </dependencies>
+                    </container>
+                    <configuration>
+                        <properties>
+                            <cargo.servlet.port>8888</cargo.servlet.port>
+                        </properties>
+                    </configuration>
+                    <deployables>
+                        <deployable>
+                            <location>${project.build.directory}/portal-develop-SNAPSHOT/</location>
+                            <properties>
+                                <context>/</context>
+                            </properties>
+                            <type>war</type>
+                        </deployable>
+                    </deployables>
+                </configuration>
+            </plugin>
 
 			<plugin>
 				<groupId>com.github.eirslett</groupId>
