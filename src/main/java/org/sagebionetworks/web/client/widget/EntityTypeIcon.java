@@ -9,18 +9,12 @@ import org.sagebionetworks.web.client.jsinterop.SRC;
 
 public class EntityTypeIcon extends ReactComponentSpan {
 
+	private EntityType type;
+	private boolean includeTooltip = true;
+
 	public EntityTypeIcon(EntityType type) {
-		configure(type);
-	}
-
-	public void configure(EntityType type) {
-		EntityTypeIconProps props = EntityTypeIconProps.create(type);
-		ReactElement component = React.createElement(SRC.SynapseComponents.EntityTypeIcon, props);
-		ReactDOM.render(component, getElement());
-	}
-
-	public void setType(EntityType type) {
-		configure(type);
+		this.type = type;
+		configure();
 	}
 
 
@@ -30,6 +24,17 @@ public class EntityTypeIcon extends ReactComponentSpan {
 	 */
 	public EntityTypeIcon(String type) {
 		setType(type);
+	}
+
+	public void configure() {
+		EntityTypeIconProps props = EntityTypeIconProps.create(type, includeTooltip);
+		ReactElement component = React.createElement(SRC.SynapseComponents.EntityTypeIcon, props);
+		ReactDOM.render(component, getElement());
+	}
+
+	public void setType(EntityType type) {
+		this.type = type;
+		configure();
 	}
 
 	/**
@@ -45,4 +50,8 @@ public class EntityTypeIcon extends ReactComponentSpan {
 		setType(enumValue);
 	}
 
+	public void setIncludeTooltip(boolean includeTooltip) {
+		this.includeTooltip = includeTooltip;
+		configure();
+	}
 }

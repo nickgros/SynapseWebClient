@@ -107,55 +107,6 @@ public class EntityTypeUtils {
 		return EntityTypeUtils.getEntityTypeForEntityClassName(className);
 	}
 
-	/**
-	 * @deprecated use {@link org.sagebionetworks.web.client.widget.EntityTypeIcon}
-	 * @param className
-	 * @return
-	 */
-	@Deprecated
-	public static IconType getIconTypeForEntityClassName(String className) {
-		// default
-		IconType icon = IconType.FILE;
-
-		if (Link.class.getName().equals(className)) {
-			icon = IconType.LINK;
-		} else if (Folder.class.getName().equals(className)) {
-			// Folder
-			icon = IconType.FOLDER;
-		} else if (FileEntity.class.getName().equals(className)) {
-			// File
-			icon = IconType.FILE;
-		} else if (Project.class.getName().equals(className)) {
-			// Project
-			icon = IconType.LIST_ALT;
-		} else if (TableEntity.class.getName().equals(className)) {
-			// TableEntity
-			icon = IconType.TABLE;
-		} else if (Dataset.class.getName().equals(className)) {
-			// Dataset
-			icon = IconType.TABLE;
-		} else if (DatasetCollection.class.getName().equals(className)) {
-			icon = IconType.TABLE;
-		} else if (EntityView.class.getName().equals(className)) {
-			// FileView
-			icon = IconType.TH_LIST;
-		} else if (MaterializedView.class.getName().equals(className)) {
-			// FileView
-			icon = IconType.TH_LIST;
-		} else if (SubmissionView.class.getName().equals(className)) {
-			// Submission View
-			icon = IconType.SERVER;
-		} else if (DockerRepository.class.getName().equals(className)) {
-			// DockerRepository
-			// TODO: change to Docker Icon: https://github.com/wesbos/Font-Awesome-Docker-Icon
-			icon = IconType.ARCHIVE;
-		} else if (Dataset.class.getName().equals(className)) {
-			icon = IconType.TH;
-		}
-
-		return icon;
-	}
-
 	public static String getFriendlyTableTypeName(String className) {
 		String friendlyName = UNKNOWN_TABLE_TYPE;
 		if (TableEntity.class.getName().equals(className)) {

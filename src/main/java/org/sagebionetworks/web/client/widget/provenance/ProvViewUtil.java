@@ -3,21 +3,17 @@ package org.sagebionetworks.web.client.widget.provenance;
 import java.util.Map;
 
 import org.gwtbootstrap3.client.ui.Anchor;
-import org.gwtbootstrap3.client.ui.Icon;
 import org.gwtbootstrap3.client.ui.Tooltip;
-import org.gwtbootstrap3.client.ui.constants.IconSize;
-import org.gwtbootstrap3.client.ui.constants.IconType;
 import org.gwtbootstrap3.client.ui.html.Div;
 import org.gwtbootstrap3.client.ui.html.Paragraph;
 import org.gwtbootstrap3.client.ui.html.Span;
 import org.gwtbootstrap3.client.ui.html.Text;
-import org.sagebionetworks.repo.model.FileEntity;
-import org.sagebionetworks.repo.model.util.ContentTypeUtils;
 import org.sagebionetworks.web.client.DisplayConstants;
 import org.sagebionetworks.web.client.DisplayUtils;
 import org.sagebionetworks.web.client.EntityTypeUtils;
 import org.sagebionetworks.web.client.IconsImageBundle;
 import org.sagebionetworks.web.client.PortalGinInjector;
+import org.sagebionetworks.web.client.widget.EntityTypeIcon;
 import org.sagebionetworks.web.client.widget.HelpWidget;
 import org.sagebionetworks.web.client.widget.provenance.ProvenanceWidgetView.Presenter;
 import org.sagebionetworks.web.client.widget.user.UserBadge;
@@ -192,14 +188,8 @@ public class ProvViewUtil {
 		}
 
 		// icon
-		IconType iconType = EntityTypeUtils.getIconTypeForEntityClassName(entityType);
-		if (FileEntity.class.getName().equals(entityType)) {
-			if (ContentTypeUtils.isRecognizedCodeFileName(name) || org.sagebionetworks.web.client.ContentTypeUtils.isWebRecognizedCodeFileName(name)) {
-				iconType = IconType.FILE_CODE_O;
-			}
-		}
-		Icon icon = new Icon(iconType);
-		icon.setSize(IconSize.TIMES2);
+		EntityTypeIcon icon = new EntityTypeIcon(EntityTypeUtils.getEntityTypeForEntityClassName(entityType));
+		icon.setIncludeTooltip(false);
 		container.add(new SimplePanel(icon));
 
 		// name
