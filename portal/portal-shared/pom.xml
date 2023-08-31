@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<project
+  xmlns="http://maven.apache.org/POM/4.0.0"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd"
+>
+  <modelVersion>4.0.0</modelVersion>
+  <properties>
+    <synapse.version>462.0</synapse.version>
+    <schema-to-pojo.version>0.6.6</schema-to-pojo.version>
+  </properties>
+  <parent>
+    <groupId>org.sagebionetworks.web</groupId>
+    <artifactId>portal</artifactId>
+    <version>1.0-SNAPSHOT</version>
+  </parent>
+
+  <artifactId>portal-shared</artifactId>
+
+  <dependencies>
+    <dependency>
+      <groupId>org.gwtproject</groupId>
+      <artifactId>gwt-servlet</artifactId>
+      <scope>provided</scope>
+    </dependency>
+    <dependency>
+      <groupId>org.sagebionetworks</groupId>
+      <artifactId>lib-stackConfiguration</artifactId>
+      <version>${synapse.version}</version>
+    </dependency>
+
+    <dependency>
+      <groupId>org.sagebionetworks</groupId>
+      <artifactId>synapseJavaClient</artifactId>
+      <version>${synapse.version}</version>
+    </dependency>
+
+    <dependency>
+      <groupId>org.sagebionetworks</groupId>
+      <artifactId>lib-utils</artifactId>
+      <version>${synapse.version}</version>
+    </dependency>
+    <dependency>
+      <groupId>org.sagebionetworks</groupId>
+      <artifactId>lib-shared-models</artifactId>
+      <version>${synapse.version}</version>
+    </dependency>
+
+    <dependency>
+      <groupId>org.sagebionetworks</groupId>
+      <artifactId>schema-to-pojo-gwt</artifactId>
+      <version>${schema-to-pojo.version}</version>
+    </dependency>
+  </dependencies>
+
+  <build>
+    <plugins>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-source-plugin</artifactId>
+      </plugin>
+    </plugins>
+  </build>
+</project>
