@@ -142,6 +142,7 @@
         scriptElement.async = false // in order
         document.head.appendChild(scriptElement)
       }
+
       function loadCss(src) {
         if (document.createStyleSheet) document.createStyleSheet(src)
         else {
@@ -189,8 +190,20 @@
       loadCss(cdnEndpoint + 'generated/font-awesome.css')
       loadJs(cdnEndpoint + 'js/highlight.pack.js')
       loadJs(cdnEndpoint + 'js/init-nchart.js')
-      loadJs(cdnEndpoint + 'js/markdown-it.min.js')
-      loadJs(cdnEndpoint + 'js/markdown-it-plugins-18.min.js')
+      loadJs(cdnEndpoint + 'generated/markdown-it.js')
+      loadJs(cdnEndpoint + 'generated/markdown-it-br.js')
+      loadJs(cdnEndpoint + 'generated/markdown-it-center-text.js')
+      loadJs(cdnEndpoint + 'generated/markdown-it-container.js')
+      loadJs(cdnEndpoint + 'generated/markdown-it-emphasis-alt.js')
+      loadJs(cdnEndpoint + 'generated/markdown-it-inline-comments.js')
+      loadJs(cdnEndpoint + 'generated/markdown-it-math.js')
+      loadJs(cdnEndpoint + 'generated/markdown-it-strikethrough-alt.js')
+      loadJs(cdnEndpoint + 'generated/markdown-it-sub.js')
+      loadJs(cdnEndpoint + 'generated/markdown-it-sup.js')
+      loadJs(cdnEndpoint + 'generated/markdown-it-synapse.js')
+      loadJs(cdnEndpoint + 'generated/markdown-it-synapse-heading.js')
+      loadJs(cdnEndpoint + 'generated/markdown-it-synapse-math.js')
+      loadJs(cdnEndpoint + 'generated/markdown-it-synapse-table.js')
       loadJs(cdnEndpoint + 'js/polyfill-2.js')
       loadJs(cdnEndpoint + 'js/details-shim.min.js')
       loadJs(cdnEndpoint + 'js/xss.min.js')
@@ -224,6 +237,7 @@
     <script type="module">
       // react-query only ships ESM. esm.sh is a CDN that will 'bundle' dependencies for us
       import * as ReactQuery from 'https://esm.sh/@tanstack/react-query@5.22.2'
+
       window.ReactQuery = ReactQuery
     </script>
   </head>
@@ -265,14 +279,14 @@
         </div>
       </noscript>
       <!-- Google Tag Manager (noscript) -->
-      <noscript
-        ><iframe
+      <noscript>
+        <iframe
           src="https://www.googletagmanager.com/ns.html?id=GTM-KPW4KS62"
           height="0"
           width="0"
           style="display: none; visibility: hidden"
-        ></iframe
-      ></noscript>
+        ></iframe>
+      </noscript>
       <!-- End Google Tag Manager (noscript) -->
       <!-- This is the GWT-generated body -->
       <div id="alertWrapper">
