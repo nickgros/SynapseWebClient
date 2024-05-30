@@ -1,8 +1,5 @@
 package org.sagebionetworks.web.client.widget.profile;
 
-import static org.sagebionetworks.web.client.presenter.ProfilePresenter.IS_CERTIFIED;
-import static org.sagebionetworks.web.client.presenter.ProfilePresenter.IS_VERIFIED;
-
 import com.google.gwt.uibinder.client.UiBinder;
 import com.google.gwt.uibinder.client.UiField;
 import com.google.gwt.user.client.Window;
@@ -11,7 +8,6 @@ import com.google.gwt.user.client.ui.IsWidget;
 import com.google.gwt.user.client.ui.SimplePanel;
 import com.google.gwt.user.client.ui.Widget;
 import com.google.inject.Inject;
-import java.util.List;
 import org.gwtbootstrap3.client.ui.Anchor;
 import org.gwtbootstrap3.client.ui.Button;
 import org.gwtbootstrap3.client.ui.Column;
@@ -24,7 +20,7 @@ import org.sagebionetworks.repo.model.UserBundle;
 import org.sagebionetworks.web.client.DisplayUtils;
 import org.sagebionetworks.web.client.SynapseJSNIUtils;
 import org.sagebionetworks.web.client.SynapseJavascriptClient;
-import org.sagebionetworks.web.client.context.SynapseReactClientFullContextPropsProvider;
+import org.sagebionetworks.web.client.context.SynapseReactClientFullContextProviderPropsProvider;
 import org.sagebionetworks.web.client.cookie.CookieProvider;
 import org.sagebionetworks.web.client.jsinterop.AccountLevelBadgesProps;
 import org.sagebionetworks.web.client.jsinterop.React;
@@ -33,6 +29,11 @@ import org.sagebionetworks.web.client.jsinterop.SRC;
 import org.sagebionetworks.web.client.jsinterop.UserProfileLinksProps;
 import org.sagebionetworks.web.client.widget.ReactComponentDiv;
 import org.sagebionetworks.web.shared.WebConstants;
+
+import java.util.List;
+
+import static org.sagebionetworks.web.client.presenter.ProfilePresenter.IS_CERTIFIED;
+import static org.sagebionetworks.web.client.presenter.ProfilePresenter.IS_VERIFIED;
 
 public class UserProfileWidgetViewImpl implements UserProfileWidgetView {
 
@@ -122,7 +123,7 @@ public class UserProfileWidgetViewImpl implements UserProfileWidgetView {
   private Widget widget;
 
   SynapseJSNIUtils jsniUtils;
-  SynapseReactClientFullContextPropsProvider propsProvider;
+  SynapseReactClientFullContextProviderPropsProvider propsProvider;
   CookieProvider cookies;
   SynapseJavascriptClient jsClient;
 
@@ -130,15 +131,15 @@ public class UserProfileWidgetViewImpl implements UserProfileWidgetView {
   public UserProfileWidgetViewImpl(
     Binder binder,
     SynapseJSNIUtils jsniUtils,
-    SynapseReactClientFullContextPropsProvider propsProvider,
+    SynapseReactClientFullContextProviderPropsProvider propsProvider,
     CookieProvider cookies,
     SynapseJavascriptClient jsClient
   ) {
-    widget = binder.createAndBindUi(this);
     this.jsniUtils = jsniUtils;
     this.propsProvider = propsProvider;
     this.cookies = cookies;
     this.jsClient = jsClient;
+    widget = binder.createAndBindUi(this);
     editProfileButton.addClickHandler(event -> {
       Window.open(WebConstants.ONESAGE_ACCOUNT_SETTINGS_URL, "_blank", "");
     });
@@ -253,7 +254,7 @@ public class UserProfileWidgetViewImpl implements UserProfileWidgetView {
       React.createElementWithSynapseContext(
         SRC.SynapseComponents.AccountLevelBadges,
         AccountLevelBadgesProps.create(userId),
-        propsProvider.getJsInteropContextProps()
+        propsProvider.get()
       );
     accountLevelBadgesContainer.render(accountLevelBadgesComponent);
     setAccountTypeVisibility(Long.parseLong(userId));
@@ -262,7 +263,7 @@ public class UserProfileWidgetViewImpl implements UserProfileWidgetView {
     ReactNode profileLinksComponent = React.createElementWithSynapseContext(
       SRC.SynapseComponents.UserProfileLinks,
       props,
-      propsProvider.getJsInteropContextProps()
+      propsProvider.get()
     );
     userProfileLinksReactComponentContainer.render(profileLinksComponent);
   }

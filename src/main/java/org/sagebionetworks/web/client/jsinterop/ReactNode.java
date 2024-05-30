@@ -4,4 +4,7 @@ import jsinterop.annotations.JsPackage;
 import jsinterop.annotations.JsType;
 
 @JsType(isNative = true, namespace = JsPackage.GLOBAL, name = "Object")
-public class ReactNode {}
+public class ReactNode<T extends ReactComponentProps> {
+
+  public T props;
+}

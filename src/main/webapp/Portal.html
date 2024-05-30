@@ -10,7 +10,7 @@
 
     <meta
       http-equiv="Content-Security-Policy"
-      content="default-src 'self' data: blob: 'unsafe-inline' 'unsafe-eval' *.synapse.org *.sagebase.org *.googleapis.com *.gstatic.com *.googletagmanager.com cdn.statuspage.io s3.amazonaws.com www.google-analytics.com kh896k90gyvg.statuspage.io *.youtube.com *.rstudio.com *.google.com *.shinyapps.io *.smartsheet.com sagebionetworks.jira.com 127.0.0.1:9876 esm.sh; img-src * data: blob:; connect-src https://* http://127.0.0.1:8888"
+      content="default-src 'self' data: blob: 'unsafe-inline' 'unsafe-eval' *.synapse.org *.sagebase.org *.googleapis.com *.gstatic.com *.googletagmanager.com cdn.statuspage.io s3.amazonaws.com www.google-analytics.com kh896k90gyvg.statuspage.io *.youtube.com *.rstudio.com *.google.com *.shinyapps.io *.smartsheet.com sagebionetworks.jira.com 127.0.0.1:9876 esm.sh unpkg.com; img-src * data: blob:; connect-src https://* http://127.0.0.1:8888"
     />
     <meta
       name="google-site-verification"
@@ -216,12 +216,22 @@
       loadJs('//cdn.statuspage.io/se-v2.js')
       // loadJs("//kh896k90gyvg.statuspage.io/embed/script.js");
       loadJs(cdnEndpoint + 'generated/papaparse.min.js')
+      loadJs(
+        'https://unpkg.com/@mui/material@5.15.13/umd/material-ui.production.min.js',
+      )
     </script>
     <script type="module">
       // react-query only ships ESM. esm.sh is a CDN that will 'bundle' dependencies for us
-      import * as ReactQuery from 'https://esm.sh/@tanstack/react-query@5.22.2'
+      import * as ReactQuery from 'https://esm.sh/@tanstack/react-query@5.22.2?deps=react@18.2.0'
       window.ReactQuery = ReactQuery
     </script>
+    <!--    <script type="module">-->
+    <!--      // Load just the MUI components we are using via JSInterop-->
+    <!--      import Grid from 'https://unpkg.com/@mui/material@5.15.13/umd/material-ui.production.min.js'-->
+    <!--      window.MUI = {-->
+    <!--        Grid: Grid-->
+    <!--      }-->
+    <!--    </script>-->
   </head>
   <body id="body">
     ${botBodyHtml}

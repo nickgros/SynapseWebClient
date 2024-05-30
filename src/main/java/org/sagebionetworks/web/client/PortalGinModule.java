@@ -161,6 +161,10 @@ public class PortalGinModule extends AbstractGinModule {
     bind(LazyLoadCallbackQueue.class)
       .to(LazyLoadCallbackQueueImpl.class)
       .in(Singleton.class);
+    bind(SynapseReactClientFullContextPropsProvider.class)
+      .to(SynapseReactClientFullContextPropsProviderImpl.class);
+    bind(SynapseReactClientFullContextProviderProps.class)
+      .toProvider(SynapseReactClientFullContextProviderPropsProvider.class);
 
     bind(ResourceLoader.class).to(ResourceLoaderImpl.class).in(Singleton.class);
 
@@ -955,8 +959,6 @@ public class PortalGinModule extends AbstractGinModule {
       .to(EntityFinderWidgetImpl.Builder.class);
 
     bind(EntityFinderWidgetView.class).to(EntityFinderWidgetViewImpl.class);
-    bind(SynapseReactClientFullContextPropsProvider.class)
-      .to(SynapseReactClientFullContextPropsProviderImpl.class);
 
     bind(AddToDownloadListV2.class).to(AddToDownloadListV2Impl.class);
     bind(OpenDataView.class).to(OpenDataViewImpl.class);

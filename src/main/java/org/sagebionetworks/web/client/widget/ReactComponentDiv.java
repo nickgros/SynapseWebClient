@@ -1,6 +1,8 @@
 package org.sagebionetworks.web.client.widget;
 
 import com.google.gwt.user.client.ui.FlowPanel;
+import com.google.gwt.user.client.ui.Widget;
+import org.sagebionetworks.web.client.jsinterop.React;
 import org.sagebionetworks.web.client.jsinterop.ReactDOMRoot;
 import org.sagebionetworks.web.client.jsinterop.ReactNode;
 
@@ -49,7 +51,7 @@ public class ReactComponentDiv extends FlowPanel {
     this.component = component;
   }
 
-  protected ReactNode getComponent() {
+  public ReactNode getComponent() {
     return component;
   }
 }

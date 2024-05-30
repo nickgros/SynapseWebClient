@@ -1,5 +1,6 @@
 package org.sagebionetworks.web.client.jsinterop;
 
+import com.google.gwt.dom.client.Element;
 import jsinterop.annotations.JsOverlay;
 import jsinterop.annotations.JsPackage;
 import jsinterop.annotations.JsType;
@@ -11,6 +12,12 @@ public class React {
   public static native <P extends ReactComponentProps> ReactNode createElement(
     ReactComponentType<P> component,
     P props
+  );
+
+  public static native <P extends ReactComponentProps> ReactNode createElement(
+    ReactComponentType<P> component,
+    P props,
+    Object child
   );
 
   public static native <P extends ReactComponentProps> ReactNode createElement(
@@ -65,11 +72,41 @@ public class React {
     P props,
     SynapseReactClientFullContextProviderProps wrapperProps
   ) {
-    ReactNode componentElement = createElement(component, props);
+    return createElementWithSynapseContext(
+      component,
+      props,
+      wrapperProps,
+      null
+    );
+  }
+
+  /**
+   * Wraps a component in SynapseContextProvider. Nearly all Synapse React Client components must be wrapped in this context, so this utility
+   * simplifies creating the wrapper.
+   *
+   * For setting props, use {@link SynapseReactClientFullContextPropsProvider}
+   * @param component
+   * @param props
+   * @param wrapperProps
+   * @param <P>
+   * @return
+   */
+  @JsOverlay
+  public static <
+    P extends ReactComponentProps
+  > ReactNode createElementWithSynapseContext(
+    ReactComponentType<P> component,
+    P props,
+    SynapseReactClientFullContextProviderProps wrapperProps,
+    Object child
+  ) {
+    ReactNode componentElement = createElement(component, props, child);
     return createElement(
       SRC.SynapseContext.FullContextProvider,
       wrapperProps,
       componentElement
     );
   }
+
+  public static native ReactNode cloneElement(ReactNode element);
 }
