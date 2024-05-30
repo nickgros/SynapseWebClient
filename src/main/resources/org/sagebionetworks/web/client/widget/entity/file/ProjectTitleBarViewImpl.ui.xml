@@ -8,12 +8,12 @@
   xmlns:bh="urn:import:org.gwtbootstrap3.client.ui.html"
   xmlns:w="urn:import:org.sagebionetworks.web.client.widget"
 >
-  <bh:Div>
-    <bh:Div addStyleNames="flexcontainer-row">
-      <bh:Div
+  <g:FlowPanel>
+    <g:FlowPanel addStyleNames="flexcontainer-row">
+      <g:FlowPanel
         addStyleNames="flexcontainer-column flexcontainer-column-fill-width font-size-30"
       >
-        <bh:Div
+        <g:FlowPanel
           addStyleNames="flexcontainer-row flexcontainer-align-items-center overflow-x-auto"
         >
           <w:EntityTypeIcon
@@ -30,12 +30,12 @@
             ui:field="favoritePanel"
             addStyleNames="flexcontainer-column margin-left-5"
           />
-        </bh:Div>
-      </bh:Div>
-      <bh:Div
+        </g:FlowPanel>
+      </g:FlowPanel>
+      <g:FlowPanel
         addStyleNames="flexcontainer-column flexcontainer-align-items-flex-end"
         ui:field="actionMenuContainer"
       />
-    </bh:Div>
-  </bh:Div>
+    </g:FlowPanel>
+  </g:FlowPanel>
 </ui:UiBinder>

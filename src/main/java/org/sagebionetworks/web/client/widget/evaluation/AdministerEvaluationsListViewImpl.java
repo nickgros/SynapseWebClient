@@ -2,10 +2,11 @@ package org.sagebionetworks.web.client.widget.evaluation;
 
 import com.google.gwt.uibinder.client.UiBinder;
 import com.google.gwt.uibinder.client.UiField;
+import com.google.gwt.user.client.ui.FlowPanel;
+import com.google.gwt.user.client.ui.FlowPanel;
 import com.google.gwt.user.client.ui.IsWidget;
 import com.google.gwt.user.client.ui.Widget;
 import com.google.inject.Inject;
-import org.gwtbootstrap3.client.ui.html.Div;
 import org.sagebionetworks.evaluation.model.Evaluation;
 import org.sagebionetworks.web.client.PortalGinInjector;
 import org.sagebionetworks.web.client.context.SynapseReactClientFullContextPropsProvider;
@@ -26,10 +27,10 @@ public class AdministerEvaluationsListViewImpl
   private SynapseReactClientFullContextPropsProvider contextPropsProvider;
 
   @UiField
-  Div rows;
+  FlowPanel rows;
 
   @UiField
-  Div widgetsContainer;
+  FlowPanel widgetsContainer;
 
   PortalGinInjector ginInjector;
   Widget widget;

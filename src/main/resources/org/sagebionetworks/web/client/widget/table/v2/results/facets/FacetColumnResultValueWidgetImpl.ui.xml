@@ -5,7 +5,7 @@
   xmlns:b="urn:import:org.gwtbootstrap3.client.ui"
   xmlns:bh="urn:import:org.gwtbootstrap3.client.ui.html"
 >
-  <bh:Div addStyleNames="FacetColumnResultValueWidget">
+  <g:FlowPanel addStyleNames="FacetColumnResultValueWidget">
     <b:CheckBox ui:field="select" addStyleNames="moveup-1 checkbox" />
     <g:FocusPanel ui:field="focusPanel" addStyleNames="value">
       <bh:Span>
@@ -15,5 +15,5 @@
     <bh:Span addStyleNames="lightGreyText count">
       <bh:Span ui:field="count" />
     </bh:Span>
-  </bh:Div>
+  </g:FlowPanel>
 </ui:UiBinder>

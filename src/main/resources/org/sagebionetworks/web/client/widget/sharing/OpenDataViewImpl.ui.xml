@@ -4,13 +4,13 @@
   xmlns:b="urn:import:org.gwtbootstrap3.client.ui"
   xmlns:bh="urn:import:org.gwtbootstrap3.client.ui.html"
   xmlns:w="urn:import:org.sagebionetworks.web.client.widget"
+  xmlns:g="urn:import:com.google.gwt.user.client.ui"
 >
-  <bh:Div>
-    <bh:Div
+  <g:FlowPanel>
+    <g:FlowPanel
       ui:field="isPublicAndOpen"
       visible="false"
-      marginTop="10"
-      marginBottom="20"
+      addStyleNames="margin-top-10 margin-bottom-20"
     >
       <bh:Paragraph marginBottom="0">
         <w:IconSvg
@@ -22,19 +22,14 @@
       <bh:Paragraph addStyleNames="lightGreyText" marginLeft="33">
         Anyone can download it, even if they aren’t logged in to Synapse.
       </bh:Paragraph>
-    </bh:Div>
-    <bh:Div
+    </g:FlowPanel>
+    <g:FlowPanel
       ui:field="isPublicAndAdmin"
       visible="false"
-      marginTop="5"
-      marginBottom="15"
+      addStyleNames="margin-top-5 margin-bottom-15"
     >
-      <bh:Div
-        addStyleNames="lightGreyBackground"
-        paddingTop="20"
-        paddingRight="20"
-        paddingBottom="10"
-        paddingLeft="20"
+      <g:FlowPanel
+        addStyleNames="lightGreyBackground padding-top-20 padding-right-20 padding-bottom-10 padding-left-20"
       >
         <bh:Paragraph marginBottom="0">
           <bh:Strong>
@@ -45,20 +40,15 @@
           This data is publicly viewable, but only registered and logged-in
           users can download it.
         </bh:Paragraph>
-      </bh:Div>
-    </bh:Div>
-    <bh:Div
+      </g:FlowPanel>
+    </g:FlowPanel>
+    <g:FlowPanel
       ui:field="isPrivateAndOpenAndAdmin"
       visible="false"
-      marginTop="5"
-      marginBottom="15"
+      addStyleNames="margin-top-10 margin-bottom-15"
     >
-      <bh:Div
-        addStyleNames="lightGreyBackground"
-        paddingTop="20"
-        paddingRight="20"
-        paddingBottom="10"
-        paddingLeft="20"
+      <g:FlowPanel
+        addStyleNames="lightGreyBackground padding-top-20 padding-right-20 padding-bottom-10 padding-left-20"
       >
         <bh:Paragraph marginBottom="0">
           <bh:Strong>This is not anonymous access data.</bh:Strong>
@@ -67,7 +57,7 @@
           You must grant public access for all users to be able to anonymously
 	        download it.
         </bh:Paragraph>
-      </bh:Div>
-    </bh:Div>
-  </bh:Div>
+      </g:FlowPanel>
+    </g:FlowPanel>
+  </g:FlowPanel>
 </ui:UiBinder>

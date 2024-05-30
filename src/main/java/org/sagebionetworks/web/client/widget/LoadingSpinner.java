@@ -4,9 +4,9 @@ import com.google.gwt.core.shared.GWT;
 import com.google.gwt.dom.client.Element;
 import com.google.gwt.uibinder.client.UiBinder;
 import com.google.gwt.uibinder.client.UiField;
+import com.google.gwt.user.client.ui.FlowPanel;
 import com.google.gwt.user.client.ui.IsWidget;
 import com.google.gwt.user.client.ui.Widget;
-import org.gwtbootstrap3.client.ui.html.Div;
 
 public class LoadingSpinner implements IsWidget {
 
@@ -15,7 +15,7 @@ public class LoadingSpinner implements IsWidget {
   private static Binder uiBinder = GWT.create(Binder.class);
 
   @UiField
-  Div loadingSpinnerDiv;
+  FlowPanel loadingSpinnerDiv;
 
   /**
    * ## Usage
@@ -57,14 +57,6 @@ public class LoadingSpinner implements IsWidget {
 
   public boolean isVisible() {
     return loadingSpinnerDiv.isVisible();
-  }
-
-  public void setMarginLeft(double margin) {
-    loadingSpinnerDiv.setMarginLeft(margin);
-  }
-
-  public void setMarginRight(double margin) {
-    loadingSpinnerDiv.setMarginLeft(margin);
   }
 
   public boolean isAttached() {

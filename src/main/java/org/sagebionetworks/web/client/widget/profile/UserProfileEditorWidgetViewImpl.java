@@ -7,6 +7,8 @@ import com.google.gwt.event.dom.client.KeyDownHandler;
 import com.google.gwt.uibinder.client.UiBinder;
 import com.google.gwt.uibinder.client.UiField;
 import com.google.gwt.user.client.rpc.AsyncCallback;
+import com.google.gwt.user.client.ui.FlowPanel;
+import com.google.gwt.user.client.ui.FlowPanel;
 import com.google.gwt.user.client.ui.IsWidget;
 import com.google.gwt.user.client.ui.SimplePanel;
 import com.google.gwt.user.client.ui.SuggestBox;
@@ -23,7 +25,6 @@ import org.gwtbootstrap3.client.ui.TextArea;
 import org.gwtbootstrap3.client.ui.TextBox;
 import org.gwtbootstrap3.client.ui.Tooltip;
 import org.gwtbootstrap3.client.ui.constants.ValidationState;
-import org.gwtbootstrap3.client.ui.html.Div;
 import org.gwtbootstrap3.client.ui.html.Paragraph;
 import org.sagebionetworks.repo.model.UserBundle;
 import org.sagebionetworks.web.client.DisplayUtils;
@@ -97,10 +98,10 @@ public class UserProfileEditorWidgetViewImpl
   Paragraph industryRenderer;
 
   @UiField
-  Div emailDiv;
+  FlowPanel emailDiv;
 
   @UiField
-  Div locationSuggestBoxContainer;
+  FlowPanel locationSuggestBoxContainer;
 
   @UiField
   Paragraph locationRenderer;
@@ -124,7 +125,7 @@ public class UserProfileEditorWidgetViewImpl
   TextArea bioEditor;
 
   @UiField
-  Div synAlertContainer;
+  FlowPanel synAlertContainer;
 
   @UiField
   Button editProfileButton;
@@ -154,7 +155,7 @@ public class UserProfileEditorWidgetViewImpl
   ReactComponentDiv accountLevelBadgesContainer;
 
   @UiField
-  Div userProfileLinksUI;
+  FlowPanel userProfileLinksUI;
 
   @UiField
   ReactComponentDiv userProfileLinksReactComponentContainer;
@@ -166,7 +167,7 @@ public class UserProfileEditorWidgetViewImpl
   Column emailAddressContainer;
 
   @UiField
-  Div commandsContainer;
+  FlowPanel commandsContainer;
 
   SuggestBox locationSuggestBox;
   private Widget widget;

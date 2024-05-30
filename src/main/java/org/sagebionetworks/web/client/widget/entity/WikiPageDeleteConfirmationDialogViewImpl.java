@@ -3,6 +3,8 @@ package org.sagebionetworks.web.client.widget.entity;
 import com.google.gwt.event.dom.client.KeyDownEvent;
 import com.google.gwt.uibinder.client.UiBinder;
 import com.google.gwt.uibinder.client.UiField;
+import com.google.gwt.user.client.ui.FlowPanel;
+import com.google.gwt.user.client.ui.FlowPanel;
 import com.google.gwt.user.client.ui.Widget;
 import com.google.inject.Inject;
 import java.util.List;
@@ -10,7 +12,6 @@ import java.util.Map;
 import org.gwtbootstrap3.client.ui.Button;
 import org.gwtbootstrap3.client.ui.ListItem;
 import org.gwtbootstrap3.client.ui.Modal;
-import org.gwtbootstrap3.client.ui.html.Div;
 import org.gwtbootstrap3.client.ui.html.Span;
 import org.gwtbootstrap3.client.ui.html.UnorderedList;
 import org.sagebionetworks.repo.model.v2.wiki.V2WikiHeader;
@@ -28,7 +29,7 @@ public class WikiPageDeleteConfirmationDialogViewImpl
   Span wikiPageTitle;
 
   @UiField
-  Div wikiHeaderTreeContainer;
+  FlowPanel wikiHeaderTreeContainer;
 
   @UiField
   Button deleteWikiButton;

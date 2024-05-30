@@ -3,10 +3,11 @@ package org.sagebionetworks.web.client.view;
 import com.google.gwt.uibinder.client.UiBinder;
 import com.google.gwt.uibinder.client.UiField;
 import com.google.gwt.user.client.ui.Composite;
+import com.google.gwt.user.client.ui.FlowPanel;
+import com.google.gwt.user.client.ui.FlowPanel;
 import com.google.gwt.user.client.ui.IsWidget;
 import com.google.gwt.user.client.ui.Widget;
 import com.google.inject.Inject;
-import org.gwtbootstrap3.client.ui.html.Div;
 import org.sagebionetworks.web.client.DisplayUtils;
 import org.sagebionetworks.web.client.SynapseJSNIUtils;
 import org.sagebionetworks.web.client.context.SynapseReactClientFullContextPropsProvider;
@@ -25,7 +26,7 @@ public class TwoFactorAuthViewImpl
   ReactComponentDiv reactContainer;
 
   @UiField
-  Div synAlertContainer;
+  FlowPanel synAlertContainer;
 
   private Presenter presenter;
   private Header headerWidget;

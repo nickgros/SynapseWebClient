@@ -7,8 +7,8 @@
   xmlns:bh="urn:import:org.gwtbootstrap3.client.ui.html"
   xmlns:w="urn:import:org.sagebionetworks.web.client.widget"
 >
-  <bh:Div>
-    <bh:Div>
+  <g:FlowPanel>
+    <g:FlowPanel>
       <b:FieldSet>
         <b:FormGroup>
           <b:FormLabel for="url" addStyleNames="displayInline">
@@ -41,6 +41,6 @@
           />
         </b:FormGroup>
       </b:FieldSet>
-    </bh:Div>
-  </bh:Div>
+    </g:FlowPanel>
+  </g:FlowPanel>
 </ui:UiBinder>

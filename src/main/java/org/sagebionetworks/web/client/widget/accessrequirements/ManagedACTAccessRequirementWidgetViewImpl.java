@@ -2,6 +2,8 @@ package org.sagebionetworks.web.client.widget.accessrequirements;
 
 import com.google.gwt.uibinder.client.UiBinder;
 import com.google.gwt.uibinder.client.UiField;
+import com.google.gwt.user.client.ui.FlowPanel;
+import com.google.gwt.user.client.ui.FlowPanel;
 import com.google.gwt.user.client.ui.InlineLabel;
 import com.google.gwt.user.client.ui.IsWidget;
 import com.google.gwt.user.client.ui.SimplePanel;
@@ -11,7 +13,6 @@ import java.util.Collections;
 import javax.annotation.Nullable;
 import org.gwtbootstrap3.client.ui.Alert;
 import org.gwtbootstrap3.client.ui.Button;
-import org.gwtbootstrap3.client.ui.html.Div;
 import org.gwtbootstrap3.client.ui.html.Span;
 import org.gwtbootstrap3.client.ui.html.Text;
 import org.sagebionetworks.repo.model.ManagedACTAccessRequirement;
@@ -32,10 +33,10 @@ public class ManagedACTAccessRequirementWidgetViewImpl
   implements ManagedACTAccessRequirementWidgetView {
 
   @UiField
-  Div approvedHeading;
+  FlowPanel approvedHeading;
 
   @UiField
-  Div unapprovedHeading;
+  FlowPanel unapprovedHeading;
 
   @UiField
   SimplePanel wikiContainer;
@@ -65,49 +66,49 @@ public class ManagedACTAccessRequirementWidgetViewImpl
   ReactComponentDiv requestDataAccessWidget;
 
   @UiField
-  Div editAccessRequirementContainer;
+  FlowPanel editAccessRequirementContainer;
 
   @UiField
-  Div reviewAccessRequestsContainer;
+  FlowPanel reviewAccessRequestsContainer;
 
   @UiField
-  Div manageAccessContainer;
+  FlowPanel manageAccessContainer;
 
   @UiField
-  Div controlsContainer;
+  FlowPanel controlsContainer;
 
   @UiField
-  Div teamSubjectsWidgetContainer;
+  FlowPanel teamSubjectsWidgetContainer;
 
   @UiField
-  Div coveredEntitiesHeadingUI;
+  FlowPanel coveredEntitiesHeadingUI;
 
   @UiField
-  Div entitySubjectsWidgetContainer;
+  FlowPanel entitySubjectsWidgetContainer;
 
   @UiField
-  Div accessRequirementRelatedProjectsListContainer;
+  FlowPanel accessRequirementRelatedProjectsListContainer;
 
   @UiField
-  Div synAlertContainer;
+  FlowPanel synAlertContainer;
 
   @UiField
-  Div requestSubmittedByOther;
+  FlowPanel requestSubmittedByOther;
 
   @UiField
-  Div submitterUserBadgeContainer;
+  FlowPanel submitterUserBadgeContainer;
 
   @UiField
-  Div cancelRequestButtonContainer;
+  FlowPanel cancelRequestButtonContainer;
 
   @UiField
-  Div updateRequestButtonContainer;
+  FlowPanel updateRequestButtonContainer;
 
   @UiField
-  Div requestAccessButtonContainer;
+  FlowPanel requestAccessButtonContainer;
 
   @UiField
-  Div iduReportButtonContainer;
+  FlowPanel iduReportButtonContainer;
 
   @UiField
   Span expirationUI;
@@ -116,7 +117,7 @@ public class ManagedACTAccessRequirementWidgetViewImpl
   Text expirationDateText;
 
   @UiField
-  Div accessRequirementIDUI;
+  FlowPanel accessRequirementIDUI;
 
   @UiField
   InlineLabel accessRequirementIDField;
@@ -125,10 +126,10 @@ public class ManagedACTAccessRequirementWidgetViewImpl
   Span accessRequirementDescription;
 
   @UiField
-  Div subjectsDefinedByAnnotationsUI;
+  FlowPanel subjectsDefinedByAnnotationsUI;
 
   @UiField
-  Div subjectsDefinedInAccessRequirementUI;
+  FlowPanel subjectsDefinedInAccessRequirementUI;
 
   private final JSONObjectAdapter jsonObjectAdapter;
   private final SynapseReactClientFullContextPropsProvider propsProvider;

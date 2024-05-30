@@ -8,8 +8,8 @@
   xmlns:bh="urn:import:org.gwtbootstrap3.client.ui.html"
   xmlns:t="urn:import:org.sagebionetworks.web.client.view.bootstrap.table"
 >
-  <bh:Div>
-    <bh:Div>
+  <g:FlowPanel>
+    <g:FlowPanel>
       <b:Anchor
         icon="QUESTION_CIRCLE"
         href="https://help.synapse.org/docs/Creating-and-Managing-Wikis.1975746682.html#CreatingandManagingWikis-GenomeBrowser"
@@ -19,7 +19,7 @@
       <b:FieldSet addStyleNames="margin-top-20">
         <b:FormGroup>
           <b:FormLabel>Species</b:FormLabel>
-          <bh:Div>
+          <g:FlowPanel>
             <b:ButtonGroup dataToggle="BUTTONS">
               <b:RadioButton
                 name="species"
@@ -32,7 +32,7 @@
                 Mouse
               </b:RadioButton>
             </b:ButtonGroup>
-          </bh:Div>
+          </g:FlowPanel>
         </b:FormGroup>
         <b:FormGroup>
           <b:FormLabel>chr</b:FormLabel>
@@ -92,7 +92,7 @@
           </b:Button>
         </b:PanelBody>
       </b:Panel>
-    </bh:Div>
+    </g:FlowPanel>
     <bh:Text text="Powered by" />
     <b:Anchor
       text="Biodalliance"
@@ -100,5 +100,5 @@
       target="_blank"
       addStyleNames="margin-left-5"
     />
-  </bh:Div>
+  </g:FlowPanel>
 </ui:UiBinder>

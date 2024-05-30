@@ -3,6 +3,8 @@ package org.sagebionetworks.web.client.widget.entity.tabs;
 import com.google.gwt.event.dom.client.ClickHandler;
 import com.google.gwt.uibinder.client.UiBinder;
 import com.google.gwt.uibinder.client.UiField;
+import com.google.gwt.user.client.ui.FlowPanel;
+import com.google.gwt.user.client.ui.FlowPanel;
 import com.google.gwt.user.client.ui.IsWidget;
 import com.google.gwt.user.client.ui.SimplePanel;
 import com.google.gwt.user.client.ui.Widget;
@@ -10,7 +12,6 @@ import com.google.inject.Inject;
 import org.gwtbootstrap3.client.ui.Anchor;
 import org.gwtbootstrap3.client.ui.Column;
 import org.gwtbootstrap3.client.ui.Heading;
-import org.gwtbootstrap3.client.ui.html.Div;
 import org.gwtbootstrap3.client.ui.html.Span;
 import org.sagebionetworks.web.client.widget.FullWidthAlert;
 
@@ -42,10 +43,10 @@ public class TablesTabViewImpl implements TablesTabView {
   Column provenanceContainer;
 
   @UiField
-  Div provenanceContainerHighlightBox;
+  FlowPanel provenanceContainerHighlightBox;
 
   @UiField
-  Div actionMenuContainer;
+  FlowPanel actionMenuContainer;
 
   @UiField
   Heading title;
@@ -57,7 +58,7 @@ public class TablesTabViewImpl implements TablesTabView {
   FullWidthAlert versionAlert;
 
   @UiField
-  Div projectLevelUI;
+  FlowPanel projectLevelUI;
 
   @UiField
   Span tableDescription;

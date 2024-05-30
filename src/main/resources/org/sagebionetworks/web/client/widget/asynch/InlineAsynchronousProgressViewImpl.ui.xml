@@ -9,8 +9,8 @@
   xmlns:bh="urn:import:org.gwtbootstrap3.client.ui.html"
   xmlns:w="urn:import:org.sagebionetworks.web.client.widget"
 >
-  <bh:Div addStyleNames="flexcontainer-row" width="100%">
-    <bh:Div
+  <g:FlowPanel addStyleNames="flexcontainer-row" width="100%">
+    <g:FlowPanel
       ui:field="spinnerColumn"
       visible="false"
       addStyleNames="inline-block"
@@ -20,21 +20,19 @@
         size="45px"
         addStyleNames="inline-block"
       />
-    </bh:Div>
-    <bh:Div
+    </g:FlowPanel>
+    <g:FlowPanel
       addStyleNames="font-size-15 inline-block"
       ui:field="title"
-      marginLeft="15"
-      marginTop="12"
+      addStyleDependentNames="margin-top-12 margin-left-15"
     />
-    <bh:Div
+    <g:FlowPanel
       addStyleNames="font-size-15 hidden-xs inline-block"
       ui:field="message"
-      marginLeft="20"
-      marginTop="12"
+      addStyleDependentNames="margin-top-12 margin-left-20"
       height="60px"
     />
-    <bh:Div ui:field="progressColumn" visible="false">
+    <g:FlowPanel ui:field="progressColumn" visible="false">
       <b:Progress addStyleNames="center-in-div">
         <b:ProgressBar
           ui:field="progressBar"
@@ -43,6 +41,6 @@
           text="0%"
         />
       </b:Progress>
-    </bh:Div>
-  </bh:Div>
+    </g:FlowPanel>
+  </g:FlowPanel>
 </ui:UiBinder>

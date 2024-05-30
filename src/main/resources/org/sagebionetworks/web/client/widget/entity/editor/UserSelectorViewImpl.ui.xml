@@ -13,10 +13,9 @@
     title="Find Synapse User or Team"
   >
     <b:ModalBody>
-      <bh:Div
+      <g:FlowPanel
         ui:field="suggestBoxContainer"
-        paddingTop="30"
-        paddingBottom="50"
+        addStyleNames="padding-top-30 padding-bottom-50"
       />
     </b:ModalBody>
   </b:Modal>

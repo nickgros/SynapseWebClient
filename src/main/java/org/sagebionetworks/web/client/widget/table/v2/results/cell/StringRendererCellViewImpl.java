@@ -1,11 +1,11 @@
 package org.sagebionetworks.web.client.widget.table.v2.results.cell;
 
 import com.google.gwt.event.logical.shared.AttachEvent;
+import com.google.gwt.user.client.ui.FlowPanel;
 import com.google.gwt.user.client.ui.Widget;
 import org.gwtbootstrap3.client.ui.Tooltip;
 import org.gwtbootstrap3.client.ui.constants.Placement;
 import org.gwtbootstrap3.client.ui.constants.Trigger;
-import org.gwtbootstrap3.client.ui.html.Div;
 import org.gwtbootstrap3.client.ui.html.Paragraph;
 
 /**
@@ -16,7 +16,7 @@ import org.gwtbootstrap3.client.ui.html.Paragraph;
  */
 public class StringRendererCellViewImpl implements StringRendererCellView {
 
-  Div div = new Div();
+  FlowPanel div = new FlowPanel();
   Paragraph p = new Paragraph();
   public static final int LENGTH_REQUIRES_TOOLTIP = 20;
 

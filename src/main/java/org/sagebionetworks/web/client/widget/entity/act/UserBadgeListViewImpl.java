@@ -2,9 +2,10 @@ package org.sagebionetworks.web.client.widget.entity.act;
 
 import com.google.gwt.uibinder.client.UiBinder;
 import com.google.gwt.uibinder.client.UiField;
+import com.google.gwt.user.client.ui.FlowPanel;
+import com.google.gwt.user.client.ui.FlowPanel;
 import com.google.gwt.user.client.ui.Widget;
 import com.google.inject.Inject;
-import org.gwtbootstrap3.client.ui.html.Div;
 import org.sagebionetworks.web.client.widget.SelectionOptions;
 
 public class UserBadgeListViewImpl implements UserBadgeListView {
@@ -18,7 +19,7 @@ public class UserBadgeListViewImpl implements UserBadgeListView {
   SelectionOptions selectionOptions;
 
   @UiField
-  Div userBadgeContainer;
+  FlowPanel userBadgeContainer;
 
   @Inject
   public UserBadgeListViewImpl(Binder binder) {

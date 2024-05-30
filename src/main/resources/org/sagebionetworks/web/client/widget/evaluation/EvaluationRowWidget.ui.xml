@@ -53,7 +53,7 @@
             size="EXTRA_SMALL"
           />
         </b:Heading>
-        <bh:Div ui:field="submitToEvaluationContainer" />
+        <g:FlowPanel ui:field="submitToEvaluationContainer" />
       </b:Column>
     </b:Row>
     <b:Row>
@@ -78,7 +78,7 @@
             addStyleNames="displayInline"
           />
           <bh:Strong text="by" addStyleNames="margin-left-5 margin-right-5" />
-          <bh:Div ui:field="createdByDiv" addStyleNames="displayInline" />
+          <g:FlowPanel ui:field="createdByDiv" addStyleNames="displayInline" />
         </b:FormGroup>
         <b:FormGroup>
           <b:FormLabel
@@ -100,11 +100,13 @@
             addStyleNames="displayInline"
           />
         </b:FormGroup>
-        <bh:Div ui:field="quotaUI">
-          <bh:Div addStyleNames="highlight-title">
+        <g:FlowPanel ui:field="quotaUI">
+          <g:FlowPanel addStyleNames="highlight-title">
             <bh:Text>Quota</bh:Text>
-          </bh:Div>
-          <bh:Div marginLeft="10" marginRight="10" marginTop="10">
+          </g:FlowPanel>
+          <g:FlowPanel
+            addStyleNames="margin-top-10 margin-left-10 margin-right-10"
+          >
             <b:FormGroup>
               <b:FormLabel
                 text="First Round Start Date/Time"
@@ -145,8 +147,8 @@
                 addStyleNames="displayInline"
               />
             </b:FormGroup>
-          </bh:Div>
-        </bh:Div>
+          </g:FlowPanel>
+        </g:FlowPanel>
       </b:Column>
     </b:Row>
   </b:Container>

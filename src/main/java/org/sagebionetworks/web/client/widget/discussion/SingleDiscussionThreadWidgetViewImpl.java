@@ -4,6 +4,8 @@ import com.google.gwt.event.dom.client.ClickEvent;
 import com.google.gwt.event.dom.client.ClickHandler;
 import com.google.gwt.uibinder.client.UiBinder;
 import com.google.gwt.uibinder.client.UiField;
+import com.google.gwt.user.client.ui.FlowPanel;
+import com.google.gwt.user.client.ui.FlowPanel;
 import com.google.gwt.user.client.ui.Image;
 import com.google.gwt.user.client.ui.IsWidget;
 import com.google.gwt.user.client.ui.SimplePanel;
@@ -13,7 +15,6 @@ import org.gwtbootstrap3.client.ui.Button;
 import org.gwtbootstrap3.client.ui.Icon;
 import org.gwtbootstrap3.client.ui.IconStack;
 import org.gwtbootstrap3.client.ui.Label;
-import org.gwtbootstrap3.client.ui.html.Div;
 import org.gwtbootstrap3.client.ui.html.Span;
 import org.sagebionetworks.web.client.DisplayUtils;
 import org.sagebionetworks.web.client.widget.LoadingSpinner;
@@ -25,13 +26,13 @@ public class SingleDiscussionThreadWidgetViewImpl
     extends UiBinder<Widget, SingleDiscussionThreadWidgetViewImpl> {}
 
   @UiField
-  Div replyListContainer;
+  FlowPanel replyListContainer;
 
   @UiField
   Span threadTitle;
 
   @UiField
-  Div threadMessage;
+  FlowPanel threadMessage;
 
   @UiField
   Span author;
@@ -40,10 +41,10 @@ public class SingleDiscussionThreadWidgetViewImpl
   Span createdOn;
 
   @UiField
-  Div synAlertContainer;
+  FlowPanel synAlertContainer;
 
   @UiField
-  Div refreshAlertContainer;
+  FlowPanel refreshAlertContainer;
 
   @UiField
   LoadingSpinner loadingMessage;
@@ -79,19 +80,19 @@ public class SingleDiscussionThreadWidgetViewImpl
   Label moderatorBadge;
 
   @UiField
-  Div commandsContainer;
+  FlowPanel commandsContainer;
 
   @UiField
   Button showAllRepliesButton;
 
   @UiField
-  Div newReplyContainer;
+  FlowPanel newReplyContainer;
 
   @UiField
-  Div secondNewReplyContainer;
+  FlowPanel secondNewReplyContainer;
 
   @UiField
-  Div deletedThread;
+  FlowPanel deletedThread;
 
   @UiField
   Span subscribersContainer;

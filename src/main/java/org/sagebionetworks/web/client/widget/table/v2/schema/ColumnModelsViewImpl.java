@@ -3,12 +3,13 @@ package org.sagebionetworks.web.client.widget.table.v2.schema;
 import com.google.gwt.uibinder.client.UiBinder;
 import com.google.gwt.uibinder.client.UiField;
 import com.google.gwt.user.client.ui.Composite;
+import com.google.gwt.user.client.ui.FlowPanel;
+import com.google.gwt.user.client.ui.FlowPanel;
 import com.google.gwt.user.client.ui.IsWidget;
 import com.google.gwt.user.client.ui.Widget;
 import com.google.inject.Inject;
 import java.util.List;
 import org.gwtbootstrap3.client.ui.Button;
-import org.gwtbootstrap3.client.ui.html.Div;
 import org.sagebionetworks.web.client.DisplayUtils;
 import org.sagebionetworks.web.client.cookie.CookieProvider;
 import org.sagebionetworks.web.client.view.bootstrap.table.TBody;
@@ -40,7 +41,7 @@ public class ColumnModelsViewImpl
   TableHeader columnIdTableHeader;
 
   @UiField
-  Div editorContainer;
+  FlowPanel editorContainer;
 
   EditHandler editHandler;
 

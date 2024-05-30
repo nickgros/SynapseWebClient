@@ -9,9 +9,9 @@
   xmlns:bh="urn:import:org.gwtbootstrap3.client.ui.html"
   xmlns:t="urn:import:org.sagebionetworks.web.client.view.bootstrap.table"
 >
-  <bh:Div addStyleNames="markdownEditor">
-    <bh:Div ui:field="writingUI">
-      <bh:Div ui:field="mdCommands" styleName="view md-command-bar">
+  <g:FlowPanel addStyleNames="markdownEditor">
+    <g:FlowPanel ui:field="writingUI">
+      <g:FlowPanel ui:field="mdCommands" styleName="view md-command-bar">
         <b:Button
           ui:field="markdownPreviewButton"
           size="EXTRA_SMALL"
@@ -294,14 +294,14 @@
           text="Formatting Guide"
           pull="RIGHT"
         />
-      </bh:Div>
-      <bh:Div>
+      </g:FlowPanel>
+      <g:FlowPanel>
         <b:TextArea ui:field="markdownTextArea" addStyleNames="hide-resize" />
-      </bh:Div>
-    </bh:Div>
+      </g:FlowPanel>
+    </g:FlowPanel>
 
-    <bh:Div ui:field="previewUI" visible="false">
-      <bh:Div addStyleNames="margin-bottom-5">
+    <g:FlowPanel ui:field="previewUI" visible="false">
+      <g:FlowPanel addStyleNames="margin-bottom-5">
         <b:Button
           ui:field="writeMarkdownButton"
           text="Edit"
@@ -310,14 +310,14 @@
           size="EXTRA_SMALL"
           addStyleNames="margin-left-2"
         />
-      </bh:Div>
-      <bh:Div addStyleNames="light-border">
+      </g:FlowPanel>
+      <g:FlowPanel addStyleNames="light-border">
         <g:SimplePanel
           ui:field="previewHtmlContainer"
           addStyleNames="entity-description-preview-wrapper"
         />
-      </bh:Div>
-    </bh:Div>
-    <bh:Div ui:field="selectTeamModalContainer" />
-  </bh:Div>
+      </g:FlowPanel>
+    </g:FlowPanel>
+    <g:FlowPanel ui:field="selectTeamModalContainer" />
+  </g:FlowPanel>
 </ui:UiBinder>

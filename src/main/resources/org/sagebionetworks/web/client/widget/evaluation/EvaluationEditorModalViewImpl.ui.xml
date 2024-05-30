@@ -20,7 +20,7 @@
     dataKeyboard="true"
   >
     <b:ModalBody>
-      <bh:Div>
+      <g:FlowPanel>
         <b:FormGroup>
           <b:FormLabel text="Name" />
           <b:TextBox ui:field="nameField" />
@@ -39,7 +39,7 @@
             addStyleNames="displayInline"
           />
           <bh:Strong text="by" addStyleNames="margin-left-5 margin-right-5" />
-          <bh:Div ui:field="createdByDiv" addStyleNames="displayInline" />
+          <g:FlowPanel ui:field="createdByDiv" addStyleNames="displayInline" />
         </b:FormGroup>
         <b:FormGroup>
           <b:FormLabel text="Submission Instructions" />
@@ -75,11 +75,13 @@
               <b:FormLabel text="Number of Rounds" />
               <w:NumberBox ui:field="numberOfRoundsField" />
             </b:FormGroup>
-            <bh:Div addStyleNames="padding-10">
-              <bh:Div addStyleNames="highlight-title">
+            <g:FlowPanel addStyleNames="padding-10">
+              <g:FlowPanel addStyleNames="highlight-title">
                 <bh:Text>Round Duration</bh:Text>
-              </bh:Div>
-              <bh:Div marginLeft="10" marginRight="10" marginTop="10">
+              </g:FlowPanel>
+              <g:FlowPanel
+                addStyleNames="margin-top-10 margin-left-10 margin-right-10"
+              >
                 <b:FormGroup>
                   <b:FormLabel text="Days" />
                   <w:NumberBox ui:field="roundDurationDays" />
@@ -96,12 +98,12 @@
                   <b:FormLabel text="Seconds" />
                   <w:NumberBox ui:field="roundDurationSeconds" />
                 </b:FormGroup>
-              </bh:Div>
-            </bh:Div>
+              </g:FlowPanel>
+            </g:FlowPanel>
           </b:PanelBody>
         </b:Panel>
-      </bh:Div>
-      <bh:Div ui:field="synAlertContainer" />
+      </g:FlowPanel>
+      <g:FlowPanel ui:field="synAlertContainer" />
     </b:ModalBody>
     <b:ModalFooter>
       <b:Button ui:field="cancelButton" type="LINK" text="Cancel" />

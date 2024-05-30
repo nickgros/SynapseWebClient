@@ -4,6 +4,7 @@
   xmlns:b="urn:import:org.gwtbootstrap3.client.ui"
   xmlns:bh="urn:import:org.gwtbootstrap3.client.ui.html"
   xmlns:w="urn:import:org.sagebionetworks.web.client.widget"
+  xmlns:g="urn:import:com.google.gwt.user.client.ui"
 >
   <b:Modal
     ui:field="modal"
@@ -27,8 +28,8 @@
     </b:ModalHeader>
     <b:ModalBody>
       <bh:Paragraph ui:field="bodyCopy" />
-      <bh:Div ui:field="form" />
-      <bh:Div ui:field="synAlertContainer" />
+      <g:FlowPanel ui:field="form" />
+      <g:FlowPanel ui:field="synAlertContainer" />
     </b:ModalBody>
     <b:ModalFooter>
       <b:Button ui:field="defaultButton" type="DEFAULT" text="Cancel" />

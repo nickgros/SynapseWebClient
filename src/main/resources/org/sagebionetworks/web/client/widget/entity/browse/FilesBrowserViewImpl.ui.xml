@@ -10,27 +10,25 @@
   xmlns:bg="urn:import:org.gwtbootstrap3.client.ui.gwt"
   xmlns:bh="urn:import:org.gwtbootstrap3.client.ui.html"
 >
-  <bh:Div addStyleNames="filesBrowser margin-top-15">
-    <bh:Div
+  <g:FlowPanel addStyleNames="filesBrowser margin-top-15">
+    <g:FlowPanel
       ui:field="commandsContainer"
-      addStyleNames="flexcontainer-row"
-      marginBottom="10"
+      addStyleNames="flexcontainer-row margin-bottom-10"
     >
-      <bh:Div
+      <g:FlowPanel
         addStyleNames="flexcontainer-column flexcontainer-column-fill-width"
       >
         <b:Heading size="H3" ui:field="title" text="Files" visible="false" />
-      </bh:Div>
-      <bh:Div
+      </g:FlowPanel>
+      <g:FlowPanel
         addStyleNames="flexcontainer-column flexcontainer-align-items-flex-end"
         ui:field="actionMenuContainer"
       />
-    </bh:Div>
-    <bh:Div ui:field="addToDownloadListContainer" />
-    <bh:Div
+    </g:FlowPanel>
+    <g:FlowPanel ui:field="addToDownloadListContainer" />
+    <g:FlowPanel
       ui:field="files"
-      styleName="highlight-box padding-top-0-imp overflow-auto"
-      marginTop="0"
+      styleName="highlight-box padding-top-0-imp overflow-auto margin-top-0"
     />
-  </bh:Div>
+  </g:FlowPanel>
 </ui:UiBinder>

@@ -1,9 +1,9 @@
 package org.sagebionetworks.web.client.view;
 
-import org.gwtbootstrap3.client.ui.html.Div;
+import com.google.gwt.user.client.ui.FlowPanel;
 import org.gwtbootstrap3.client.ui.html.Text;
 
-public class DivViewImpl extends Div implements DivView {
+public class DivViewImpl extends FlowPanel implements DivView {
 
   @Override
   public void setText(String text) {

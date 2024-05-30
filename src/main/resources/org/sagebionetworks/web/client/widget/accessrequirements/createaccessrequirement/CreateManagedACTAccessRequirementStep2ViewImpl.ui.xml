@@ -10,14 +10,14 @@
   xmlns:bh="urn:import:org.gwtbootstrap3.client.ui.html"
   xmlns:w="urn:import:org.sagebionetworks.web.client.widget"
 >
-  <bh:Div>
-    <bh:Div>
+  <g:FlowPanel>
+    <g:FlowPanel>
       <b:FormGroup>
         <b:FormLabel>Instructions (wiki)</b:FormLabel>
-        <bh:Div ui:field="wikiPageContainer" />
+        <g:FlowPanel ui:field="wikiPageContainer" />
         <b:Button ui:field="editWikiButton" text="Edit Instructions" />
       </b:FormGroup>
-      <bh:Div>
+      <g:FlowPanel>
         <b:Panel>
           <b:PanelHeader>
             <b:Heading size="H5" text="Data Access Request Parameters" />
@@ -41,8 +41,8 @@
             <b:FormGroup>
               <b:FormLabel>DUC</b:FormLabel>
               <b:CheckBox ui:field="ducCheckbox" text="DUC is required." />
-              <bh:Div ui:field="ducTemplateFileContainer" />
-              <bh:Div ui:field="ducTemplateFileUploadContainer" />
+              <g:FlowPanel ui:field="ducTemplateFileContainer" />
+              <g:FlowPanel ui:field="ducTemplateFileUploadContainer" />
             </b:FormGroup>
             <b:CheckBox
               ui:field="irbCheckbox"
@@ -66,7 +66,7 @@
             />
           </b:PanelBody>
         </b:Panel>
-      </bh:Div>
-    </bh:Div>
-  </bh:Div>
+      </g:FlowPanel>
+    </g:FlowPanel>
+  </g:FlowPanel>
 </ui:UiBinder>

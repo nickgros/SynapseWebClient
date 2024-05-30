@@ -2,32 +2,32 @@ package org.sagebionetworks.web.client.widget.accessrequirements;
 
 import com.google.gwt.uibinder.client.UiBinder;
 import com.google.gwt.uibinder.client.UiField;
+import com.google.gwt.user.client.ui.FlowPanel;
 import com.google.gwt.user.client.ui.InlineLabel;
 import com.google.gwt.user.client.ui.IsWidget;
 import com.google.gwt.user.client.ui.Widget;
 import com.google.inject.Inject;
-import org.gwtbootstrap3.client.ui.html.Div;
 
 public class LockAccessRequirementWidgetViewImpl
   implements LockAccessRequirementWidgetView {
 
   @UiField
-  Div deleteAccessRequirementContainer;
+  FlowPanel deleteAccessRequirementContainer;
 
   @UiField
-  Div teamSubjectsWidgetContainer;
+  FlowPanel teamSubjectsWidgetContainer;
 
   @UiField
-  Div entitySubjectsWidgetContainer;
+  FlowPanel entitySubjectsWidgetContainer;
 
   @UiField
-  Div accessRequirementRelatedProjectsListContainer;
+  FlowPanel accessRequirementRelatedProjectsListContainer;
 
   @UiField
-  Div coveredEntitiesHeadingUI;
+  FlowPanel coveredEntitiesHeadingUI;
 
   @UiField
-  Div accessRequirementIDUI;
+  FlowPanel accessRequirementIDUI;
 
   @UiField
   InlineLabel accessRequirementIDField;

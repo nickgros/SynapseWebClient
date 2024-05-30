@@ -7,7 +7,7 @@
   xmlns:bg="urn:import:org.gwtbootstrap3.client.ui.gwt"
   xmlns:bh="urn:import:org.gwtbootstrap3.client.ui.html"
 >
-  <bh:Div>
+  <g:FlowPanel>
     <bh:Text ui:field="previewMessage" />
     <g:ScrollPanel>
       <t:Table styleName="table table-striped table-condensed" ui:field="table">
@@ -18,5 +18,5 @@
       </t:Table>
     </g:ScrollPanel>
     <b:Alert ui:field="emptyResults" type="DANGER" visible="false" />
-  </bh:Div>
+  </g:FlowPanel>
 </ui:UiBinder>

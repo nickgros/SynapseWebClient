@@ -6,14 +6,13 @@
   xmlns:bh="urn:import:org.gwtbootstrap3.client.ui.html"
   xmlns:w="urn:import:org.sagebionetworks.web.client.widget"
 >
-  <bh:Div>
-    <bh:Div ui:field="loadingUI">
+  <g:FlowPanel>
+    <g:FlowPanel ui:field="loadingUI">
       <w:LoadingSpinner size="16px" />
       <bh:Text>
-        &nbsp;
-        Loading...
+        &nbsp; Loading...
       </bh:Text>
-    </bh:Div>
+    </g:FlowPanel>
 
     <b:Alert type="WARNING" ui:field="errorUI">
       <bh:Strong text="Markdown Widget Warning: " />
@@ -22,13 +21,13 @@
 
     <b:Panel ui:field="challengeTeamsUI" addStyleNames="margin-bottom-0-imp">
       <b:PanelBody>
-        <bh:Div
+        <g:FlowPanel
           ui:field="challengeTeamsContainer"
           addStyleNames="secondary-links"
         />
       </b:PanelBody>
     </b:Panel>
-    <bh:Div ui:field="paginationWidgetContainer" />
-    <bh:Div ui:field="dialogWidgetContainer" />
-  </bh:Div>
+    <g:FlowPanel ui:field="paginationWidgetContainer" />
+    <g:FlowPanel ui:field="dialogWidgetContainer" />
+  </g:FlowPanel>
 </ui:UiBinder>

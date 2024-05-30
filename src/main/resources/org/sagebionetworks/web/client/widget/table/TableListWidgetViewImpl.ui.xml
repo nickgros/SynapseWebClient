@@ -10,7 +10,7 @@
   xmlns:tr="urn:import:org.sagebionetworks.web.client.widget.table.v2.results"
 >
   <g:HTMLPanel>
-    <bh:Div ui:field="synAlertContainer" />
+    <g:FlowPanel ui:field="synAlertContainer" />
     <w:LoadingSpinner
       size="40px"
       ui:field="loadingUI"
@@ -24,10 +24,9 @@
       marginLeft="15"
     />
     <b:TextArea width="1px" ui:field="copyToClipboardTextbox" visible="false" />
-    <bh:Div
+    <g:FlowPanel
       ui:field="tableArea"
-      addStyleNames="highlight-box padding-10"
-      marginTop="0"
+      addStyleNames="highlight-box padding-10 margin-top-0"
     >
       <t:Table ui:field="columnHeaders" width="100%">
         <t:TableRow>
@@ -80,8 +79,8 @@
         ui:field="hrUnderTableHeaders"
         addStyleNames="margin-top-5 margin-bottom-5"
       />
-      <bh:Div ui:field="tablesListDiv" />
-      <bh:Div ui:field="loadMoreWidgetContainer" />
-    </bh:Div>
+      <g:FlowPanel ui:field="tablesListDiv" />
+      <g:FlowPanel ui:field="loadMoreWidgetContainer" />
+    </g:FlowPanel>
   </g:HTMLPanel>
 </ui:UiBinder>

@@ -7,13 +7,13 @@ import com.google.gwt.event.shared.GwtEvent;
 import com.google.gwt.event.shared.HandlerRegistration;
 import com.google.gwt.uibinder.client.UiBinder;
 import com.google.gwt.uibinder.client.UiField;
+import com.google.gwt.user.client.ui.FlowPanel;
 import com.google.gwt.user.client.ui.HTMLPanel;
 import com.google.gwt.user.client.ui.Widget;
 import com.google.inject.Inject;
 import java.util.ArrayList;
 import java.util.List;
 import org.gwtbootstrap3.client.ui.Radio;
-import org.gwtbootstrap3.client.ui.html.Div;
 
 /**
  * Radio editor view
@@ -26,7 +26,7 @@ public class RadioCellEditorViewImpl implements RadioCellEditorView {
   public interface Binder extends UiBinder<Widget, RadioCellEditorViewImpl> {}
 
   @UiField
-  Div container;
+  FlowPanel container;
 
   Widget widget;
 

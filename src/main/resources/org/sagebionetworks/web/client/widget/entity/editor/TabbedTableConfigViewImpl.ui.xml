@@ -6,7 +6,7 @@
   xmlns:b="urn:import:org.gwtbootstrap3.client.ui"
   xmlns:bh="urn:import:org.gwtbootstrap3.client.ui.html"
 >
-  <bh:Div addStyleNames="margin-top-left-10">
+  <g:FlowPanel addStyleNames="margin-top-left-10">
     <b:FieldSet>
       <b:FormGroup>
         <b:FormLabel for="tabTable">Tab delimited table contents</b:FormLabel>
@@ -18,5 +18,5 @@
         />
       </b:FormGroup>
     </b:FieldSet>
-  </bh:Div>
+  </g:FlowPanel>
 </ui:UiBinder>

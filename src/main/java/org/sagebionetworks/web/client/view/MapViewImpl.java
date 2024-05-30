@@ -3,9 +3,10 @@ package org.sagebionetworks.web.client.view;
 import com.google.gwt.uibinder.client.UiBinder;
 import com.google.gwt.uibinder.client.UiField;
 import com.google.gwt.user.client.Window;
+import com.google.gwt.user.client.ui.FlowPanel;
+import com.google.gwt.user.client.ui.FlowPanel;
 import com.google.gwt.user.client.ui.Widget;
 import com.google.inject.Inject;
-import org.gwtbootstrap3.client.ui.html.Div;
 import org.sagebionetworks.web.client.SynapseJSNIUtils;
 import org.sagebionetworks.web.client.widget.header.Header;
 
@@ -14,13 +15,13 @@ public class MapViewImpl implements MapView {
   public interface MapViewImplUiBinder extends UiBinder<Widget, MapViewImpl> {}
 
   @UiField
-  Div teamBadgeContainer;
+  FlowPanel teamBadgeContainer;
 
   @UiField
-  Div allUsersTitle;
+  FlowPanel allUsersTitle;
 
   @UiField
-  Div mapPanel;
+  FlowPanel mapPanel;
 
   Widget widget;
 

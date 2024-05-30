@@ -3,11 +3,11 @@ package org.sagebionetworks.web.client.widget.discussion;
 import com.google.gwt.uibinder.client.UiBinder;
 import com.google.gwt.uibinder.client.UiField;
 import com.google.gwt.user.client.Window;
+import com.google.gwt.user.client.ui.FlowPanel;
 import com.google.gwt.user.client.ui.IsWidget;
 import com.google.gwt.user.client.ui.Widget;
 import com.google.inject.Inject;
 import org.gwtbootstrap3.client.ui.Column;
-import org.gwtbootstrap3.client.ui.html.Div;
 import org.gwtbootstrap3.client.ui.html.Span;
 import org.sagebionetworks.repo.model.discussion.DiscussionThreadOrder;
 import org.sagebionetworks.repo.model.table.SortDirection;
@@ -24,10 +24,10 @@ public class DiscussionThreadListWidgetViewImpl
   Column threadListContainer;
 
   @UiField
-  Div synAlertContainer;
+  FlowPanel synAlertContainer;
 
   @UiField
-  Div threadCountAlertContainer;
+  FlowPanel threadCountAlertContainer;
 
   @UiField
   SortableTableHeaderImpl sortByReplies;
@@ -42,7 +42,7 @@ public class DiscussionThreadListWidgetViewImpl
   SortableTableHeaderImpl sortByTopic;
 
   @UiField
-  Div threadHeader;
+  FlowPanel threadHeader;
 
   @UiField
   Span noThreadsFound;

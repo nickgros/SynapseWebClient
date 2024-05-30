@@ -6,16 +6,16 @@
   xmlns:bh="urn:import:org.gwtbootstrap3.client.ui.html"
   xmlns:t="urn:import:org.sagebionetworks.web.client.view.bootstrap.table"
 >
-  <bh:Div>
-    <bh:Div addStyleNames="pageHeader">
+  <g:FlowPanel>
+    <g:FlowPanel addStyleNames="pageHeader">
       <b:Heading
         addStyleNames="pageHeaderTitle"
         size="H3"
         text="Profile Validation Submissions"
       />
-    </bh:Div>
-    <bh:Div ui:field="synAlertContainer" />
-    <bh:Div
+    </g:FlowPanel>
+    <g:FlowPanel ui:field="synAlertContainer" />
+    <g:FlowPanel
       addStyleNames="margin-top-30 margin-left-35 min-height-400 margin-right-10"
     >
       <b:Row>
@@ -51,7 +51,7 @@
           >
             <b:PanelHeader>
               <b:Heading size="H3" text="User Filter" />
-              <bh:Div ui:field="currentUserContainer" />
+              <g:FlowPanel ui:field="currentUserContainer" />
               <b:Button
                 ui:field="clearUserFilter"
                 icon="TIMES"
@@ -61,7 +61,7 @@
               />
             </b:PanelHeader>
             <b:PanelBody>
-              <bh:Div ui:field="userSelectContainer" />
+              <g:FlowPanel ui:field="userSelectContainer" />
             </b:PanelBody>
           </b:Panel>
         </b:Column>
@@ -108,8 +108,8 @@
           </t:TableHeader>
         </t:TableRow>
       </t:Table>
-      <bh:Div ui:field="tableData" addStyleNames="margin-bottom-20" />
-    </bh:Div>
-    <bh:Div addStyleNames="clear" />
-  </bh:Div>
+      <g:FlowPanel ui:field="tableData" addStyleNames="margin-bottom-20" />
+    </g:FlowPanel>
+    <g:FlowPanel addStyleNames="clear" />
+  </g:FlowPanel>
 </ui:UiBinder>

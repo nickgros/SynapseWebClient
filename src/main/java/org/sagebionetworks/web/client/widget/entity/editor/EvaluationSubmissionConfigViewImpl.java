@@ -2,13 +2,14 @@ package org.sagebionetworks.web.client.widget.entity.editor;
 
 import com.google.gwt.uibinder.client.UiBinder;
 import com.google.gwt.uibinder.client.UiField;
+import com.google.gwt.user.client.ui.FlowPanel;
+import com.google.gwt.user.client.ui.FlowPanel;
 import com.google.gwt.user.client.ui.Widget;
 import com.google.inject.Inject;
 import java.util.Map;
 import org.gwtbootstrap3.client.ui.Button;
 import org.gwtbootstrap3.client.ui.Radio;
 import org.gwtbootstrap3.client.ui.TextBox;
-import org.gwtbootstrap3.client.ui.html.Div;
 import org.sagebionetworks.web.client.DisplayConstants;
 import org.sagebionetworks.web.client.DisplayUtils;
 import org.sagebionetworks.web.client.cookie.CookieProvider;
@@ -45,10 +46,10 @@ public class EvaluationSubmissionConfigViewImpl
   Radio evaluationQueueOption;
 
   @UiField
-  Div challengeProjectUi;
+  FlowPanel challengeProjectUi;
 
   @UiField
-  Div evaluationQueueUi;
+  FlowPanel evaluationQueueUi;
 
   @UiField
   Button findProjectButton;
@@ -61,7 +62,7 @@ public class EvaluationSubmissionConfigViewImpl
   Radio submitForm;
 
   @UiField
-  Div formUi;
+  FlowPanel formUi;
 
   @UiField
   TextBox formContainerIdField;
@@ -82,7 +83,7 @@ public class EvaluationSubmissionConfigViewImpl
   Button findUiSchemaFileButton;
 
   @UiField
-  Div submissionTypeOptions;
+  FlowPanel submissionTypeOptions;
 
   Widget widget;
 

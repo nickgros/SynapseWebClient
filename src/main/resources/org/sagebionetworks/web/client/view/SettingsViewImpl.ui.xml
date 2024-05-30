@@ -9,24 +9,24 @@
   xmlns:w="urn:import:org.sagebionetworks.web.client.widget"
 >
   <g:HTMLPanel>
-    <bh:Div>
+    <g:FlowPanel>
       <b:Row>
         <b:Column size="LG_6">
-          <bh:Div addStyleNames="margin-bottom-20">
-            <bh:Div addStyleNames="highlight-title">
+          <g:FlowPanel addStyleNames="margin-bottom-20">
+            <g:FlowPanel addStyleNames="highlight-title">
               <bh:Text>Profile</bh:Text>
-            </bh:Div>
-            <bh:Div addStyleNames="margin-15">
+            </g:FlowPanel>
+            <g:FlowPanel addStyleNames="margin-15">
               <b:Button ui:field="editProfileButton" icon="EDIT">
                 Edit Profile
               </b:Button>
-            </bh:Div>
-          </bh:Div>
-          <bh:Div addStyleNames="margin-bottom-20">
-            <bh:Div addStyleNames="highlight-title">
+            </g:FlowPanel>
+          </g:FlowPanel>
+          <g:FlowPanel addStyleNames="margin-bottom-20">
+            <g:FlowPanel addStyleNames="highlight-title">
               <bh:Text>Date/Time Format</bh:Text>
-            </bh:Div>
-            <bh:Div addStyleNames="margin-15">
+            </g:FlowPanel>
+            <g:FlowPanel addStyleNames="margin-15">
               <b:ButtonGroup>
                 <b:Button
                   ui:field="dateFormatDropdown"
@@ -41,14 +41,14 @@
                   <b:AnchorListItem ui:field="dateFormatUTC" text="UTC" />
                 </b:DropDownMenu>
               </b:ButtonGroup>
-            </bh:Div>
-          </bh:Div>
-          <bh:Div addStyleNames="margin-bottom-20">
-            <bh:Div addStyleNames="highlight-title">
+            </g:FlowPanel>
+          </g:FlowPanel>
+          <g:FlowPanel addStyleNames="margin-bottom-20">
+            <g:FlowPanel addStyleNames="highlight-title">
               <bh:Text>Certification</bh:Text>
-            </bh:Div>
-            <bh:Div>
-              <bh:Div addStyleNames="margin-15">
+            </g:FlowPanel>
+            <g:FlowPanel>
+              <g:FlowPanel addStyleNames="margin-15">
                 <b:Button ui:field="certificationButton">
                   Get Certified
                 </b:Button>
@@ -59,20 +59,20 @@
                 >
                   Passed Certification Quiz
                 </b:Button>
-              </bh:Div>
+              </g:FlowPanel>
               <w:HelpWidget
                 helpMarkdown="There are times where human data can only be shared with certain restrictions. Learn what the rules are and how to apply and comply with data privacy levels. This topic is covered during certification."
                 text="More info..."
                 href="https://help.synapse.org/docs/User-Types.2007072795.html#UserAccountTiers-CertifiedUsers"
               />
-            </bh:Div>
-          </bh:Div>
-          <bh:Div addStyleNames="margin-bottom-20">
-            <bh:Div addStyleNames="highlight-title">
+            </g:FlowPanel>
+          </g:FlowPanel>
+          <g:FlowPanel addStyleNames="margin-bottom-20">
+            <g:FlowPanel addStyleNames="highlight-title">
               <bh:Text>Profile Validation</bh:Text>
-            </bh:Div>
-            <bh:Div>
-              <bh:Div addStyleNames="margin-15">
+            </g:FlowPanel>
+            <g:FlowPanel>
+              <g:FlowPanel addStyleNames="margin-15">
                 <b:Button
                   ui:field="verificationSubmittedButton"
                   type="PRIMARY"
@@ -108,10 +108,10 @@
                 >
                   Profile Validated
                 </b:Button>
-              </bh:Div>
-            </bh:Div>
-            <bh:Div ui:field="verifyAlert">
-              <bh:Div addStyleNames="margin-15">
+              </g:FlowPanel>
+            </g:FlowPanel>
+            <g:FlowPanel ui:field="verifyAlert">
+              <g:FlowPanel addStyleNames="margin-15">
                 <bh:Paragraph>
                   <bh:Text>
                     Users with a validated profile can access more features and
@@ -158,22 +158,22 @@
                     </b:ListItem>
                   </bh:OrderedList>
                 </bh:Paragraph>
-              </bh:Div>
-            </bh:Div>
+              </g:FlowPanel>
+            </g:FlowPanel>
             <w:HelpWidget
               helpMarkdown="A Synapse user with a validated profile is eligible to request access to specific controlled access tier data, including mHealth data."
               text="More info..."
               href="https://help.synapse.org/docs/User-Types.2007072795.html#UserAccountTiers-ValidatedUsers"
             />
-          </bh:Div>
+          </g:FlowPanel>
         </b:Column>
         <b:Column size="LG_6">
-          <bh:Div addStyleNames="margin-bottom-20">
-            <bh:Div addStyleNames="highlight-title">
+          <g:FlowPanel addStyleNames="margin-bottom-20">
+            <g:FlowPanel addStyleNames="highlight-title">
               <bh:Text>Change Synapse Password</bh:Text>
-            </bh:Div>
+            </g:FlowPanel>
 
-            <bh:Div addStyleNames="form-horizontal margin-15">
+            <g:FlowPanel addStyleNames="form-horizontal margin-15">
               <b:Row ui:field="currentPassword" addStyleNames="form-group">
                 <b:Column size="SM_3" addStyleNames="control-label boldText">
                   <bh:Text>Current password</bh:Text>
@@ -222,13 +222,13 @@
                   <g:SimplePanel ui:field="passwordSynAlertPanel" />
                 </b:Column>
               </b:Row>
-            </bh:Div>
-          </bh:Div>
-          <bh:Div addStyleNames="margin-bottom-20">
-            <bh:Div addStyleNames="highlight-title">
+            </g:FlowPanel>
+          </g:FlowPanel>
+          <g:FlowPanel addStyleNames="margin-bottom-20">
+            <g:FlowPanel addStyleNames="highlight-title">
               <bh:Text>ORCID</bh:Text>
-            </bh:Div>
-            <bh:Div addStyleNames="margin-15">
+            </g:FlowPanel>
+            <g:FlowPanel addStyleNames="margin-15">
               <b:Button
                 ui:field="linkORCIDButton"
                 addStyleNames="margin-right-10"
@@ -249,30 +249,30 @@
                   />
                 </b:Tooltip>
               </bh:Span>
-            </bh:Div>
-          </bh:Div>
-          <bh:Div addStyleNames="margin-bottom-20">
-            <bh:Div addStyleNames="highlight-title">
+            </g:FlowPanel>
+          </g:FlowPanel>
+          <g:FlowPanel addStyleNames="margin-bottom-20">
+            <g:FlowPanel addStyleNames="highlight-title">
               <bh:Text>Synapse Terms and Conditions for Use</bh:Text>
-            </bh:Div>
-            <bh:Div>
-              <bh:Div addStyleNames="margin-15">
+            </g:FlowPanel>
+            <g:FlowPanel>
+              <g:FlowPanel addStyleNames="margin-15">
                 <b:Button ui:field="synapseTermsAcceptedButton" type="SUCCESS">
                   Accepted Terms and Conditions for Use
                 </b:Button>
-              </bh:Div>
-            </bh:Div>
-          </bh:Div>
+              </g:FlowPanel>
+            </g:FlowPanel>
+          </g:FlowPanel>
         </b:Column>
       </b:Row>
 
-      <bh:Div addStyleNames="margin-bottom-20">
-        <bh:Div addStyleNames="highlight-title">
+      <g:FlowPanel addStyleNames="margin-bottom-20">
+        <g:FlowPanel addStyleNames="highlight-title">
           <bh:Text>Email</bh:Text>
-        </bh:Div>
-        <bh:Div addStyleNames="margin-15">
-          <bh:Div ui:field="emailsPanel" />
-        </bh:Div>
+        </g:FlowPanel>
+        <g:FlowPanel addStyleNames="margin-15">
+          <g:FlowPanel ui:field="emailsPanel" />
+        </g:FlowPanel>
         <g:FlowPanel>
           <b:CheckBox
             ui:field="emailNotificationsCheckbox"
@@ -281,11 +281,11 @@
           />
         </g:FlowPanel>
         <g:SimplePanel ui:field="notificationSynAlertPanel" />
-      </bh:Div>
+      </g:FlowPanel>
       <g:FlowPanel addStyleNames="margin-bottom-20">
-        <bh:Div addStyleNames="highlight-title">
+        <g:FlowPanel addStyleNames="highlight-title">
           <bh:Text>Following</bh:Text>
-        </bh:Div>
+        </g:FlowPanel>
         <bh:Paragraph addStyleNames="margin-15">
           Your followed forums and threads have moved! To view the topics that
           you are following, click
@@ -300,9 +300,9 @@
       </g:FlowPanel>
 
       <g:HTMLPanel addStyleNames="margin-bottom-20">
-        <bh:Div addStyleNames="highlight-title">
+        <g:FlowPanel addStyleNames="highlight-title">
           <bh:Text>Two-factor Authentication (2FA)</bh:Text>
-        </bh:Div>
+        </g:FlowPanel>
         <w:ReactComponentDiv
           ui:field="twoFactorAuthSettingsPanel"
           addStyleNames="margin-15"
@@ -310,10 +310,10 @@
       </g:HTMLPanel>
 
       <g:HTMLPanel addStyleNames="margin-bottom-20">
-        <bh:Div addStyleNames="highlight-title">
+        <g:FlowPanel addStyleNames="highlight-title">
           <bh:Text>Personal Access Tokens</bh:Text>
-        </bh:Div>
-        <bh:Div addStyleNames="margin-15">
+        </g:FlowPanel>
+        <g:FlowPanel addStyleNames="margin-15">
           <bh:Paragraph>
             You can issue personal access tokens to authenticate your scripts
             with
@@ -326,13 +326,13 @@
             addStyleNames="margin-top-10"
             text="Manage Personal Access Tokens"
           />
-        </bh:Div>
+        </g:FlowPanel>
       </g:HTMLPanel>
       <g:HTMLPanel addStyleNames="margin-bottom-20">
-        <bh:Div addStyleNames="highlight-title">
+        <g:FlowPanel addStyleNames="highlight-title">
           <bh:Text>OAuth Client Editor</bh:Text>
-        </bh:Div>
-        <bh:Div addStyleNames="margin-15">
+        </g:FlowPanel>
+        <g:FlowPanel addStyleNames="margin-15">
           <bh:Paragraph>
             OAuth Clients can be created to develop applications that use
             Synapse
@@ -343,7 +343,7 @@
             addStyleNames="margin-top-10"
             text="Go to OAuth Client Manager"
           />
-        </bh:Div>
+        </g:FlowPanel>
       </g:HTMLPanel>
 
       <g:HTMLPanel
@@ -351,9 +351,9 @@
         visible="false"
         addStyleNames="margin-bottom-20"
       >
-        <bh:Div addStyleNames="highlight-title">
+        <g:FlowPanel addStyleNames="highlight-title">
           <bh:Text>Synapse API Key</bh:Text>
-        </bh:Div>
+        </g:FlowPanel>
         <p>
           Using an API key allows you to authenticate your scripts for an
           indefinite amount of time. It is important
@@ -384,8 +384,8 @@
         />
       </g:HTMLPanel>
 
-      <bh:Div addStyleNames="clear" />
-    </bh:Div>
+      <g:FlowPanel addStyleNames="clear" />
+    </g:FlowPanel>
     <!-- close class="container" -->
     <g:SimplePanel ui:field="footer" />
     <!-- end footer -->

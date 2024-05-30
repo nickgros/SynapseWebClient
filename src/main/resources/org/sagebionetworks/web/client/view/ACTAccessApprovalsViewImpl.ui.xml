@@ -7,31 +7,30 @@
   xmlns:t="urn:import:org.sagebionetworks.web.client.view.bootstrap.table"
   xmlns:bd="urn:import:org.gwtbootstrap3.extras.datetimepicker.client.ui"
 >
-  <bh:Div>
-    <bh:Div addStyleNames="pageHeader">
+  <g:FlowPanel>
+    <g:FlowPanel addStyleNames="pageHeader">
       <b:Heading
         addStyleNames="pageHeaderTitle"
         size="H3"
         text="Review Current Access"
       />
-    </bh:Div>
+    </g:FlowPanel>
     <b:NavPills addStyleNames="margin-left-35 margin-right-10 margin-top-5">
       <b:AnchorListItem
         text="ACT data access dashboard"
         href="/ACTDataAccessSubmissionDashboard:default"
       />
     </b:NavPills>
-    <bh:Div
+    <g:FlowPanel
       ui:field="showHideAccessRequirementButtonContainer"
-      pull="RIGHT"
-      addStyleNames="moveup-35 margin-right-10"
+      addStyleNames="moveup-35 margin-right-10 floatright"
     />
-    <bh:Div ui:field="synAlertContainer" />
+    <g:FlowPanel ui:field="synAlertContainer" />
     <b:Panel
       ui:field="accessRequirementUI"
       addStyleNames="margin-left-35 margin-right-10 light-border padding-10"
     >
-      <bh:Div ui:field="accessRequirementContainer" />
+      <g:FlowPanel ui:field="accessRequirementContainer" />
     </b:Panel>
     <b:Button
       ui:field="clearAccessRequirementFilter"
@@ -42,7 +41,7 @@
     >
       Expand search to all Access Requirements
     </b:Button>
-    <bh:Div
+    <g:FlowPanel
       addStyleNames="margin-top-30 margin-left-35 min-height-400 margin-right-10"
     >
       <b:Row>
@@ -52,7 +51,7 @@
           >
             <b:PanelHeader>
               <b:Heading size="H3" text="Submitter Filter" />
-              <bh:Div ui:field="currentSubmitterContainer" />
+              <g:FlowPanel ui:field="currentSubmitterContainer" />
               <b:Button
                 ui:field="clearSubmitterFilter"
                 icon="TIMES"
@@ -62,7 +61,7 @@
               />
             </b:PanelHeader>
             <b:PanelBody>
-              <bh:Div ui:field="submitterSelectContainer" />
+              <g:FlowPanel ui:field="submitterSelectContainer" />
             </b:PanelBody>
           </b:Panel>
         </b:Column>
@@ -72,7 +71,7 @@
           >
             <b:PanelHeader>
               <b:Heading size="H3" text="Accessor Filter" />
-              <bh:Div ui:field="currentAccessorContainer" />
+              <g:FlowPanel ui:field="currentAccessorContainer" />
               <b:Button
                 ui:field="clearAccessorFilter"
                 icon="TIMES"
@@ -82,7 +81,7 @@
               />
             </b:PanelHeader>
             <b:PanelBody>
-              <bh:Div ui:field="accessorSelectContainer" />
+              <g:FlowPanel ui:field="accessorSelectContainer" />
             </b:PanelBody>
           </b:Panel>
         </b:Column>
@@ -132,7 +131,7 @@
         pull="RIGHT"
       />
       <bh:Hr />
-      <bh:Div marginLeft="5" marginRight="5">
+      <g:FlowPanel addStyleNames="margin-left-5 margin-right-5">
         <!-- table header -->
         <t:Table
           addStyleNames="table-layout-fixed margin-bottom-20"
@@ -160,9 +159,9 @@
             </t:TableHeader>
           </t:TableRow>
         </t:Table>
-        <bh:Div ui:field="tableData" addStyleNames="margin-bottom-20" />
-      </bh:Div>
-    </bh:Div>
-    <bh:Div addStyleNames="clear" />
-  </bh:Div>
+        <g:FlowPanel ui:field="tableData" addStyleNames="margin-bottom-20" />
+      </g:FlowPanel>
+    </g:FlowPanel>
+    <g:FlowPanel addStyleNames="clear" />
+  </g:FlowPanel>
 </ui:UiBinder>

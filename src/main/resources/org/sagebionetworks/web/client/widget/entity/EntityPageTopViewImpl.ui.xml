@@ -8,24 +8,24 @@
 >
   <g:HTMLPanel>
     <!--Project level information -->
-    <bh:Div addStyleNames="pageHeader min-height-48">
+    <g:FlowPanel addStyleNames="pageHeader min-height-48">
       <g:FlowPanel addStyleNames="projectMetadata" ui:field="projectUI">
         <bh:Span
           ui:field="projectActionMenuContainer"
           addStyleNames="right"
           paddingTop="20"
         />
-        <bh:Div addStyleNames="projectTitle">
-          <bh:Div ui:field="projectTitleBar" />
+        <g:FlowPanel addStyleNames="projectTitle">
+          <g:FlowPanel ui:field="projectTitleBar" />
           <g:SimplePanel ui:field="projectMetadataContainer" />
-        </bh:Div>
+        </g:FlowPanel>
         <w:LoadingSpinner
           size="40px"
           ui:field="loadingUI"
           addStyleNames="center-block center"
         />
       </g:FlowPanel>
-    </bh:Div>
-    <bh:Div ui:field="tabsUI" />
+    </g:FlowPanel>
+    <g:FlowPanel ui:field="tabsUI" />
   </g:HTMLPanel>
 </ui:UiBinder>

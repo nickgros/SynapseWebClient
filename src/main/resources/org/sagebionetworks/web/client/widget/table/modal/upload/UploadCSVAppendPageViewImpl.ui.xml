@@ -9,7 +9,7 @@
   xmlns:bh="urn:import:org.gwtbootstrap3.client.ui.html"
   xmlns:t="urn:import:org.sagebionetworks.web.client.view.bootstrap.table"
 >
-  <bh:Div>
+  <g:FlowPanel>
     <g:SimplePanel ui:field="trackerPanel" />
-  </bh:Div>
+  </g:FlowPanel>
 </ui:UiBinder>

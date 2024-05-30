@@ -7,10 +7,10 @@
   xmlns:bh="urn:import:org.gwtbootstrap3.client.ui.html"
   xmlns:table="urn:import:org.sagebionetworks.web.client.view.bootstrap.table"
 >
-  <bh:Div>
-    <bh:Div ui:field="synAlertContainer" />
-    <bh:Div ui:field="mainContainer" visible="false">
+  <g:FlowPanel>
+    <g:FlowPanel ui:field="synAlertContainer" />
+    <g:FlowPanel ui:field="mainContainer" visible="false">
       <table:Table ui:field="invitations" width="100%" />
-    </bh:Div>
-  </bh:Div>
+    </g:FlowPanel>
+  </g:FlowPanel>
 </ui:UiBinder>

@@ -5,12 +5,13 @@ import com.google.gwt.event.dom.client.ClickHandler;
 import com.google.gwt.event.dom.client.KeyDownEvent;
 import com.google.gwt.uibinder.client.UiBinder;
 import com.google.gwt.uibinder.client.UiField;
+import com.google.gwt.user.client.ui.FlowPanel;
+import com.google.gwt.user.client.ui.FlowPanel;
 import com.google.gwt.user.client.ui.Widget;
 import com.google.inject.Inject;
 import org.gwtbootstrap3.client.ui.Button;
 import org.gwtbootstrap3.client.ui.Modal;
 import org.gwtbootstrap3.client.ui.TextBox;
-import org.gwtbootstrap3.client.ui.html.Div;
 import org.sagebionetworks.web.client.DisplayUtils;
 import org.sagebionetworks.web.client.utils.Callback;
 
@@ -33,10 +34,10 @@ public class DiscussionThreadModalViewImpl
   TextBox threadTitle;
 
   @UiField
-  Div markdownEditorContainer;
+  FlowPanel markdownEditorContainer;
 
   @UiField
-  Div synAlertContainer;
+  FlowPanel synAlertContainer;
 
   private Widget widget;
   private Presenter presenter;

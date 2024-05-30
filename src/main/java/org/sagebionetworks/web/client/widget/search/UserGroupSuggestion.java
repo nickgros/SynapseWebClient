@@ -6,9 +6,9 @@ import com.google.gwt.dom.client.Element;
 import com.google.gwt.user.client.Command;
 import com.google.gwt.user.client.rpc.AsyncCallback;
 import com.google.gwt.user.client.rpc.IsSerializable;
+import com.google.gwt.user.client.ui.FlowPanel;
 import com.google.gwt.user.client.ui.HTMLPanel;
 import com.google.gwt.user.client.ui.SuggestOracle;
-import org.gwtbootstrap3.client.ui.html.Div;
 import org.gwtbootstrap3.client.ui.html.Span;
 import org.sagebionetworks.repo.model.UserGroupHeader;
 import org.sagebionetworks.repo.model.UserProfile;
@@ -87,21 +87,19 @@ public class UserGroupSuggestion
                   new AsyncCallback<UserProfile>() {
                     @Override
                     public void onSuccess(UserProfile profile) {
-                      Div div = new Div();
-                      div.setMarginTop(3);
-                      div.addStyleName("flexcontainer-row");
+                      FlowPanel div = new FlowPanel();
+                      div.addStyleName("flexcontainer-row margin-top-3");
                       userBadge.addStyleNames(
                         "flexcontainer-column flexcontainer-justify-center"
                       );
                       div.add(userBadge.asWidget());
 
-                      Div extraInfoDiv = new Div();
+                      FlowPanel extraInfoDiv = new FlowPanel();
                       extraInfoDiv.add(
                         new Span(getExtraUserInformation(profile))
                       );
-                      extraInfoDiv.setMarginTop(1);
                       extraInfoDiv.addStyleName(
-                        "flexcontainer-column flexcontainer-column-fill-width overflowHidden blackText-imp"
+                        "flexcontainer-column flexcontainer-column-fill-width overflowHidden blackText-imp margin-top-1"
                       );
                       div.add(extraInfoDiv);
                       el.appendChild(div.getElement());

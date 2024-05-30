@@ -7,7 +7,7 @@
   xmlns:bh="urn:import:org.gwtbootstrap3.client.ui.html"
   xmlns:w="urn:import:org.sagebionetworks.web.client.widget"
 >
-  <bh:Div
+  <g:FlowPanel
     addStyleNames="displayInlineBlock overflowHidden vertical-align-middle padding-10"
   >
     <bh:Span addStyleNames="flexcontainer-row">
@@ -41,12 +41,15 @@
         <b:Heading size="H4">
           <b:Anchor ui:field="nameLink" addStyleNames="highlight-link" />
         </b:Heading>
-        <bh:Div addStyleNames="strong">
+        <g:FlowPanel addStyleNames="strong">
           <bh:Span ui:field="memberCountContainer" />
           <bh:Text>team members</bh:Text>
-        </bh:Div>
-        <bh:Div ui:field="descriptionContainer" marginTop="10" />
-        <bh:Div ui:field="emailUI">
+        </g:FlowPanel>
+        <g:FlowPanel
+          ui:field="descriptionContainer"
+          addStyleNames="margin-top-10"
+        />
+        <g:FlowPanel ui:field="emailUI">
           <bh:Text>Team email list:</bh:Text>
           <w:TextBoxWithCopyToClipboardWidget
             ui:field="synapseEmailField"
@@ -55,8 +58,8 @@
           <bh:Italic>
             (note: all emails to this address sent to the entire team)
           </bh:Italic>
-        </bh:Div>
+        </g:FlowPanel>
       </bh:Span>
     </bh:Span>
-  </bh:Div>
+  </g:FlowPanel>
 </ui:UiBinder>

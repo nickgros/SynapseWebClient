@@ -4,12 +4,13 @@ import com.google.gwt.event.dom.client.ClickEvent;
 import com.google.gwt.event.dom.client.ClickHandler;
 import com.google.gwt.uibinder.client.UiBinder;
 import com.google.gwt.uibinder.client.UiField;
+import com.google.gwt.user.client.ui.FlowPanel;
+import com.google.gwt.user.client.ui.FlowPanel;
 import com.google.gwt.user.client.ui.Widget;
 import com.google.inject.Inject;
 import java.util.List;
 import org.gwtbootstrap3.client.ui.Anchor;
 import org.gwtbootstrap3.client.ui.Button;
-import org.gwtbootstrap3.client.ui.html.Div;
 import org.gwtbootstrap3.client.ui.html.Paragraph;
 import org.gwtbootstrap3.client.ui.html.Span;
 import org.sagebionetworks.repo.model.verification.VerificationState;
@@ -48,10 +49,10 @@ public class VerificationSubmissionRowViewImpl
   Span state;
 
   @UiField
-  Div emailAddresses;
+  FlowPanel emailAddresses;
 
   @UiField
-  Div filesContainer;
+  FlowPanel filesContainer;
 
   @UiField
   Button approveButton;
@@ -72,10 +73,10 @@ public class VerificationSubmissionRowViewImpl
   Span reasonAlertText;
 
   @UiField
-  Div synAlertContainer;
+  FlowPanel synAlertContainer;
 
   @UiField
-  Div promptModalContainer;
+  FlowPanel promptModalContainer;
 
   @Override
   public void setPresenter(Presenter presenter) {

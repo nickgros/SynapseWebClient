@@ -7,12 +7,12 @@
   xmlns:t="urn:import:org.sagebionetworks.web.client.view.bootstrap.table"
   xmlns:tr="urn:import:org.sagebionetworks.web.client.widget.table.v2.results"
 >
-  <bh:Div>
-    <bh:Div ui:field="threadCountAlertContainer" />
+  <g:FlowPanel>
+    <g:FlowPanel ui:field="threadCountAlertContainer" />
     <b:Row>
       <b:Column size="XS_12">
         <!-- Thread header -->
-        <bh:Div
+        <g:FlowPanel
           ui:field="threadHeader"
           addStyleNames="padding-5 light-border-bottom"
         >
@@ -45,7 +45,7 @@
               />
             </t:TableRow>
           </t:Table>
-        </bh:Div>
+        </g:FlowPanel>
       </b:Column>
       <b:Column size="XS_12" ui:field="threadListContainer" paddingLeft="22" />
     </b:Row>
@@ -56,6 +56,6 @@
         </bh:Span>
       </b:Column>
     </b:Row>
-    <bh:Div ui:field="synAlertContainer" />
-  </bh:Div>
+    <g:FlowPanel ui:field="synAlertContainer" />
+  </g:FlowPanel>
 </ui:UiBinder>

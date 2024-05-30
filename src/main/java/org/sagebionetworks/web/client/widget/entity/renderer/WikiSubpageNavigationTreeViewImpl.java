@@ -4,12 +4,12 @@ import com.google.gwt.event.dom.client.ClickEvent;
 import com.google.gwt.event.dom.client.ClickHandler;
 import com.google.gwt.user.client.ui.Anchor;
 import com.google.gwt.user.client.ui.FlowPanel;
+import com.google.gwt.user.client.ui.FlowPanel;
 import com.google.gwt.user.client.ui.HTML;
 import com.google.gwt.user.client.ui.Widget;
 import com.google.inject.Inject;
 import org.gwtbootstrap3.client.ui.constants.IconType;
 import org.gwtbootstrap3.client.ui.constants.Pull;
-import org.gwtbootstrap3.client.ui.html.Div;
 import org.sagebionetworks.web.client.DisplayUtils;
 import org.sagebionetworks.web.client.place.Synapse;
 import org.sagebionetworks.web.client.utils.UnorderedListPanel;
@@ -57,7 +57,7 @@ public class WikiSubpageNavigationTreeViewImpl
     final SubpageNavTreeNode root
   ) {
     String styleName = presenter.isCurrentPage(root) ? "active" : "";
-    Div w = new Div();
+    FlowPanel w = new FlowPanel();
     w.setWidth("100%");
     Anchor l = new Anchor(root.getPageTitle());
     l.addStyleName("subpage-link " + styleName);
@@ -68,7 +68,7 @@ public class WikiSubpageNavigationTreeViewImpl
     if (!root.getChildren().isEmpty()) {
       UnorderedListPanel subList = new UnorderedListPanel();
       subList.addStyleName("nav wiki-tree-nav");
-      final Div subListContainer = new Div();
+      final FlowPanel subListContainer = new FlowPanel();
       subListContainer.add(subList);
       ul.add(subListContainer);
       final org.gwtbootstrap3.client.ui.Anchor collapseAnchor =

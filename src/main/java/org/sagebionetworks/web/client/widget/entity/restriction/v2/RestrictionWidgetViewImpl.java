@@ -2,11 +2,12 @@ package org.sagebionetworks.web.client.widget.entity.restriction.v2;
 
 import com.google.gwt.uibinder.client.UiBinder;
 import com.google.gwt.uibinder.client.UiField;
+import com.google.gwt.user.client.ui.FlowPanel;
+import com.google.gwt.user.client.ui.FlowPanel;
 import com.google.gwt.user.client.ui.IsWidget;
 import com.google.gwt.user.client.ui.Widget;
 import com.google.inject.Inject;
 import org.gwtbootstrap3.client.ui.Anchor;
-import org.gwtbootstrap3.client.ui.html.Div;
 import org.gwtbootstrap3.client.ui.html.Paragraph;
 import org.gwtbootstrap3.client.ui.html.Span;
 import org.sagebionetworks.web.client.DisplayUtils;
@@ -34,7 +35,7 @@ public class RestrictionWidgetViewImpl implements RestrictionWidgetView {
   Anchor folderViewTermsLink;
 
   @UiField
-  Div folderRestrictionUI;
+  FlowPanel folderRestrictionUI;
 
   @UiField
   Paragraph folderRestrictedMessage;
@@ -46,7 +47,7 @@ public class RestrictionWidgetViewImpl implements RestrictionWidgetView {
   Span modalsContainer;
 
   @UiField
-  Div hasAccessContainerParent;
+  FlowPanel hasAccessContainerParent;
 
   @UiField
   ReactComponentDiv hasAccessContainer;

@@ -23,7 +23,7 @@
           />
         </b:Column>
       </b:Row>
-      <bh:Div ui:field="synAlertContainer" />
+      <g:FlowPanel ui:field="synAlertContainer" />
     </b:ModalBody>
     <b:ModalFooter>
       <b:Button ui:field="cancelButton" type="LINK">Cancel</b:Button>

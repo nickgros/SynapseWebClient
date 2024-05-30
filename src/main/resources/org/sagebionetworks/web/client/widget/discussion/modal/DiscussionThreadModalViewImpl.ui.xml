@@ -19,8 +19,8 @@
         addStyleNames="font-size-24 margin-bottom-10"
         height="50px"
       />
-      <bh:Div ui:field="markdownEditorContainer" />
-      <bh:Div ui:field="synAlertContainer" />
+      <g:FlowPanel ui:field="markdownEditorContainer" />
+      <g:FlowPanel ui:field="synAlertContainer" />
     </b:ModalBody>
     <b:ModalFooter>
       <b:Button ui:field="cancelButton" type="LINK" text="Cancel" />

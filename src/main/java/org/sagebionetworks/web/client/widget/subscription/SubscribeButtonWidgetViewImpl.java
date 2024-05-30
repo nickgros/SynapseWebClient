@@ -3,13 +3,14 @@ package org.sagebionetworks.web.client.widget.subscription;
 import com.google.gwt.event.dom.client.ClickHandler;
 import com.google.gwt.uibinder.client.UiBinder;
 import com.google.gwt.uibinder.client.UiField;
+import com.google.gwt.user.client.ui.FlowPanel;
+import com.google.gwt.user.client.ui.FlowPanel;
 import com.google.gwt.user.client.ui.Widget;
 import com.google.inject.Inject;
 import org.gwtbootstrap3.client.ui.Button;
 import org.gwtbootstrap3.client.ui.Icon;
 import org.gwtbootstrap3.client.ui.Tooltip;
 import org.gwtbootstrap3.client.ui.constants.ButtonSize;
-import org.gwtbootstrap3.client.ui.html.Div;
 import org.sagebionetworks.web.client.DisplayUtils;
 
 public class SubscribeButtonWidgetViewImpl
@@ -34,7 +35,7 @@ public class SubscribeButtonWidgetViewImpl
   Tooltip unfollowIconTooltip;
 
   @UiField
-  Div synAlertContainer;
+  FlowPanel synAlertContainer;
 
   public interface Binder
     extends UiBinder<Widget, SubscribeButtonWidgetViewImpl> {}

@@ -2,6 +2,8 @@ package org.sagebionetworks.web.client.widget.accessrequirements.approval;
 
 import com.google.gwt.uibinder.client.UiBinder;
 import com.google.gwt.uibinder.client.UiField;
+import com.google.gwt.user.client.ui.FlowPanel;
+import com.google.gwt.user.client.ui.FlowPanel;
 import com.google.gwt.user.client.ui.IsWidget;
 import com.google.gwt.user.client.ui.Label;
 import com.google.gwt.user.client.ui.Widget;
@@ -12,7 +14,6 @@ import org.gwtbootstrap3.client.ui.Button;
 import org.gwtbootstrap3.client.ui.Modal;
 import org.gwtbootstrap3.client.ui.ModalBody;
 import org.gwtbootstrap3.client.ui.ModalFooter;
-import org.gwtbootstrap3.client.ui.html.Div;
 import org.gwtbootstrap3.client.ui.html.Span;
 import org.sagebionetworks.repo.model.dataaccess.AccessApprovalNotification;
 import org.sagebionetworks.web.client.DateTimeUtils;
@@ -23,13 +24,13 @@ import org.sagebionetworks.web.client.widget.user.UserBadge;
 public class AccessorGroupViewImpl implements AccessorGroupView {
 
   @UiField
-  Div synAlertContainer;
+  FlowPanel synAlertContainer;
 
   @UiField
-  Div accessorsContainer;
+  FlowPanel accessorsContainer;
 
   @UiField
-  Div submittedByContainer;
+  FlowPanel submittedByContainer;
 
   @UiField
   AnchorListItem showAccessRequirementItem;
@@ -38,7 +39,7 @@ public class AccessorGroupViewImpl implements AccessorGroupView {
   AnchorListItem showNotificationsItem;
 
   @UiField
-  Div emailsContainer;
+  FlowPanel emailsContainer;
 
   @UiField
   Button revokeAccessButton;
@@ -47,7 +48,7 @@ public class AccessorGroupViewImpl implements AccessorGroupView {
   Label expiresOnField;
 
   Modal dialog;
-  Div dialogBodyDiv = new Div();
+  FlowPanel dialogBodyDiv = new FlowPanel();
 
   Presenter presenter;
   PortalGinInjector ginInjector;
@@ -137,7 +138,7 @@ public class AccessorGroupViewImpl implements AccessorGroupView {
     dialogBodyDiv.clear();
     // show each notification
     for (AccessApprovalNotification notification : notifications) {
-      Div div = new Div();
+      FlowPanel div = new FlowPanel();
       div.addStyleName("flexcontainer-row flexcontainer-align-items-center");
 
       Span s = new Span();

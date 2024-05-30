@@ -3,6 +3,7 @@ package org.sagebionetworks.web.client.widget.team;
 import com.google.gwt.uibinder.client.UiBinder;
 import com.google.gwt.uibinder.client.UiField;
 import com.google.gwt.user.client.ui.FlowPanel;
+import com.google.gwt.user.client.ui.FlowPanel;
 import com.google.gwt.user.client.ui.SimplePanel;
 import com.google.gwt.user.client.ui.Widget;
 import com.google.inject.Inject;
@@ -12,7 +13,6 @@ import org.gwtbootstrap3.client.ui.TextArea;
 import org.gwtbootstrap3.client.ui.constants.ButtonSize;
 import org.gwtbootstrap3.client.ui.constants.ButtonType;
 import org.gwtbootstrap3.client.ui.constants.IconType;
-import org.gwtbootstrap3.client.ui.html.Div;
 import org.gwtbootstrap3.client.ui.html.Span;
 import org.sagebionetworks.web.client.DisplayUtils;
 import org.sagebionetworks.web.client.PortalGinInjector;
@@ -45,7 +45,7 @@ public class InviteWidgetViewImpl
   Button cancelButton;
 
   @UiField
-  Div inviteesContainer;
+  FlowPanel inviteesContainer;
 
   @UiField
   LoadingSpinner loadingUI;
@@ -112,7 +112,7 @@ public class InviteWidgetViewImpl
 
   @Override
   public void addEmailToInvite(String emailInvite) {
-    Div d = new Div();
+    FlowPanel d = new FlowPanel();
     d.addStyleName("margin-top-5");
     d.add(new Span(emailInvite));
     Button button = new Button(
@@ -133,7 +133,7 @@ public class InviteWidgetViewImpl
 
   @Override
   public void addUserToInvite(String userId) {
-    Div d = new Div();
+    FlowPanel d = new FlowPanel();
     UserBadge badge = ginInjector.getUserBadgeWidget();
     badge.configure(userId);
     badge.setOpenInNewWindow();

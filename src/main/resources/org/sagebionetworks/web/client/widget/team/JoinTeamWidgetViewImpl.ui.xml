@@ -12,7 +12,7 @@
       <s:Dialog ui:field="joinWizard" addStyleNames="modal-fullscreen">
         <g:SimplePanel ui:field="progressWidgetPanel" />
         <g:SimplePanel ui:field="currentWizardContentPanel" />
-        <bh:Div ui:field="wizardSynAlertContainer" />
+        <g:FlowPanel ui:field="wizardSynAlertContainer" />
         <g:HTML ui:field="accessRequirementHTML" />
         <b:Button
           type="INFO"
@@ -79,6 +79,6 @@
       visible="false"
       text="Join"
     />
-    <bh:Div ui:field="synAlertContainer" />
+    <g:FlowPanel ui:field="synAlertContainer" />
   </g:HTMLPanel>
 </ui:UiBinder>

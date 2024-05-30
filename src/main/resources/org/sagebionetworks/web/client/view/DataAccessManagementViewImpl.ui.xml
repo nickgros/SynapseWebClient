@@ -6,14 +6,14 @@
   xmlns:bh="urn:import:org.gwtbootstrap3.client.ui.html"
   xmlns:w="urn:import:org.sagebionetworks.web.client.widget"
 >
-  <bh:Div>
-    <bh:Div addStyleNames="pageHeader">
+  <g:FlowPanel>
+    <g:FlowPanel addStyleNames="pageHeader">
       <b:Heading
         addStyleNames="pageHeaderTitle"
         text="Data Access Management"
         size="H3"
       />
-    </bh:Div>
+    </g:FlowPanel>
     <w:ReactComponentDiv ui:field="reactComponent" />
-  </bh:Div>
+  </g:FlowPanel>
 </ui:UiBinder>

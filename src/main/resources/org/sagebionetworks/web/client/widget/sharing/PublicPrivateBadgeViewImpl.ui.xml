@@ -5,7 +5,7 @@
   xmlns:bh="urn:import:org.gwtbootstrap3.client.ui.html"
   xmlns:g="urn:import:com.google.gwt.user.client.ui"
 >
-  <bh:Div addStyleNames="inline-block">
+  <g:FlowPanel addStyleNames="inline-block">
     <b:Tooltip title="Anyone on the internet can access" placement="BOTTOM">
       <bh:Span ui:field="publicSpan" visible="false">
         <b:Icon type="GLOBE" />
@@ -21,5 +21,5 @@
         <bh:Text>Private</bh:Text>
       </bh:Span>
     </b:Tooltip>
-  </bh:Div>
+  </g:FlowPanel>
 </ui:UiBinder>

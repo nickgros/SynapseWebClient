@@ -74,7 +74,7 @@
           <b:FormLabel for="uploadWidget">Upload new icon</b:FormLabel>
           <b:Row b:id="uploadWidget">
             <b:Column size="MD_4">
-              <bh:Div ui:field="iconContainer">
+              <g:FlowPanel ui:field="iconContainer">
                 <b:Icon
                   ui:field="defaultIcon"
                   type="SYN_USERS"
@@ -82,7 +82,7 @@
                   visible="true"
                 />
                 <g:HTMLPanel width="150px" addStyleNames="position-relative">
-                  <bh:Div addStyleNames="position-absolute topLevelZIndex">
+                  <g:FlowPanel addStyleNames="position-absolute topLevelZIndex">
                     <b:Button
                       ui:field="removePicture"
                       icon="TIMES"
@@ -90,7 +90,7 @@
                       type="LINK"
                       visible="false"
                     />
-                  </bh:Div>
+                  </g:FlowPanel>
                   <b:Image
                     ui:field="previewImage"
                     width="150px"
@@ -98,7 +98,7 @@
                     addStyleNames="img-circle"
                   />
                 </g:HTMLPanel>
-              </bh:Div>
+              </g:FlowPanel>
               <w:LoadingSpinner
                 ui:field="teamImageLoading"
                 size="16px"

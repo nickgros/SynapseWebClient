@@ -2,14 +2,12 @@ package org.sagebionetworks.web.client.widget.evaluation;
 
 import com.google.gwt.uibinder.client.UiBinder;
 import com.google.gwt.uibinder.client.UiField;
-import com.google.gwt.user.client.ui.IsWidget;
+import com.google.gwt.user.client.ui.FlowPanel;
 import com.google.gwt.user.client.ui.Widget;
 import com.google.inject.Inject;
 import org.gwtbootstrap3.client.ui.Anchor;
-import org.gwtbootstrap3.client.ui.Button;
 import org.gwtbootstrap3.client.ui.Heading;
 import org.gwtbootstrap3.client.ui.Panel;
-import org.gwtbootstrap3.client.ui.html.Div;
 
 public class ChallengeWidgetViewImpl implements ChallengeWidgetView {
 
@@ -18,10 +16,10 @@ public class ChallengeWidgetViewImpl implements ChallengeWidgetView {
   private Presenter presenter;
 
   @UiField
-  Div teamWidgetContainer;
+  FlowPanel teamWidgetContainer;
 
   @UiField
-  Div widgetsContainer;
+  FlowPanel widgetsContainer;
 
   @UiField
   Panel challengeUI;
@@ -33,7 +31,7 @@ public class ChallengeWidgetViewImpl implements ChallengeWidgetView {
   Heading challengeNameHeading;
 
   @UiField
-  Div selectTeamModalContainer;
+  FlowPanel selectTeamModalContainer;
 
   @UiField
   Anchor editTeam;

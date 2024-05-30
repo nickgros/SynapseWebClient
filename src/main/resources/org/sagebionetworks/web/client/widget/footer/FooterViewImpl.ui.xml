@@ -11,13 +11,15 @@
   <g:HTMLPanel addStyleNames="footer">
     <!-- FOOTER -->
     <bh:ClearFix />
-    <bh:Div>
-      <bh:Div addStyleNames="synapse-dark-blue-bg padding-15">
-        <bh:Div>
-          <bh:Div addStyleNames="flexcontainer-row flexcontainer-justify">
-            <bh:Div addStyleNames="flexcontainer-column-fill-width hidden-xs">
+    <g:FlowPanel>
+      <g:FlowPanel addStyleNames="synapse-dark-blue-bg padding-15">
+        <g:FlowPanel>
+          <g:FlowPanel addStyleNames="flexcontainer-row flexcontainer-justify">
+            <g:FlowPanel
+              addStyleNames="flexcontainer-column-fill-width hidden-xs"
+            >
               <!--Left-aligned logo for desktop view-->
-              <bh:Div>
+              <g:FlowPanel>
                 <g:Image
                   url="images/logo.svg"
                   addStyleNames="margin-bottom-15 margin-right-5 moveup-2"
@@ -30,11 +32,11 @@
                   addStyleNames="displayInline color-white dmsans letter-spacing-6 moveup-5"
                   text="SYNAPSE"
                 />
-              </bh:Div>
-            </bh:Div>
-            <bh:Div addStyleNames="flexcontainer-column-fill-width">
+              </g:FlowPanel>
+            </g:FlowPanel>
+            <g:FlowPanel addStyleNames="flexcontainer-column-fill-width">
               <!--Acts as a max-width flex column between logo and alpha mode buttons in desktop view. Contains a centered logo in mobile view-->
-              <bh:Div addStyleNames="visible-xs margin-auto" width="200px">
+              <g:FlowPanel addStyleNames="visible-xs margin-auto" width="200px">
                 <g:Image
                   url="images/logo.svg"
                   addStyleNames="margin-bottom-15 margin-right-5 moveup-2"
@@ -47,12 +49,12 @@
                   addStyleNames="displayInline color-white dmsans letter-spacing-6 moveup-5"
                   text="SYNAPSE"
                 />
-              </bh:Div>
-            </bh:Div>
+              </g:FlowPanel>
+            </g:FlowPanel>
 
-            <bh:Div width="204px" addStyleNames="text-align-right">
+            <g:FlowPanel width="204px" addStyleNames="text-align-right">
               <bh:Span ui:field="hideACTActionsContainer" />
-              <bh:Div width="100%" addStyleNames="flexcontainer-row">
+              <g:FlowPanel width="100%" addStyleNames="flexcontainer-row">
                 <g:Image
                   ui:field="alphaModeStatusIcon"
                   addStyleNames="flexcontainer-column margin-right-5 margin-top-3"
@@ -84,12 +86,14 @@
                   iconStyles="color-white"
                   placement="TOP"
                 />
-              </bh:Div>
-            </bh:Div>
-          </bh:Div>
-          <bh:Div addStyleNames="flexcontainer-row margin-bottom-10 hidden-xs">
-            <bh:Div addStyleNames="margin-auto">
-              <bh:Div
+              </g:FlowPanel>
+            </g:FlowPanel>
+          </g:FlowPanel>
+          <g:FlowPanel
+            addStyleNames="flexcontainer-row margin-bottom-10 hidden-xs"
+          >
+            <g:FlowPanel addStyleNames="margin-auto">
+              <g:FlowPanel
                 addStyleNames="flexcontainer-row flexcontainer-align-items-center letter-spacing-1"
               >
                 <bh:Span addStyleNames="flexcontainer-column">
@@ -143,13 +147,13 @@
                     addStyleNames="color-white"
                   />
                 </bh:Span>
-              </bh:Div>
-            </bh:Div>
-          </bh:Div>
-        </bh:Div>
+              </g:FlowPanel>
+            </g:FlowPanel>
+          </g:FlowPanel>
+        </g:FlowPanel>
         <bh:ClearFix />
-        <bh:Div addStyleNames="visible-xs center">
-          <bh:Div>
+        <g:FlowPanel addStyleNames="visible-xs center">
+          <g:FlowPanel>
             <b:Anchor
               href="https://sagebionetworks.jira.com/servicedesk/customer/portal/9"
               text="Contact Us"
@@ -172,7 +176,7 @@
               text="Report Violation"
               addStyleNames="color-white displayBlock margin-top-5 margin-bottom-5"
             />
-            <bh:Div addStyleNames="margin-top-10 margin-bottom-10">
+            <g:FlowPanel addStyleNames="margin-top-10 margin-bottom-10">
               <g:FocusPanel
                 ui:field="sageLogo2"
                 addStyleNames="displayInline link"
@@ -189,8 +193,8 @@
                 href="http://sagebionetworks.org/"
                 addStyleNames="color-white letter-spacing-1 font-weight-400"
               />
-            </bh:Div>
-            <bh:Div>
+            </g:FlowPanel>
+            <g:FlowPanel>
               <g:Label
                 addStyleNames="margin-top-5 margin-bottom-5 lightGreyText margin-left-2 displayInline"
                 text="portal: "
@@ -221,17 +225,17 @@
                 ui:field="repoVersionSpan2"
                 addStyleNames="margin-top-5 margin-bottom-5 lightGreyText"
               />
-            </bh:Div>
-          </bh:Div>
-        </bh:Div>
-        <bh:Div>
-          <bh:Div
+            </g:FlowPanel>
+          </g:FlowPanel>
+        </g:FlowPanel>
+        <g:FlowPanel>
+          <g:FlowPanel
             addStyleNames="flexcontainer-row flexcontainer-justify-space-between hidden-xs"
           >
-            <bh:Div width="160px" />
+            <g:FlowPanel width="160px" />
             <!-- dummy column to center Sage Bionetworks logo (offset Synapse versions
 							on the right) -->
-            <bh:Div>
+            <g:FlowPanel>
               <g:FocusPanel
                 ui:field="sageLogo1"
                 addStyleNames="displayInline link"
@@ -243,15 +247,15 @@
                   height="30px"
                 />
               </g:FocusPanel>
-              <bh:Div addStyleNames="margin-top-10 center">
+              <g:FlowPanel addStyleNames="margin-top-10 center">
                 <b:Anchor
                   ui:field="copyrightYear"
                   href="http://sagebionetworks.org/"
                   addStyleNames="margin-top-5 margin-bottom-5 color-white letter-spacing-1 font-weight-400"
                 />
-              </bh:Div>
-            </bh:Div>
-            <bh:Div addStyleNames="text-align-right font-size-14">
+              </g:FlowPanel>
+            </g:FlowPanel>
+            <g:FlowPanel addStyleNames="text-align-right font-size-14">
               <bh:Br />
               <g:Label
                 addStyleNames="margin-top-5 margin-bottom-5 lightGreyText margin-left-2 displayInline"
@@ -279,10 +283,10 @@
                 ui:field="repoVersionSpan"
                 addStyleNames="margin-top-5 margin-bottom-5 lightGreyText"
               />
-            </bh:Div>
-          </bh:Div>
-        </bh:Div>
-      </bh:Div>
-    </bh:Div>
+            </g:FlowPanel>
+          </g:FlowPanel>
+        </g:FlowPanel>
+      </g:FlowPanel>
+    </g:FlowPanel>
   </g:HTMLPanel>
 </ui:UiBinder>

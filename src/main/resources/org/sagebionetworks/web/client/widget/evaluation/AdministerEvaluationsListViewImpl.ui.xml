@@ -6,7 +6,7 @@
   xmlns:bh="urn:import:org.gwtbootstrap3.client.ui.html"
 >
   <b:Panel addStyleNames="min-height-400">
-    <bh:Div ui:field="rows" />
-    <bh:Div ui:field="widgetsContainer" />
+    <g:FlowPanel ui:field="rows" />
+    <g:FlowPanel ui:field="widgetsContainer" />
   </b:Panel>
 </ui:UiBinder>

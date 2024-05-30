@@ -37,8 +37,7 @@
     <w:LoadingSpinner
       ui:field="loadingUI"
       size="28px"
-      marginLeft="6"
-      marginRight="6"
+      addStyleNames="margin-left-6 margin-right-6"
     />
   </bh:Span>
 </ui:UiBinder>

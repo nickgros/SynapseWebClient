@@ -9,7 +9,7 @@
     field='sageImageBundle'
     type='org.sagebionetworks.web.client.SageImageBundle'
   />
-  <bh:Div addStyleNames="flexcontainer-row">
+  <g:FlowPanel addStyleNames="flexcontainer-row">
     <g:Image
       ui:field="certifiedIcon"
       addStyleNames="margin-right-2 margin-top-3 flexcontainer-column"
@@ -31,5 +31,5 @@
       emphasis="DANGER"
       addStyleNames="flexcontainer-column"
     />
-  </bh:Div>
+  </g:FlowPanel>
 </ui:UiBinder>

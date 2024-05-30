@@ -11,12 +11,11 @@
   xmlns:bh="urn:import:org.gwtbootstrap3.client.ui.html"
   xmlns:w="urn:import:org.sagebionetworks.web.client.widget"
 >
-  <bh:Div visible="false">
+  <g:FlowPanel visible="false">
     <b:Heading size="H3" ui:field="totalItemCountContainer">
       <bh:Span ui:field="totalItemCountItemName">Files</bh:Span>
       <bh:Span>
-        &nbsp;
-        (
+        &nbsp; (
       </bh:Span>
       <bh:Span ui:field="totalItemCount">-</bh:Span>
       <bh:Span>)</bh:Span>
@@ -39,5 +38,5 @@
         />
       </bh:Span>
     </b:Heading>
-  </bh:Div>
+  </g:FlowPanel>
 </ui:UiBinder>

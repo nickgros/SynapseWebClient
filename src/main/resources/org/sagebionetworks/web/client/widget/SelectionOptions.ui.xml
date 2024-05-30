@@ -5,8 +5,8 @@
   xmlns:bh="urn:import:org.gwtbootstrap3.client.ui.html"
   xmlns:w="urn:import:org.sagebionetworks.web.client.widget"
 >
-  <bh:Div addStyleNames="border-top-1" marginTop="20" paddingTop="10">
+  <g:FlowPanel addStyleNames="border-top-1 margin-top-20 padding-top-10">
     <b:Anchor ui:field="selectAll" text="Select All" marginRight="20" />
     <b:Anchor ui:field="deleteSelected" text="Remove Selected" />
-  </bh:Div>
+  </g:FlowPanel>
 </ui:UiBinder>

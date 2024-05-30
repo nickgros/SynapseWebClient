@@ -6,16 +6,16 @@
   xmlns:g="urn:import:com.google.gwt.user.client.ui"
   xmlns:w="urn:import:org.sagebionetworks.web.client.widget"
 >
-  <bh:Div addStyleNames="margin-5">
+  <g:FlowPanel addStyleNames="margin-5">
     <w:LoadingSpinner size="16px" ui:field="loadingUI" />
     <bh:Span ui:field="loadingMessage" />
-    <bh:Div>
+    <g:FlowPanel>
       <w:ReactComponentDiv
         ui:field="demoContainer"
         height="1000px"
         width="100%"
       />
-    </bh:Div>
-    <bh:Div ui:field="synAlertContainer" />
-  </bh:Div>
+    </g:FlowPanel>
+    <g:FlowPanel ui:field="synAlertContainer" />
+  </g:FlowPanel>
 </ui:UiBinder>

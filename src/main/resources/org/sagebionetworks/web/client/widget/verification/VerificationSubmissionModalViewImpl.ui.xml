@@ -43,7 +43,7 @@
         />
         <bh:Paragraph ui:field="reasonAlertText" />
       </b:Alert>
-      <bh:Div
+      <g:FlowPanel
         ui:field="publicallyVisible"
         addStyleNames="bg-primary padding-10 rounded"
       >
@@ -56,25 +56,25 @@
           <b:Column size="SM_6">
             <b:FormGroup>
               <b:FormLabel>First name</b:FormLabel>
-              <bh:Div addStyleNames="whiteBackground rounded">
+              <g:FlowPanel addStyleNames="whiteBackground rounded">
                 <b:TextBox
                   ui:field="firstName"
                   addStyleNames="blackText-imp"
                   enabled="false"
                 />
-              </bh:Div>
+              </g:FlowPanel>
             </b:FormGroup>
           </b:Column>
           <b:Column size="SM_6">
             <b:FormGroup>
               <b:FormLabel>Last name</b:FormLabel>
-              <bh:Div addStyleNames="whiteBackground rounded">
+              <g:FlowPanel addStyleNames="whiteBackground rounded">
                 <b:TextBox
                   ui:field="lastName"
                   addStyleNames="blackText-imp"
                   enabled="false"
                 />
-              </bh:Div>
+              </g:FlowPanel>
             </b:FormGroup>
           </b:Column>
         </b:Row>
@@ -82,25 +82,25 @@
           <b:Column size="SM_6">
             <b:FormGroup>
               <b:FormLabel>Affiliation</b:FormLabel>
-              <bh:Div addStyleNames="whiteBackground rounded">
+              <g:FlowPanel addStyleNames="whiteBackground rounded">
                 <b:TextBox
                   ui:field="currentAffiliation"
                   addStyleNames="blackText-imp"
                   enabled="false"
                 />
-              </bh:Div>
+              </g:FlowPanel>
             </b:FormGroup>
           </b:Column>
           <b:Column size="SM_6">
             <b:FormGroup>
               <b:FormLabel>Location</b:FormLabel>
-              <bh:Div addStyleNames="whiteBackground rounded">
+              <g:FlowPanel addStyleNames="whiteBackground rounded">
                 <b:TextBox
                   ui:field="location"
                   addStyleNames="blackText-imp"
                   enabled="false"
                 />
-              </bh:Div>
+              </g:FlowPanel>
             </b:FormGroup>
           </b:Column>
         </b:Row>
@@ -108,18 +108,18 @@
           <b:Column size="SM_12">
             <b:FormGroup>
               <b:FormLabel>ORCID</b:FormLabel>
-              <bh:Div>
+              <g:FlowPanel>
                 <b:Anchor
                   ui:field="orcIdAnchor"
                   addStyleNames="color-white"
                   target="_blank"
                 />
-              </bh:Div>
+              </g:FlowPanel>
             </b:FormGroup>
           </b:Column>
         </b:Row>
-      </bh:Div>
-      <bh:Div
+      </g:FlowPanel>
+      <g:FlowPanel
         ui:field="actOnly"
         addStyleNames="bg-warning padding-10 rounded margin-top-10"
       >
@@ -132,7 +132,7 @@
           <b:Column size="SM_12">
             <b:FormGroup>
               <b:FormLabel>Email</b:FormLabel>
-              <bh:Div ui:field="emailAddresses" />
+              <g:FlowPanel ui:field="emailAddresses" />
             </b:FormGroup>
           </b:Column>
         </b:Row>
@@ -144,7 +144,7 @@
           </b:FormLabel>
           <b:Panel ui:field="filesContainer" addStyleNames="padding-10" />
         </b:FormGroup>
-        <bh:Div
+        <g:FlowPanel
           ui:field="actStateHistoryContainer"
           addStyleNames="margin-bottom-10 margin-top-10"
         >
@@ -156,10 +156,10 @@
               width="100%"
             />
           </b:FormGroup>
-        </bh:Div>
-      </bh:Div>
-      <bh:Div ui:field="synAlertContainer" addStyleNames="margin-top-10" />
-      <bh:Div ui:field="promptModalContainer" />
+        </g:FlowPanel>
+      </g:FlowPanel>
+      <g:FlowPanel ui:field="synAlertContainer" addStyleNames="margin-top-10" />
+      <g:FlowPanel ui:field="promptModalContainer" />
     </b:ModalBody>
     <b:ModalFooter>
       <b:Button ui:field="cancelButton" type="LINK">Cancel</b:Button>

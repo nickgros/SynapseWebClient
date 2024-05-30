@@ -3,6 +3,8 @@ package org.sagebionetworks.web.client.widget.entity.act;
 import com.google.gwt.event.dom.client.KeyDownEvent;
 import com.google.gwt.uibinder.client.UiBinder;
 import com.google.gwt.uibinder.client.UiField;
+import com.google.gwt.user.client.ui.FlowPanel;
+import com.google.gwt.user.client.ui.FlowPanel;
 import com.google.gwt.user.client.ui.Widget;
 import com.google.inject.Inject;
 import java.util.ArrayList;
@@ -11,7 +13,6 @@ import org.gwtbootstrap3.client.ui.Button;
 import org.gwtbootstrap3.client.ui.CheckBox;
 import org.gwtbootstrap3.client.ui.Modal;
 import org.gwtbootstrap3.client.ui.TextArea;
-import org.gwtbootstrap3.client.ui.html.Div;
 import org.sagebionetworks.web.client.DisplayUtils;
 
 public class RejectReasonViewImpl implements RejectReasonView {
@@ -26,7 +27,7 @@ public class RejectReasonViewImpl implements RejectReasonView {
   TextArea nameField;
 
   @UiField
-  Div reasonsContainer;
+  FlowPanel reasonsContainer;
 
   @UiField
   CheckBox customTextOption;

@@ -5,12 +5,12 @@ import com.google.gwt.event.dom.client.ClickHandler;
 import com.google.gwt.safehtml.shared.SafeHtmlUtils;
 import com.google.gwt.user.client.ui.Button;
 import com.google.gwt.user.client.ui.FlowPanel;
+import com.google.gwt.user.client.ui.FlowPanel;
 import com.google.gwt.user.client.ui.HTMLPanel;
 import com.google.gwt.user.client.ui.Widget;
 import com.google.inject.Inject;
 import org.gwtbootstrap3.client.ui.Alert;
 import org.gwtbootstrap3.client.ui.constants.AlertType;
-import org.gwtbootstrap3.client.ui.html.Div;
 import org.sagebionetworks.web.client.DisplayConstants;
 import org.sagebionetworks.web.client.DisplayUtils;
 import org.sagebionetworks.web.client.DisplayUtils.ButtonType;
@@ -23,7 +23,7 @@ public class SubmitToEvaluationWidgetViewImpl
   implements SubmitToEvaluationWidgetView {
 
   private Presenter presenter;
-  private Div evaluationSubmitterContainer = new Div();
+  private FlowPanel evaluationSubmitterContainer = new FlowPanel();
 
   @Inject
   public SubmitToEvaluationWidgetViewImpl() {}

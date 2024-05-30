@@ -27,11 +27,11 @@
       visible="false"
     />
 
-    <bh:Div styleName="margin-top-15" />
+    <g:FlowPanel styleName="margin-top-15" />
     <b:Progress ui:field="progressContainer" visible="false">
       <b:ProgressBar ui:field="progressBar" type="INFO" percent="0" text="0%" />
     </b:Progress>
-    <bh:Div ui:field="synAlertContainer" />
+    <g:FlowPanel ui:field="synAlertContainer" />
     <!-- dataKeyboard must be false in this case since clicking ESC will also 
 			close the parent modal -->
     <b:Modal

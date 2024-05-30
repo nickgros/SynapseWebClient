@@ -9,7 +9,7 @@
   xmlns:bh="urn:import:org.gwtbootstrap3.client.ui.html"
   xmlns:t="urn:import:org.sagebionetworks.web.client.view.bootstrap.table"
 >
-  <bh:Div>
+  <g:FlowPanel>
     <b:Modal
       ui:field="editorDialog"
       addStyleNames="modal-fullscreen"
@@ -24,7 +24,7 @@
           addStyleNames="font-size-32 margin-bottom-10"
           height="50px"
         />
-        <bh:Div ui:field="markdownEditorContainer" />
+        <g:FlowPanel ui:field="markdownEditorContainer" />
       </b:ModalBody>
       <b:ModalFooter>
         <b:Button
@@ -47,5 +47,5 @@
         </b:Button>
       </b:ModalFooter>
     </b:Modal>
-  </bh:Div>
+  </g:FlowPanel>
 </ui:UiBinder>

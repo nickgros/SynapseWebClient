@@ -6,7 +6,7 @@
   xmlns:b="urn:import:org.gwtbootstrap3.client.ui"
   xmlns:bh="urn:import:org.gwtbootstrap3.client.ui.html"
 >
-  <bh:Div>
+  <g:FlowPanel>
     <b:Row addStyleNames="margin-10">
       <b:Column size="XS_6">
         <b:FormGroup>
@@ -65,5 +65,5 @@
       </b:Column>
       <b:Column size="XS_6" />
     </b:Row>
-  </bh:Div>
+  </g:FlowPanel>
 </ui:UiBinder>

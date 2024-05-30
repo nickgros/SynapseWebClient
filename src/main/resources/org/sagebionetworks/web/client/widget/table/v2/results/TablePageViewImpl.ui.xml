@@ -8,15 +8,19 @@
   xmlns:bh="urn:import:org.gwtbootstrap3.client.ui.html"
   xmlns:w="urn:import:org.sagebionetworks.web.client.widget"
 >
-  <bh:Div>
-    <bh:Div ui:field="loadingUI" />
-    <bh:Div ui:field="tablePanel" addStyleNames="tablePage" visible="false">
+  <g:FlowPanel>
+    <g:FlowPanel ui:field="loadingUI" />
+    <g:FlowPanel
+      ui:field="tablePanel"
+      addStyleNames="tablePage"
+      visible="false"
+    >
       <g:ScrollPanel ui:field="topScrollBar" height="18px" visible="false">
-        <bh:Div ui:field="topScrollDiv" height="18px" />
+        <g:FlowPanel ui:field="topScrollDiv" height="18px" />
       </g:ScrollPanel>
-      <bh:Div>
+      <g:FlowPanel>
         <g:ScrollPanel ui:field="tableScrollPanel" height="100%">
-          <bh:Div ui:field="tableDiv">
+          <g:FlowPanel ui:field="tableDiv">
             <t:Table
               styleName="table table-striped table-condensed synapseViewOrTable"
               ui:field="table"
@@ -26,20 +30,20 @@
               </t:THead>
               <t:TBody ui:field="body" />
             </t:Table>
-          </bh:Div>
+          </g:FlowPanel>
         </g:ScrollPanel>
-        <bh:Div addStyleNames="flexcontainer-row">
-          <bh:Div
+        <g:FlowPanel addStyleNames="flexcontainer-row">
+          <g:FlowPanel
             ui:field="paginationPanel"
             addStyleNames="flexcontainer-column flexcontainer-column-fill-width"
           />
-          <bh:Div
+          <g:FlowPanel
             addStyleNames="flexcontainer-column flexcontainer-align-items-flex-end"
           >
             <bh:Span addStyleNames="em" ui:field="lastUpdatedOnSpan" />
-          </bh:Div>
-        </bh:Div>
-      </bh:Div>
-    </bh:Div>
-  </bh:Div>
+          </g:FlowPanel>
+        </g:FlowPanel>
+      </g:FlowPanel>
+    </g:FlowPanel>
+  </g:FlowPanel>
 </ui:UiBinder>

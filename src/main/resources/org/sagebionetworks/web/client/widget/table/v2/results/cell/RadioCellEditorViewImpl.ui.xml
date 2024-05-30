@@ -5,5 +5,5 @@
   xmlns:b="urn:import:org.gwtbootstrap3.client.ui"
   xmlns:bh="urn:import:org.gwtbootstrap3.client.ui.html"
 >
-  <bh:Div ui:field="container" addStyleNames="margin-left-5" />
+  <g:FlowPanel ui:field="container" addStyleNames="margin-left-5" />
 </ui:UiBinder>

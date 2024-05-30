@@ -17,7 +17,7 @@
     <b:ModalBody>
       <g:SimplePanel ui:field="bodyPanel" />
       <w:LoadingSpinner size="31px" ui:field="loadingPanel" />
-      <bh:Div styleName="margin-top-15" />
+      <g:FlowPanel styleName="margin-top-15" />
       <b:Alert ui:field="alert" type="DANGER" visible="false" />
       <g:FlowPanel addStyleNames="help-panel">
         <b:BlockQuote styleName="panel scroll-auto">

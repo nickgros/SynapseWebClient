@@ -9,6 +9,7 @@ import com.google.gwt.uibinder.client.UiField;
 import com.google.gwt.user.client.Window;
 import com.google.gwt.user.client.ui.Composite;
 import com.google.gwt.user.client.ui.FlowPanel;
+import com.google.gwt.user.client.ui.FlowPanel;
 import com.google.gwt.user.client.ui.HTML;
 import com.google.gwt.user.client.ui.IsWidget;
 import com.google.gwt.user.client.ui.SimplePanel;
@@ -24,7 +25,6 @@ import org.gwtbootstrap3.client.ui.Heading;
 import org.gwtbootstrap3.client.ui.Icon;
 import org.gwtbootstrap3.client.ui.TextBox;
 import org.gwtbootstrap3.client.ui.constants.IconType;
-import org.gwtbootstrap3.client.ui.html.Div;
 import org.sagebionetworks.repo.model.ProjectListSortColumn;
 import org.sagebionetworks.repo.model.Team;
 import org.sagebionetworks.repo.model.UserProfile;
@@ -68,7 +68,7 @@ public class ProfileViewImpl extends Composite implements ProfileView {
   public static final String IS_REGISTERED_FOR = " is registered for.";
 
   @UiField
-  Div profileUI;
+  FlowPanel profileUI;
 
   @UiField
   DivElement dashboardUI;
@@ -253,41 +253,38 @@ public class ProfileViewImpl extends Composite implements ProfileView {
       }
     });
 
-    teamSearchButton.addClickHandler(
-      event -> presenter.goTo(new TeamSearch(teamSearchTextBox.getValue()))
+    teamSearchButton.addClickHandler(event ->
+      presenter.goTo(new TeamSearch(teamSearchTextBox.getValue()))
     );
-    projectSearchButton.addClickHandler(
-      event -> presenter.goTo(new Search(projectSearchTextBox.getValue()))
+    projectSearchButton.addClickHandler(event ->
+      presenter.goTo(new Search(projectSearchTextBox.getValue()))
     );
 
-    moreChallengesButton.addClickHandler(
-      event -> presenter.getMoreChallenges()
+    moreChallengesButton.addClickHandler(event -> presenter.getMoreChallenges()
     );
     showChallengesLoading(false);
 
-    favoritesFilter.addClickHandler(
-      event -> presenter.applyFilterClicked(ProjectFilterEnum.FAVORITES, null)
+    favoritesFilter.addClickHandler(event ->
+      presenter.applyFilterClicked(ProjectFilterEnum.FAVORITES, null)
     );
-    allProjectsFilter.addClickHandler(
-      event -> presenter.applyFilterClicked(ProjectFilterEnum.ALL, null)
+    allProjectsFilter.addClickHandler(event ->
+      presenter.applyFilterClicked(ProjectFilterEnum.ALL, null)
     );
-    myProjectsFilter.addClickHandler(
-      event ->
-        presenter.applyFilterClicked(ProjectFilterEnum.CREATED_BY_ME, null)
+    myProjectsFilter.addClickHandler(event ->
+      presenter.applyFilterClicked(ProjectFilterEnum.CREATED_BY_ME, null)
     );
-    sharedDirectlyWithMeFilter.addClickHandler(
-      event ->
-        presenter.applyFilterClicked(
-          ProjectFilterEnum.SHARED_DIRECTLY_WITH_ME,
-          null
-        )
+    sharedDirectlyWithMeFilter.addClickHandler(event ->
+      presenter.applyFilterClicked(
+        ProjectFilterEnum.SHARED_DIRECTLY_WITH_ME,
+        null
+      )
     );
 
-    projectNameColumnHeader.setSortingListener(
-      headerName -> presenter.sort(ProjectListSortColumn.PROJECT_NAME)
+    projectNameColumnHeader.setSortingListener(headerName ->
+      presenter.sort(ProjectListSortColumn.PROJECT_NAME)
     );
-    lastActivityOnColumnHeader.setSortingListener(
-      headerName -> presenter.sort(ProjectListSortColumn.LAST_ACTIVITY)
+    lastActivityOnColumnHeader.setSortingListener(headerName ->
+      presenter.sort(ProjectListSortColumn.LAST_ACTIVITY)
     );
   }
 

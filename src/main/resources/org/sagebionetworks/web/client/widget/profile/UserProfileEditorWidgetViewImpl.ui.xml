@@ -7,23 +7,18 @@
   xmlns:w="urn:import:org.sagebionetworks.web.client.widget"
 >
   <g:HTMLPanel>
-    <bh:Div addStyleNames="profileContainer">
-      <bh:Div
-        addStyleNames="profileImageContainer"
-        paddingTop="20"
-        paddingBottom="30"
+    <g:FlowPanel addStyleNames="profileContainer">
+      <g:FlowPanel
+        addStyleNames="profileImageContainer padding-top-20 padding-bottom-30"
       >
         <g:SimplePanel ui:field="imagePanel" addStyleNames="myProfileImage" />
         <g:SimplePanel
           ui:field="fileInputWidgetPanel"
           addStyleNames="imageUploader"
         />
-      </bh:Div>
-      <bh:Div
-        addStyleNames="profileFormContainer overflowHidden"
-        paddingTop="40"
-        paddingLeft="40"
-        paddingRight="50"
+      </g:FlowPanel>
+      <g:FlowPanel
+        addStyleNames="profileFormContainer overflowHidden padding-top-40 padding-left-40 padding-right-50"
       >
         <b:Row>
           <b:Column size="MD_12,LG_6">
@@ -93,9 +88,9 @@
           <b:Column size="MD_12,LG_6">
             <b:FormGroup ui:field="linkFormGroup">
               <b:FormLabel for="link">Website</b:FormLabel>
-              <bh:Div>
+              <g:FlowPanel>
                 <b:Anchor ui:field="linkRenderer" target="_blank" />
-              </bh:Div>
+              </g:FlowPanel>
               <b:TextBox name="link" ui:field="link" />
               <b:HelpBlock ui:field="linkHelpBlock" />
             </b:FormGroup>
@@ -112,7 +107,7 @@
           <b:Column size="MD_12,LG_6">
             <b:FormGroup>
               <b:FormLabel for="location">City, Country</b:FormLabel>
-              <bh:Div ui:field="locationSuggestBoxContainer" />
+              <g:FlowPanel ui:field="locationSuggestBoxContainer" />
               <bh:Paragraph ui:field="locationRenderer" visible="false" />
             </b:FormGroup>
           </b:Column>
@@ -121,10 +116,9 @@
           <b:Column size="MD_12,LG_6" ui:field="emailAddressContainer">
             <b:FormGroup>
               <b:FormLabel>Email Address</b:FormLabel>
-              <bh:Div
+              <g:FlowPanel
                 ui:field="emailDiv"
-                marginBottom="10"
-                addStyleNames="truncate"
+                addStyleNames="truncate margin-bottom-10"
               />
               <b:Anchor
                 addStyleNames="displayInlineBlock"
@@ -140,9 +134,9 @@
           <b:Column size="MD_12,LG_6" ui:field="orcIDContainer">
             <b:FormGroup>
               <b:FormLabel for="orcId">ORCID</b:FormLabel>
-              <bh:Div>
+              <g:FlowPanel>
                 <b:Anchor ui:field="orcIdLink" target="_blank" />
-              </bh:Div>
+              </g:FlowPanel>
             </b:FormGroup>
           </b:Column>
         </b:Row>
@@ -182,8 +176,11 @@
           </b:Column>
         </b:Row>
 
-        <bh:Div ui:field="synAlertContainer" />
-        <bh:Div marginTop="45" marginBottom="50" ui:field="commandsContainer">
+        <g:FlowPanel ui:field="synAlertContainer" />
+        <g:FlowPanel
+          ui:field="commandsContainer"
+          addStyleNames="margin-top-45 margin-bottom-50"
+        >
           <b:Button ui:field="cancelButton" type="DEFAULT" visible="false">
             Cancel
           </b:Button>
@@ -199,16 +196,16 @@
           <b:Button ui:field="editProfileButton" type="PRIMARY" visible="false">
             Edit Profile
           </b:Button>
-        </bh:Div>
-      </bh:Div>
-      <bh:Div
+        </g:FlowPanel>
+      </g:FlowPanel>
+      <g:FlowPanel
         addStyleNames="profileLinksContainer"
         ui:field="userProfileLinksUI"
       >
         <w:ReactComponentDiv
           ui:field="userProfileLinksReactComponentContainer"
         />
-      </bh:Div>
-    </bh:Div>
+      </g:FlowPanel>
+    </g:FlowPanel>
   </g:HTMLPanel>
 </ui:UiBinder>

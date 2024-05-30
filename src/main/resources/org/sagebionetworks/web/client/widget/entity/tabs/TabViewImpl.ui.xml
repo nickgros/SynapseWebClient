@@ -6,7 +6,7 @@
   xmlns:b="urn:import:org.gwtbootstrap3.client.ui"
   xmlns:bh="urn:import:org.gwtbootstrap3.client.ui.html"
 >
-  <bh:Div>
+  <g:FlowPanel>
     <b:ListItem
       ui:field="tabListItem"
       addStyleNames="entity-tab"
@@ -20,7 +20,7 @@
     </b:ListItem>
     <b:TabPane ui:field="tabPane" active="true" addStyleNames="tab-background">
       <g:SimplePanel ui:field="orientationBannerPanel" />
-      <bh:Div ui:field="contentDiv" />
+      <g:FlowPanel ui:field="contentDiv" />
     </b:TabPane>
-  </bh:Div>
+  </g:FlowPanel>
 </ui:UiBinder>

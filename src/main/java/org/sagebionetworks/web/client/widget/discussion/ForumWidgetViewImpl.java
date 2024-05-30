@@ -2,13 +2,14 @@ package org.sagebionetworks.web.client.widget.discussion;
 
 import com.google.gwt.uibinder.client.UiBinder;
 import com.google.gwt.uibinder.client.UiField;
+import com.google.gwt.user.client.ui.FlowPanel;
+import com.google.gwt.user.client.ui.FlowPanel;
 import com.google.gwt.user.client.ui.IsWidget;
 import com.google.gwt.user.client.ui.SimplePanel;
 import com.google.gwt.user.client.ui.Widget;
 import com.google.inject.Inject;
 import org.gwtbootstrap3.client.ui.Button;
 import org.gwtbootstrap3.client.ui.ButtonGroup;
-import org.gwtbootstrap3.client.ui.html.Div;
 import org.gwtbootstrap3.client.ui.html.Span;
 import org.sagebionetworks.web.client.DisplayUtils;
 import org.sagebionetworks.web.client.context.SynapseReactClientFullContextPropsProvider;
@@ -26,7 +27,7 @@ public class ForumWidgetViewImpl implements ForumWidgetView {
   SimplePanel newThreadModalContainer;
 
   @UiField
-  Div synAlertContainer;
+  FlowPanel synAlertContainer;
 
   @UiField
   Button showAllThreadsButton;
@@ -47,10 +48,10 @@ public class ForumWidgetViewImpl implements ForumWidgetView {
   SimplePanel deletedThreadListContainer;
 
   @UiField
-  Div deleteThreadsArea;
+  FlowPanel deleteThreadsArea;
 
   @UiField
-  Div mainContainer;
+  FlowPanel mainContainer;
 
   @UiField
   Span subscribersContainer;
@@ -62,29 +63,29 @@ public class ForumWidgetViewImpl implements ForumWidgetView {
   Button sortRepliesDescendingButton;
 
   @UiField
-  Div singleThreadAndSortContainer;
+  FlowPanel singleThreadAndSortContainer;
 
   @UiField
-  Div actionMenuContainer;
+  FlowPanel actionMenuContainer;
 
   @UiField
-  Div forumSearchContainer;
+  FlowPanel forumSearchContainer;
 
   // flex containers
   @UiField
-  Div headingFlexContainer;
+  FlowPanel headingFlexContainer;
 
   @UiField
-  Div subscribersFlexContainer;
+  FlowPanel subscribersFlexContainer;
 
   @UiField
-  Div forumSearchFlexContainer;
+  FlowPanel forumSearchFlexContainer;
 
   @UiField
-  Div subscribeButtonFlexContainer;
+  FlowPanel subscribeButtonFlexContainer;
 
   @UiField
-  Div newThreadButtonFlexContainer;
+  FlowPanel newThreadButtonFlexContainer;
 
   private Presenter presenter;
   private SynapseReactClientFullContextPropsProvider propsProvider;

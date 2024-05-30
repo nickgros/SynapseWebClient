@@ -6,18 +6,18 @@
   xmlns:b3="urn:import:org.gwtbootstrap3.extras.toggleswitch.client.ui"
   xmlns:bh="urn:import:org.gwtbootstrap3.client.ui.html"
 >
-  <bh:Div>
-    <bh:Div addStyleNames="pageHeader">
+  <g:FlowPanel>
+    <g:FlowPanel addStyleNames="pageHeader">
       <b:Heading
         addStyleNames="pageHeaderTitle"
         ui:field="pageHeaderTitle"
         size="H3"
         text="Help Forum"
       />
-    </bh:Div>
+    </g:FlowPanel>
 
-    <bh:Div addStyleNames="min-height-200 margin-top-30 margin-10">
-      <bh:Div ui:field="forumWidgetContainer" />
-    </bh:Div>
-  </bh:Div>
+    <g:FlowPanel addStyleNames="min-height-200 margin-top-30 margin-10">
+      <g:FlowPanel ui:field="forumWidgetContainer" />
+    </g:FlowPanel>
+  </g:FlowPanel>
 </ui:UiBinder>

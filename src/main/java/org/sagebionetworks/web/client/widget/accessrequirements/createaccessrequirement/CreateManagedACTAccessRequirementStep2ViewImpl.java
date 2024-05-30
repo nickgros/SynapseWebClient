@@ -4,13 +4,14 @@ import com.google.gwt.event.dom.client.ClickEvent;
 import com.google.gwt.event.dom.client.ClickHandler;
 import com.google.gwt.uibinder.client.UiBinder;
 import com.google.gwt.uibinder.client.UiField;
+import com.google.gwt.user.client.ui.FlowPanel;
+import com.google.gwt.user.client.ui.FlowPanel;
 import com.google.gwt.user.client.ui.IsWidget;
 import com.google.gwt.user.client.ui.Widget;
 import com.google.inject.Inject;
 import org.gwtbootstrap3.client.ui.Button;
 import org.gwtbootstrap3.client.ui.CheckBox;
 import org.gwtbootstrap3.client.ui.TextBox;
-import org.gwtbootstrap3.client.ui.html.Div;
 
 public class CreateManagedACTAccessRequirementStep2ViewImpl
   implements CreateManagedACTAccessRequirementStep2View {
@@ -21,7 +22,7 @@ public class CreateManagedACTAccessRequirementStep2ViewImpl
   Widget widget;
 
   @UiField
-  Div wikiPageContainer;
+  FlowPanel wikiPageContainer;
 
   @UiField
   Button editWikiButton;
@@ -39,10 +40,10 @@ public class CreateManagedACTAccessRequirementStep2ViewImpl
   CheckBox ducCheckbox;
 
   @UiField
-  Div ducTemplateFileContainer;
+  FlowPanel ducTemplateFileContainer;
 
   @UiField
-  Div ducTemplateFileUploadContainer;
+  FlowPanel ducTemplateFileUploadContainer;
 
   @UiField
   CheckBox irbCheckbox;

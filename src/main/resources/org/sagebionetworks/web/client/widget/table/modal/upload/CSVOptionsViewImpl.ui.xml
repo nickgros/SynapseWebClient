@@ -11,7 +11,7 @@
 >
   <b:Panel>
     <b:PanelBody>
-      <bh:Div>
+      <g:FlowPanel>
         <b:FormGroup>
           <b:FormLabel for="separator">Separator</b:FormLabel>
           <b:Row>
@@ -59,7 +59,7 @@
             First line is the header
           </b:CheckBox>
         </b:FormGroup>
-      </bh:Div>
+      </g:FlowPanel>
       <b:Button ui:field="refreshButton" icon="REFRESH">
         Refresh preview
       </b:Button>

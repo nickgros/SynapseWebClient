@@ -6,8 +6,8 @@
   xmlns:g="urn:import:com.google.gwt.user.client.ui"
   xmlns:w="urn:import:org.sagebionetworks.web.client.widget"
 >
-  <bh:Div addStyleNames="margin-5">
-    <bh:Div
+  <g:FlowPanel addStyleNames="margin-5">
+    <g:FlowPanel
       ui:field="htmlSanitizedWarning"
       addStyleNames="margin-top-20 margin-bottom-10"
     >
@@ -19,13 +19,13 @@
           addStyleNames="margin-left-5"
         />
       </b:Alert>
-    </bh:Div>
-    <bh:Div ui:field="loadingUI" addStyleNames="center center-block">
+    </g:FlowPanel>
+    <g:FlowPanel ui:field="loadingUI" addStyleNames="center center-block">
       <w:LoadingSpinner size="31px" />
       <bh:Text ui:field="loadingMessage" />
-    </bh:Div>
-    <bh:Div ui:field="htmlContainer" />
+    </g:FlowPanel>
+    <g:FlowPanel ui:field="htmlContainer" />
     <bh:Span ui:field="storeRawHtmlSpan" visible="false" />
-    <bh:Div ui:field="synAlertContainer" />
-  </bh:Div>
+    <g:FlowPanel ui:field="synAlertContainer" />
+  </g:FlowPanel>
 </ui:UiBinder>

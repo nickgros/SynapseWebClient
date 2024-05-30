@@ -6,12 +6,12 @@
   xmlns:bh="urn:import:org.gwtbootstrap3.client.ui.html"
   xmlns:t="urn:import:org.sagebionetworks.web.client.view.bootstrap.table"
 >
-  <bh:Div>
-    <bh:Div addStyleNames="pageHeader" marginBottom="10">
+  <g:FlowPanel>
+    <g:FlowPanel addStyleNames="pageHeader margin-bottom-10">
       <b:Heading ui:field="title" addStyleNames="pageHeaderTitle" size="H3" />
-    </bh:Div>
-    <bh:Div ui:field="above" />
-    <bh:Div ui:field="body" addStyleNames="margin-10" />
-    <bh:Div ui:field="below" addStyleNames="margin-bottom-20" />
-  </bh:Div>
+    </g:FlowPanel>
+    <g:FlowPanel ui:field="above" />
+    <g:FlowPanel ui:field="body" addStyleNames="margin-10" />
+    <g:FlowPanel ui:field="below" addStyleNames="margin-bottom-20" />
+  </g:FlowPanel>
 </ui:UiBinder>

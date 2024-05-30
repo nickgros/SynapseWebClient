@@ -4,13 +4,14 @@ import com.google.gwt.event.dom.client.ChangeEvent;
 import com.google.gwt.event.dom.client.ChangeHandler;
 import com.google.gwt.uibinder.client.UiBinder;
 import com.google.gwt.uibinder.client.UiField;
+import com.google.gwt.user.client.ui.FlowPanel;
+import com.google.gwt.user.client.ui.FlowPanel;
 import com.google.gwt.user.client.ui.Widget;
 import com.google.inject.Inject;
 import org.gwtbootstrap3.client.ui.Button;
 import org.gwtbootstrap3.client.ui.Input;
 import org.gwtbootstrap3.client.ui.TextArea;
 import org.gwtbootstrap3.client.ui.TextBox;
-import org.gwtbootstrap3.client.ui.html.Div;
 import org.sagebionetworks.web.client.widget.entity.annotation.AnnotationEditorViewImpl;
 
 public class CommaSeparatedValuesParserViewImpl
@@ -23,7 +24,7 @@ public class CommaSeparatedValuesParserViewImpl
   private Presenter presenter;
 
   @UiField
-  Div container;
+  FlowPanel container;
 
   @UiField
   Button cancelButton;

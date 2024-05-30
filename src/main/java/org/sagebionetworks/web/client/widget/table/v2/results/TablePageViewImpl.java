@@ -4,13 +4,14 @@ import com.google.gwt.event.dom.client.ScrollEvent;
 import com.google.gwt.event.dom.client.ScrollHandler;
 import com.google.gwt.uibinder.client.UiBinder;
 import com.google.gwt.uibinder.client.UiField;
+import com.google.gwt.user.client.ui.FlowPanel;
+import com.google.gwt.user.client.ui.FlowPanel;
 import com.google.gwt.user.client.ui.IsWidget;
 import com.google.gwt.user.client.ui.ScrollPanel;
 import com.google.gwt.user.client.ui.SimplePanel;
 import com.google.gwt.user.client.ui.Widget;
 import com.google.inject.Inject;
 import java.util.List;
-import org.gwtbootstrap3.client.ui.html.Div;
 import org.gwtbootstrap3.client.ui.html.Span;
 import org.sagebionetworks.web.client.GWTWrapper;
 import org.sagebionetworks.web.client.utils.Callback;
@@ -31,7 +32,7 @@ public class TablePageViewImpl implements TablePageView {
   public interface Binder extends UiBinder<Widget, TablePageViewImpl> {}
 
   @UiField
-  Div loadingUI;
+  FlowPanel loadingUI;
 
   @UiField
   Table table;
@@ -43,12 +44,12 @@ public class TablePageViewImpl implements TablePageView {
   TBody body;
 
   @UiField
-  Div paginationPanel;
+  FlowPanel paginationPanel;
 
   @UiField
-  Div tablePanel;
+  FlowPanel tablePanel;
 
-  Div widget;
+  FlowPanel widget;
 
   @UiField
   ScrollPanel topScrollBar;
@@ -57,17 +58,17 @@ public class TablePageViewImpl implements TablePageView {
   ScrollPanel tableScrollPanel;
 
   @UiField
-  Div topScrollDiv;
+  FlowPanel topScrollDiv;
 
   @UiField
-  Div tableDiv;
+  FlowPanel tableDiv;
 
   @UiField
   Span lastUpdatedOnSpan;
 
   @Inject
   public TablePageViewImpl(Binder binder, final GWTWrapper gwt) {
-    widget = (Div) binder.createAndBindUi(this);
+    widget = (FlowPanel) binder.createAndBindUi(this);
 
     gwt.scheduleExecution(
       new Callback() {
@@ -84,9 +85,15 @@ public class TablePageViewImpl implements TablePageView {
             topScrollBar.setVisible(
               isScrollBarShowing && tableScrollPanel.getOffsetHeight() > 600
             );
-            paginationPanel.setMarginLeft(
-              tableScrollPanel.getAbsoluteLeft() - tablePanel.getAbsoluteLeft()
-            );
+            paginationPanel
+              .getElement()
+              .getStyle()
+              .setProperty(
+                "margin-left",
+                tableScrollPanel.getAbsoluteLeft() -
+                tablePanel.getAbsoluteLeft() +
+                "px"
+              );
             gwt.scheduleExecution(this, 400);
           }
         }

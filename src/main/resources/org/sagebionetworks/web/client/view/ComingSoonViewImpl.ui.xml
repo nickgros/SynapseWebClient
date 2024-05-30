@@ -34,8 +34,8 @@
         helpMarkdown="This contains **very basic** markdown, perhaps with a [link](http://www.jayhodgson.com)."
       />
     </g:FlowPanel>
-    <bh:Div ui:field="widgetContainer" />
-    <bh:Div ui:field="chart" width="100%" height="400px" />
+    <g:FlowPanel ui:field="widgetContainer" />
+    <g:FlowPanel ui:field="chart" width="100%" height="400px" />
 
     This page is coming soon.
     <div class="clear" />

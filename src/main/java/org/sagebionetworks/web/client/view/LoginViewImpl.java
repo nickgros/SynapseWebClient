@@ -3,13 +3,13 @@ package org.sagebionetworks.web.client.view;
 import com.google.gwt.uibinder.client.UiBinder;
 import com.google.gwt.uibinder.client.UiField;
 import com.google.gwt.user.client.ui.Composite;
+import com.google.gwt.user.client.ui.FlowPanel;
 import com.google.gwt.user.client.ui.HTMLPanel;
 import com.google.gwt.user.client.ui.IsWidget;
 import com.google.gwt.user.client.ui.SimplePanel;
 import com.google.gwt.user.client.ui.Widget;
 import com.google.inject.Inject;
 import org.gwtbootstrap3.client.ui.Heading;
-import org.gwtbootstrap3.client.ui.html.Div;
 import org.sagebionetworks.web.client.DisplayUtils;
 import org.sagebionetworks.web.client.SynapseJSNIUtils;
 import org.sagebionetworks.web.client.context.SynapseReactClientFullContextPropsProvider;
@@ -36,7 +36,7 @@ public class LoginViewImpl extends Composite implements LoginView {
 
   // terms of service view
   @UiField
-  Div termsOfUseView;
+  FlowPanel termsOfUseView;
 
   @UiField
   ReactComponentDiv termsOfUseContainer;
@@ -51,10 +51,10 @@ public class LoginViewImpl extends Composite implements LoginView {
   Heading loadingUiText;
 
   @UiField
-  Div synAlertContainer;
+  FlowPanel synAlertContainer;
 
   @UiField
-  Div pageProgressContainer;
+  FlowPanel pageProgressContainer;
 
   private Presenter presenter;
   private LoginWidget loginWidget;

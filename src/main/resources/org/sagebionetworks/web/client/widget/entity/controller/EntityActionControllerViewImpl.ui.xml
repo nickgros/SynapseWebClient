@@ -23,7 +23,7 @@
         </b:Button>
       </b:ModalFooter>
     </b:Modal>
-    <bh:Div ui:field="uploadDialogWidgetContainer" />
+    <g:FlowPanel ui:field="uploadDialogWidgetContainer" />
     <b:Modal
       ui:field="createVersionDialog"
       closable="false"
@@ -32,9 +32,9 @@
       size="SMALL"
     >
       <b:ModalBody>
-        <bh:Div ui:field="createVersionJobTrackingWidgetContainer" />
+        <g:FlowPanel ui:field="createVersionJobTrackingWidgetContainer" />
       </b:ModalBody>
     </b:Modal>
-    <bh:Div ui:field="extraWidgetsContainer" />
+    <g:FlowPanel ui:field="extraWidgetsContainer" />
   </bh:Span>
 </ui:UiBinder>

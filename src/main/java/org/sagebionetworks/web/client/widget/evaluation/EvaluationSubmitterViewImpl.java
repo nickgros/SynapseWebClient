@@ -9,6 +9,8 @@ import com.google.gwt.event.dom.client.KeyDownHandler;
 import com.google.gwt.safehtml.shared.SafeHtmlUtils;
 import com.google.gwt.uibinder.client.UiBinder;
 import com.google.gwt.uibinder.client.UiField;
+import com.google.gwt.user.client.ui.FlowPanel;
+import com.google.gwt.user.client.ui.FlowPanel;
 import com.google.gwt.user.client.ui.ListBox;
 import com.google.gwt.user.client.ui.SimplePanel;
 import com.google.gwt.user.client.ui.Widget;
@@ -24,7 +26,6 @@ import org.gwtbootstrap3.client.ui.Modal;
 import org.gwtbootstrap3.client.ui.Panel;
 import org.gwtbootstrap3.client.ui.Radio;
 import org.gwtbootstrap3.client.ui.TextBox;
-import org.gwtbootstrap3.client.ui.html.Div;
 import org.gwtbootstrap3.client.ui.html.Paragraph;
 import org.gwtbootstrap3.client.ui.html.Span;
 import org.sagebionetworks.evaluation.model.Evaluation;
@@ -119,13 +120,13 @@ public class EvaluationSubmitterViewImpl implements EvaluationSubmitterView {
   LoadingSpinner contributorsLoadingUI;
 
   @UiField
-  Div teamsUI;
+  FlowPanel teamsUI;
 
   @UiField
-  Div availableTeamsUI;
+  FlowPanel availableTeamsUI;
 
   @UiField
-  Div emptyTeamsUI;
+  FlowPanel emptyTeamsUI;
 
   @UiField
   SimplePanel challengeListSynAlertPanel;
@@ -490,7 +491,7 @@ public class EvaluationSubmitterViewImpl implements EvaluationSubmitterView {
 
   @Override
   public void addInEligibleContributor(String principalId, String reason) {
-    Div row = getContributorRow(principalId, false);
+    FlowPanel row = getContributorRow(principalId, false);
     // also add the reason
     Span span = new Span();
     span.addStyleName("greyText-imp margin-left-5");
@@ -505,8 +506,11 @@ public class EvaluationSubmitterViewImpl implements EvaluationSubmitterView {
     teamIneligibleHtml.setText(error);
   }
 
-  private Div getContributorRow(String principalId, boolean selectCheckbox) {
-    Div row = new Div();
+  private FlowPanel getContributorRow(
+    String principalId,
+    boolean selectCheckbox
+  ) {
+    FlowPanel row = new FlowPanel();
     InlineCheckBox cb = new InlineCheckBox();
     cb.addStyleName("moveup-10");
     cb.setValue(selectCheckbox);

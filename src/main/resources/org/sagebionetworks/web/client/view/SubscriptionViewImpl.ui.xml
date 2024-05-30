@@ -6,20 +6,20 @@
   xmlns:bh="urn:import:org.gwtbootstrap3.client.ui.html"
   xmlns:t="urn:import:org.sagebionetworks.web.client.view.bootstrap.table"
 >
-  <bh:Div>
-    <bh:Div
+  <g:FlowPanel>
+    <g:FlowPanel
       addStyleNames="margin-top-30 margin-left-35 min-height-400 margin-right-10"
     >
       <b:Row>
         <b:Column size="XS_12">
-          <bh:Div ui:field="synAlertContainer" />
+          <g:FlowPanel ui:field="synAlertContainer" />
           <b:Heading
             size="H2"
             text="Notification Settings"
             addStyleNames="margin-top-30"
           />
-          <bh:Div addStyleNames="margin-left-15 margin-top-20">
-            <bh:Div ui:field="topicWidgetContainer" />
+          <g:FlowPanel addStyleNames="margin-left-15 margin-top-20">
+            <g:FlowPanel ui:field="topicWidgetContainer" />
 
             <b:Radio
               ui:field="followButton"
@@ -45,9 +45,9 @@
             />
             <!-- <b:Anchor ui:field="notificationCenterLink" text="Manage all notifications" 
 							addStyleNames="margin-top-10 font-size-24"/> -->
-          </bh:Div>
+          </g:FlowPanel>
         </b:Column>
       </b:Row>
-    </bh:Div>
-  </bh:Div>
+    </g:FlowPanel>
+  </g:FlowPanel>
 </ui:UiBinder>

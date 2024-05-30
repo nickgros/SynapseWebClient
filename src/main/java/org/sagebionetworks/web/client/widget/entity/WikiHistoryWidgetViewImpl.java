@@ -4,6 +4,7 @@ import com.google.gwt.event.dom.client.ClickEvent;
 import com.google.gwt.event.dom.client.ClickHandler;
 import com.google.gwt.safehtml.shared.SafeHtmlBuilder;
 import com.google.gwt.user.client.ui.FlowPanel;
+import com.google.gwt.user.client.ui.FlowPanel;
 import com.google.gwt.user.client.ui.HTMLPanel;
 import com.google.gwt.user.client.ui.IsWidget;
 import com.google.gwt.user.client.ui.SimplePanel;
@@ -14,7 +15,6 @@ import java.util.Date;
 import java.util.List;
 import org.gwtbootstrap3.client.ui.Button;
 import org.gwtbootstrap3.client.ui.constants.ButtonSize;
-import org.gwtbootstrap3.client.ui.html.Div;
 import org.gwtbootstrap3.client.ui.html.Span;
 import org.gwtbootstrap3.client.ui.html.Text;
 import org.sagebionetworks.repo.model.v2.wiki.V2WikiHistorySnapshot;
@@ -47,14 +47,14 @@ public class WikiHistoryWidgetViewImpl
   private int offset;
   private int resultSize;
   DateTimeUtils dateTimeUtils;
-  Div loadingUI;
-  Div synAlertContainer = new Div();
+  FlowPanel loadingUI;
+  FlowPanel synAlertContainer = new FlowPanel();
 
   @Inject
   public WikiHistoryWidgetViewImpl(DateTimeUtils dateTimeUtils) {
     this.dateTimeUtils = dateTimeUtils;
     addStyleName("min-height-200");
-    loadingUI = new Div();
+    loadingUI = new FlowPanel();
     loadingUI.add(DisplayUtils.getLoadingWidget("Loading"));
     add(synAlertContainer);
   }

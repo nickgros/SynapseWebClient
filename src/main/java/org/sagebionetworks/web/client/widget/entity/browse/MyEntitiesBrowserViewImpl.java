@@ -4,12 +4,13 @@ import com.google.gwt.dom.client.LIElement;
 import com.google.gwt.uibinder.client.UiBinder;
 import com.google.gwt.uibinder.client.UiField;
 import com.google.gwt.user.client.ui.Anchor;
+import com.google.gwt.user.client.ui.FlowPanel;
+import com.google.gwt.user.client.ui.FlowPanel;
 import com.google.gwt.user.client.ui.SimplePanel;
 import com.google.gwt.user.client.ui.UIObject;
 import com.google.gwt.user.client.ui.Widget;
 import com.google.inject.Inject;
 import java.util.List;
-import org.gwtbootstrap3.client.ui.html.Div;
 import org.sagebionetworks.repo.model.EntityHeader;
 import org.sagebionetworks.web.client.DisplayUtils;
 import org.sagebionetworks.web.client.PortalGinInjector;
@@ -54,13 +55,13 @@ public class MyEntitiesBrowserViewImpl implements MyEntitiesBrowserView {
   Anchor currentContextLink;
 
   @UiField
-  Div myProjectsTabContents;
+  FlowPanel myProjectsTabContents;
 
   @UiField
-  Div myFavoritesTabContents;
+  FlowPanel myFavoritesTabContents;
 
   @UiField
-  Div currentContextTabContents;
+  FlowPanel currentContextTabContents;
 
   LoadMoreWidgetContainer myProjectsContainerWrapper;
   private Widget widget;
@@ -201,7 +202,7 @@ public class MyEntitiesBrowserViewImpl implements MyEntitiesBrowserView {
   private void setTabSelected(
     Anchor tabLink,
     LIElement tabListItem,
-    Div tabContents
+    FlowPanel tabContents
   ) {
     setTabInActive(
       currentContextLink,
@@ -220,7 +221,7 @@ public class MyEntitiesBrowserViewImpl implements MyEntitiesBrowserView {
   private void setTabActive(
     Anchor tabLink,
     LIElement tabListItem,
-    Div tabContents
+    FlowPanel tabContents
   ) {
     tabContents.setVisible(true);
     tabListItem.addClassName("active");
@@ -230,7 +231,7 @@ public class MyEntitiesBrowserViewImpl implements MyEntitiesBrowserView {
   private void setTabInActive(
     Anchor tabLink,
     LIElement tabListItem,
-    Div tabContents
+    FlowPanel tabContents
   ) {
     tabContents.setVisible(false);
     tabListItem.removeClassName("active");

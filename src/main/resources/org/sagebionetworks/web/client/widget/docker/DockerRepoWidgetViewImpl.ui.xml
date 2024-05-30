@@ -10,18 +10,18 @@
   <b:Row>
     <b:Column size="XS_12">
       <b:Row>
-        <bh:Div addStyleNames="margin-left-15 margin-right-15">
+        <g:FlowPanel addStyleNames="margin-left-15 margin-right-15">
           <g:SimplePanel ui:field="dockerTitlebarContainer" />
           <g:SimplePanel ui:field="dockerMetadataContainer" />
-        </bh:Div>
+        </g:FlowPanel>
       </b:Row>
       <g:FlowPanel addStyleNames="entity-page-side-margins">
         <b:Row>
           <b:Column size="XS_12, MD_6">
             <b:Panel>
-              <bh:Div addStyleNames="highlight-title">
+              <g:FlowPanel addStyleNames="highlight-title">
                 <bh:Text text="Docker Pull Command" />
-              </bh:Div>
+              </g:FlowPanel>
               <b:PanelBody addStyleNames="margin-15">
                 <g:TextBox
                   ui:field="dockerPullCommand"
@@ -37,7 +37,7 @@
           </b:Column>
           <b:Column size="XS_12, MD_6">
             <g:FlowPanel addStyleNames="margin-bottom-15">
-              <bh:Div addStyleNames="highlight-title">
+              <g:FlowPanel addStyleNames="highlight-title">
                 <bh:Text>Tags</bh:Text>
                 <w:HelpWidget
                   helpMarkdown="An image name is made up of slash-separated name components, optionally prefixed by a registry hostname."
@@ -45,8 +45,8 @@
                   addStyleNames="margin-left-5"
                   placement="BOTTOM"
                 />
-              </bh:Div>
-              <bh:Div
+              </g:FlowPanel>
+              <g:FlowPanel
                 addStyleNames="padding-15"
                 ui:field="dockerCommitListContainer"
               />
@@ -55,7 +55,7 @@
               ui:field="provenancePanel"
               addStyleNames="light-border padding-10 margin-bottom-15"
             >
-              <bh:Div addStyleNames="highlight-title">
+              <g:FlowPanel addStyleNames="highlight-title">
                 <bh:Text>Provenance</bh:Text>
                 <w:HelpWidget
                   helpMarkdown="Provenance tracks the relationship between data, code and analytical results"
@@ -63,8 +63,8 @@
                   addStyleNames="margin-left-5"
                   placement="BOTTOM"
                 />
-              </bh:Div>
-              <bh:Div ui:field="dockerRepoProvenanceContainer" />
+              </g:FlowPanel>
+              <g:FlowPanel ui:field="dockerRepoProvenanceContainer" />
             </g:FlowPanel>
           </b:Column>
         </b:Row>

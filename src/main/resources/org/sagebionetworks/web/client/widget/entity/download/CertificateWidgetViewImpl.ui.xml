@@ -4,12 +4,12 @@
   xmlns:bh="urn:import:org.gwtbootstrap3.client.ui.html"
   xmlns:w="urn:import:org.sagebionetworks.web.client.widget"
 >
-  <bh:Div>
+  <g:FlowPanel>
     <w:FullWidthAlert
       ui:field="alert"
       alertType="SUCCESS"
       primaryCTAText="View your dashboard"
       primaryCTAHref="/Profile:v/projects"
     />
-  </bh:Div>
+  </g:FlowPanel>
 </ui:UiBinder>

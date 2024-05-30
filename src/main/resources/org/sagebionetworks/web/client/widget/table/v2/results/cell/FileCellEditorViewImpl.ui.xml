@@ -22,7 +22,7 @@
         <b:ModalBody>
           <bh:Text>Select a file to upload.</bh:Text>
           <g:SimplePanel ui:field="fileInputWidgetPanel" />
-          <bh:Div styleName="margin-top-15" />
+          <g:FlowPanel styleName="margin-top-15" />
           <b:Alert ui:field="uploadAlert" type="DANGER" visible="false" />
         </b:ModalBody>
       </b:Panel>

@@ -1,6 +1,7 @@
 package org.sagebionetworks.web.client.widget.provenance;
 
 import com.google.gwt.user.client.ui.FlowPanel;
+import com.google.gwt.user.client.ui.FlowPanel;
 import com.google.gwt.user.client.ui.IsWidget;
 import com.google.gwt.user.client.ui.Widget;
 import com.google.inject.Inject;
@@ -8,7 +9,6 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
-import org.gwtbootstrap3.client.ui.html.Div;
 import org.sagebionetworks.web.client.DisplayConstants;
 import org.sagebionetworks.web.client.DisplayUtils;
 import org.sagebionetworks.web.client.IconsImageBundle;
@@ -37,7 +37,7 @@ public class ProvenanceWidgetViewImpl
   private HashMap<String, String> filledPopoverIds;
   private Integer height = null;
   private static final String TOP3_LEFT3 = "margin-left-3 margin-top-3";
-  private Div synAlertContainer = new Div();
+  private FlowPanel synAlertContainer = new FlowPanel();
   private FlowPanel container;
   private FlowPanel thisLayoutContainer;
   private FlowPanel prov;

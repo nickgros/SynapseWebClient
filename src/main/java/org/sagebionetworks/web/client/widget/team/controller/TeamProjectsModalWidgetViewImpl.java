@@ -2,12 +2,12 @@ package org.sagebionetworks.web.client.widget.team.controller;
 
 import com.google.gwt.uibinder.client.UiBinder;
 import com.google.gwt.uibinder.client.UiField;
+import com.google.gwt.user.client.ui.FlowPanel;
 import com.google.gwt.user.client.ui.IsWidget;
 import com.google.gwt.user.client.ui.Widget;
 import com.google.inject.Inject;
 import org.gwtbootstrap3.client.ui.Button;
 import org.gwtbootstrap3.client.ui.Modal;
-import org.gwtbootstrap3.client.ui.html.Div;
 import org.sagebionetworks.repo.model.ProjectListSortColumn;
 import org.sagebionetworks.repo.model.entity.query.SortDirection;
 import org.sagebionetworks.web.client.widget.table.v2.results.SortableTableHeaderImpl;
@@ -22,7 +22,7 @@ public class TeamProjectsModalWidgetViewImpl
   Button cancelButton;
 
   @UiField
-  Div synAlertContainer;
+  FlowPanel synAlertContainer;
 
   @UiField
   SortableTableHeaderImpl projectNameColumnHeader;
@@ -31,7 +31,7 @@ public class TeamProjectsModalWidgetViewImpl
   SortableTableHeaderImpl lastActivityOnColumnHeader;
 
   @UiField
-  Div projectsContainer;
+  FlowPanel projectsContainer;
 
   public interface Binder
     extends UiBinder<Widget, TeamProjectsModalWidgetViewImpl> {}

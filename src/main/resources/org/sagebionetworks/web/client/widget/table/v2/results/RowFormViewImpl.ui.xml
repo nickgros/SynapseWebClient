@@ -7,5 +7,5 @@
   xmlns:bg="urn:import:org.gwtbootstrap3.client.ui.gwt"
   xmlns:bh="urn:import:org.gwtbootstrap3.client.ui.html"
 >
-  <bh:Div ui:field="form" />
+  <g:FlowPanel ui:field="form" />
 </ui:UiBinder>

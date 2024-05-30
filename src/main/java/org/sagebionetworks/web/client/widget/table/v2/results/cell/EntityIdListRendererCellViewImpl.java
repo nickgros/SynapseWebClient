@@ -1,8 +1,8 @@
 package org.sagebionetworks.web.client.widget.table.v2.results.cell;
 
+import com.google.gwt.user.client.ui.FlowPanel;
 import com.google.gwt.user.client.ui.Widget;
 import com.google.inject.Inject;
-import org.gwtbootstrap3.client.ui.html.Div;
 import org.gwtbootstrap3.client.ui.html.Text;
 import org.sagebionetworks.schema.adapter.JSONArrayAdapter;
 import org.sagebionetworks.schema.adapter.JSONObjectAdapter;
@@ -18,7 +18,7 @@ public class EntityIdListRendererCellViewImpl
   String v;
   JSONObjectAdapter adapter;
   PortalGinInjector ginInjector;
-  Div div = new Div();
+  FlowPanel div = new FlowPanel();
 
   @Inject
   public EntityIdListRendererCellViewImpl(

@@ -7,12 +7,12 @@
   xmlns:bg="urn:import:org.gwtbootstrap3.client.ui.gwt"
   xmlns:bh="urn:import:org.gwtbootstrap3.client.ui.html"
 >
-  <bh:Div>
-    <bh:Div addStyleNames="margin-top-15">
+  <g:FlowPanel>
+    <g:FlowPanel addStyleNames="margin-top-15">
       <bh:Strong ui:field="columnName" />
-    </bh:Div>
-    <bh:Div ui:field="facetValues" />
+    </g:FlowPanel>
+    <g:FlowPanel ui:field="facetValues" />
     <b:Button ui:field="showAllButton" visible="false" size="EXTRA_SMALL" />
-    <bh:Div ui:field="overflowFacetValues" />
-  </bh:Div>
+    <g:FlowPanel ui:field="overflowFacetValues" />
+  </g:FlowPanel>
 </ui:UiBinder>

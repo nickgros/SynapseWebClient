@@ -7,14 +7,14 @@
   xmlns:bh="urn:import:org.gwtbootstrap3.client.ui.html"
   xmlns:w="urn:import:org.sagebionetworks.web.client.widget"
 >
-  <bh:Div>
+  <g:FlowPanel>
     <b:Radio
       ui:field="challengeRadioOption"
       name="evaluationQueueType"
       text="Challenge Queue(s)"
       value="true"
     />
-    <bh:Div ui:field="challengeProjectUi" marginLeft="30">
+    <g:FlowPanel ui:field="challengeProjectUi" addStyleNames="margin-left-30">
       <b:FormLabel text="Challenge Project" />
       <b:InputGroup>
         <b:TextBox
@@ -31,21 +31,25 @@
           />
         </b:InputGroupButton>
       </b:InputGroup>
-    </bh:Div>
+    </g:FlowPanel>
     <b:Radio
       ui:field="evaluationQueueOption"
       name="evaluationQueueType"
       text="Single Evaluation Queue"
     />
-    <bh:Div ui:field="evaluationQueueUi" marginLeft="30" visible="false">
+    <g:FlowPanel
+      ui:field="evaluationQueueUi"
+      addStyleNames="margin-left-30"
+      visible="false"
+    >
       <b:FormLabel text="Evaluation Queue ID" />
       <b:TextBox
         ui:field="evaluationQueueIdField"
         value=""
         placeholder="e.g. 9614271"
       />
-    </bh:Div>
-    <bh:Div ui:field="submissionTypeOptions">
+    </g:FlowPanel>
+    <g:FlowPanel ui:field="submissionTypeOptions">
       <bh:Hr />
       <b:Radio
         ui:field="submitEntityOption"
@@ -53,7 +57,7 @@
         text="User to submit a Synapse Entity (e.g. a File) that they have created"
         value="true"
       />
-      <bh:Div>
+      <g:FlowPanel>
         <b:Radio
           ui:field="submitForm"
           name="submitType"
@@ -66,8 +70,12 @@
           addStyleNames="margin-left-5"
           placement="BOTTOM"
         />
-      </bh:Div>
-      <bh:Div ui:field="formUi" marginLeft="30" marginTop="10" visible="false">
+      </g:FlowPanel>
+      <g:FlowPanel
+        ui:field="formUi"
+        addStyleNames="margin-left-30 margin-top-10"
+        visible="false"
+      >
         <b:FormLabel text="Parent Container (Project/Folder)" marginTop="10" />
         <w:HelpWidget
           helpMarkdown="This should contain a subfolder for each submitter.  The subfolder name must match the submitters user_id.
@@ -122,19 +130,19 @@
             />
           </b:InputGroupButton>
         </b:InputGroup>
-      </bh:Div>
-    </bh:Div>
+      </g:FlowPanel>
+    </g:FlowPanel>
     <bh:Hr />
-    <bh:Div addStyleNames="margin-10">
+    <g:FlowPanel addStyleNames="margin-10">
       <b:FormLabel text="Evaluation Queue unavailable message" />
       <b:TextBox
         ui:field="unavailableMessageField"
         value="Join the team to submit to the challenge"
       />
-    </bh:Div>
-    <bh:Div addStyleNames="margin-10">
+    </g:FlowPanel>
+    <g:FlowPanel addStyleNames="margin-10">
       <b:FormLabel text="Button text" />
       <b:TextBox ui:field="buttonTextField" value="Submit to challenge" />
-    </bh:Div>
-  </bh:Div>
+    </g:FlowPanel>
+  </g:FlowPanel>
 </ui:UiBinder>

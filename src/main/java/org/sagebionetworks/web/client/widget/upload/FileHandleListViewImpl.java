@@ -4,9 +4,9 @@ import com.google.gwt.event.dom.client.ClickEvent;
 import com.google.gwt.event.dom.client.ClickHandler;
 import com.google.gwt.uibinder.client.UiBinder;
 import com.google.gwt.uibinder.client.UiField;
+import com.google.gwt.user.client.ui.FlowPanel;
 import com.google.gwt.user.client.ui.Widget;
 import com.google.inject.Inject;
-import org.gwtbootstrap3.client.ui.html.Div;
 import org.sagebionetworks.web.client.view.bootstrap.table.TBody;
 import org.sagebionetworks.web.client.widget.CheckBoxState;
 import org.sagebionetworks.web.client.widget.SelectionOptions;
@@ -26,7 +26,7 @@ public class FileHandleListViewImpl implements FileHandleListView {
   TBody fileLinksContainer;
 
   @UiField
-  Div fileUploadContainer;
+  FlowPanel fileUploadContainer;
 
   @Inject
   public FileHandleListViewImpl(Binder binder) {

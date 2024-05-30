@@ -13,10 +13,10 @@
         <b:FormLabel>Alternate text</b:FormLabel>
         <b:TextBox ui:field="altText" />
       </b:FormGroup>
-      <bh:Div>
+      <g:FlowPanel>
         <b:FormLabel>Scale (%)</b:FormLabel>
-      </bh:Div>
-      <bh:Div ui:field="scaleSliderContainer" />
+      </g:FlowPanel>
+      <g:FlowPanel ui:field="scaleSliderContainer" />
 
       <g:SimplePanel>
         <b:FormLabel>Alignment</b:FormLabel>

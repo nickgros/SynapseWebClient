@@ -7,7 +7,7 @@
   xmlns:bh="urn:import:org.gwtbootstrap3.client.ui.html"
   xmlns:t="urn:import:org.sagebionetworks.web.client.view.bootstrap.table"
 >
-  <bh:Div addStyleNames="margin-left-10 margin-right-10">
+  <g:FlowPanel addStyleNames="margin-left-10 margin-right-10">
     <t:Table
       width="100%"
       height="30px"
@@ -38,10 +38,10 @@
           <b:Anchor ui:field="orcIdAnchor" target="_blank" />
         </t:TableData>
         <t:TableData width="10%" addStyleNames="overflowHidden">
-          <bh:Div ui:field="emailAddresses" />
+          <g:FlowPanel ui:field="emailAddresses" />
         </t:TableData>
         <t:TableData width="10%" addStyleNames="overflowHidden">
-          <bh:Div ui:field="filesContainer" />
+          <g:FlowPanel ui:field="filesContainer" />
         </t:TableData>
         <t:TableData width="10%" addStyleNames="overflowHidden">
           <bh:Span ui:field="reasonAlertText" />
@@ -89,7 +89,7 @@
         </t:TableData>
       </t:TableRow>
     </t:Table>
-    <bh:Div ui:field="synAlertContainer" />
-    <bh:Div ui:field="promptModalContainer" />
-  </bh:Div>
+    <g:FlowPanel ui:field="synAlertContainer" />
+    <g:FlowPanel ui:field="promptModalContainer" />
+  </g:FlowPanel>
 </ui:UiBinder>

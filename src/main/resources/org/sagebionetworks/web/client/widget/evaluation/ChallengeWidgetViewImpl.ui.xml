@@ -5,67 +5,67 @@
   xmlns:b="urn:import:org.gwtbootstrap3.client.ui"
   xmlns:bh="urn:import:org.gwtbootstrap3.client.ui.html"
 >
-  <bh:Div>
+  <g:FlowPanel>
     <b:Panel ui:field="challengeUI">
       <b:Heading size="H3" text="Challenge" />
-      <bh:Div addStyleNames="padding-bottom-15 displayTable" width="100%">
-        <bh:Div addStyleNames="displayTableRow">
-          <bh:Div addStyleNames="displayTableCell" width="150px">
+      <g:FlowPanel addStyleNames="padding-bottom-15 displayTable" width="100%">
+        <g:FlowPanel addStyleNames="displayTableRow">
+          <g:FlowPanel addStyleNames="displayTableCell" width="150px">
             <b:Heading
               size="H5"
               text="Challenge Name"
               addStyleNames="displayInlineBlock lightGreyText margin-right-30"
             />
-          </bh:Div>
-          <bh:Div addStyleNames="displayTableCell">
+          </g:FlowPanel>
+          <g:FlowPanel addStyleNames="displayTableCell">
             <b:Heading
               size="H5"
               ui:field="challengeNameHeading"
               addStyleNames="displayInlineBlock"
             />
-          </bh:Div>
-        </bh:Div>
-        <bh:Div addStyleNames="displayTableRow">
-          <bh:Div addStyleNames="displayTableCell" width="150px">
+          </g:FlowPanel>
+        </g:FlowPanel>
+        <g:FlowPanel addStyleNames="displayTableRow">
+          <g:FlowPanel addStyleNames="displayTableCell" width="150px">
             <b:Heading
               size="H5"
               text="Challenge ID"
               addStyleNames="displayInlineBlock lightGreyText margin-right-30"
             />
-          </bh:Div>
-          <bh:Div addStyleNames="displayTableCell">
+          </g:FlowPanel>
+          <g:FlowPanel addStyleNames="displayTableCell">
             <b:Heading
               size="H5"
               ui:field="challengeIdHeading"
               addStyleNames="displayInlineBlock"
             />
-          </bh:Div>
-        </bh:Div>
-        <bh:Div addStyleNames="displayTableRow">
-          <bh:Div addStyleNames="displayTableCell" width="150px">
+          </g:FlowPanel>
+        </g:FlowPanel>
+        <g:FlowPanel addStyleNames="displayTableRow">
+          <g:FlowPanel addStyleNames="displayTableCell" width="150px">
             <b:Heading
               size="H5"
               text="Team"
               addStyleNames="displayInlineBlock lightGreyText margin-right-30"
             />
-          </bh:Div>
+          </g:FlowPanel>
 
-          <bh:Div addStyleNames="displayTableCell">
+          <g:FlowPanel addStyleNames="displayTableCell">
             <b:Heading
               size="H5"
               text="Registered participant's team"
               addStyleNames="displayInlineBlock margin-right-10"
             />
             <b:Anchor ui:field="editTeam" text="Edit Team" />
-            <bh:Div
+            <g:FlowPanel
               ui:field="teamWidgetContainer"
               addStyleNames="border-top-6-synapse-blue border-left-1 border-right-1 border-bottom-1"
             />
-          </bh:Div>
-        </bh:Div>
-      </bh:Div>
+          </g:FlowPanel>
+        </g:FlowPanel>
+      </g:FlowPanel>
     </b:Panel>
-    <bh:Div ui:field="selectTeamModalContainer" />
-    <bh:Div ui:field="widgetsContainer" />
-  </bh:Div>
+    <g:FlowPanel ui:field="selectTeamModalContainer" />
+    <g:FlowPanel ui:field="widgetsContainer" />
+  </g:FlowPanel>
 </ui:UiBinder>

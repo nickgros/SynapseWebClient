@@ -9,7 +9,7 @@
   xmlns:bg="urn:import:org.gwtbootstrap3.client.ui.gwt"
   xmlns:bh="urn:import:org.gwtbootstrap3.client.ui.html"
 >
-  <bh:Div>
+  <g:FlowPanel>
     <b:Modal
       ui:field="modal"
       title="Select Evaluation Queue"
@@ -18,15 +18,18 @@
       dataKeyboard="true"
     >
       <b:ModalBody>
-        <bh:Div
+        <g:FlowPanel
           addStyleNames="margin-top-10"
           ui:field="evaluationListContainer"
         />
-        <bh:Div
+        <g:FlowPanel
           addStyleNames="margin-bottom-10"
           ui:field="paginationWidgetContainer"
         />
-        <bh:Div ui:field="synAlertContainer" addStyleNames="margin-top-10" />
+        <g:FlowPanel
+          ui:field="synAlertContainer"
+          addStyleNames="margin-top-10"
+        />
       </b:ModalBody>
       <b:ModalFooter>
         <b:Button ui:field="cancelButton" type="LINK" text="Cancel" />
@@ -38,5 +41,5 @@
         />
       </b:ModalFooter>
     </b:Modal>
-  </bh:Div>
+  </g:FlowPanel>
 </ui:UiBinder>

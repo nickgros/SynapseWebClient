@@ -4,6 +4,8 @@ import com.google.gwt.event.dom.client.ClickEvent;
 import com.google.gwt.event.dom.client.ClickHandler;
 import com.google.gwt.uibinder.client.UiBinder;
 import com.google.gwt.uibinder.client.UiField;
+import com.google.gwt.user.client.ui.FlowPanel;
+import com.google.gwt.user.client.ui.FlowPanel;
 import com.google.gwt.user.client.ui.IsWidget;
 import com.google.gwt.user.client.ui.Widget;
 import com.google.inject.Inject;
@@ -12,7 +14,6 @@ import org.gwtbootstrap3.client.ui.FormGroup;
 import org.gwtbootstrap3.client.ui.InputGroup;
 import org.gwtbootstrap3.client.ui.Radio;
 import org.gwtbootstrap3.client.ui.TextBox;
-import org.gwtbootstrap3.client.ui.html.Div;
 
 public class CreateAccessRequirementStep1ViewImpl
   implements CreateAccessRequirementStep1View {
@@ -23,10 +24,10 @@ public class CreateAccessRequirementStep1ViewImpl
   Widget widget;
 
   @UiField
-  Div teamSubjectsContainer;
+  FlowPanel teamSubjectsContainer;
 
   @UiField
-  Div entitySubjectsContainer;
+  FlowPanel entitySubjectsContainer;
 
   @UiField
   TextBox teamIds;
@@ -55,7 +56,7 @@ public class CreateAccessRequirementStep1ViewImpl
   InputGroup teamUI;
 
   @UiField
-  Div entityUI;
+  FlowPanel entityUI;
 
   @Inject
   public CreateAccessRequirementStep1ViewImpl(Binder binder) {

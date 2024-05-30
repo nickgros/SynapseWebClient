@@ -7,7 +7,7 @@
   xmlns:b="urn:import:org.gwtbootstrap3.client.ui"
   xmlns:bh="urn:import:org.gwtbootstrap3.client.ui.html"
 >
-  <bh:Div addStyleNames="container" marginTop="30">
+  <g:FlowPanel addStyleNames="container margin-top-30">
     <b:Heading size="H3" text="Register with Synapse" />
     <b:Row>
       <b:Column size="MD_4 SM_6 XS_12" marginTop="30">
@@ -71,7 +71,7 @@
         </b:FormGroup>
       </b:Column>
     </b:Row>
-    <bh:Div ui:field="synAlertContainer" />
-    <bh:Div ui:field="pageProgressContainer" />
-  </bh:Div>
+    <g:FlowPanel ui:field="synAlertContainer" />
+    <g:FlowPanel ui:field="pageProgressContainer" />
+  </g:FlowPanel>
 </ui:UiBinder>

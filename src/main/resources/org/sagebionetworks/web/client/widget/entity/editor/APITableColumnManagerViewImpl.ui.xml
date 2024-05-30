@@ -13,7 +13,7 @@
     type='org.sagebionetworks.web.client.IconsImageBundle'
   />
 
-  <bh:Div>
+  <g:FlowPanel>
     <b:Panel>
       <b:PanelHeader>
         <b:Heading size="H3" text="Columns" />
@@ -58,5 +58,5 @@
         </b:Button>
       </b:PanelBody>
     </b:Panel>
-  </bh:Div>
+  </g:FlowPanel>
 </ui:UiBinder>

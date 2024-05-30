@@ -2,10 +2,11 @@ package org.sagebionetworks.web.client.widget.entity.renderer;
 
 import com.google.gwt.uibinder.client.UiBinder;
 import com.google.gwt.uibinder.client.UiField;
+import com.google.gwt.user.client.ui.FlowPanel;
+import com.google.gwt.user.client.ui.FlowPanel;
 import com.google.gwt.user.client.ui.IsWidget;
 import com.google.gwt.user.client.ui.Widget;
 import com.google.inject.Inject;
-import org.gwtbootstrap3.client.ui.html.Div;
 import org.sagebionetworks.web.client.context.SynapseReactClientFullContextPropsProvider;
 import org.sagebionetworks.web.client.jsinterop.HtmlPreviewProps;
 import org.sagebionetworks.web.client.jsinterop.React;
@@ -18,10 +19,10 @@ public class HtmlPreviewViewImpl implements HtmlPreviewView {
   public interface Binder extends UiBinder<Widget, HtmlPreviewViewImpl> {}
 
   @UiField
-  Div synAlertContainer;
+  FlowPanel synAlertContainer;
 
   @UiField
-  Div loadingUI;
+  FlowPanel loadingUI;
 
   @UiField
   ReactComponentDiv container;

@@ -6,8 +6,8 @@
   xmlns:b="urn:import:org.gwtbootstrap3.client.ui"
   xmlns:bh="urn:import:org.gwtbootstrap3.client.ui.html"
 >
-  <bh:Div>
-    <bh:Div addStyleNames="form-horizontal">
+  <g:FlowPanel>
+    <g:FlowPanel addStyleNames="form-horizontal">
       <b:FieldSet>
         <b:FormGroup>
           <b:FormLabel for="entityList" addStyleNames="col-xs-2">
@@ -55,6 +55,6 @@
           </g:FlowPanel>
         </b:FormGroup>
       </b:FieldSet>
-    </bh:Div>
-  </bh:Div>
+    </g:FlowPanel>
+  </g:FlowPanel>
 </ui:UiBinder>

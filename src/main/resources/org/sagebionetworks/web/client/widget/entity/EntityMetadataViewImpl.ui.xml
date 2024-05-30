@@ -9,7 +9,7 @@
   <g:HTMLPanel addStyleNames="entityMetadata entity-page-side-margins">
     <g:HTMLPanel ui:field="detailedMetadata">
       <g:SimplePanel ui:field="entityModalWidgetContainer" />
-      <bh:Div>
+      <g:FlowPanel>
         <bh:Span
           addStyleNames="boldText margin-right-5"
           text="Project SynID:"
@@ -38,14 +38,14 @@
           <bh:Span addStyleNames="boldText">Project Storage Location:</bh:Span>
           <bh:Span ui:field="uploadDestinationField" />
         </bh:Span>
-      </bh:Div>
+      </g:FlowPanel>
     </g:HTMLPanel>
-    <bh:Div ui:field="descriptionContainer">
+    <g:FlowPanel ui:field="descriptionContainer">
       <bh:Paragraph addStyleNames="boldText" ui:field="descriptionTitleText">
         Description
       </bh:Paragraph>
       <bh:Paragraph ui:field="descriptionText" />
-    </bh:Div>
-    <bh:Div ui:field="fileHistoryContainer" />
+    </g:FlowPanel>
+    <g:FlowPanel ui:field="fileHistoryContainer" />
   </g:HTMLPanel>
 </ui:UiBinder>

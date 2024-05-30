@@ -4,12 +4,12 @@ import com.google.gwt.event.dom.client.ClickEvent;
 import com.google.gwt.event.dom.client.ClickHandler;
 import com.google.gwt.uibinder.client.UiBinder;
 import com.google.gwt.uibinder.client.UiField;
+import com.google.gwt.user.client.ui.FlowPanel;
 import com.google.gwt.user.client.ui.Widget;
 import com.google.inject.Inject;
 import org.gwtbootstrap3.client.ui.Button;
 import org.gwtbootstrap3.client.ui.Heading;
 import org.gwtbootstrap3.client.ui.Modal;
-import org.gwtbootstrap3.client.ui.html.Div;
 
 public class SelectTeamModalViewImpl implements SelectTeamModalView {
 
@@ -24,7 +24,7 @@ public class SelectTeamModalViewImpl implements SelectTeamModalView {
   Button selectTeamButton;
 
   @UiField
-  Div teamSelectBoxContainer;
+  FlowPanel teamSelectBoxContainer;
 
   @UiField
   Modal teamModal;

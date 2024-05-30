@@ -2,6 +2,7 @@ package org.sagebionetworks.web.client.widget.sharing;
 
 import com.google.gwt.event.dom.client.ClickHandler;
 import com.google.gwt.user.client.ui.FlowPanel;
+import com.google.gwt.user.client.ui.FlowPanel;
 import com.google.gwt.user.client.ui.HTML;
 import com.google.gwt.user.client.ui.IsWidget;
 import com.google.gwt.user.client.ui.Label;
@@ -14,7 +15,6 @@ import org.gwtbootstrap3.client.ui.constants.ButtonSize;
 import org.gwtbootstrap3.client.ui.constants.ButtonType;
 import org.gwtbootstrap3.client.ui.constants.HeadingSize;
 import org.gwtbootstrap3.client.ui.constants.IconType;
-import org.gwtbootstrap3.client.ui.html.Div;
 import org.gwtbootstrap3.client.ui.html.Italic;
 import org.gwtbootstrap3.client.ui.html.Text;
 import org.sagebionetworks.web.client.DisplayConstants;
@@ -185,8 +185,8 @@ public class AccessControlListEditorViewImpl
           }
         };
     }
-    Div div = new Div();
-    div.setMarginBottom(20);
+    FlowPanel div = new FlowPanel();
+    div.addStyleName("margin-bottom-20");
     add(div);
     if (!isInherited) {
       if (isProject) {

@@ -10,19 +10,19 @@
     type='org.sagebionetworks.web.client.SageImageBundle'
   />
 
-  <bh:Div>
+  <g:FlowPanel>
     <b:Container>
       <b:Container fluid="true">
         <b:Row>
           <b:Column size="XS_12">
-            <bh:Div
+            <g:FlowPanel
               ui:field="markdownContainer"
               addStyleNames="min-height-400"
             />
-            <bh:Div ui:field="synAlertContainer" />
+            <g:FlowPanel ui:field="synAlertContainer" />
           </b:Column>
         </b:Row>
       </b:Container>
     </b:Container>
-  </bh:Div>
+  </g:FlowPanel>
 </ui:UiBinder>

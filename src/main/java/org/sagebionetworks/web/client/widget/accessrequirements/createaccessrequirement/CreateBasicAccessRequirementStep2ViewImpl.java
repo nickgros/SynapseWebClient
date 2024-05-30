@@ -4,13 +4,14 @@ import com.google.gwt.event.dom.client.ClickEvent;
 import com.google.gwt.event.dom.client.ClickHandler;
 import com.google.gwt.uibinder.client.UiBinder;
 import com.google.gwt.uibinder.client.UiField;
+import com.google.gwt.user.client.ui.FlowPanel;
+import com.google.gwt.user.client.ui.FlowPanel;
 import com.google.gwt.user.client.ui.IsWidget;
 import com.google.gwt.user.client.ui.Widget;
 import com.google.inject.Inject;
 import org.gwtbootstrap3.client.ui.Button;
 import org.gwtbootstrap3.client.ui.CheckBox;
 import org.gwtbootstrap3.client.ui.FormGroup;
-import org.gwtbootstrap3.client.ui.html.Div;
 import org.gwtbootstrap3.client.ui.html.Paragraph;
 
 public class CreateBasicAccessRequirementStep2ViewImpl
@@ -28,7 +29,7 @@ public class CreateBasicAccessRequirementStep2ViewImpl
   Paragraph oldInstructions;
 
   @UiField
-  Div wikiPageContainer;
+  FlowPanel wikiPageContainer;
 
   @UiField
   Button editWikiButton;
@@ -37,10 +38,10 @@ public class CreateBasicAccessRequirementStep2ViewImpl
   Button clearOldTermsButton;
 
   @UiField
-  Div synAlertContainer;
+  FlowPanel synAlertContainer;
 
   @UiField
-  Div hasAccessorRequirementUI;
+  FlowPanel hasAccessorRequirementUI;
 
   @UiField
   CheckBox validatedCheckbox;

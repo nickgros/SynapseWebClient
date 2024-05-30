@@ -102,6 +102,10 @@ public class FavoriteWidgetViewImpl implements FavoriteWidgetView {
   @Override
   public void setLoadingSize(int px) {
     loadingUI.setSize(px);
-    loadingUI.setMarginLeft(px / 2);
+  }
+
+  @Override
+  public void setLoadingStyleName(String classes) {
+    loadingUI.setAddStyleNames(classes);
   }
 }

@@ -36,8 +36,8 @@
         </t:TableRow>
       </t:Table>
       <bh:Hr addStyleNames="margin-top-5 margin-bottom-5" />
-      <bh:Div ui:field="projectsContainer" addStyleNames="margin-top-10" />
-      <bh:Div ui:field="synAlertContainer" />
+      <g:FlowPanel ui:field="projectsContainer" addStyleNames="margin-top-10" />
+      <g:FlowPanel ui:field="synAlertContainer" />
     </b:ModalBody>
     <b:ModalFooter>
       <b:Button ui:field="cancelButton" type="LINK">Close</b:Button>

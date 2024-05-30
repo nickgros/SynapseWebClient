@@ -14,10 +14,10 @@
   >
     <b:ModalBody>
       <b:FormGroup ui:field="teamSelectionUI">
-        <bh:Div ui:field="teamSelectComboUI">
+        <g:FlowPanel ui:field="teamSelectComboUI">
           <b:FormLabel addStyleNames="margin-right-10">Select Team</b:FormLabel>
           <g:ListBox ui:field="teamComboBox" styleName="form-control" />
-        </bh:Div>
+        </g:FlowPanel>
         <bh:Paragraph
           ui:field="noTeamsFoundUI"
           visible="false"

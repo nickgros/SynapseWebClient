@@ -10,8 +10,8 @@
   xmlns:tr="urn:import:org.sagebionetworks.web.client.widget.table.v2.results"
   xmlns:w="urn:import:org.sagebionetworks.web.client.widget"
 >
-  <bh:Div marginTop="12" marginBottom="12">
-    <bh:Div ui:field="synAlertContainer" />
+  <g:FlowPanel addStyleNames="margin-top-12 margin-bottom-12">
+    <g:FlowPanel ui:field="synAlertContainer" />
     <bh:Span ui:field="emptyUI" text="&#8212; Empty" />
     <!-- File browser tree "table" header -->
     <t:Table
@@ -104,6 +104,6 @@
       ui:field="hrUnderTableHeaders"
       addStyleNames="margin-top-5 margin-bottom-5"
     />
-    <bh:Div ui:field="mainContainer" />
-  </bh:Div>
+    <g:FlowPanel ui:field="mainContainer" />
+  </g:FlowPanel>
 </ui:UiBinder>

@@ -35,7 +35,7 @@
           ui:field="editorsPanel"
           addStyleNames="max-height-65-vh scroll-y"
         />
-        <bh:Div>
+        <g:FlowPanel>
           <b:Button ui:field="addAnnotationButton">Add New Key</b:Button>
           <b:Button ui:field="pasteNewValuesButton" type="LINK">
             PASTE NEW VALUES
@@ -44,7 +44,7 @@
             addStyleNames="margin-top-10"
             ui:field="pasteNewValuesPanel"
           />
-        </bh:Div>
+        </g:FlowPanel>
         <s:SynapseAlertViewImpl ui:field="alert" />
       </b:ModalBody>
       <b:ModalFooter>

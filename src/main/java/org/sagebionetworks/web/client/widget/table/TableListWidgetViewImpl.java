@@ -2,6 +2,8 @@ package org.sagebionetworks.web.client.widget.table;
 
 import com.google.gwt.uibinder.client.UiBinder;
 import com.google.gwt.uibinder.client.UiField;
+import com.google.gwt.user.client.ui.FlowPanel;
+import com.google.gwt.user.client.ui.FlowPanel;
 import com.google.gwt.user.client.ui.HTMLPanel;
 import com.google.gwt.user.client.ui.IsWidget;
 import com.google.gwt.user.client.ui.Widget;
@@ -10,7 +12,6 @@ import java.util.ArrayList;
 import java.util.List;
 import org.gwtbootstrap3.client.ui.Icon;
 import org.gwtbootstrap3.client.ui.TextArea;
-import org.gwtbootstrap3.client.ui.html.Div;
 import org.gwtbootstrap3.client.ui.html.Span;
 import org.sagebionetworks.repo.model.entity.Direction;
 import org.sagebionetworks.repo.model.entity.SortBy;
@@ -33,16 +34,16 @@ public class TableListWidgetViewImpl implements TableListWidgetView {
   List<TableEntityListGroupItem> tablesList;
 
   @UiField
-  Div tablesListDiv;
+  FlowPanel tablesListDiv;
 
   @UiField
-  Div loadMoreWidgetContainer;
+  FlowPanel loadMoreWidgetContainer;
 
   @UiField
-  Div synAlertContainer;
+  FlowPanel synAlertContainer;
 
   @UiField
-  Div tableArea;
+  FlowPanel tableArea;
 
   @UiField
   Span emptyUI;

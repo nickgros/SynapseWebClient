@@ -18,13 +18,13 @@
       toggle="false"
     >
       <g:FlowPanel addStyleNames="margin-bottom-15">
-        <bh:Div addStyleNames="highlight-title">
+        <g:FlowPanel addStyleNames="highlight-title">
           <bh:Text>Scope</bh:Text>
           <g:Button ui:field="scopeCollapseCloseButton" addStyleNames="close">
             ×️
           </g:Button>
-        </bh:Div>
-        <bh:Div ui:field="scopePanel" />
+        </g:FlowPanel>
+        <g:FlowPanel ui:field="scopePanel" />
       </g:FlowPanel>
     </b:Collapse>
 
@@ -34,7 +34,7 @@
       toggle="false"
     >
       <g:FlowPanel addStyleNames="margin-bottom-15">
-        <bh:Div addStyleNames="highlight-title">
+        <g:FlowPanel addStyleNames="highlight-title">
           <bh:Text>Schema</bh:Text>
           <w:HelpWidget
             helpMarkdown="Every table has a schema that describes the columns and types of data stored in each column."
@@ -46,7 +46,7 @@
             addStyleNames="close"
             icon="close"
           />
-        </bh:Div>
+        </g:FlowPanel>
         <g:SimplePanel ui:field="columnDetailsPanel" />
       </g:FlowPanel>
     </b:Collapse>
@@ -60,9 +60,9 @@
 
     <w:ReactComponentDiv ui:field="itemsEditorContainer" />
 
-    <bh:Div ui:field="addToDownloadListContainer" />
-    <bh:Div styleName="margin-top-5" />
-    <bh:Div ui:field="plotNavContainer" />
-    <bh:Div ui:field="modalContainer" />
+    <g:FlowPanel ui:field="addToDownloadListContainer" />
+    <g:FlowPanel styleName="margin-top-5" />
+    <g:FlowPanel ui:field="plotNavContainer" />
+    <g:FlowPanel ui:field="modalContainer" />
   </g:HTMLPanel>
 </ui:UiBinder>

@@ -2,6 +2,8 @@ package org.sagebionetworks.web.client.widget.doi;
 
 import com.google.gwt.uibinder.client.UiBinder;
 import com.google.gwt.uibinder.client.UiField;
+import com.google.gwt.user.client.ui.FlowPanel;
+import com.google.gwt.user.client.ui.FlowPanel;
 import com.google.gwt.user.client.ui.IsWidget;
 import com.google.gwt.user.client.ui.Widget;
 import com.google.inject.Inject;
@@ -14,7 +16,6 @@ import org.gwtbootstrap3.client.ui.IntegerBox;
 import org.gwtbootstrap3.client.ui.ListBox;
 import org.gwtbootstrap3.client.ui.Modal;
 import org.gwtbootstrap3.client.ui.TextArea;
-import org.gwtbootstrap3.client.ui.html.Div;
 import org.sagebionetworks.repo.model.Entity;
 import org.sagebionetworks.repo.model.EntityTypeUtils;
 import org.sagebionetworks.repo.model.VersionInfo;
@@ -40,7 +41,7 @@ public class CreateOrUpdateDoiModalViewImpl
   Button mintDoiButton;
 
   @UiField
-  Div doiEditorDiv;
+  FlowPanel doiEditorDiv;
 
   @UiField
   TextArea creatorsField;
@@ -64,13 +65,13 @@ public class CreateOrUpdateDoiModalViewImpl
   Button cancelButton;
 
   @UiField
-  Div jobTrackingWidget;
+  FlowPanel jobTrackingWidget;
 
   @UiField
-  Div synAlert;
+  FlowPanel synAlert;
 
   @UiField
-  Div doiOverwriteWarning;
+  FlowPanel doiOverwriteWarning;
 
   @UiField
   FormGroup versionForm;

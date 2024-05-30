@@ -39,6 +39,7 @@ public class ProjectBadge implements SynapseWidgetPresenter {
     this.userProfileAsyncHandler = userProfileAsyncHandler;
     view.setFavoritesWidget(favoritesWidget.asWidget());
     favoritesWidget.setLoadingSize(10);
+    favoritesWidget.setLoadingStyleName("margin-left-5");
   }
 
   public void configure(ProjectHeader header) {

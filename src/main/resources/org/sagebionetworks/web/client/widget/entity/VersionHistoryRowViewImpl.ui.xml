@@ -37,7 +37,7 @@
       />
     </t:TableData>
     <t:TableData>
-      <bh:Div ui:field="doiWidgetContainer" />
+      <g:FlowPanel ui:field="doiWidgetContainer" />
     </t:TableData>
     <t:TableData>
       <b:Tooltip title="Delete version">

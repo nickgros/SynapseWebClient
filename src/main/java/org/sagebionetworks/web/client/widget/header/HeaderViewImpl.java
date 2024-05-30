@@ -6,13 +6,13 @@ import com.google.gwt.uibinder.client.UiBinder;
 import com.google.gwt.uibinder.client.UiField;
 import com.google.gwt.user.client.Window;
 import com.google.gwt.user.client.ui.Composite;
+import com.google.gwt.user.client.ui.FlowPanel;
 import com.google.gwt.user.client.ui.FocusPanel;
 import com.google.gwt.user.client.ui.Image;
 import com.google.gwt.user.client.ui.Widget;
 import com.google.inject.Inject;
 import com.google.web.bindery.event.shared.binder.EventBinder;
 import org.gwtbootstrap3.client.ui.Alert;
-import org.gwtbootstrap3.client.ui.html.Div;
 import org.gwtbootstrap3.client.ui.html.Span;
 import org.sagebionetworks.schema.adapter.JSONObjectAdapter;
 import org.sagebionetworks.schema.adapter.JSONObjectAdapterException;
@@ -35,10 +35,10 @@ public class HeaderViewImpl extends Composite implements HeaderView {
   public interface Binder extends UiBinder<Widget, HeaderViewImpl> {}
 
   @UiField
-  Div header;
+  FlowPanel header;
 
   @UiField
-  Div donationBannerContainer;
+  FlowPanel donationBannerContainer;
 
   @UiField
   FullWidthAlert cookieNotificationAlert;
@@ -47,7 +47,7 @@ public class HeaderViewImpl extends Composite implements HeaderView {
   FullWidthAlert nihNotificationAlert;
 
   @UiField
-  Div portalAlert;
+  FlowPanel portalAlert;
 
   @UiField
   Image portalLogo;

@@ -4,12 +4,12 @@ import com.google.gwt.event.dom.client.ClickEvent;
 import com.google.gwt.event.dom.client.ClickHandler;
 import com.google.gwt.uibinder.client.UiBinder;
 import com.google.gwt.uibinder.client.UiField;
+import com.google.gwt.user.client.ui.FlowPanel;
 import com.google.gwt.user.client.ui.SimplePanel;
 import com.google.gwt.user.client.ui.Widget;
 import com.google.inject.Inject;
 import org.gwtbootstrap3.client.ui.Icon;
 import org.gwtbootstrap3.client.ui.Label;
-import org.gwtbootstrap3.client.ui.html.Div;
 import org.gwtbootstrap3.client.ui.html.Span;
 import org.sagebionetworks.web.client.DisplayUtils;
 import org.sagebionetworks.web.client.widget.LoadingSpinner;
@@ -19,7 +19,7 @@ public class ReplyWidgetViewImpl implements ReplyWidgetView {
   public interface Binder extends UiBinder<Widget, ReplyWidgetViewImpl> {}
 
   @UiField
-  Div replyContainer;
+  FlowPanel replyContainer;
 
   @UiField
   Span author;
@@ -28,13 +28,13 @@ public class ReplyWidgetViewImpl implements ReplyWidgetView {
   Span createdOn;
 
   @UiField
-  Div replyMessage;
+  FlowPanel replyMessage;
 
   @UiField
-  Div synAlertContainer;
+  FlowPanel synAlertContainer;
 
   @UiField
-  Div copyTextModalContainer;
+  FlowPanel copyTextModalContainer;
 
   @UiField
   Icon deleteIcon;
@@ -58,7 +58,7 @@ public class ReplyWidgetViewImpl implements ReplyWidgetView {
   Label moderatorBadge;
 
   @UiField
-  Div commandsContainer;
+  FlowPanel commandsContainer;
 
   private Widget widget;
   private ReplyWidget presenter;

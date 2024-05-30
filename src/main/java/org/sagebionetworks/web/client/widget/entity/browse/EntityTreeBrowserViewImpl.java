@@ -8,6 +8,7 @@ import com.google.gwt.resources.client.ImageResource;
 import com.google.gwt.uibinder.client.UiBinder;
 import com.google.gwt.uibinder.client.UiField;
 import com.google.gwt.user.client.ui.FlowPanel;
+import com.google.gwt.user.client.ui.FlowPanel;
 import com.google.gwt.user.client.ui.IsWidget;
 import com.google.gwt.user.client.ui.Tree;
 import com.google.gwt.user.client.ui.TreeItem;
@@ -17,7 +18,6 @@ import java.util.HashMap;
 import java.util.Map;
 import org.gwtbootstrap3.client.ui.Icon;
 import org.gwtbootstrap3.client.ui.TextArea;
-import org.gwtbootstrap3.client.ui.html.Div;
 import org.gwtbootstrap3.client.ui.html.Hr;
 import org.gwtbootstrap3.client.ui.html.Span;
 import org.sagebionetworks.repo.model.entity.Direction;
@@ -57,7 +57,7 @@ public class EntityTreeBrowserViewImpl
   Span emptyUI;
 
   @UiField
-  Div mainContainer;
+  FlowPanel mainContainer;
 
   LoadingSpinner loadingSpinner;
   EntityTree entityTree;
@@ -69,7 +69,7 @@ public class EntityTreeBrowserViewImpl
   Hr hrUnderTableHeaders;
 
   @UiField
-  Div synAlertContainer;
+  FlowPanel synAlertContainer;
 
   @UiField
   SortableTableHeaderImpl nameColumnHeader;
@@ -108,7 +108,7 @@ public class EntityTreeBrowserViewImpl
   Icon copyIDToClipboardIcon;
 
   SynapseJSNIUtils jsniUtils;
-  Div entityTreeContainer = new Div();
+  FlowPanel entityTreeContainer = new FlowPanel();
   AuthenticationController authController;
   GlobalApplicationState globalAppState;
   CookieProvider cookies;
@@ -440,13 +440,13 @@ public class EntityTreeBrowserViewImpl
   @Override
   public void copyToClipboard(String value) {
     TextArea copyToClipboardTextbox = new TextArea();
-    ((Div) widget).add(copyToClipboardTextbox);
+    ((FlowPanel) widget).add(copyToClipboardTextbox);
     copyToClipboardTextbox.setWidth("1px");
     copyToClipboardTextbox.setFocus(true);
     copyToClipboardTextbox.setValue(value);
     copyToClipboardTextbox.selectAll();
     jsniUtils.copyToClipboard();
-    ((Div) widget).remove(copyToClipboardTextbox);
+    ((FlowPanel) widget).remove(copyToClipboardTextbox);
   }
 
   @Override

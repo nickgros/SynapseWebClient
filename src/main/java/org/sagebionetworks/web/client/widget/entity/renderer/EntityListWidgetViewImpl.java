@@ -2,10 +2,11 @@ package org.sagebionetworks.web.client.widget.entity.renderer;
 
 import com.google.gwt.uibinder.client.UiBinder;
 import com.google.gwt.uibinder.client.UiField;
+import com.google.gwt.user.client.ui.FlowPanel;
+import com.google.gwt.user.client.ui.FlowPanel;
 import com.google.gwt.user.client.ui.Widget;
 import com.google.inject.Inject;
 import org.gwtbootstrap3.client.ui.Panel;
-import org.gwtbootstrap3.client.ui.html.Div;
 import org.gwtbootstrap3.client.ui.html.Span;
 import org.sagebionetworks.web.client.view.bootstrap.table.TableHeader;
 
@@ -19,7 +20,7 @@ public class EntityListWidgetViewImpl implements EntityListWidgetView {
   Panel table;
 
   @UiField
-  Div rows;
+  FlowPanel rows;
 
   @UiField
   Span emptyUI;

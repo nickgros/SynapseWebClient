@@ -18,19 +18,19 @@
     dataKeyboard="true"
   >
     <b:ModalBody>
-      <bh:Div>
+      <g:FlowPanel>
         <b:FormGroup>
           <b:FormLabel>Synapse Project Name</b:FormLabel>
           <b:TextBox ui:field="entityNameField" />
         </b:FormGroup>
-        <bh:Div ui:field="aliasUI">
+        <g:FlowPanel ui:field="aliasUI">
           <b:FormGroup>
             <b:FormLabel>Add a "Friendly" URL Name (Optional)</b:FormLabel>
             <bh:Paragraph>
               You may add a personalized URL alias which will
 							redirect users to this project automatically.
             </bh:Paragraph>
-            <bh:Div
+            <g:FlowPanel
               addStyleNames="flexcontainer-row flexcontainer-align-items-center"
             >
               <bh:Span addStyleNames="font-weight-normal">
@@ -42,7 +42,7 @@
                   placeholder="UberInterestingResearch"
                 />
               </g:FlowPanel>
-            </bh:Div>
+            </g:FlowPanel>
           </b:FormGroup>
           <b:Alert type="WARNING" addStyleNames="margin-top-10">
             <bh:Strong text="Note &nbsp;" />
@@ -50,21 +50,21 @@
               text=" Changing the friendly URL name will release the previous name for anyone to use."
             />
           </b:Alert>
-        </bh:Div>
-      </bh:Div>
+        </g:FlowPanel>
+      </g:FlowPanel>
       <b:Alert ui:field="alert" type="DANGER" visible="false" />
     </b:ModalBody>
     <b:ModalFooter>
-      <bh:Div addStyleNames="flexcontainer-row">
-        <bh:Div
+      <g:FlowPanel addStyleNames="flexcontainer-row">
+        <g:FlowPanel
           addStyleNames="flexcontainer-column flexcontainer-column-fill-width flexcontainer-align-items-flex-start text-align-left"
         />
-        <bh:Div addStyleNames="flexcontainer-column">
+        <g:FlowPanel addStyleNames="flexcontainer-column">
           <b:Button ui:field="defaultButton" type="LINK" dataDismiss="MODAL">
             Cancel
           </b:Button>
-        </bh:Div>
-        <bh:Div addStyleNames="flexcontainer-column">
+        </g:FlowPanel>
+        <g:FlowPanel addStyleNames="flexcontainer-column">
           <b:Button
             ui:field="primaryButton"
             type="PRIMARY"
@@ -72,8 +72,8 @@
           >
             Save
           </b:Button>
-        </bh:Div>
-      </bh:Div>
+        </g:FlowPanel>
+      </g:FlowPanel>
     </b:ModalFooter>
   </b:Modal>
 </ui:UiBinder>

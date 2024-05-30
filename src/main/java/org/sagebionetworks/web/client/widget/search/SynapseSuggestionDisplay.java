@@ -3,6 +3,7 @@ package org.sagebionetworks.web.client.widget.search;
 import com.google.gwt.dom.client.Element;
 import com.google.gwt.user.client.Window;
 import com.google.gwt.user.client.ui.FlowPanel;
+import com.google.gwt.user.client.ui.FlowPanel;
 import com.google.gwt.user.client.ui.Label;
 import com.google.gwt.user.client.ui.SuggestBox;
 import com.google.gwt.user.client.ui.SuggestBox.SuggestionCallback;
@@ -12,7 +13,6 @@ import com.google.gwt.user.client.ui.Widget;
 import java.util.Collection;
 import org.gwtbootstrap3.client.ui.Button;
 import org.gwtbootstrap3.client.ui.ButtonGroup;
-import org.gwtbootstrap3.client.ui.html.Div;
 import org.gwtbootstrap3.client.ui.html.Text;
 import org.sagebionetworks.web.client.DisplayUtils;
 
@@ -29,7 +29,7 @@ public class SynapseSuggestionDisplay
 
   private Widget popupContents; // to save when loading.
 
-  private Div loadingPanel;
+  private FlowPanel loadingPanel;
 
   public SynapseSuggestionDisplay() {
     super();
@@ -71,7 +71,7 @@ public class SynapseSuggestionDisplay
 
   public void showLoading(UIObject suggestBox) {
     if (loadingPanel == null) {
-      loadingPanel = new Div();
+      loadingPanel = new FlowPanel();
       loadingPanel.setWidth(suggestBox.getOffsetWidth() + "px");
       loadingPanel.add(new Text("Loading..."));
     }

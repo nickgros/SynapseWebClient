@@ -14,11 +14,11 @@
     toggle="false"
   >
     <g:FlowPanel addStyleNames="margin-bottom-15">
-      <bh:Div addStyleNames="highlight-title">
+      <g:FlowPanel addStyleNames="highlight-title">
         <bh:Text>Version History</bh:Text>
         <w:IconSvg ui:field="closeButton" addStyleNames="close" icon="close" />
-      </bh:Div>
-      <bh:Div ui:field="synAlertContainer" />
+      </g:FlowPanel>
+      <g:FlowPanel ui:field="synAlertContainer" />
       <g:Anchor
         ui:field="currentVersionLink"
         text="Go to the current version"
@@ -37,9 +37,13 @@
             />
           </b:Tooltip>
         </g:FlowPanel>
-        <bh:Div ui:field="emptyUI" addStyleNames="padding-15" visible="false">
+        <g:FlowPanel
+          ui:field="emptyUI"
+          addStyleNames="padding-15"
+          visible="false"
+        >
           <bh:Text>- No versions found</bh:Text>
-        </bh:Div>
+        </g:FlowPanel>
         <t:Table ui:field="versionTable" addStyleNames="table table-condensed">
           <t:THead>
             <t:TableRow>

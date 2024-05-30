@@ -3,13 +3,13 @@ package org.sagebionetworks.web.client.widget.team;
 import com.google.gwt.event.dom.client.ClickHandler;
 import com.google.gwt.uibinder.client.UiBinder;
 import com.google.gwt.uibinder.client.UiField;
+import com.google.gwt.user.client.ui.FlowPanel;
 import com.google.gwt.user.client.ui.HTML;
 import com.google.gwt.user.client.ui.IsWidget;
 import com.google.gwt.user.client.ui.Widget;
 import com.google.inject.Inject;
 import org.gwtbootstrap3.client.ui.Button;
 import org.gwtbootstrap3.client.ui.Heading;
-import org.gwtbootstrap3.client.ui.html.Div;
 import org.gwtbootstrap3.client.ui.html.Italic;
 import org.gwtbootstrap3.client.ui.html.Text;
 import org.sagebionetworks.web.client.PortalGinInjector;
@@ -26,10 +26,10 @@ public class OpenUserInvitationsWidgetViewImpl
     extends UiBinder<Widget, OpenUserInvitationsWidgetViewImpl> {}
 
   @UiField
-  Div synAlertContainer;
+  FlowPanel synAlertContainer;
 
   @UiField
-  Div invitationsContainer;
+  FlowPanel invitationsContainer;
 
   @UiField
   Heading title;

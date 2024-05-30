@@ -9,7 +9,7 @@
   xmlns:bh="urn:import:org.gwtbootstrap3.client.ui.html"
   xmlns:t="urn:import:org.sagebionetworks.web.client.view.bootstrap.table"
 >
-  <bh:Div>
+  <g:FlowPanel>
     <bh:Span ui:field="emptyUI" text="&#8212; Empty" />
     <b:Panel ui:field="table" addStyleNames="margin-left-5 margin-right-5">
       <b:PanelBody>
@@ -36,8 +36,8 @@
             </t:TableHeader>
           </t:TableRow>
         </t:Table>
-        <bh:Div ui:field="rows" />
+        <g:FlowPanel ui:field="rows" />
       </b:PanelBody>
     </b:Panel>
-  </bh:Div>
+  </g:FlowPanel>
 </ui:UiBinder>

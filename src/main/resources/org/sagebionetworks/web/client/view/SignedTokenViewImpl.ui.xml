@@ -6,8 +6,8 @@
   xmlns:bh="urn:import:org.gwtbootstrap3.client.ui.html"
   xmlns:w="urn:import:org.sagebionetworks.web.client.widget"
 >
-  <bh:Div>
-    <bh:Div addStyleNames="color-line" />
+  <g:FlowPanel>
+    <g:FlowPanel addStyleNames="color-line" />
     <b:Container addStyleNames="min-height-200 margin-top-60">
       <w:LoadingSpinner
         ui:field="loadingUI"
@@ -56,15 +56,15 @@
           </b:Button>
         </b:ModalFooter>
       </b:Modal>
-      <bh:Div ui:field="otherUI">
+      <g:FlowPanel ui:field="otherUI">
         <!-- Success UI -->
         <b:Row ui:field="successUI">
           <b:Column size="XS_12, MD_6" offset="MD_3">
-            <bh:Div>
+            <g:FlowPanel>
               <b:Alert type="SUCCESS">
                 <b:Heading size="H3" ui:field="successMessage" />
               </b:Alert>
-            </bh:Div>
+            </g:FlowPanel>
           </b:Column>
         </b:Row>
 
@@ -85,7 +85,7 @@
             />
           </b:Column>
         </b:Row>
-      </bh:Div>
+      </g:FlowPanel>
     </b:Container>
-  </bh:Div>
+  </g:FlowPanel>
 </ui:UiBinder>

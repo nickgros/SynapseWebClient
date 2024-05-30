@@ -23,7 +23,7 @@
           styleName="margin-right-10"
           text="Is this sensitive human data that must be protected?"
         />
-        <bh:Div styleName="margin-top-10">
+        <g:FlowPanel styleName="margin-top-10">
           <b:InlineRadio
             ui:field="yesHumanDataRadio"
             name="humandata"
@@ -34,8 +34,8 @@
             name="humandata"
             text="No"
           />
-        </bh:Div>
-        <bh:Div styleName="margin-top-10">
+        </g:FlowPanel>
+        <g:FlowPanel styleName="margin-top-10">
           <b:Alert
             ui:field="notSensitiveHumanDataMessage"
             type="WARNING"
@@ -46,7 +46,7 @@
 						If you want to add conditions to use of this folder content, please contact the Synapse Access and Compliance Team (ACT) to discuss at act@sagebase.org"
             />
           </b:Alert>
-        </bh:Div>
+        </g:FlowPanel>
       </b:ModalBody>
       <b:ModalFooter>
         <b:Button ui:field="imposeRestrictionCancelButton" type="LINK">

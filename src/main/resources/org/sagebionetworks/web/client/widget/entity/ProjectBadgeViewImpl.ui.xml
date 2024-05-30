@@ -6,10 +6,8 @@
   xmlns:bh="urn:import:org.gwtbootstrap3.client.ui.html"
   xmlns:w="urn:import:org.sagebionetworks.web.client.widget"
 >
-  <bh:Div
-    addStyleNames="light-border-bottom"
-    marginBottom="9"
-    paddingBottom="7"
+  <g:FlowPanel
+    addStyleNames="light-border-bottom margin-bottom-9 padding-bottom-7"
   >
     <w:EntityTypeIcon
       ui:field="icon"
@@ -32,5 +30,5 @@
     >
       <bh:Span ui:field="additionalText" />
     </bh:Span>
-  </bh:Div>
+  </g:FlowPanel>
 </ui:UiBinder>

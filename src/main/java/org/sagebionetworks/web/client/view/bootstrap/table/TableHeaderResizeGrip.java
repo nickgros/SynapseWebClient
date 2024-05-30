@@ -8,10 +8,10 @@ import com.google.gwt.event.dom.client.MouseMoveEvent;
 import com.google.gwt.event.dom.client.MouseMoveHandler;
 import com.google.gwt.event.dom.client.MouseUpEvent;
 import com.google.gwt.event.dom.client.MouseUpHandler;
+import com.google.gwt.user.client.ui.FlowPanel;
 import com.google.gwt.user.client.ui.RootPanel;
-import org.gwtbootstrap3.client.ui.html.Div;
 
-public class TableHeaderResizeGrip extends Div {
+public class TableHeaderResizeGrip extends FlowPanel {
 
   public static Element curCol = null;
   public static int curColWidth = -1, pageX = -1;
@@ -80,7 +80,7 @@ public class TableHeaderResizeGrip extends Div {
 
   public static final MouseDownHandler MOUSE_DOWN_HANDLER = event -> {
     // get the parent th element
-    Div sourceDiv = (Div) event.getSource();
+    FlowPanel sourceDiv = (FlowPanel) event.getSource();
     curCol = sourceDiv.getParent().getElement();
     // and the next th element over
     pageX = event.getClientX();

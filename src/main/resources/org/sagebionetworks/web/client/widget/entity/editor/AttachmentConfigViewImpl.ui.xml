@@ -11,7 +11,7 @@
     type='org.sagebionetworks.web.client.IconsImageBundle'
   />
 
-  <bh:Div>
+  <g:FlowPanel>
     <g:SimplePanel ui:field="wikiAttachmentsContainer" />
     <g:SimplePanel
       ui:field="fileInputWidgetContainer"
@@ -33,5 +33,5 @@
       />
       <bh:Text ui:field="uploadErrorText" />
     </g:FlowPanel>
-  </bh:Div>
+  </g:FlowPanel>
 </ui:UiBinder>

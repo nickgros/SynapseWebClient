@@ -9,13 +9,13 @@
   xmlns:bg="urn:import:org.gwtbootstrap3.client.ui.gwt"
   xmlns:bh="urn:import:org.gwtbootstrap3.client.ui.html"
 >
-  <bh:Div>
+  <g:FlowPanel>
     <bh:Span ui:field="noContainers" visible="false">
       <div>
         <i>- Empty</i>
       </div>
     </bh:Span>
-    <bh:Div ui:field="entitiesContainer" />
+    <g:FlowPanel ui:field="entitiesContainer" />
     <b:Button
       ui:field="addButton"
       icon="PLUS"
@@ -25,6 +25,6 @@
     >
       Add container
     </b:Button>
-    <bh:Div ui:field="synAlertContainer" />
-  </bh:Div>
+    <g:FlowPanel ui:field="synAlertContainer" />
+  </g:FlowPanel>
 </ui:UiBinder>

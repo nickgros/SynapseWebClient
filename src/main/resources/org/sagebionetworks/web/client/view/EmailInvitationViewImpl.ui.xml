@@ -14,7 +14,7 @@
     />
     <b:Column size="XS_12, MD_6" offset="MD_3">
       <g:SimplePanel ui:field="synapseAlertContainer" />
-      <bh:Div ui:field="notLoggedInContainer" visible="false">
+      <g:FlowPanel ui:field="notLoggedInContainer" visible="false">
         <b:Heading
           ui:field="invitationTitle"
           size="H4"
@@ -35,13 +35,13 @@
           type="SUCCESS"
           addStyleNames="margin-top-10"
         />
-        <bh:Div
+        <g:FlowPanel
           addStyleNames="lightGreyBackground padding-15 center font-size-16"
         >
           <bh:Span text="Already have an account?" marginRight="10" />
           <b:Anchor text="Sign in" ui:field="loginLink" />
-        </bh:Div>
-      </bh:Div>
+        </g:FlowPanel>
+      </g:FlowPanel>
     </b:Column>
   </b:Container>
 </ui:UiBinder>

@@ -7,9 +7,9 @@
   xmlns:bh="urn:import:org.gwtbootstrap3.client.ui.html"
 >
   <g:HTMLPanel>
-    <bh:Div addStyleNames="pageHeader">
+    <g:FlowPanel addStyleNames="pageHeader">
       <b:Heading addStyleNames="pageHeaderTitle" size="H3" text="Search" />
-    </bh:Div>
+    </g:FlowPanel>
     <div class="margin-top-30 margin-left-35 margin-right-40">
       <div class="row">
         <div class="col-md-9 col-md-push-3">
@@ -54,7 +54,7 @@
             <g:SimplePanel ui:field="facetPanel" />
           </div>
         </g:HTMLPanel>
-        <bh:Div addStyleNames="col-md-3 col-md-pull-9">
+        <g:FlowPanel addStyleNames="col-md-3 col-md-pull-9">
           <bh:Italic>Searching for a user profile? Try our</bh:Italic>
           <b:Anchor
             href="/PeopleSearch:"
@@ -63,7 +63,7 @@
             People Search
           </b:Anchor>
           <bh:Italic>.</bh:Italic>
-        </bh:Div>
+        </g:FlowPanel>
       </div>
     </div>
   </g:HTMLPanel>

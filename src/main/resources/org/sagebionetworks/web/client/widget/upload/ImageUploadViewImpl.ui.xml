@@ -31,10 +31,10 @@
       <canvas ui:field="originalCanvas" />
       <canvas ui:field="resizedCanvas" />
     </g:HTMLPanel>
-    <bh:Div styleName="margin-top-15" />
+    <g:FlowPanel styleName="margin-top-15" />
     <b:Progress ui:field="progressContainer" visible="false">
       <b:ProgressBar ui:field="progressBar" type="INFO" percent="0" text="0%" />
     </b:Progress>
-    <bh:Div ui:field="synAlertContainer" />
+    <g:FlowPanel ui:field="synAlertContainer" />
   </g:HTMLPanel>
 </ui:UiBinder>

@@ -5,20 +5,17 @@
   xmlns:b="urn:import:org.gwtbootstrap3.client.ui"
   xmlns:bh="urn:import:org.gwtbootstrap3.client.ui.html"
 >
-  <bh:Div>
-    <bh:Div addStyleNames="pageHeader">
+  <g:FlowPanel>
+    <g:FlowPanel addStyleNames="pageHeader">
       <b:Heading addStyleNames="pageHeaderTitle" text="Team Search" size="H3" />
-    </bh:Div>
+    </g:FlowPanel>
 
-    <bh:Div addStyleNames="SRC-card-grid-row margin-top-20">
-      <bh:Div
-        addStyleNames="SRC-grid-item"
-        marginTop="10"
-        marginBottom="5"
-        marginRight="15"
+    <g:FlowPanel addStyleNames="SRC-card-grid-row margin-top-20">
+      <g:FlowPanel
+        addStyleNames="SRC-grid-item margin-top-10 margin-bottom-5 margin-right-15"
         height="50px"
       >
-        <bh:Div>
+        <g:FlowPanel>
           <b:Icon
             ui:field="searchButton"
             type="SEARCH"
@@ -31,11 +28,11 @@
             addStyleNames="inline-block padding-left-35"
             placeholder="Find teams"
           />
-        </bh:Div>
-      </bh:Div>
-    </bh:Div>
+        </g:FlowPanel>
+      </g:FlowPanel>
+    </g:FlowPanel>
     <g:SimplePanel ui:field="synAlertPanel" />
     <g:FlowPanel ui:field="mainContainer" addStyleNames="margin-top-10" />
     <g:SimplePanel ui:field="paginationPanel" />
-  </bh:Div>
+  </g:FlowPanel>
 </ui:UiBinder>

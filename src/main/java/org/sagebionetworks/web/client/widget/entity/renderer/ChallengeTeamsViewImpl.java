@@ -4,13 +4,14 @@ import com.google.gwt.event.dom.client.ClickEvent;
 import com.google.gwt.event.dom.client.ClickHandler;
 import com.google.gwt.uibinder.client.UiBinder;
 import com.google.gwt.uibinder.client.UiField;
+import com.google.gwt.user.client.ui.FlowPanel;
+import com.google.gwt.user.client.ui.FlowPanel;
 import com.google.gwt.user.client.ui.Widget;
 import com.google.inject.Inject;
 import org.gwtbootstrap3.client.ui.Alert;
 import org.gwtbootstrap3.client.ui.Anchor;
 import org.gwtbootstrap3.client.ui.Panel;
 import org.gwtbootstrap3.client.ui.constants.IconType;
-import org.gwtbootstrap3.client.ui.html.Div;
 import org.gwtbootstrap3.client.ui.html.Paragraph;
 import org.gwtbootstrap3.client.ui.html.Span;
 import org.gwtbootstrap3.client.ui.html.Text;
@@ -33,16 +34,16 @@ public class ChallengeTeamsViewImpl implements ChallengeTeamsView {
   PortalGinInjector ginInjector;
 
   @UiField
-  Div paginationWidgetContainer;
+  FlowPanel paginationWidgetContainer;
 
   @UiField
-  Div dialogWidgetContainer;
+  FlowPanel dialogWidgetContainer;
 
   @UiField
-  Div challengeTeamsContainer;
+  FlowPanel challengeTeamsContainer;
 
   @UiField
-  Div loadingUI;
+  FlowPanel loadingUI;
 
   @UiField
   Alert errorUI;
@@ -82,7 +83,7 @@ public class ChallengeTeamsViewImpl implements ChallengeTeamsView {
     String message,
     boolean showEditButton
   ) {
-    Div div = new Div();
+    FlowPanel div = new FlowPanel();
     div.addStyleName("margin-bottom-5");
     TeamBadge newTeamBadge = ginInjector.getTeamBadgeWidget();
     newTeamBadge.configure(teamId);

@@ -6,7 +6,7 @@
   xmlns:t="urn:import:org.sagebionetworks.web.client.view.bootstrap.table"
 >
   <!-- This modal dialog will contain the editor for query results -->
-  <bh:Div>
+  <g:FlowPanel>
     <b:Modal
       ui:field="editRowsModal"
       title="Edit Rows"
@@ -88,5 +88,5 @@
         </b:Button>
       </b:ModalFooter>
     </b:Modal>
-  </bh:Div>
+  </g:FlowPanel>
 </ui:UiBinder>

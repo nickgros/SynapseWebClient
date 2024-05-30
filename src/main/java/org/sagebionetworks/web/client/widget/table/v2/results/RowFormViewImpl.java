@@ -2,11 +2,12 @@ package org.sagebionetworks.web.client.widget.table.v2.results;
 
 import com.google.gwt.uibinder.client.UiBinder;
 import com.google.gwt.uibinder.client.UiField;
+import com.google.gwt.user.client.ui.FlowPanel;
+import com.google.gwt.user.client.ui.FlowPanel;
 import com.google.gwt.user.client.ui.Widget;
 import com.google.inject.Inject;
 import org.gwtbootstrap3.client.ui.FormGroup;
 import org.gwtbootstrap3.client.ui.FormLabel;
-import org.gwtbootstrap3.client.ui.html.Div;
 import org.sagebionetworks.web.client.widget.table.v2.results.cell.Cell;
 
 /**
@@ -20,7 +21,7 @@ public class RowFormViewImpl implements RowFormView {
   public interface Binder extends UiBinder<Widget, RowFormViewImpl> {}
 
   @UiField
-  Div form;
+  FlowPanel form;
 
   Widget w;
 

@@ -10,7 +10,7 @@
     <b:Form visible="true" ui:field="form">
       <b:Input ui:field="fileInput" b:id="fileInputWidget" type="FILE" />
     </b:Form>
-    <bh:Div styleName="margin-top-15" />
+    <g:FlowPanel styleName="margin-top-15" />
     <b:Progress ui:field="progressContainer" visible="false">
       <b:ProgressBar ui:field="progressBar" type="INFO" percent="1" text="1%" />
     </b:Progress>

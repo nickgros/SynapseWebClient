@@ -2,12 +2,13 @@ package org.sagebionetworks.web.client.widget.entity.renderer;
 
 import com.google.gwt.uibinder.client.UiBinder;
 import com.google.gwt.uibinder.client.UiField;
+import com.google.gwt.user.client.ui.FlowPanel;
 import com.google.gwt.user.client.ui.Widget;
 import com.google.inject.Inject;
 import org.gwtbootstrap3.client.ui.Alert;
 import org.gwtbootstrap3.client.ui.Anchor;
 import org.gwtbootstrap3.client.ui.Button;
-import org.gwtbootstrap3.client.ui.html.Div;
+import org.gwtbootstrap3.client.ui.Panel;
 import org.gwtbootstrap3.client.ui.html.Span;
 
 public class SynapseTableFormWidgetViewImpl
@@ -17,10 +18,10 @@ public class SynapseTableFormWidgetViewImpl
     extends UiBinder<Widget, SynapseTableFormWidgetViewImpl> {}
 
   @UiField
-  Div synAlertContainer;
+  FlowPanel synAlertContainer;
 
   @UiField
-  Div rowWidgetContainer;
+  FlowPanel rowWidgetContainer;
 
   @UiField
   Button submitButton;
@@ -32,7 +33,7 @@ public class SynapseTableFormWidgetViewImpl
   Alert successMessageUI;
 
   @UiField
-  Div formUI;
+  Panel formUI;
 
   @UiField
   Span userBadgeContainer;

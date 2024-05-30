@@ -7,9 +7,9 @@
   xmlns:bh="urn:import:org.gwtbootstrap3.client.ui.html"
   xmlns:a="urn:import:org.sagebionetworks.web.client.widget.entity.menu.v2"
 >
-  <bh:Div>
-    <bh:Div addStyleNames="flexcontainer-row">
-      <bh:Div
+  <g:FlowPanel>
+    <g:FlowPanel addStyleNames="flexcontainer-row">
+      <g:FlowPanel
         ui:field="headingFlexContainer"
         addStyleNames="flexcontainer-column flexcontainer-column-fill-width"
       >
@@ -25,51 +25,47 @@
         >
           Show All Threads
         </b:Button>
-      </bh:Div>
-      <bh:Div
+      </g:FlowPanel>
+      <g:FlowPanel
         ui:field="subscribersFlexContainer"
-        addStyleNames="flexcontainer-column flexcontainer-align-items-flex-end min-width-70"
-        marginRight="10"
+        addStyleNames="flexcontainer-column flexcontainer-align-items-flex-end min-width-70 margin-right-10"
       >
         <bh:Span ui:field="subscribersContainer" addStyleNames="movedown-7" />
-      </bh:Div>
-      <bh:Div
+      </g:FlowPanel>
+      <g:FlowPanel
         ui:field="forumSearchFlexContainer"
-        addStyleNames="flexcontainer-column flexcontainer-align-items-flex-end"
-        marginRight="10"
+        addStyleNames="flexcontainer-column flexcontainer-align-items-flex-end margin-right-10"
       >
-        <bh:Div ui:field="forumSearchContainer" />
-      </bh:Div>
-      <bh:Div
+        <g:FlowPanel ui:field="forumSearchContainer" />
+      </g:FlowPanel>
+      <g:FlowPanel
         ui:field="subscribeButtonFlexContainer"
-        addStyleNames="flexcontainer-column flexcontainer-align-items-flex-end min-width-70"
-        marginRight="10"
+        addStyleNames="flexcontainer-column flexcontainer-align-items-flex-end min-width-70 margin-right-10"
       >
         <bh:Span ui:field="subscribeButtonContainer" />
-      </bh:Div>
-      <bh:Div
+      </g:FlowPanel>
+      <g:FlowPanel
         ui:field="newThreadButtonFlexContainer"
-        addStyleNames="flexcontainer-column flexcontainer-align-items-flex-end min-width-70"
-        marginRight="10"
+        addStyleNames="flexcontainer-column flexcontainer-align-items-flex-end min-width-70 margin-right-10"
       >
         <b:Button ui:field="newThreadButton" type="PRIMARY">
           New Thread
         </b:Button>
-      </bh:Div>
+      </g:FlowPanel>
 
-      <bh:Div
+      <g:FlowPanel
         addStyleNames="flexcontainer-column flexcontainer-align-items-flex-end min-width-70"
         ui:field="actionMenuContainer"
       />
-    </bh:Div>
-    <bh:Div
+    </g:FlowPanel>
+    <g:FlowPanel
       ui:field="deleteThreadsArea"
       addStyleNames="padding-top-0-imp margin-top-20 margin-bottom-20"
       visible="false"
     >
-      <bh:Div addStyleNames="highlight-title">
+      <g:FlowPanel addStyleNames="highlight-title">
         <bh:Text>Deleted Threads</bh:Text>
-      </bh:Div>
+      </g:FlowPanel>
       <b:Row>
         <b:Column size="XS_12">
           <g:SimplePanel
@@ -79,8 +75,8 @@
           />
         </b:Column>
       </b:Row>
-    </bh:Div>
-    <bh:Div
+    </g:FlowPanel>
+    <g:FlowPanel
       ui:field="mainContainer"
       addStyleNames="padding-top-0-imp margin-bottom-20 "
     >
@@ -92,13 +88,9 @@
           />
         </b:Column>
         <b:Column size="XS_12">
-          <bh:Div
+          <g:FlowPanel
             ui:field="singleThreadAndSortContainer"
-            addStyleNames="light-border"
-            paddingTop="15"
-            paddingRight="30"
-            paddingBottom="15"
-            paddingLeft="30"
+            addStyleNames="light-border padding-top-15 padding-right-30 padding-bottom-15 padding-left-30"
           >
             <b:ButtonGroup
               ui:field="repliesSortButtonGroup"
@@ -120,7 +112,7 @@
               addStyleNames="margin-top-10"
               ui:field="singleThreadContainer"
             />
-          </bh:Div>
+          </g:FlowPanel>
         </b:Column>
         <b:Column size="XS_12">
           <g:SimplePanel
@@ -130,8 +122,8 @@
           />
         </b:Column>
       </b:Row>
-    </bh:Div>
+    </g:FlowPanel>
     <g:SimplePanel ui:field="newThreadModalContainer" />
-    <bh:Div ui:field="synAlertContainer" />
-  </bh:Div>
+    <g:FlowPanel ui:field="synAlertContainer" />
+  </g:FlowPanel>
 </ui:UiBinder>

@@ -5,13 +5,14 @@ import com.google.gwt.event.dom.client.ClickHandler;
 import com.google.gwt.uibinder.client.UiBinder;
 import com.google.gwt.uibinder.client.UiField;
 import com.google.gwt.user.client.DOM;
+import com.google.gwt.user.client.ui.FlowPanel;
+import com.google.gwt.user.client.ui.FlowPanel;
 import com.google.gwt.user.client.ui.IsWidget;
 import com.google.gwt.user.client.ui.Widget;
 import com.google.inject.Inject;
 import org.gwtbootstrap3.client.ui.ButtonGroup;
 import org.gwtbootstrap3.client.ui.CheckBox;
 import org.gwtbootstrap3.client.ui.Radio;
-import org.gwtbootstrap3.client.ui.html.Div;
 import org.sagebionetworks.repo.model.UserProfile;
 import org.sagebionetworks.repo.model.dataaccess.AccessType;
 import org.sagebionetworks.repo.model.dataaccess.AccessorChange;
@@ -31,10 +32,10 @@ public class UserBadgeItem implements IsWidget, SelectableListItem {
   CheckBox select;
 
   @UiField
-  Div userBadgeContainer;
+  FlowPanel userBadgeContainer;
 
   @UiField
-  Div renewRevokeContainer;
+  FlowPanel renewRevokeContainer;
 
   @UiField
   ButtonGroup renewRevokeButtonGroup;
@@ -115,7 +116,7 @@ public class UserBadgeItem implements IsWidget, SelectableListItem {
         break;
       default:
     }
-    Div badgeContainerRow = new Div();
+    FlowPanel badgeContainerRow = new FlowPanel();
     badgeContainerRow.addStyleName("flexcontainer-row");
 
     UserBadge userBadge = portalGinInjector.getUserBadgeWidget();
@@ -142,10 +143,8 @@ public class UserBadgeItem implements IsWidget, SelectableListItem {
     ProfileCertifiedValidatedWidget w =
       portalGinInjector.getProfileCertifiedValidatedWidget();
     w.configure(Long.parseLong(userId));
-    Div flexColumn = new Div();
-    flexColumn.addStyleName("flexcontainer-column");
-    flexColumn.setMarginTop(12);
-    flexColumn.setMarginLeft(5);
+    FlowPanel flexColumn = new FlowPanel();
+    flexColumn.addStyleName("flexcontainer-column margin-top-12 margin-left-5");
     flexColumn.add(w);
     badgeContainerRow.add(flexColumn);
 

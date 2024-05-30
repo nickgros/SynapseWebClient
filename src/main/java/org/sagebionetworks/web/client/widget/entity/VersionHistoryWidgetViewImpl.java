@@ -11,6 +11,8 @@ import com.google.gwt.uibinder.client.UiBinder;
 import com.google.gwt.uibinder.client.UiField;
 import com.google.gwt.user.client.ui.Anchor;
 import com.google.gwt.user.client.ui.Composite;
+import com.google.gwt.user.client.ui.FlowPanel;
+import com.google.gwt.user.client.ui.FlowPanel;
 import com.google.gwt.user.client.ui.Hyperlink;
 import com.google.gwt.user.client.ui.IsWidget;
 import com.google.gwt.user.client.ui.Widget;
@@ -20,7 +22,6 @@ import java.util.List;
 import org.gwtbootstrap3.client.ui.Button;
 import org.gwtbootstrap3.client.ui.Collapse;
 import org.gwtbootstrap3.client.ui.Panel;
-import org.gwtbootstrap3.client.ui.html.Div;
 import org.sagebionetworks.repo.model.Entity;
 import org.sagebionetworks.repo.model.ObjectType;
 import org.sagebionetworks.repo.model.VersionInfo;
@@ -73,7 +74,7 @@ public class VersionHistoryWidgetViewImpl
   Button moreButton;
 
   @UiField
-  Div synAlertContainer;
+  FlowPanel synAlertContainer;
 
   @UiField
   TableHeader sizeTableHeader;
@@ -85,7 +86,7 @@ public class VersionHistoryWidgetViewImpl
   org.sagebionetworks.web.client.view.bootstrap.table.Table versionTable;
 
   @UiField
-  Div emptyUI;
+  FlowPanel emptyUI;
 
   CallbackP<List<String>> versionValuesCallback;
   PromptForValuesModalView editVersionInfoModal;

@@ -24,8 +24,8 @@
     <b:ModalBody>
       <bh:Text ui:field="instructions" />
       <g:SimplePanel ui:field="bodyPanel" />
-      <bh:Div styleName="margin-top-15" />
-      <bh:Div ui:field="synapseAlertContainer" />
+      <g:FlowPanel styleName="margin-top-15" />
+      <g:FlowPanel ui:field="synapseAlertContainer" />
     </b:ModalBody>
     <b:ModalFooter>
       <b:Button ui:field="defaultButton" type="LINK" text="Cancel" />

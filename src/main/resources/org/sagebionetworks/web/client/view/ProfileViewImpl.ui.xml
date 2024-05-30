@@ -12,13 +12,13 @@
     <g:HTMLPanel>
       <div>
         <div>
-          <bh:Div addStyleNames="pageHeader">
+          <g:FlowPanel addStyleNames="pageHeader">
             <b:Heading
               addStyleNames="pageHeaderTitle"
               ui:field="pageHeaderTitle"
               size="H3"
             />
-          </bh:Div>
+          </g:FlowPanel>
           <g:SimplePanel ui:field="orientationBannerPanel" />
           <div ui:field="dashboardUI" class="inline-block" style="width:100%;">
             <b:Alert
@@ -32,20 +32,20 @@
             <div>
               <div>
                 <div class="tab-background" ui:field="profileTabContainer">
-                  <bh:Div
+                  <g:FlowPanel
                     ui:field="profileUI"
                     addStyleNames="profileUI inline-block vertical-align-top "
                     width="100%"
                   >
-                    <bh:Div>
+                    <g:FlowPanel>
                       <g:SimplePanel ui:field="profileSynAlertPanel" />
-                      <bh:Div
+                      <g:FlowPanel
                         ui:field="userBadgeContainer"
                         addStyleNames="max-width-800"
                       />
                       <g:SimplePanel ui:field="editUserProfilePanel" />
-                    </bh:Div>
-                  </bh:Div>
+                    </g:FlowPanel>
+                  </g:FlowPanel>
                 </div>
                 <div
                   class="tab-background pageContent margin-top-40"
@@ -88,8 +88,11 @@
                     class="panel panel-default padding-5 min-height-200"
                     ui:field="projectsHighlightBox"
                   >
-                    <bh:Div>
-                      <bh:Div height="26px" marginBottom="25" marginTop="10">
+                    <g:FlowPanel>
+                      <g:FlowPanel
+                        height="26px"
+                        addStyleNames="margin-top-10 margin-bottom-25"
+                      >
                         <b:ButtonGroup ui:field="projectFiltersUI">
                           <b:Button ui:field="allProjectsFilter" size="SMALL">
                             All
@@ -125,7 +128,7 @@
                             />
                           </b:ButtonGroup>
                         </b:ButtonGroup>
-                      </bh:Div>
+                      </g:FlowPanel>
                       <t:Table ui:field="columnHeaders" width="100%">
                         <!-- Project list table headers -->
                         <t:TableRow>
@@ -146,7 +149,7 @@
                         ui:field="projectsTabContent"
                         addStyleNames="margin-top-10"
                       />
-                    </bh:Div>
+                    </g:FlowPanel>
                     <g:FlowPanel
                       ui:field="favoritesHelpPanel"
                       addStyleNames="help-panel"

@@ -2,6 +2,8 @@ package org.sagebionetworks.web.client.widget.accessrequirements;
 
 import com.google.gwt.uibinder.client.UiBinder;
 import com.google.gwt.uibinder.client.UiField;
+import com.google.gwt.user.client.ui.FlowPanel;
+import com.google.gwt.user.client.ui.FlowPanel;
 import com.google.gwt.user.client.ui.HTML;
 import com.google.gwt.user.client.ui.InlineLabel;
 import com.google.gwt.user.client.ui.IsWidget;
@@ -11,7 +13,6 @@ import com.google.inject.Inject;
 import org.gwtbootstrap3.client.ui.Alert;
 import org.gwtbootstrap3.client.ui.BlockQuote;
 import org.gwtbootstrap3.client.ui.Button;
-import org.gwtbootstrap3.client.ui.html.Div;
 import org.sagebionetworks.web.client.DisplayUtils;
 import org.sagebionetworks.web.client.GlobalApplicationState;
 import org.sagebionetworks.web.client.place.LoginPlace;
@@ -21,10 +22,10 @@ public class TermsOfUseAccessRequirementWidgetViewImpl
   implements TermsOfUseAccessRequirementWidgetView {
 
   @UiField
-  Div approvedHeading;
+  FlowPanel approvedHeading;
 
   @UiField
-  Div unapprovedHeading;
+  FlowPanel unapprovedHeading;
 
   @UiField
   SimplePanel wikiContainer;
@@ -36,7 +37,7 @@ public class TermsOfUseAccessRequirementWidgetViewImpl
   InlineLabel accessRequirementIDField;
 
   @UiField
-  Div accessRequirementIDUI;
+  FlowPanel accessRequirementIDUI;
 
   @UiField
   BlockQuote termsUI;
@@ -51,34 +52,34 @@ public class TermsOfUseAccessRequirementWidgetViewImpl
   Button loginButton;
 
   @UiField
-  Div editAccessRequirementContainer;
+  FlowPanel editAccessRequirementContainer;
 
   @UiField
-  Div teamSubjectsWidgetContainer;
+  FlowPanel teamSubjectsWidgetContainer;
 
   @UiField
-  Div coveredEntitiesHeadingUI;
+  FlowPanel coveredEntitiesHeadingUI;
 
   @UiField
-  Div entitySubjectsWidgetContainer;
+  FlowPanel entitySubjectsWidgetContainer;
 
   @UiField
-  Div accessRequirementRelatedProjectsListContainer;
+  FlowPanel accessRequirementRelatedProjectsListContainer;
 
   @UiField
-  Div manageAccessContainer;
+  FlowPanel manageAccessContainer;
 
   @UiField
   Alert approvedAlert;
 
   @UiField
-  Div controlsContainer;
+  FlowPanel controlsContainer;
 
   @UiField
-  Div subjectsDefinedByAnnotationsUI;
+  FlowPanel subjectsDefinedByAnnotationsUI;
 
   @UiField
-  Div subjectsDefinedInAccessRequirementUI;
+  FlowPanel subjectsDefinedInAccessRequirementUI;
 
   Callback onAttachCallback;
 

@@ -42,6 +42,6 @@
       Edit
 			Schema
     </b:Button>
-    <b.html:Div ui:field="editorContainer" />
+    <g:FlowPanel ui:field="editorContainer" />
   </g:HTMLPanel>
 </ui:UiBinder>

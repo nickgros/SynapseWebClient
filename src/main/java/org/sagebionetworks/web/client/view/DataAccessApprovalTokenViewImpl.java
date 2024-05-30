@@ -2,12 +2,13 @@ package org.sagebionetworks.web.client.view;
 
 import com.google.gwt.uibinder.client.UiBinder;
 import com.google.gwt.uibinder.client.UiField;
+import com.google.gwt.user.client.ui.FlowPanel;
+import com.google.gwt.user.client.ui.FlowPanel;
 import com.google.gwt.user.client.ui.IsWidget;
 import com.google.gwt.user.client.ui.Widget;
 import com.google.inject.Inject;
 import org.gwtbootstrap3.client.ui.Button;
 import org.gwtbootstrap3.client.ui.TextArea;
-import org.gwtbootstrap3.client.ui.html.Div;
 import org.sagebionetworks.web.client.DisplayUtils;
 import org.sagebionetworks.web.client.GlobalApplicationState;
 import org.sagebionetworks.web.client.widget.header.Header;
@@ -24,7 +25,7 @@ public class DataAccessApprovalTokenViewImpl
   TextArea textArea;
 
   @UiField
-  Div synAlertContainer;
+  FlowPanel synAlertContainer;
 
   Presenter presenter;
   String originalButtonText;

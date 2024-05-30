@@ -6,7 +6,7 @@
   xmlns:bh="urn:import:org.gwtbootstrap3.client.ui.html"
   xmlns:w="urn:import:org.sagebionetworks.web.client.widget"
 >
-  <bh:Div>
+  <g:FlowPanel>
     <b:Modal
       ui:field="doiModal"
       closable="true"
@@ -35,7 +35,7 @@
           text="Note that all supplementary information attached to a DOI is publicly available outside of Synapse, even if your data is private."
           addStyleNames="em"
         />
-        <bh:Div ui:field="doiEditorDiv">
+        <g:FlowPanel ui:field="doiEditorDiv">
           <b:Form>
             <b:FormGroup ui:field="versionForm">
               <b:FormLabel>Version</b:FormLabel>
@@ -45,9 +45,9 @@
                 addStyleNames="margin-left-5"
                 placement="BOTTOM"
               />
-              <bh:Div>
+              <g:FlowPanel>
                 <b:ListBox ui:field="versionSelection" />
-              </bh:Div>
+              </g:FlowPanel>
             </b:FormGroup>
             <b:FormGroup>
               <b:FormLabel>Creator(s), one per line</b:FormLabel>
@@ -75,7 +75,7 @@
                 placeholder="My Digital Object"
               />
             </b:FormGroup>
-            <bh:Div addStyleNames="flexcontainer-row">
+            <g:FlowPanel addStyleNames="flexcontainer-row">
               <b:FormGroup>
                 <b:FormLabel>General Resource Type</b:FormLabel>
                 <w:HelpWidget
@@ -83,9 +83,9 @@
                   addStyleNames="margin-left-5"
                   placement="BOTTOM"
                 />
-                <bh:Div>
+                <g:FlowPanel>
                   <b:ListBox ui:field="resourceTypeGeneralSelect" />
-                </bh:Div>
+                </g:FlowPanel>
               </b:FormGroup>
               <bh:Span width="80px" />
               <b:FormGroup>
@@ -100,24 +100,24 @@
                   placeholder="YYYY"
                 />
               </b:FormGroup>
-            </bh:Div>
+            </g:FlowPanel>
           </b:Form>
-        </bh:Div>
-        <bh:Div ui:field="doiOverwriteWarning">
+        </g:FlowPanel>
+        <g:FlowPanel ui:field="doiOverwriteWarning">
           <b:Alert type="WARNING" addStyleNames="margin-top-10">
             <bh:Strong text="Note: &nbsp;" />
             <bh:Text
               text="A DOI has already been created. Updating the DOI information will cause old information to be lost!"
             />
           </b:Alert>
-        </bh:Div>
-        <bh:Div ui:field="synAlert" />
+        </g:FlowPanel>
+        <g:FlowPanel ui:field="synAlert" />
       </b:ModalBody>
       <b:ModalFooter>
-        <bh:Div ui:field="jobTrackingWidget" />
+        <g:FlowPanel ui:field="jobTrackingWidget" />
         <b:Button type="LINK" ui:field="cancelButton">Cancel</b:Button>
         <b:Button type="PRIMARY" text="OK" ui:field="mintDoiButton" />
       </b:ModalFooter>
     </b:Modal>
-  </bh:Div>
+  </g:FlowPanel>
 </ui:UiBinder>

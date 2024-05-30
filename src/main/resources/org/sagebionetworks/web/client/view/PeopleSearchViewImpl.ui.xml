@@ -7,16 +7,16 @@
   xmlns:bh="urn:import:org.gwtbootstrap3.client.ui.html"
 >
   <g:HTMLPanel>
-    <bh:Div addStyleNames="pageHeader">
+    <g:FlowPanel addStyleNames="pageHeader">
       <b:Heading
         addStyleNames="pageHeaderTitle"
         size="H3"
         text="People Search"
       />
-    </bh:Div>
+    </g:FlowPanel>
 
-    <bh:Div marginTop="20" addStyleNames="margin-left-15 margin-right-15">
-      <bh:Div>
+    <g:FlowPanel addStyleNames="margin-top-20 margin-left-15 margin-right-15">
+      <g:FlowPanel>
         <b:InputGroup>
           <b:TextBox ui:field="searchField" addStyleNames="input-lg" />
           <b:InputGroupButton>
@@ -29,24 +29,24 @@
             </b:Button>
           </b:InputGroupButton>
         </b:InputGroup>
-      </bh:Div>
-      <bh:Div>
+      </g:FlowPanel>
+      <g:FlowPanel>
         <g:SimplePanel
           ui:field="synAlertPanel"
           addStyleNames="margin-top-10"
           visible="false"
         />
-      </bh:Div>
-      <bh:Div>
+      </g:FlowPanel>
+      <g:FlowPanel>
         <g:SimplePanel
           ui:field="peopleListPanel"
           addStyleNames="margin-top-15"
         />
-      </bh:Div>
-      <bh:Div>
+      </g:FlowPanel>
+      <g:FlowPanel>
         <b:Container addStyleNames="clear" />
-      </bh:Div>
-    </bh:Div>
+      </g:FlowPanel>
+    </g:FlowPanel>
     <g:SimplePanel ui:field="searchBoxPanel" />
   </g:HTMLPanel>
 </ui:UiBinder>

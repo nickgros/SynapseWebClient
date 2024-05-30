@@ -7,13 +7,14 @@ import com.google.gwt.event.dom.client.KeyDownEvent;
 import com.google.gwt.event.dom.client.KeyDownHandler;
 import com.google.gwt.uibinder.client.UiBinder;
 import com.google.gwt.uibinder.client.UiField;
+import com.google.gwt.user.client.ui.FlowPanel;
+import com.google.gwt.user.client.ui.FlowPanel;
 import com.google.gwt.user.client.ui.IsWidget;
 import com.google.gwt.user.client.ui.Widget;
 import com.google.inject.Inject;
 import org.gwtbootstrap3.client.ui.Button;
 import org.gwtbootstrap3.client.ui.Modal;
 import org.gwtbootstrap3.client.ui.TextBox;
-import org.gwtbootstrap3.client.ui.html.Div;
 import org.sagebionetworks.web.client.DisplayUtils;
 
 public class AddFolderDialogWidgetViewImpl
@@ -28,7 +29,7 @@ public class AddFolderDialogWidgetViewImpl
   TextBox folderNameField;
 
   @UiField
-  Div sharingAndDataUseContainer;
+  FlowPanel sharingAndDataUseContainer;
 
   @UiField
   Button cancelNewFolderButton;
@@ -37,7 +38,7 @@ public class AddFolderDialogWidgetViewImpl
   Button okNewFolderButton;
 
   @UiField
-  Div synAlertContainer;
+  FlowPanel synAlertContainer;
 
   Widget w;
 

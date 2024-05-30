@@ -6,6 +6,7 @@ import com.google.gwt.uibinder.client.UiBinder;
 import com.google.gwt.uibinder.client.UiField;
 import com.google.gwt.uibinder.client.UiHandler;
 import com.google.gwt.user.client.rpc.AsyncCallback;
+import com.google.gwt.user.client.ui.FlowPanel;
 import com.google.gwt.user.client.ui.IsWidget;
 import com.google.gwt.user.client.ui.Widget;
 import com.google.inject.Inject;
@@ -21,7 +22,6 @@ import org.gwtbootstrap3.client.ui.ModalFooter;
 import org.gwtbootstrap3.client.ui.constants.AlertType;
 import org.gwtbootstrap3.client.ui.constants.ButtonType;
 import org.gwtbootstrap3.client.ui.constants.HeadingSize;
-import org.gwtbootstrap3.client.ui.html.Div;
 import org.gwtbootstrap3.client.ui.html.Paragraph;
 import org.gwtbootstrap3.client.ui.html.Text;
 import org.gwtbootstrap3.client.ui.html.UnorderedList;
@@ -67,13 +67,13 @@ public class EvaluationRowWidget implements IsWidget {
   FormControlStatic createdOnDiv;
 
   @UiField
-  Div createdByDiv;
+  FlowPanel createdByDiv;
 
   @UiField
-  Div submitToEvaluationContainer;
+  FlowPanel submitToEvaluationContainer;
 
   @UiField
-  Div quotaUI;
+  FlowPanel quotaUI;
 
   @UiField
   FormControlStatic roundStart;
@@ -239,7 +239,7 @@ public class EvaluationRowWidget implements IsWidget {
     modal.add(body);
     modal.show();
 
-    Div errorContainer = new Div();
+    FlowPanel errorContainer = new FlowPanel();
     body.add(errorContainer);
 
     ModalFooter footer = new ModalFooter();

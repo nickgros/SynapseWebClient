@@ -10,7 +10,7 @@
   xmlns:w="urn:import:org.sagebionetworks.web.client.widget"
 >
   <g:HTMLPanel addStyleNames="TeamViewImpl">
-    <bh:Div addStyleNames="pageHeader">
+    <g:FlowPanel addStyleNames="pageHeader">
       <b:Heading
         addStyleNames="pageHeaderTitle inline-block"
         ui:field="teamNameHeading"
@@ -76,22 +76,21 @@
           </b:DropDownMenu>
         </b:DropDown>
       </bh:Span>
-    </bh:Div>
+    </g:FlowPanel>
     <div class="margin-right-20 margin-left-20">
-      <bh:Div
-        addStyleNames="border-top-6-synapse-blue border-left-1 border-right-1 border-bottom-1 flexcontainer-row"
-        marginTop="35"
+      <g:FlowPanel
+        addStyleNames="border-top-6-synapse-blue border-left-1 border-right-1 border-bottom-1 flexcontainer-row margin-top-35"
       >
-        <bh:Div
+        <g:FlowPanel
           addStyleNames="flexcontainer-column flexcontainer-column-fill-width"
         >
-          <bh:Div ui:field="teamBadgeContainer" />
-        </bh:Div>
-        <bh:Div
+          <g:FlowPanel ui:field="teamBadgeContainer" />
+        </g:FlowPanel>
+        <g:FlowPanel
           ui:field="commandsContainer"
           addStyleNames="flexcontainer-column flexcontainer-align-items-flex-end min-width-70"
         >
-          <bh:Div>
+          <g:FlowPanel>
             <w:HelpWidget
               helpMarkdown="Teams are a way to easily manage groups of users for the purposes of project access, communication, and challenge participation."
               href="https://help.synapse.org/docs/Teams.1985446029.html"
@@ -99,20 +98,24 @@
               addStyleNames="margin-top-15 margin-bottom-10 margin-right-10"
               placement="LEFT"
             />
-          </bh:Div>
-        </bh:Div>
-      </bh:Div>
-      <bh:Div ui:field="widgetsContainer" />
+          </g:FlowPanel>
+        </g:FlowPanel>
+      </g:FlowPanel>
+      <g:FlowPanel ui:field="widgetsContainer" />
       <g:SimplePanel ui:field="inviteMemberPanel" />
 
       <g:SimplePanel ui:field="synAlertPanel" />
       <div class="row">
         <g:HTMLPanel ui:field="mainContainer" styleName="col-md-12">
-          <bh:Div ui:field="publicJoinField" visible="false" marginTop="10">
+          <g:FlowPanel
+            ui:field="publicJoinField"
+            visible="false"
+            addStyleNames="margin-top-10"
+          >
             <bh:Italic>
               Can be joined without team manager authorization
             </bh:Italic>
-          </bh:Div>
+          </g:FlowPanel>
           <b:Anchor
             ui:field="showMapLink"
             text="Show map"
@@ -127,7 +130,7 @@
             addStyleNames="modal-fullscreen"
           >
             <b:ModalBody>
-              <bh:Div ui:field="mapPanel" />
+              <g:FlowPanel ui:field="mapPanel" />
             </b:ModalBody>
             <b:ModalFooter>
               <b:Button type="DEFAULT" dataDismiss="MODAL">Ok</b:Button>
@@ -153,30 +156,30 @@
             ui:field="openUserInvitationsPanel"
             addStyleNames="margin-bottom-5 margin-top-60"
           />
-          <bh:Div addStyleNames="SRC-grid-item" marginBottom="5" height="40px">
+          <g:FlowPanel
+            addStyleNames="SRC-grid-item margin-bottom-5"
+            height="40px"
+          >
             <b:Heading size="H3" text="Managers" />
-          </bh:Div>
+          </g:FlowPanel>
           <g:SimplePanel
             ui:field="managerListPanel"
             addStyleNames="margin-bottom-40"
           />
 
-          <bh:Div addStyleNames="SRC-card-grid-row margin-top-60">
-            <bh:Div
-              addStyleNames="SRC-grid-item"
-              marginBottom="5"
+          <g:FlowPanel addStyleNames="SRC-card-grid-row margin-top-60">
+            <g:FlowPanel
+              addStyleNames="SRC-grid-item margin-bottom-5"
               height="40px"
             >
               <b:Heading size="H3" text="Members" />
-            </bh:Div>
-            <bh:Div addStyleNames="SRC-grid-item" height="10px" />
-            <bh:Div
-              addStyleNames="SRC-grid-item flexcontainer-align-items-flex-end"
-              marginTop="10"
-              marginBottom="5"
+            </g:FlowPanel>
+            <g:FlowPanel addStyleNames="SRC-grid-item" height="10px" />
+            <g:FlowPanel
+              addStyleNames="SRC-grid-item flexcontainer-align-items-flex-end margin-top-10 margin-bottom-5"
               height="50px"
             >
-              <bh:Div>
+              <g:FlowPanel>
                 <b:Icon
                   ui:field="memberSearchButton"
                   type="SEARCH"
@@ -189,9 +192,9 @@
                   addStyleNames="inline-block padding-left-35"
                   placeholder="Find team members"
                 />
-              </bh:Div>
-            </bh:Div>
-          </bh:Div>
+              </g:FlowPanel>
+            </g:FlowPanel>
+          </g:FlowPanel>
           <g:SimplePanel
             ui:field="memberListPanel"
             addStyleNames="margin-bottom-40"

@@ -4,13 +4,14 @@ import com.google.gwt.uibinder.client.UiBinder;
 import com.google.gwt.uibinder.client.UiField;
 import com.google.gwt.user.client.ui.Button;
 import com.google.gwt.user.client.ui.Composite;
+import com.google.gwt.user.client.ui.FlowPanel;
+import com.google.gwt.user.client.ui.FlowPanel;
 import com.google.gwt.user.client.ui.IsWidget;
 import com.google.gwt.user.client.ui.SimplePanel;
 import com.google.gwt.user.client.ui.Widget;
 import com.google.inject.Inject;
 import org.gwtbootstrap3.client.ui.Collapse;
 import org.gwtbootstrap3.client.ui.constants.AlertType;
-import org.gwtbootstrap3.client.ui.html.Div;
 import org.sagebionetworks.repo.model.entitybundle.v2.EntityBundle;
 import org.sagebionetworks.web.client.DisplayUtils;
 import org.sagebionetworks.web.client.PortalGinInjector;
@@ -59,19 +60,19 @@ public class TableEntityWidgetViewImpl
   SimplePanel columnDetailsPanel;
 
   @UiField
-  Div scopePanel;
+  FlowPanel scopePanel;
 
   @UiField
   FullWidthAlert tableMessage;
 
   @UiField
-  Div modalContainer;
+  FlowPanel modalContainer;
 
   @UiField
-  Div plotNavContainer;
+  FlowPanel plotNavContainer;
 
   @UiField
-  Div addToDownloadListContainer;
+  FlowPanel addToDownloadListContainer;
 
   @UiField
   ReactComponentDiv itemsEditorContainer;

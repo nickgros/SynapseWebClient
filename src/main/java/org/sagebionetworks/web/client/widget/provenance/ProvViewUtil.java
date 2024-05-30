@@ -7,6 +7,7 @@ import com.google.gwt.safehtml.shared.SafeHtmlBuilder;
 import com.google.gwt.safehtml.shared.SafeHtmlUtils;
 import com.google.gwt.user.client.ui.AbstractImagePrototype;
 import com.google.gwt.user.client.ui.FlowPanel;
+import com.google.gwt.user.client.ui.FlowPanel;
 import com.google.gwt.user.client.ui.HTML;
 import com.google.gwt.user.client.ui.SimplePanel;
 import java.util.Map;
@@ -15,7 +16,6 @@ import org.gwtbootstrap3.client.ui.Icon;
 import org.gwtbootstrap3.client.ui.Tooltip;
 import org.gwtbootstrap3.client.ui.constants.IconSize;
 import org.gwtbootstrap3.client.ui.constants.IconType;
-import org.gwtbootstrap3.client.ui.html.Div;
 import org.gwtbootstrap3.client.ui.html.Paragraph;
 import org.gwtbootstrap3.client.ui.html.Span;
 import org.gwtbootstrap3.client.ui.html.Text;
@@ -72,7 +72,7 @@ public class ProvViewUtil {
 
     if (node.getType() == ActivityType.UNDEFINED) {
       container.addStyleName(PROV_ACTIVITY_UNDEFINED_STYLE);
-      Div undefinedContainer = new Div();
+      FlowPanel undefinedContainer = new FlowPanel();
       undefinedContainer.add(new Text(DisplayConstants.UNDEFINED));
       HelpWidget help = new HelpWidget();
       help.setHelpMarkdown(DisplayConstants.PROVENANCE_BASIC_HELP);
@@ -116,7 +116,7 @@ public class ProvViewUtil {
         description.setContainer("body");
         content.add(description);
       }
-      Div badgeContainer = new Div();
+      FlowPanel badgeContainer = new FlowPanel();
       badgeContainer.addStyleName(ACT_MARGIN_USER);
       badgeContainer.add(badge.asWidget());
       content.add(badgeContainer);

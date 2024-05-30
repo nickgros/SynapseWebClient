@@ -4,6 +4,7 @@ import com.google.gwt.event.dom.client.ClickEvent;
 import com.google.gwt.event.dom.client.ClickHandler;
 import com.google.gwt.uibinder.client.UiBinder;
 import com.google.gwt.uibinder.client.UiField;
+import com.google.gwt.user.client.ui.FlowPanel;
 import com.google.gwt.user.client.ui.IsWidget;
 import com.google.gwt.user.client.ui.Widget;
 import com.google.inject.Inject;
@@ -11,7 +12,6 @@ import org.gwtbootstrap3.client.ui.Anchor;
 import org.gwtbootstrap3.client.ui.Button;
 import org.gwtbootstrap3.client.ui.Icon;
 import org.gwtbootstrap3.client.ui.constants.IconType;
-import org.gwtbootstrap3.client.ui.html.Div;
 import org.gwtbootstrap3.client.ui.html.Span;
 import org.gwtbootstrap3.client.ui.html.Text;
 import org.sagebionetworks.web.client.DisplayUtils;
@@ -26,10 +26,10 @@ public class EntityContainerListWidgetViewImpl
   Presenter presenter;
 
   @UiField
-  Div synAlertContainer;
+  FlowPanel synAlertContainer;
 
   @UiField
-  Div entitiesContainer;
+  FlowPanel entitiesContainer;
 
   @UiField
   Span noContainers;
@@ -66,7 +66,7 @@ public class EntityContainerListWidgetViewImpl
     String name,
     boolean showDeleteButton
   ) {
-    final Div row = new Div();
+    final FlowPanel row = new FlowPanel();
     row.addStyleName("padding-5 light-border-bottom");
     Anchor entityLink = new Anchor(
       name,

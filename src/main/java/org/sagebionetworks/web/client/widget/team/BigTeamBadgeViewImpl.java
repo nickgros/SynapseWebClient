@@ -4,6 +4,7 @@ import com.google.gwt.event.dom.client.ClickHandler;
 import com.google.gwt.safehtml.shared.SafeHtmlUtils;
 import com.google.gwt.uibinder.client.UiBinder;
 import com.google.gwt.uibinder.client.UiField;
+import com.google.gwt.user.client.ui.FlowPanel;
 import com.google.gwt.user.client.ui.FocusPanel;
 import com.google.gwt.user.client.ui.HTML;
 import com.google.gwt.user.client.ui.Image;
@@ -12,7 +13,6 @@ import com.google.gwt.user.client.ui.IsWidget;
 import com.google.gwt.user.client.ui.Widget;
 import com.google.inject.Inject;
 import org.gwtbootstrap3.client.ui.Anchor;
-import org.gwtbootstrap3.client.ui.html.Div;
 import org.gwtbootstrap3.client.ui.html.Span;
 import org.gwtbootstrap3.client.ui.html.Text;
 import org.sagebionetworks.repo.model.Team;
@@ -43,7 +43,7 @@ public class BigTeamBadgeViewImpl implements BigTeamBadgeView {
   Anchor nameLink;
 
   @UiField
-  Div descriptionContainer;
+  FlowPanel descriptionContainer;
 
   @UiField
   Span notificationsSpan;
@@ -55,7 +55,7 @@ public class BigTeamBadgeViewImpl implements BigTeamBadgeView {
   TextBoxWithCopyToClipboardWidget synapseEmailField;
 
   @UiField
-  Div emailUI;
+  FlowPanel emailUI;
 
   GlobalApplicationState globalApplicationState;
   IconsImageBundle iconsImageBundle;

@@ -7,11 +7,13 @@
   xmlns:t="urn:import:org.sagebionetworks.web.client.view.bootstrap.table"
   xmlns:w="urn:import:org.sagebionetworks.web.client.widget"
 >
-  <bh:Div
+  <g:FlowPanel
     ui:field="replyContainer"
     addStyleNames="discussionReply light-border lightGreyBackground padding-5 margin-bottom-5 margin-left-30"
   >
-    <bh:Div addStyleNames="flexcontainer-row flexcontainer-align-items-center">
+    <g:FlowPanel
+      addStyleNames="flexcontainer-row flexcontainer-align-items-center"
+    >
       <bh:Span ui:field="author" />
       <b:Label
         text="Moderator"
@@ -19,8 +21,8 @@
         visible="false"
         addStyleNames="synapse-accent-primary-bg margin-left-5"
       />
-    </bh:Div>
-    <bh:Div width="100%">
+    </g:FlowPanel>
+    <g:FlowPanel width="100%">
       <w:LoadingSpinner
         ui:field="loadingMessage"
         visible="false"
@@ -30,10 +32,10 @@
       <b:Container fluid="true">
         <b:Row>
           <b:Column size="XS_12">
-            <bh:Div ui:field="replyMessage" />
+            <g:FlowPanel ui:field="replyMessage" />
           </b:Column>
           <b:Column size="XS_12">
-            <bh:Div addStyleNames="margin-left-10 small left">
+            <g:FlowPanel addStyleNames="margin-left-10 small left">
               <bh:Span ui:field="createdOn" />
               <b:Label
                 text="Edited"
@@ -41,8 +43,8 @@
                 visible="false"
                 addStyleNames="margin-left-10 moveup-1"
               />
-            </bh:Div>
-            <bh:Div ui:field="commandsContainer">
+            </g:FlowPanel>
+            <g:FlowPanel ui:field="commandsContainer">
               <b:Tooltip title="Delete reply" placement="LEFT">
                 <b:Icon
                   ui:field="deleteIcon"
@@ -72,13 +74,13 @@
                   addStyleNames="imageButton margin-right-5 line-height-1em "
                 />
               </b:Tooltip>
-            </bh:Div>
+            </g:FlowPanel>
           </b:Column>
         </b:Row>
       </b:Container>
-    </bh:Div>
+    </g:FlowPanel>
     <g:SimplePanel ui:field="editReplyModalContainer" />
-    <bh:Div ui:field="copyTextModalContainer" />
-    <bh:Div ui:field="synAlertContainer" />
-  </bh:Div>
+    <g:FlowPanel ui:field="copyTextModalContainer" />
+    <g:FlowPanel ui:field="synAlertContainer" />
+  </g:FlowPanel>
 </ui:UiBinder>

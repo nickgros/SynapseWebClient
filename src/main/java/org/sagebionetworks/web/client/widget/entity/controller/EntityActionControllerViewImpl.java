@@ -2,12 +2,13 @@ package org.sagebionetworks.web.client.widget.entity.controller;
 
 import com.google.gwt.uibinder.client.UiBinder;
 import com.google.gwt.uibinder.client.UiField;
+import com.google.gwt.user.client.ui.FlowPanel;
+import com.google.gwt.user.client.ui.FlowPanel;
 import com.google.gwt.user.client.ui.IsWidget;
 import com.google.gwt.user.client.ui.Widget;
 import com.google.inject.Inject;
 import org.gwtbootstrap3.client.ui.Modal;
 import org.gwtbootstrap3.client.ui.Pre;
-import org.gwtbootstrap3.client.ui.html.Div;
 import org.gwtbootstrap3.client.ui.html.Span;
 import org.gwtbootstrap3.extras.bootbox.client.callback.PromptCallback;
 import org.sagebionetworks.web.client.DisplayUtils;
@@ -30,16 +31,16 @@ public class EntityActionControllerViewImpl
   Pre infoDialogText;
 
   @UiField
-  Div extraWidgetsContainer;
+  FlowPanel extraWidgetsContainer;
 
   @UiField
-  Div uploadDialogWidgetContainer;
+  FlowPanel uploadDialogWidgetContainer;
 
   @UiField
   Modal createVersionDialog;
 
   @UiField
-  Div createVersionJobTrackingWidgetContainer;
+  FlowPanel createVersionJobTrackingWidgetContainer;
 
   Span widget = new Span();
   Widget viewWidget = null;

@@ -5,11 +5,11 @@
   xmlns:b="urn:import:org.gwtbootstrap3.client.ui"
   xmlns:bh="urn:import:org.gwtbootstrap3.client.ui.html"
 >
-  <bh:Div>
-    <bh:Div ui:field="emptyUI" visible="false">
+  <g:FlowPanel>
+    <g:FlowPanel ui:field="emptyUI" visible="false">
       <bh:Italic>- Empty</bh:Italic>
-    </bh:Div>
-    <bh:Div ui:field="rows" />
+    </g:FlowPanel>
+    <g:FlowPanel ui:field="rows" />
     <b:Button
       ui:field="addButton"
       icon="PLUS"
@@ -18,6 +18,6 @@
     >
       Add evaluation queue
     </b:Button>
-    <bh:Div ui:field="otherWidgets" />
-  </bh:Div>
+    <g:FlowPanel ui:field="otherWidgets" />
+  </g:FlowPanel>
 </ui:UiBinder>

@@ -8,14 +8,14 @@
 >
   <g:HTMLPanel>
     <div>
-      <bh:Div addStyleNames="pageHeader">
+      <g:FlowPanel addStyleNames="pageHeader">
         <b:Heading addStyleNames="pageHeaderTitle" size="H3" text="Following" />
         <bh:Paragraph addStyleNames="description">
           These are discussion threads and forums that you are subscribed
           to. You will receive an email when someone responds or
           creates a thread.
         </bh:Paragraph>
-      </bh:Div>
+      </g:FlowPanel>
       <w:OrientationBanner
         name="Following"
         title="All The Discussions You're Following"

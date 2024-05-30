@@ -2,10 +2,11 @@ package org.sagebionetworks.web.client.widget.entity.renderer;
 
 import com.google.gwt.uibinder.client.UiBinder;
 import com.google.gwt.uibinder.client.UiField;
+import com.google.gwt.user.client.ui.FlowPanel;
+import com.google.gwt.user.client.ui.FlowPanel;
 import com.google.gwt.user.client.ui.IsWidget;
 import com.google.gwt.user.client.ui.Widget;
 import com.google.inject.Inject;
-import org.gwtbootstrap3.client.ui.html.Div;
 import org.sagebionetworks.web.client.view.bootstrap.table.Table;
 import org.sagebionetworks.web.client.widget.LoadingSpinner;
 
@@ -15,10 +16,10 @@ public class UserListViewImpl implements UserListView {
   Table table;
 
   @UiField
-  Div paginationWidgetContainer;
+  FlowPanel paginationWidgetContainer;
 
   @UiField
-  Div synAlertContainer;
+  FlowPanel synAlertContainer;
 
   @UiField
   LoadingSpinner loadingUI;

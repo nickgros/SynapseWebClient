@@ -3,10 +3,10 @@ package org.sagebionetworks.web.client.widget.accessrequirements.submission;
 import com.google.gwt.event.logical.shared.AttachEvent;
 import com.google.gwt.uibinder.client.UiBinder;
 import com.google.gwt.uibinder.client.UiField;
+import com.google.gwt.user.client.ui.FlowPanel;
 import com.google.gwt.user.client.ui.IsWidget;
 import com.google.gwt.user.client.ui.Widget;
 import com.google.inject.Inject;
-import org.gwtbootstrap3.client.ui.html.Div;
 import org.gwtbootstrap3.client.ui.html.Span;
 import org.sagebionetworks.web.client.DisplayUtils;
 import org.sagebionetworks.web.client.utils.Callback;
@@ -14,10 +14,10 @@ import org.sagebionetworks.web.client.utils.Callback;
 public class OpenSubmissionWidgetViewImpl implements OpenSubmissionWidgetView {
 
   @UiField
-  Div synAlertContainer;
+  FlowPanel synAlertContainer;
 
   @UiField
-  Div accessRequirementContainer;
+  FlowPanel accessRequirementContainer;
 
   @UiField
   Span numberOfSubmissions;

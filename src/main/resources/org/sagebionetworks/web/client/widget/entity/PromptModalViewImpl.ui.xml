@@ -18,14 +18,14 @@
     dataKeyboard="true"
   >
     <b:ModalBody>
-      <bh:Div>
+      <g:FlowPanel>
         <b:FormGroup>
           <b:FormLabel ui:field="nameLabel" for="formName">
             Label goes here
           </b:FormLabel>
           <b:TextBox b:id="formName" ui:field="nameField" />
         </b:FormGroup>
-      </bh:Div>
+      </g:FlowPanel>
       <b:Alert ui:field="alert" type="DANGER" visible="false" />
     </b:ModalBody>
     <b:ModalFooter>

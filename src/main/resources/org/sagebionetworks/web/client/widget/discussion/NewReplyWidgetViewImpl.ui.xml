@@ -5,14 +5,14 @@
   xmlns:b="urn:import:org.gwtbootstrap3.client.ui"
   xmlns:bh="urn:import:org.gwtbootstrap3.client.ui.html"
 >
-  <bh:Div>
+  <g:FlowPanel>
     <b:TextBox ui:field="replyTextBox" placeholder="Write a reply..." />
-    <bh:Div
+    <g:FlowPanel
       ui:field="newReplyContainer"
       visible="false"
       addStyleNames="margin-top-10 margin-bottom-40"
     >
-      <bh:Div ui:field="markdownEditorContainer" />
+      <g:FlowPanel ui:field="markdownEditorContainer" />
       <b:Button
         ui:field="saveButton"
         type="PRIMARY"
@@ -28,7 +28,7 @@
         addStyleNames="margin-right-5 margin-top-5"
         pull="RIGHT"
       />
-    </bh:Div>
-    <bh:Div ui:field="synAlert" />
-  </bh:Div>
+    </g:FlowPanel>
+    <g:FlowPanel ui:field="synAlert" />
+  </g:FlowPanel>
 </ui:UiBinder>

@@ -5,13 +5,13 @@ import com.google.gwt.event.dom.client.ClickHandler;
 import com.google.gwt.uibinder.client.UiBinder;
 import com.google.gwt.uibinder.client.UiField;
 import com.google.gwt.user.client.ui.FlowPanel;
+import com.google.gwt.user.client.ui.FlowPanel;
 import com.google.gwt.user.client.ui.IsWidget;
 import com.google.gwt.user.client.ui.SimplePanel;
 import com.google.gwt.user.client.ui.TextBox;
 import com.google.gwt.user.client.ui.Widget;
 import com.google.inject.Inject;
 import org.gwtbootstrap3.client.ui.PanelBody;
-import org.gwtbootstrap3.client.ui.html.Div;
 import org.sagebionetworks.web.client.SynapseJSNIUtils;
 
 public class DockerRepoWidgetViewImpl implements DockerRepoWidgetView {
@@ -20,7 +20,7 @@ public class DockerRepoWidgetViewImpl implements DockerRepoWidgetView {
   PanelBody dockerRepoWikiPageContainer;
 
   @UiField
-  Div dockerRepoProvenanceContainer;
+  FlowPanel dockerRepoProvenanceContainer;
 
   @UiField
   FlowPanel provenancePanel;
@@ -41,7 +41,7 @@ public class DockerRepoWidgetViewImpl implements DockerRepoWidgetView {
   SimplePanel dockerModifiedAndCreatedContainer;
 
   @UiField
-  Div dockerCommitListContainer;
+  FlowPanel dockerCommitListContainer;
 
   public interface Binder extends UiBinder<Widget, DockerRepoWidgetViewImpl> {}
 

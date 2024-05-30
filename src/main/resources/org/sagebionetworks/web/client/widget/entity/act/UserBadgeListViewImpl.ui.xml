@@ -7,8 +7,8 @@
   xmlns:s="urn:import:org.sagebionetworks.web.client.widget"
   xmlns:bh="urn:import:org.gwtbootstrap3.client.ui.html"
 >
-  <bh:Div marginTop="5" marginBottom="15">
-    <bh:Div width="100%" ui:field="userBadgeContainer" />
+  <g:FlowPanel marginTop="5" marginBottom="15">
+    <g:FlowPanel width="100%" ui:field="userBadgeContainer" />
     <s:SelectionOptions ui:field="selectionOptions" />
-  </bh:Div>
+  </g:FlowPanel>
 </ui:UiBinder>

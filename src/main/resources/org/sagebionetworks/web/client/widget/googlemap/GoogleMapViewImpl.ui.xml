@@ -9,21 +9,21 @@
     field='sageImageBundle'
     type='org.sagebionetworks.web.client.SageImageBundle'
   />
-  <bh:Div>
-    <bh:Div ui:field="synAlertContainer" />
-    <bh:Div visible="false">
-      <bh:Div ui:field="markerPopupContent">
+  <g:FlowPanel>
+    <g:FlowPanel ui:field="synAlertContainer" />
+    <g:FlowPanel visible="false">
+      <g:FlowPanel ui:field="markerPopupContent">
         <b:Heading size="H4" ui:field="locationTitle" />
-        <bh:Div ui:field="userBadges" />
-      </bh:Div>
-    </bh:Div>
-    <bh:Div ui:field="googleMapContainer" height="300px">
-      <bh:Div
+        <g:FlowPanel ui:field="userBadges" />
+      </g:FlowPanel>
+    </g:FlowPanel>
+    <g:FlowPanel ui:field="googleMapContainer" height="300px">
+      <g:FlowPanel
         ui:field="googleMapCanvas"
         height="100%"
         width="100%"
         addStyleNames="mapping"
       />
-    </bh:Div>
-  </bh:Div>
+    </g:FlowPanel>
+  </g:FlowPanel>
 </ui:UiBinder>

@@ -8,8 +8,8 @@
   xmlns:t="urn:import:org.sagebionetworks.web.client.view.bootstrap.table"
   xmlns:w="urn:import:org.sagebionetworks.web.client.widget"
 >
-  <bh:Div>
-    <bh:Div ui:field="synAlertContainer" />
+  <g:FlowPanel>
+    <g:FlowPanel ui:field="synAlertContainer" />
     <t:Table ui:field="table" width="900px">
       <t:TableRow>
         <t:TableHeader text="Name" />
@@ -22,6 +22,6 @@
       size="31px"
       addStyleNames="center-block center"
     />
-    <bh:Div ui:field="paginationWidgetContainer" />
-  </bh:Div>
+    <g:FlowPanel ui:field="paginationWidgetContainer" />
+  </g:FlowPanel>
 </ui:UiBinder>

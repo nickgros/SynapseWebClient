@@ -14,8 +14,8 @@
       ui:field="projectLevelUi"
       addStyleNames="margin-top-15 entity-page-side-margins"
     >
-      <bh:Div addStyleNames="flexcontainer-row">
-        <bh:Div
+      <g:FlowPanel addStyleNames="flexcontainer-row">
+        <g:FlowPanel
           addStyleNames="flexcontainer-column flexcontainer-column-fill-width"
         >
           <b:Heading
@@ -24,12 +24,12 @@
             text="Docker"
             addStyleNames="margin-bottom-20"
           />
-        </bh:Div>
-        <bh:Div
+        </g:FlowPanel>
+        <g:FlowPanel
           addStyleNames="flexcontainer-column flexcontainer-align-items-flex-end min-width-70"
           ui:field="actionMenuContainer"
         />
-      </bh:Div>
+      </g:FlowPanel>
       <g:SimplePanel ui:field="dockerRepoListWidgetContainer" />
     </g:FlowPanel>
     <g:SimplePanel ui:field="dockerRepoWidgetContainer" />

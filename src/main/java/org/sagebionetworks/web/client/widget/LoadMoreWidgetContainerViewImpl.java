@@ -2,10 +2,10 @@ package org.sagebionetworks.web.client.widget;
 
 import com.google.gwt.uibinder.client.UiBinder;
 import com.google.gwt.uibinder.client.UiField;
+import com.google.gwt.user.client.ui.FlowPanel;
 import com.google.gwt.user.client.ui.Widget;
 import com.google.inject.Inject;
 import java.util.Iterator;
-import org.gwtbootstrap3.client.ui.html.Div;
 
 public class LoadMoreWidgetContainerViewImpl
   implements LoadMoreWidgetContainerView {
@@ -16,7 +16,7 @@ public class LoadMoreWidgetContainerViewImpl
   Presenter presenter;
 
   @UiField
-  Div container;
+  FlowPanel container;
 
   @UiField
   LoadingSpinner loadMoreImage;

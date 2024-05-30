@@ -8,9 +8,9 @@
   xmlns:bh="urn:import:org.gwtbootstrap3.client.ui.html"
   xmlns:t="urn:import:org.sagebionetworks.web.client.view.bootstrap.table"
 >
-  <bh:Div>
-    <bh:Div>
-      <bh:Div>
+  <g:FlowPanel>
+    <g:FlowPanel>
+      <g:FlowPanel>
         <s:SelectionToolbar
           ui:field="selectionToolbar"
           addStyleNames="displayInlineBlock"
@@ -24,8 +24,8 @@
         >
           Edit Note
         </b:Button>
-      </bh:Div>
-      <bh:Div ui:field="entityListContainer" />
+      </g:FlowPanel>
+      <g:FlowPanel ui:field="entityListContainer" />
       <b:Button
         ui:field="addEntityButton"
         icon="PLUS"
@@ -34,7 +34,7 @@
       >
         Add Entities
       </b:Button>
-      <bh:Div ui:field="widgets" />
-    </bh:Div>
-  </bh:Div>
+      <g:FlowPanel ui:field="widgets" />
+    </g:FlowPanel>
+  </g:FlowPanel>
 </ui:UiBinder>

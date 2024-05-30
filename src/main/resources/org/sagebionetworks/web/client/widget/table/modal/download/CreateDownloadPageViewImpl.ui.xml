@@ -9,8 +9,8 @@
   xmlns:bg="urn:import:org.gwtbootstrap3.client.ui.gwt"
   xmlns:bh="urn:import:org.gwtbootstrap3.client.ui.html"
 >
-  <bh:Div>
-    <bh:Div>
+  <g:FlowPanel>
+    <g:FlowPanel>
       <b:FormGroup>
         <b:FormLabel for="fileType">File type</b:FormLabel>
         <b:Radio name="fileType" ui:field="commaRadio">
@@ -34,7 +34,7 @@
 					Version).
         </b:CheckBox>
       </b:FormGroup>
-    </bh:Div>
+    </g:FlowPanel>
     <g:SimplePanel ui:field="trackerPanel" />
-  </bh:Div>
+  </g:FlowPanel>
 </ui:UiBinder>

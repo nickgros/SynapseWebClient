@@ -8,9 +8,9 @@
 >
   <g:FlowPanel addStyleNames="margin-top-15 entity-page-side-margins">
     <g:FlowPanel ui:field="adminTabContainer">
-      <bh:Div>
+      <g:FlowPanel>
         <bh:Span ui:field="actionMenuContainer" addStyleNames="right" />
-      </bh:Div>
+      </g:FlowPanel>
       <g:FlowPanel ui:field="challengeWidgetContainer" />
       <g:FlowPanel ui:field="evaluationListContainer" />
     </g:FlowPanel>

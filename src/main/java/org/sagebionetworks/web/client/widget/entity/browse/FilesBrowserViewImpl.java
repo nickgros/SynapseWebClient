@@ -2,6 +2,8 @@ package org.sagebionetworks.web.client.widget.entity.browse;
 
 import com.google.gwt.uibinder.client.UiBinder;
 import com.google.gwt.uibinder.client.UiField;
+import com.google.gwt.user.client.ui.FlowPanel;
+import com.google.gwt.user.client.ui.FlowPanel;
 import com.google.gwt.user.client.ui.IsWidget;
 import com.google.gwt.user.client.ui.Widget;
 import com.google.inject.Inject;
@@ -9,7 +11,6 @@ import org.gwtbootstrap3.client.ui.AnchorListItem;
 import org.gwtbootstrap3.client.ui.Button;
 import org.gwtbootstrap3.client.ui.Heading;
 import org.gwtbootstrap3.client.ui.Tooltip;
-import org.gwtbootstrap3.client.ui.html.Div;
 import org.gwtbootstrap3.client.ui.html.Span;
 import org.sagebionetworks.web.client.DisplayUtils;
 import org.sagebionetworks.web.client.security.AuthenticationController;
@@ -25,16 +26,16 @@ public class FilesBrowserViewImpl implements FilesBrowserView {
   private Widget widget;
 
   @UiField
-  Div files;
+  FlowPanel files;
 
   @UiField
-  Div commandsContainer;
+  FlowPanel commandsContainer;
 
   @UiField
-  Div addToDownloadListContainer;
+  FlowPanel addToDownloadListContainer;
 
   @UiField
-  Div actionMenuContainer;
+  FlowPanel actionMenuContainer;
 
   @UiField
   Heading title;

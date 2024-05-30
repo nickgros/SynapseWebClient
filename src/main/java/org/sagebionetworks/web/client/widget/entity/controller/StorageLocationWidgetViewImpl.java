@@ -2,6 +2,8 @@ package org.sagebionetworks.web.client.widget.entity.controller;
 
 import com.google.gwt.uibinder.client.UiBinder;
 import com.google.gwt.uibinder.client.UiField;
+import com.google.gwt.user.client.ui.FlowPanel;
+import com.google.gwt.user.client.ui.FlowPanel;
 import com.google.gwt.user.client.ui.IsWidget;
 import com.google.gwt.user.client.ui.SimplePanel;
 import com.google.gwt.user.client.ui.Widget;
@@ -14,7 +16,6 @@ import org.gwtbootstrap3.client.ui.DropDownMenu;
 import org.gwtbootstrap3.client.ui.Modal;
 import org.gwtbootstrap3.client.ui.Radio;
 import org.gwtbootstrap3.client.ui.TextBox;
-import org.gwtbootstrap3.client.ui.html.Div;
 import org.sagebionetworks.web.client.DisplayUtils;
 
 public class StorageLocationWidgetViewImpl
@@ -78,13 +79,13 @@ public class StorageLocationWidgetViewImpl
   Button cancelButton;
 
   @UiField
-  Div s3Collapse;
+  FlowPanel s3Collapse;
 
   @UiField
-  Div googleCloudCollapse;
+  FlowPanel googleCloudCollapse;
 
   @UiField
-  Div externalObjectStoreCollapse;
+  FlowPanel externalObjectStoreCollapse;
 
   @UiField
   TextBox externalObjectStoreBucket;
@@ -102,16 +103,16 @@ public class StorageLocationWidgetViewImpl
   TextBox externalObjectStoreBannerField;
 
   @UiField
-  Div loadingUI;
+  FlowPanel loadingUI;
 
   @UiField
-  Div contentUI;
+  FlowPanel contentUI;
 
   @UiField
   CheckBox s3StsField;
 
   @UiField
-  Div s3StsUI;
+  FlowPanel s3StsUI;
 
   Widget widget;
   Presenter presenter;

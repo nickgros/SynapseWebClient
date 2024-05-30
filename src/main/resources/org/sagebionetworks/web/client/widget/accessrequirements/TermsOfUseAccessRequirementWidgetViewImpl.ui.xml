@@ -11,25 +11,25 @@
   />
   <b:Panel marginBottom="0">
     <b:PanelBody>
-      <bh:Div ui:field="accessRequirementIDUI" visible="false">
+      <g:FlowPanel ui:field="accessRequirementIDUI" visible="false">
         <g:InlineLabel
           addStyleNames="boldText margin-right-5"
           text="Click Wrap Access Requirement ID:"
         />
         <g:InlineLabel ui:field="accessRequirementIDField" />
-      </bh:Div>
-      <bh:Div ui:field="approvedHeading" visible="false">
+      </g:FlowPanel>
+      <g:FlowPanel ui:field="approvedHeading" visible="false">
         <g:InlineLabel
           styleName="boldText"
           text="You have accepted the following terms in order to access these data:"
         />
-      </bh:Div>
-      <bh:Div ui:field="unapprovedHeading">
+      </g:FlowPanel>
+      <g:FlowPanel ui:field="unapprovedHeading">
         <g:InlineLabel
           styleName="boldText"
           text="Access to the data requires that you are a registered Synapse user and agree to the following terms and conditions:"
         />
-      </bh:Div>
+      </g:FlowPanel>
       <!-- terms -->
       <b:BlockQuote ui:field="wikiTermsUI" visible="false">
         <g:SimplePanel ui:field="wikiContainer" />
@@ -39,41 +39,39 @@
           <g:HTML ui:field="terms" styleName="font-size-14" />
         </bh:Paragraph>
       </b:BlockQuote>
-      <bh:Div ui:field="subjectsDefinedByAnnotationsUI" visible="false">
+      <g:FlowPanel ui:field="subjectsDefinedByAnnotationsUI" visible="false">
         <bh:Strong>
           Subjects controlled by this Access Requirement are defined by
           annotations on individual entities.
         </bh:Strong>
-      </bh:Div>
-      <bh:Div ui:field="subjectsDefinedInAccessRequirementUI">
-        <bh:Div
+      </g:FlowPanel>
+      <g:FlowPanel ui:field="subjectsDefinedInAccessRequirementUI">
+        <g:FlowPanel
           ui:field="coveredEntitiesHeadingUI"
           visible="false"
           styleName="margin-top-10"
         >
           <g:InlineLabel styleName="boldText" text="Entities Covered" />
           <bh:Hr addStyleNames="margin-top-5 margin-bottom-5" />
-        </bh:Div>
-        <bh:Div
+        </g:FlowPanel>
+        <g:FlowPanel
           ui:field="accessRequirementRelatedProjectsListContainer"
           addStyleNames="margin-left-5 margin-right-5 accessRequirementRelatedProjectsListContainer"
         />
-        <bh:Div
+        <g:FlowPanel
           ui:field="entitySubjectsWidgetContainer"
           addStyleNames="margin-left-5 margin-right-5"
         />
-        <bh:Div
+        <g:FlowPanel
           ui:field="teamSubjectsWidgetContainer"
-          pull="LEFT"
-          addStyleNames="margin-left-5 margin-right-5"
+          addStyleNames="margin-left-5 margin-right-5 floatleft"
         />
-      </bh:Div>
+      </g:FlowPanel>
       <bh:ClearFix />
-      <bh:Div addStyleNames="margin-top-5" ui:field="controlsContainer">
-        <bh:Div
+      <g:FlowPanel addStyleNames="margin-top-5" ui:field="controlsContainer">
+        <g:FlowPanel
           ui:field="manageAccessContainer"
-          pull="RIGHT"
-          addStyleNames="margin-right-5"
+          addStyleNames="margin-right-5 floatright"
         />
         <b:Button
           ui:field="signTermsButton"
@@ -91,10 +89,9 @@
           visible="false"
           addStyleNames="margin-right-5"
         />
-        <bh:Div
+        <g:FlowPanel
           ui:field="editAccessRequirementContainer"
-          pull="RIGHT"
-          addStyleNames="margin-right-5"
+          addStyleNames="margin-right-5 floatright"
         />
         <b:Alert
           ui:field="approvedAlert"
@@ -112,7 +109,7 @@
             <bh:Span marginRight="10">Terms of Use Accepted</bh:Span>
           </bh:Span>
         </b:Alert>
-      </bh:Div>
+      </g:FlowPanel>
       <bh:ClearFix />
     </b:PanelBody>
   </b:Panel>

@@ -5,7 +5,7 @@
   xmlns:b="urn:import:org.gwtbootstrap3.client.ui"
   xmlns:bh="urn:import:org.gwtbootstrap3.client.ui.html"
 >
-  <bh:Div>
+  <g:FlowPanel>
     <b:Modal
       ui:field="teamModal"
       closable="true"
@@ -21,12 +21,12 @@
         />
       </b:ModalHeader>
       <b:ModalBody>
-        <bh:Div ui:field="teamSelectBoxContainer" />
+        <g:FlowPanel ui:field="teamSelectBoxContainer" />
       </b:ModalBody>
       <b:ModalFooter>
         <b:Button type="LINK" ui:field="cancelButton">Cancel</b:Button>
         <b:Button type="PRIMARY" text="OK" ui:field="selectTeamButton" />
       </b:ModalFooter>
     </b:Modal>
-  </bh:Div>
+  </g:FlowPanel>
 </ui:UiBinder>

@@ -7,8 +7,8 @@
   xmlns:bh="urn:import:org.gwtbootstrap3.client.ui.html"
   xmlns:t="urn:import:org.sagebionetworks.web.client.view.bootstrap.table"
 >
-  <bh:Div>
-    <bh:Div ui:field="synAlertContainer" />
+  <g:FlowPanel>
+    <g:FlowPanel ui:field="synAlertContainer" />
     <t:Table addStyleNames="table-layout-fixed border-top-1" width="100%">
       <t:TableRow>
         <t:TableData width="100px">
@@ -21,16 +21,16 @@
           />
         </t:TableData>
         <t:TableData width="40%">
-          <bh:Div ui:field="submittedByContainer" />
+          <g:FlowPanel ui:field="submittedByContainer" />
         </t:TableData>
         <t:TableData width="40%">
-          <bh:Div ui:field="accessorsContainer" />
+          <g:FlowPanel ui:field="accessorsContainer" />
         </t:TableData>
         <t:TableData width="175px">
           <g:Label ui:field="expiresOnField" />
         </t:TableData>
         <t:TableData width="200px">
-          <bh:Div ui:field="emailsContainer" />
+          <g:FlowPanel ui:field="emailsContainer" />
         </t:TableData>
         <t:TableData width="80px" addStyleNames="text-align-center">
           <b:ButtonGroup>
@@ -47,5 +47,5 @@
         </t:TableData>
       </t:TableRow>
     </t:Table>
-  </bh:Div>
+  </g:FlowPanel>
 </ui:UiBinder>

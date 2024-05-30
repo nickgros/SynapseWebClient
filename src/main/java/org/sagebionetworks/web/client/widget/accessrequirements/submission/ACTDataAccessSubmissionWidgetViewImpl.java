@@ -4,6 +4,8 @@ import com.google.gwt.event.dom.client.ClickEvent;
 import com.google.gwt.event.dom.client.ClickHandler;
 import com.google.gwt.uibinder.client.UiBinder;
 import com.google.gwt.uibinder.client.UiField;
+import com.google.gwt.user.client.ui.FlowPanel;
+import com.google.gwt.user.client.ui.FlowPanel;
 import com.google.gwt.user.client.ui.IsWidget;
 import com.google.gwt.user.client.ui.Label;
 import com.google.gwt.user.client.ui.Widget;
@@ -14,7 +16,6 @@ import org.gwtbootstrap3.client.ui.CheckBox;
 import org.gwtbootstrap3.client.ui.FormGroup;
 import org.gwtbootstrap3.client.ui.Modal;
 import org.gwtbootstrap3.client.ui.TextArea;
-import org.gwtbootstrap3.client.ui.html.Div;
 import org.gwtbootstrap3.client.ui.html.Span;
 import org.gwtbootstrap3.client.ui.html.Text;
 import org.sagebionetworks.web.client.widget.TextBoxWithCopyToClipboardWidget;
@@ -23,7 +24,7 @@ public class ACTDataAccessSubmissionWidgetViewImpl
   implements ACTDataAccessSubmissionWidgetView {
 
   @UiField
-  Div synAlertContainer;
+  FlowPanel synAlertContainer;
 
   @UiField
   Label submittedOnField;
@@ -53,16 +54,16 @@ public class ACTDataAccessSubmissionWidgetViewImpl
   TextArea intendedDataUseField;
 
   @UiField
-  Div accessorsContainer;
+  FlowPanel accessorsContainer;
 
   @UiField
-  Div ducContainer;
+  FlowPanel ducContainer;
 
   @UiField
-  Div irbContainer;
+  FlowPanel irbContainer;
 
   @UiField
-  Div otherAttachmentsContainer;
+  FlowPanel otherAttachmentsContainer;
 
   @UiField
   CheckBox renewalCheckbox;
@@ -107,7 +108,7 @@ public class ACTDataAccessSubmissionWidgetViewImpl
   Modal dialog;
 
   @UiField
-  Div submittedByContainer;
+  FlowPanel submittedByContainer;
 
   @UiField
   Button moreInfoButton;
@@ -194,7 +195,7 @@ public class ACTDataAccessSubmissionWidgetViewImpl
 
   @Override
   public void addAccessors(IsWidget w, String username) {
-    Div div = new Div();
+    FlowPanel div = new FlowPanel();
     div.add(w);
     TextBoxWithCopyToClipboardWidget emailTextBox =
       new TextBoxWithCopyToClipboardWidget();

@@ -18,7 +18,7 @@
     dataKeyboard="true"
   >
     <b:ModalBody>
-      <bh:Div>
+      <g:FlowPanel>
         <b:FormGroup>
           <b:FormLabel>Synapse name</b:FormLabel>
           <b:TextBox ui:field="entityNameField" />
@@ -31,7 +31,7 @@
           <b:FormLabel>Content type</b:FormLabel>
           <b:TextBox ui:field="contentTypeField" />
         </b:FormGroup>
-      </bh:Div>
+      </g:FlowPanel>
       <b:Alert ui:field="alert" type="DANGER" visible="false" />
     </b:ModalBody>
     <b:ModalFooter>

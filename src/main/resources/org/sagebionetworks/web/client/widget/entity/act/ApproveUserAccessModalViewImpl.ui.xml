@@ -14,7 +14,7 @@
     type='org.sagebionetworks.web.client.SageImageBundle'
   />
 
-  <bh:Div>
+  <g:FlowPanel>
     <!-- Dialog for previewing email message -->
     <b:Modal
       ui:field="previewModal"
@@ -43,7 +43,7 @@
       dataKeyboard="true"
     >
       <b:ModalBody>
-        <bh:Div addStyleNames="margin-top-10 margin-bottom-10">
+        <g:FlowPanel addStyleNames="margin-top-10 margin-bottom-10">
           <b:Heading
             size="H5"
             text="Access Requirement"
@@ -57,38 +57,41 @@
             />
             <b:DropDownMenu ui:field="arDropdownMenu" />
           </b:ButtonGroup>
-        </bh:Div>
-        <bh:Div addStyleNames="margin-top-10 margin-bottom-10">
-          <bh:Div
+        </g:FlowPanel>
+        <g:FlowPanel addStyleNames="margin-top-10 margin-bottom-10">
+          <g:FlowPanel
             ui:field="accessRequirementWidgetContainer"
             addStyleNames="light-border padding-10"
           />
-        </bh:Div>
-        <bh:Div addStyleNames="margin-top-10 margin-bottom-10">
+        </g:FlowPanel>
+        <g:FlowPanel addStyleNames="margin-top-10 margin-bottom-10">
           <b:Heading
             size="H5"
             text="User"
             addStyleNames="margin-left-10 margin-right-10 margin-top-20"
           />
-          <bh:Div ui:field="userSelectContainer" />
-        </bh:Div>
-        <bh:Div addStyleNames="margin-top-10 margin-bottom-10">
+          <g:FlowPanel ui:field="userSelectContainer" />
+        </g:FlowPanel>
+        <g:FlowPanel addStyleNames="margin-top-10 margin-bottom-10">
           <b:Heading
             size="H5"
             text="Dataset"
             addStyleNames="margin-left-10 margin-right-10 margin-top-20"
           />
-          <bh:Div ui:field="loadingEmail" />
-          <bh:Div addStyleNames="margin-top-10 margin-bottom-10" height="30px">
+          <g:FlowPanel ui:field="loadingEmail" />
+          <g:FlowPanel
+            addStyleNames="margin-top-10 margin-bottom-10"
+            height="30px"
+          >
             <g:HTML
               ui:field="emailTemplate"
               addStyleNames="read-only-box"
               width="100%"
               height="30px"
             />
-          </bh:Div>
-        </bh:Div>
-        <bh:Div addStyleNames="margin-top-10 margin-bottom-10">
+          </g:FlowPanel>
+        </g:FlowPanel>
+        <g:FlowPanel addStyleNames="margin-top-10 margin-bottom-10">
           <b:Heading
             size="H5"
             text="Email Message"
@@ -106,8 +109,11 @@
             addStyleNames="min-height-200"
             placeholder="Enter a message to send the user upon approval..."
           />
-        </bh:Div>
-        <bh:Div ui:field="synAlertContainer" addStyleNames="margin-top-10" />
+        </g:FlowPanel>
+        <g:FlowPanel
+          ui:field="synAlertContainer"
+          addStyleNames="margin-top-10"
+        />
       </b:ModalBody>
       <b:ModalFooter>
         <b:Button ui:field="cancelButton" type="LINK" text="Cancel" />
@@ -125,5 +131,5 @@
         />
       </b:ModalFooter>
     </b:Modal>
-  </bh:Div>
+  </g:FlowPanel>
 </ui:UiBinder>

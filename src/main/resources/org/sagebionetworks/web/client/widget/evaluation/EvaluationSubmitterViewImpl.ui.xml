@@ -19,7 +19,7 @@
       addStyleNames="modal-fullscreen"
     >
       <b:ModalBody>
-        <bh:Div>
+        <g:FlowPanel>
           <b:FormGroup ui:field="dockerCommitListUI">
             <b:FormGroup>
               <b:FormControlStatic addStyleNames="h5">
@@ -30,7 +30,7 @@
             </b:FormGroup>
           </b:FormGroup>
           <g:SimplePanel ui:field="dockerCommitListSynAlertPanel" />
-        </bh:Div>
+        </g:FlowPanel>
       </b:ModalBody>
       <b:ModalFooter>
         <b:Button type="LINK" dataDismiss="MODAL">Cancel</b:Button>
@@ -50,7 +50,7 @@
       ui:field="modal1"
     >
       <b:ModalBody>
-        <bh:Div>
+        <g:FlowPanel>
           <w:ReactComponentDiv ui:field="formDiv" />
           <b:FormGroup ui:field="entityFinderUI">
             <b:FormGroup>
@@ -90,7 +90,7 @@
             <b:FormLabel>Submission name (optional)</b:FormLabel>
             <b:TextBox ui:field="submissionNameField" />
           </b:FormGroup>
-        </bh:Div>
+        </g:FlowPanel>
       </b:ModalBody>
       <b:ModalFooter>
         <b:Button type="LINK" dataDismiss="MODAL">Cancel</b:Button>
@@ -105,7 +105,7 @@
     </b:Modal>
     <b:Modal dataBackdrop="STATIC" dataKeyboard="true" ui:field="modal2">
       <b:ModalBody>
-        <bh:Div>
+        <g:FlowPanel>
           <b:ButtonGroup>
             <b:Radio
               ui:field="isIndividualRadioButton"
@@ -120,9 +120,9 @@
               text="I am submitting as part of a team"
             />
           </b:ButtonGroup>
-          <bh:Div ui:field="teamsUI">
+          <g:FlowPanel ui:field="teamsUI">
             <bh:Paragraph emphasis="DANGER" ui:field="teamIneligibleHtml" />
-            <bh:Div ui:field="availableTeamsUI">
+            <g:FlowPanel ui:field="availableTeamsUI">
               <b:FormGroup>
                 <b:FormLabel>Select Team</b:FormLabel>
                 <g:ListBox ui:field="teamComboBox" styleName="form-control" />
@@ -144,16 +144,16 @@
                 />
               </b:FormGroup>
               <g:SimplePanel ui:field="contributorSynAlertPanel" />
-            </bh:Div>
-            <bh:Div ui:field="emptyTeamsUI">
+            </g:FlowPanel>
+            <g:FlowPanel ui:field="emptyTeamsUI">
               <bh:Paragraph emphasis="WARNING">
                 No registered teams were
 								found
               </bh:Paragraph>
               <b:Anchor ui:field="registerMyTeamLink2" text="Register a team" />
-            </bh:Div>
-          </bh:Div>
-        </bh:Div>
+            </g:FlowPanel>
+          </g:FlowPanel>
+        </g:FlowPanel>
       </b:ModalBody>
       <b:ModalFooter>
         <b:Button type="LINK" dataDismiss="MODAL">Cancel</b:Button>

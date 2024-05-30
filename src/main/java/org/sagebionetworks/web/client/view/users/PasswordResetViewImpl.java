@@ -17,6 +17,8 @@ import com.google.gwt.event.dom.client.KeyDownHandler;
 import com.google.gwt.uibinder.client.UiBinder;
 import com.google.gwt.uibinder.client.UiField;
 import com.google.gwt.user.client.ui.Composite;
+import com.google.gwt.user.client.ui.FlowPanel;
+import com.google.gwt.user.client.ui.FlowPanel;
 import com.google.gwt.user.client.ui.PasswordTextBox;
 import com.google.gwt.user.client.ui.SimplePanel;
 import com.google.gwt.user.client.ui.Widget;
@@ -25,7 +27,6 @@ import org.gwtbootstrap3.client.ui.Alert;
 import org.gwtbootstrap3.client.ui.Button;
 import org.gwtbootstrap3.client.ui.Heading;
 import org.gwtbootstrap3.client.ui.TextBox;
-import org.gwtbootstrap3.client.ui.html.Div;
 import org.sagebionetworks.web.client.DisplayConstants;
 import org.sagebionetworks.web.client.DisplayUtils;
 import org.sagebionetworks.web.client.widget.FullWidthAlert;
@@ -69,7 +70,7 @@ public class PasswordResetViewImpl
   DivElement password2;
 
   @UiField
-  Div emailAddress;
+  FlowPanel emailAddress;
 
   @UiField
   DivElement currentPasswordError;
@@ -96,7 +97,7 @@ public class PasswordResetViewImpl
   SpanElement contentHtml;
 
   @UiField
-  Div synAlertContainer;
+  FlowPanel synAlertContainer;
 
   private Presenter presenter;
   private Header headerWidget;

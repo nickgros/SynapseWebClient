@@ -4,9 +4,9 @@ import com.google.gwt.core.client.GWT;
 import com.google.gwt.uibinder.client.UiBinder;
 import com.google.gwt.uibinder.client.UiField;
 import com.google.gwt.user.client.ui.*;
+import com.google.gwt.user.client.ui.FlowPanel;
 import com.google.inject.Inject;
 import org.gwtbootstrap3.client.ui.Collapse;
-import org.gwtbootstrap3.client.ui.html.Div;
 import org.gwtbootstrap3.client.ui.html.Paragraph;
 import org.gwtbootstrap3.client.ui.html.Span;
 import org.gwtbootstrap3.client.ui.html.Text;
@@ -42,7 +42,7 @@ public class EntityMetadataViewImpl
   Span restrictionPanelV2;
 
   @UiField
-  Div fileHistoryContainer;
+  FlowPanel fileHistoryContainer;
 
   @UiField
   Span uploadDestinationPanel;
@@ -51,7 +51,7 @@ public class EntityMetadataViewImpl
   Span uploadDestinationField;
 
   @UiField
-  Div descriptionContainer;
+  FlowPanel descriptionContainer;
 
   @UiField
   Paragraph descriptionText;

@@ -8,12 +8,13 @@ import com.google.gwt.event.logical.shared.AttachEvent;
 import com.google.gwt.uibinder.client.UiBinder;
 import com.google.gwt.uibinder.client.UiField;
 import com.google.gwt.user.client.Window;
+import com.google.gwt.user.client.ui.FlowPanel;
+import com.google.gwt.user.client.ui.FlowPanel;
 import com.google.gwt.user.client.ui.Frame;
 import com.google.gwt.user.client.ui.IsWidget;
 import com.google.gwt.user.client.ui.Widget;
 import com.google.inject.Inject;
 import org.gwtbootstrap3.client.ui.Anchor;
-import org.gwtbootstrap3.client.ui.html.Div;
 import org.gwtbootstrap3.client.ui.html.Span;
 import org.sagebionetworks.web.client.SynapseJSNIUtils;
 
@@ -22,16 +23,16 @@ public class NbConvertPreviewViewImpl implements NbConvertPreviewView {
   public interface Binder extends UiBinder<Widget, NbConvertPreviewViewImpl> {}
 
   @UiField
-  Div htmlContainer;
+  FlowPanel htmlContainer;
 
   @UiField
-  Div synAlertContainer;
+  FlowPanel synAlertContainer;
 
   @UiField
-  Div loadingUI;
+  FlowPanel loadingUI;
 
   @UiField
-  Div htmlSanitizedWarning;
+  FlowPanel htmlSanitizedWarning;
 
   @UiField
   Anchor showContentLink;

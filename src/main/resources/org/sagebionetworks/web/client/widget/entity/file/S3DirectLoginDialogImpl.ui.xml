@@ -16,7 +16,7 @@
       dataKeyboard="true"
     >
       <b:ModalBody>
-        <bh:Div ui:field="s3DirectLoginDialogBody" />
+        <g:FlowPanel ui:field="s3DirectLoginDialogBody" />
       </b:ModalBody>
       <b:ModalFooter>
         <b:Button ui:field="s3DirectLoginDialogButton" type="PRIMARY">

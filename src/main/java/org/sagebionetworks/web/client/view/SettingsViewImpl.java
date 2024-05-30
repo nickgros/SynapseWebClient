@@ -11,6 +11,7 @@ import com.google.gwt.uibinder.client.UiField;
 import com.google.gwt.user.client.Window;
 import com.google.gwt.user.client.ui.Composite;
 import com.google.gwt.user.client.ui.FlowPanel;
+import com.google.gwt.user.client.ui.FlowPanel;
 import com.google.gwt.user.client.ui.HTMLPanel;
 import com.google.gwt.user.client.ui.IsWidget;
 import com.google.gwt.user.client.ui.PasswordTextBox;
@@ -25,7 +26,6 @@ import org.gwtbootstrap3.client.ui.CheckBox;
 import org.gwtbootstrap3.client.ui.Icon;
 import org.gwtbootstrap3.client.ui.Panel;
 import org.gwtbootstrap3.client.ui.Row;
-import org.gwtbootstrap3.client.ui.html.Div;
 import org.gwtbootstrap3.client.ui.html.Span;
 import org.sagebionetworks.repo.model.UserProfile;
 import org.sagebionetworks.web.client.ClientProperties;
@@ -75,7 +75,7 @@ public class SettingsViewImpl extends Composite implements SettingsView {
   Anchor forgotPasswordLink;
 
   @UiField
-  Div emailsPanel;
+  FlowPanel emailsPanel;
 
   @UiField
   PasswordTextBox currentPasswordField;
@@ -130,7 +130,7 @@ public class SettingsViewImpl extends Composite implements SettingsView {
 
   // Profile Validation UI
   @UiField
-  Div verifyAlert;
+  FlowPanel verifyAlert;
 
   @UiField
   Anchor requestProfileValidationLink1;

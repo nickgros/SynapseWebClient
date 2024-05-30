@@ -17,7 +17,7 @@
         </g:FocusPanel>
       </t:TableData>
       <t:TableData addStyleNames="overflow-x-hidden ">
-        <bh:Div
+        <g:FlowPanel
           addStyleNames="margin-left-5 margin-right-5"
           ui:field="nameContainer"
         >
@@ -25,7 +25,7 @@
             ui:field="entityContainer"
             addStyleNames="displayInline pull-left"
           />
-        </bh:Div>
+        </g:FlowPanel>
       </t:TableData>
       <t:TableData
         width="150px"
@@ -41,10 +41,10 @@
         <g:Label ui:field="itemCountField" />
       </t:TableData>
       <t:TableData width="270px" addStyleNames="visible-xl overflow-x-hidden">
-        <bh:Div ui:field="createdByField" />
+        <g:FlowPanel ui:field="createdByField" />
       </t:TableData>
       <t:TableData width="270px" addStyleNames="visible-xl overflow-x-hidden">
-        <bh:Div ui:field="modifiedByField" />
+        <g:FlowPanel ui:field="modifiedByField" />
       </t:TableData>
       <t:TableData
         width="165px"

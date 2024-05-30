@@ -6,8 +6,8 @@
   xmlns:bh="urn:import:org.gwtbootstrap3.client.ui.html"
   xmlns:w="urn:import:org.sagebionetworks.web.client.widget"
 >
-  <bh:Div marginBottom="5">
-    <bh:Div ui:field="container" />
+  <g:FlowPanel addStyleNames="margin-bottom-5">
+    <g:FlowPanel ui:field="container" />
     <bh:ClearFix />
     <b:Button ui:field="loadMoreButton" text="Show more results" />
     <w:LoadingSpinner
@@ -16,5 +16,5 @@
       addStyleNames="center-block center"
       visible="false"
     />
-  </bh:Div>
+  </g:FlowPanel>
 </ui:UiBinder>

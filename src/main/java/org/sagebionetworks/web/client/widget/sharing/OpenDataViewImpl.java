@@ -2,25 +2,26 @@ package org.sagebionetworks.web.client.widget.sharing;
 
 import com.google.gwt.uibinder.client.UiBinder;
 import com.google.gwt.uibinder.client.UiField;
+import com.google.gwt.user.client.ui.FlowPanel;
+import com.google.gwt.user.client.ui.FlowPanel;
 import com.google.gwt.user.client.ui.IsWidget;
 import com.google.gwt.user.client.ui.Widget;
 import com.google.inject.Inject;
-import org.gwtbootstrap3.client.ui.html.Div;
 
 public class OpenDataViewImpl implements OpenDataView {
 
-  public interface Binder extends UiBinder<Div, OpenDataViewImpl> {}
+  public interface Binder extends UiBinder<FlowPanel, OpenDataViewImpl> {}
 
-  private Div widget;
-
-  @UiField
-  Div isPublicAndOpen;
+  private FlowPanel widget;
 
   @UiField
-  Div isPublicAndAdmin;
+  FlowPanel isPublicAndOpen;
 
   @UiField
-  Div isPrivateAndOpenAndAdmin;
+  FlowPanel isPublicAndAdmin;
+
+  @UiField
+  FlowPanel isPrivateAndOpenAndAdmin;
 
   @Inject
   public OpenDataViewImpl(Binder binder) {

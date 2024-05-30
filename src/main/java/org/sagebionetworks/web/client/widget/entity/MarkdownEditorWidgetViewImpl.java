@@ -8,13 +8,13 @@ import com.google.gwt.event.dom.client.KeyUpHandler;
 import com.google.gwt.uibinder.client.UiBinder;
 import com.google.gwt.uibinder.client.UiField;
 import com.google.gwt.user.client.Window;
+import com.google.gwt.user.client.ui.FlowPanel;
 import com.google.gwt.user.client.ui.SimplePanel;
 import com.google.gwt.user.client.ui.Widget;
 import com.google.inject.Inject;
 import org.gwtbootstrap3.client.ui.AnchorListItem;
 import org.gwtbootstrap3.client.ui.Button;
 import org.gwtbootstrap3.client.ui.ModalSize;
-import org.gwtbootstrap3.client.ui.html.Div;
 import org.gwtbootstrap3.client.ui.html.Span;
 import org.sagebionetworks.web.client.DisplayUtils;
 import org.sagebionetworks.web.client.widget.modal.Dialog;
@@ -34,13 +34,13 @@ public class MarkdownEditorWidgetViewImpl implements MarkdownEditorWidgetView {
 
   // dialog for the formatting guide
   @UiField
-  public Div mdCommands;
+  public FlowPanel mdCommands;
 
   @UiField
   public org.gwtbootstrap3.client.ui.TextArea markdownTextArea;
 
   @UiField
-  public Div selectTeamModalContainer;
+  public FlowPanel selectTeamModalContainer;
 
   /**
    * List of toolbar commands
@@ -228,10 +228,10 @@ public class MarkdownEditorWidgetViewImpl implements MarkdownEditorWidgetView {
   public SimplePanel previewHtmlContainer;
 
   @UiField
-  public Div previewUI;
+  public FlowPanel previewUI;
 
   @UiField
-  public Div writingUI;
+  public FlowPanel writingUI;
 
   Span widget = new Span();
   // this UI widget

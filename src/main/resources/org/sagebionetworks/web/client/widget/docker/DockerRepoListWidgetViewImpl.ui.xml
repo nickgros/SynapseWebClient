@@ -24,6 +24,6 @@
     />
     <b:ListGroup ui:field="dockerList" />
     <g:SimplePanel ui:field="synAlertContainer" />
-    <bh:Div ui:field="membersContainer" />
+    <g:FlowPanel ui:field="membersContainer" />
   </g:HTMLPanel>
 </ui:UiBinder>

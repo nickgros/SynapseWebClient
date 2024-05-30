@@ -5,11 +5,12 @@ import com.google.gwt.event.dom.client.ClickHandler;
 import com.google.gwt.safehtml.shared.SafeHtmlUtils;
 import com.google.gwt.uibinder.client.UiBinder;
 import com.google.gwt.uibinder.client.UiField;
+import com.google.gwt.user.client.ui.FlowPanel;
+import com.google.gwt.user.client.ui.FlowPanel;
 import com.google.gwt.user.client.ui.Widget;
 import com.google.inject.Inject;
 import org.gwtbootstrap3.client.ui.Button;
 import org.gwtbootstrap3.client.ui.Modal;
-import org.gwtbootstrap3.client.ui.html.Div;
 import org.sagebionetworks.web.client.widget.entity.download.AwsLoginView;
 
 public class S3DirectLoginDialogImpl implements S3DirectLoginDialog {
@@ -23,7 +24,7 @@ public class S3DirectLoginDialogImpl implements S3DirectLoginDialog {
   Modal s3DirectLoginDialog;
 
   @UiField
-  Div s3DirectLoginDialogBody;
+  FlowPanel s3DirectLoginDialogBody;
 
   @UiField
   Button s3DirectLoginDialogButton;

@@ -181,4 +181,8 @@ public class FavoriteWidget implements Presenter, IsWidget {
   public void setLoadingSize(int px) {
     view.setLoadingSize(px);
   }
+
+  public void setLoadingStyleName(String classes) {
+    view.setLoadingStyleName(classes);
+  }
 }

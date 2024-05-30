@@ -8,20 +8,20 @@
   xmlns:bh="urn:import:org.gwtbootstrap3.client.ui.html"
 >
   <g:HTMLPanel>
-    <bh:Div addStyleNames="pageHeader">
+    <g:FlowPanel addStyleNames="pageHeader">
       <b:Heading
         addStyleNames="pageHeaderTitle"
         size="H3"
         text="Create Synapse Account"
       />
-    </bh:Div>
+    </g:FlowPanel>
     <div class="container margin-top-40 min-height-400">
-      <bh:Div
+      <g:FlowPanel
         width="365px"
         addStyleNames="center-in-div"
         ui:field="createSynapseAccountUI"
       >
-        <bh:Div width="100%" ui:field="googleSynapseAccountCreationUI">
+        <g:FlowPanel width="100%" ui:field="googleSynapseAccountCreationUI">
           <b:Heading
             size="H4"
             subText="Choose a username"
@@ -30,7 +30,10 @@
           <b:FormGroup>
             <b:TextBox ui:field="userNameField" placeholder="" />
           </b:FormGroup>
-          <bh:Div ui:field="googleSynAlertContainer" marginBottom="10" />
+          <g:FlowPanel
+            ui:field="googleSynAlertContainer"
+            addStyleNames="margin-bottom-10"
+          />
           <b:Button
             ui:field="googleSignUpButton"
             size="LARGE"
@@ -41,20 +44,18 @@
             paddingBottom="0"
             paddingLeft="0"
           />
-          <bh:Div
-            addStyleNames="centered-in-hr"
-            marginTop="40"
-            marginBottom="40"
+          <g:FlowPanel
+            addStyleNames="centered-in-hr margin-top-40 margin-bottom-40"
           >
             <bh:Span addStyleNames="lightGreyText">or</bh:Span>
-          </bh:Div>
-        </bh:Div>
+          </g:FlowPanel>
+        </g:FlowPanel>
         <b:Heading
           size="H4"
           subText="Enter your email address and we will send you the instructions on how to complete the registration process."
           addStyleNames="flexcontainer-justify-center margin-top-20"
         />
-        <bh:Div
+        <g:FlowPanel
           ui:field="registerWidgetContainer"
           addStyleNames="margin-top-20"
         />
@@ -67,8 +68,12 @@
             href="/LoginPlace:0"
           />
         </b:Heading>
-      </bh:Div>
-      <bh:Div ui:field="emailSentUI" visible="false" marginTop="40">
+      </g:FlowPanel>
+      <g:FlowPanel
+        ui:field="emailSentUI"
+        visible="false"
+        addStyleNames="margin-top-40"
+      >
         <b:Heading
           size="H3"
           text="Please check your email to finish creating your account"
@@ -77,8 +82,8 @@
           addStyleNames="margin-top-30"
           text="We have sent you an email to the email address provided. Please check your email and click the provided link to activate your account."
         />
-        <bh:Div ui:field="pageProgressContainer" />
-      </bh:Div>
+        <g:FlowPanel ui:field="pageProgressContainer" />
+      </g:FlowPanel>
     </div>
   </g:HTMLPanel>
 </ui:UiBinder>

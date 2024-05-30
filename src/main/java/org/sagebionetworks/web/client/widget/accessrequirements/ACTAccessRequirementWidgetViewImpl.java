@@ -2,6 +2,8 @@ package org.sagebionetworks.web.client.widget.accessrequirements;
 
 import com.google.gwt.uibinder.client.UiBinder;
 import com.google.gwt.uibinder.client.UiField;
+import com.google.gwt.user.client.ui.FlowPanel;
+import com.google.gwt.user.client.ui.FlowPanel;
 import com.google.gwt.user.client.ui.HTML;
 import com.google.gwt.user.client.ui.InlineLabel;
 import com.google.gwt.user.client.ui.IsWidget;
@@ -11,7 +13,6 @@ import com.google.inject.Inject;
 import org.gwtbootstrap3.client.ui.Alert;
 import org.gwtbootstrap3.client.ui.BlockQuote;
 import org.gwtbootstrap3.client.ui.Button;
-import org.gwtbootstrap3.client.ui.html.Div;
 import org.gwtbootstrap3.client.ui.html.Span;
 import org.sagebionetworks.web.client.DisplayUtils;
 import org.sagebionetworks.web.client.GlobalApplicationState;
@@ -22,10 +23,10 @@ public class ACTAccessRequirementWidgetViewImpl
   implements ACTAccessRequirementWidgetView {
 
   @UiField
-  Div approvedHeading;
+  FlowPanel approvedHeading;
 
   @UiField
-  Div unapprovedHeading;
+  FlowPanel unapprovedHeading;
 
   @UiField
   BlockQuote wikiTermsUI;
@@ -43,37 +44,37 @@ public class ACTAccessRequirementWidgetViewImpl
   Button requestAccessButton;
 
   @UiField
-  Div editAccessRequirementContainer;
+  FlowPanel editAccessRequirementContainer;
 
   @UiField
-  Div teamSubjectsWidgetContainer;
+  FlowPanel teamSubjectsWidgetContainer;
 
   @UiField
-  Div entitySubjectsWidgetContainer;
+  FlowPanel entitySubjectsWidgetContainer;
 
   @UiField
-  Div accessRequirementRelatedProjectsListContainer;
+  FlowPanel accessRequirementRelatedProjectsListContainer;
 
   @UiField
-  Div synAlertContainer;
+  FlowPanel synAlertContainer;
 
   @UiField
-  Div requestAccessButtonContainer;
+  FlowPanel requestAccessButtonContainer;
 
   @UiField
   Alert requestApprovedMessage;
 
   @UiField
-  Div manageAccessContainer;
+  FlowPanel manageAccessContainer;
 
   @UiField
-  Div convertAccessRequirementContainer;
+  FlowPanel convertAccessRequirementContainer;
 
   @UiField
   Button loginButton;
 
   @UiField
-  Div controlsContainer;
+  FlowPanel controlsContainer;
 
   Callback onAttachCallback;
 
@@ -81,19 +82,19 @@ public class ACTAccessRequirementWidgetViewImpl
   Span accessRequirementDescription;
 
   @UiField
-  Div coveredEntitiesHeadingUI;
+  FlowPanel coveredEntitiesHeadingUI;
 
   @UiField
-  Div accessRequirementIDUI;
+  FlowPanel accessRequirementIDUI;
 
   @UiField
   InlineLabel accessRequirementIDField;
 
   @UiField
-  Div subjectsDefinedByAnnotationsUI;
+  FlowPanel subjectsDefinedByAnnotationsUI;
 
   @UiField
-  Div subjectsDefinedInAccessRequirementUI;
+  FlowPanel subjectsDefinedInAccessRequirementUI;
 
   public interface Binder
     extends UiBinder<Widget, ACTAccessRequirementWidgetViewImpl> {}

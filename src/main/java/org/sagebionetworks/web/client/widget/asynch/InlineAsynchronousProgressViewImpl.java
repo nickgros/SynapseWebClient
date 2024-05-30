@@ -2,10 +2,11 @@ package org.sagebionetworks.web.client.widget.asynch;
 
 import com.google.gwt.uibinder.client.UiBinder;
 import com.google.gwt.uibinder.client.UiField;
+import com.google.gwt.user.client.ui.FlowPanel;
+import com.google.gwt.user.client.ui.FlowPanel;
 import com.google.gwt.user.client.ui.Widget;
 import com.google.inject.Inject;
 import org.gwtbootstrap3.client.ui.ProgressBar;
-import org.gwtbootstrap3.client.ui.html.Div;
 import org.gwtbootstrap3.client.ui.html.Text;
 import org.sagebionetworks.web.client.widget.LoadingSpinner;
 
@@ -19,28 +20,28 @@ public class InlineAsynchronousProgressViewImpl
   implements AsynchronousProgressView {
 
   public interface Binder
-    extends UiBinder<Div, InlineAsynchronousProgressViewImpl> {}
+    extends UiBinder<FlowPanel, InlineAsynchronousProgressViewImpl> {}
 
   @UiField
-  Div progressColumn;
+  FlowPanel progressColumn;
 
   @UiField
-  Div spinnerColumn;
+  FlowPanel spinnerColumn;
 
   @UiField
-  Div title;
+  FlowPanel title;
 
   @UiField
   ProgressBar progressBar;
 
   @UiField
-  Div message;
+  FlowPanel message;
 
   @UiField
   LoadingSpinner spinner;
 
   Presenter presenter;
-  Div container;
+  FlowPanel container;
 
   @Inject
   public InlineAsynchronousProgressViewImpl(final Binder uiBinder) {

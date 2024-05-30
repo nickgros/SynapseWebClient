@@ -33,18 +33,17 @@
       </b:ModalHeader>
       <b:ModalBody>
         <b:FormGroup>
-          <bh:Div
+          <g:FlowPanel
             ui:field="loadingUI"
             addStyleNames="center-block center"
             visible="false"
           >
             <w:LoadingSpinner size="31px" />
             <bh:Text>
-              &nbsp;
-              Loading...
+              &nbsp; Loading...
             </bh:Text>
-          </bh:Div>
-          <bh:Div ui:field="contentUI">
+          </g:FlowPanel>
+          <g:FlowPanel ui:field="contentUI">
             <b:Radio
               ui:field="synapseStorageButton"
               name="storageLocationRadio"
@@ -57,15 +56,15 @@
               text="Amazon S3 Bucket"
               addStyleNames="font-size-18"
             />
-            <bh:Div addStyleNames="margin-left-20" ui:field="s3Collapse">
-              <bh:Div addStyleNames="margin-bottom-10">
+            <g:FlowPanel addStyleNames="margin-left-20" ui:field="s3Collapse">
+              <g:FlowPanel addStyleNames="margin-bottom-10">
                 <b:Anchor
                   href="https://help.synapse.org/docs/Custom-Storage-Locations.2048327803.html"
                   icon="QUESTION_CIRCLE"
                   target="_blank"
                   text="More info..."
                 />
-              </bh:Div>
+              </g:FlowPanel>
               <b:FormLabel for="s3BucketField">Bucket</b:FormLabel>
               <b:TextBox
                 ui:field="s3BucketField"
@@ -100,7 +99,11 @@
                   addStyleNames="margin-bottom-10 hide-resize padding-left-10"
                 />
               </b:InputGroup>
-              <bh:Div ui:field="s3StsUI" marginTop="20" visible="false">
+              <g:FlowPanel
+                ui:field="s3StsUI"
+                addStyleNames="margin-top-20"
+                visible="false"
+              >
                 <b:CheckBox
                   ui:field="s3StsField"
                   text="Security Token Service (STS) Enabled"
@@ -112,26 +115,26 @@
                   placement="BOTTOM"
                   href="https://help.synapse.org/docs/Compute-Directly-on-Data-in-Synapse-or-S3.2048426057.html"
                 />
-              </bh:Div>
-            </bh:Div>
+              </g:FlowPanel>
+            </g:FlowPanel>
             <b:Radio
               ui:field="externalGoogleCloudStorageButton"
               name="storageLocationRadio"
               text="Google Cloud Storage Bucket"
               addStyleNames="font-size-18"
             />
-            <bh:Div
+            <g:FlowPanel
               addStyleNames="margin-left-20"
               ui:field="googleCloudCollapse"
             >
-              <bh:Div addStyleNames="margin-bottom-10">
+              <g:FlowPanel addStyleNames="margin-bottom-10">
                 <b:Anchor
                   href="https://help.synapse.org/docs/Custom-Storage-Locations.2048327803.html"
                   icon="QUESTION_CIRCLE"
                   target="_blank"
                   text="More info..."
                 />
-              </bh:Div>
+              </g:FlowPanel>
               <b:FormLabel for="googleCloudBucketField">Bucket</b:FormLabel>
               <b:TextBox
                 ui:field="googleCloudBucketField"
@@ -169,25 +172,25 @@
                   addStyleNames="margin-bottom-10 hide-resize padding-left-10"
                 />
               </b:InputGroup>
-            </bh:Div>
+            </g:FlowPanel>
             <b:Radio
               ui:field="externalObjectStoreButton"
               name="storageLocationRadio"
               text="External Object Store"
               addStyleNames="font-size-18"
             />
-            <bh:Div
+            <g:FlowPanel
               addStyleNames="margin-left-20"
               ui:field="externalObjectStoreCollapse"
             >
-              <bh:Div addStyleNames="margin-bottom-10">
+              <g:FlowPanel addStyleNames="margin-bottom-10">
                 <b:Anchor
                   href="https://help.synapse.org/docs/Custom-Storage-Locations.2048327803.html"
                   icon="QUESTION_CIRCLE"
                   target="_blank"
                   text="More info..."
                 />
-              </bh:Div>
+              </g:FlowPanel>
               <b:FormLabel>Bucket</b:FormLabel>
               <b:TextBox
                 ui:field="externalObjectStoreBucket"
@@ -213,8 +216,8 @@
                   addStyleNames="margin-bottom-10 hide-resize padding-left-10"
                 />
               </b:InputGroup>
-            </bh:Div>
-          </bh:Div>
+            </g:FlowPanel>
+          </g:FlowPanel>
         </b:FormGroup>
         <g:SimplePanel ui:field="synAlertPanel" />
       </b:ModalBody>

@@ -20,7 +20,7 @@
         </b:FormLabel>
         <g:SimplePanel ui:field="suggestBoxPanel" />
       </b:FormGroup>
-      <bh:Div ui:field="inviteesContainer" />
+      <g:FlowPanel ui:field="inviteesContainer" />
       <b:FormGroup addStyleNames="margin-top-10">
         <b:FormLabel for="inviteText">
           Invitation Message (Optional)

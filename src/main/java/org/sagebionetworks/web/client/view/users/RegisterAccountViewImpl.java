@@ -7,12 +7,13 @@ import com.google.gwt.uibinder.client.UiBinder;
 import com.google.gwt.uibinder.client.UiField;
 import com.google.gwt.user.client.Window;
 import com.google.gwt.user.client.ui.Composite;
+import com.google.gwt.user.client.ui.FlowPanel;
+import com.google.gwt.user.client.ui.FlowPanel;
 import com.google.gwt.user.client.ui.Image;
 import com.google.gwt.user.client.ui.Widget;
 import com.google.inject.Inject;
 import org.gwtbootstrap3.client.ui.Button;
 import org.gwtbootstrap3.client.ui.TextBox;
-import org.gwtbootstrap3.client.ui.html.Div;
 import org.gwtbootstrap3.client.ui.html.Span;
 import org.sagebionetworks.web.client.ClientProperties;
 import org.sagebionetworks.web.client.DisplayConstants;
@@ -36,7 +37,7 @@ public class RegisterAccountViewImpl
     extends UiBinder<Widget, RegisterAccountViewImpl> {}
 
   @UiField
-  Div registerWidgetContainer;
+  FlowPanel registerWidgetContainer;
 
   @UiField
   TextBox userNameField;
@@ -45,19 +46,19 @@ public class RegisterAccountViewImpl
   Button googleSignUpButton;
 
   @UiField
-  Div googleSynAlertContainer;
+  FlowPanel googleSynAlertContainer;
 
   @UiField
-  Div googleSynapseAccountCreationUI;
+  FlowPanel googleSynapseAccountCreationUI;
 
   @UiField
-  Div createSynapseAccountUI;
+  FlowPanel createSynapseAccountUI;
 
   @UiField
-  Div emailSentUI;
+  FlowPanel emailSentUI;
 
   @UiField
-  Div pageProgressContainer;
+  FlowPanel pageProgressContainer;
 
   SynapseAlert synAlert;
   GWTTimer timer;

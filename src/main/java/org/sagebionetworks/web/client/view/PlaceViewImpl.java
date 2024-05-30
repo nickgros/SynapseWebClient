@@ -3,11 +3,12 @@ package org.sagebionetworks.web.client.view;
 import com.google.gwt.uibinder.client.UiBinder;
 import com.google.gwt.uibinder.client.UiField;
 import com.google.gwt.user.client.Window;
+import com.google.gwt.user.client.ui.FlowPanel;
+import com.google.gwt.user.client.ui.FlowPanel;
 import com.google.gwt.user.client.ui.IsWidget;
 import com.google.gwt.user.client.ui.Widget;
 import com.google.inject.Inject;
 import org.gwtbootstrap3.client.ui.Heading;
-import org.gwtbootstrap3.client.ui.html.Div;
 import org.gwtbootstrap3.client.ui.html.Text;
 import org.sagebionetworks.web.client.widget.header.Header;
 
@@ -17,13 +18,13 @@ public class PlaceViewImpl implements PlaceView {
     extends UiBinder<Widget, PlaceViewImpl> {}
 
   @UiField
-  Div above;
+  FlowPanel above;
 
   @UiField
-  Div below;
+  FlowPanel below;
 
   @UiField
-  Div body;
+  FlowPanel body;
 
   @UiField
   Heading title;

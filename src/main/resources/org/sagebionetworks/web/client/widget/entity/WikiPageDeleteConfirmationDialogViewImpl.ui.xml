@@ -14,14 +14,14 @@
     size="LARGE"
   >
     <b:ModalBody>
-      <bh:Div>
+      <g:FlowPanel>
         <bh:Span>Are you sure you want to delete the wiki page "</bh:Span>
         <bh:Span ui:field="wikiPageTitle" />
         <bh:Span>" and all subpages?</bh:Span>
-        <bh:Div>
+        <g:FlowPanel>
           <bh:Text>The following wiki page(s) will be deleted:</bh:Text>
-        </bh:Div>
-        <bh:Div
+        </g:FlowPanel>
+        <g:FlowPanel
           ui:field="wikiHeaderTreeContainer"
           addStyleNames="margin-top-20 margin-bottom-20"
         />
@@ -31,7 +31,7 @@
           for deleting wiki pages; once deleted these pages cannot be
 					recovered.
         </bh:Span>
-      </bh:Div>
+      </g:FlowPanel>
     </b:ModalBody>
     <b:ModalFooter>
       <b:Button ui:field="cancelDeleteWikiButton" type="LINK">Cancel</b:Button>

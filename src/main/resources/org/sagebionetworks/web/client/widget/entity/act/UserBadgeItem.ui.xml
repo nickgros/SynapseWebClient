@@ -12,21 +12,21 @@
     field='icons'
     type='org.sagebionetworks.web.client.IconsImageBundle'
   />
-  <bh:Div marginTop="5" addStyleNames="flexcontainer-row">
-    <bh:Div addStyleNames="flexcontainer-column">
+  <g:FlowPanel addStyleNames="flexcontainer-row margin-top-5">
+    <g:FlowPanel addStyleNames="flexcontainer-column">
       <b:CheckBox ui:field="select" addStyleNames="inline-block" />
-    </bh:Div>
+    </g:FlowPanel>
 
-    <bh:Div
+    <g:FlowPanel
       ui:field="userBadgeContainer"
       addStyleNames="flexcontainer-column flexcontainer-column-fill-width"
     />
 
-    <bh:Div
+    <g:FlowPanel
       ui:field="renewRevokeContainer"
       addStyleNames="flexcontainer-column flexcontainer-align-items-flex-end"
     >
       <b:ButtonGroup ui:field="renewRevokeButtonGroup" />
-    </bh:Div>
-  </bh:Div>
+    </g:FlowPanel>
+  </g:FlowPanel>
 </ui:UiBinder>

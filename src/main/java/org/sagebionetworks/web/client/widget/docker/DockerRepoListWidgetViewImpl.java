@@ -2,6 +2,8 @@ package org.sagebionetworks.web.client.widget.docker;
 
 import com.google.gwt.uibinder.client.UiBinder;
 import com.google.gwt.uibinder.client.UiField;
+import com.google.gwt.user.client.ui.FlowPanel;
+import com.google.gwt.user.client.ui.FlowPanel;
 import com.google.gwt.user.client.ui.SimplePanel;
 import com.google.gwt.user.client.ui.Widget;
 import com.google.inject.Inject;
@@ -9,7 +11,6 @@ import java.util.HashMap;
 import java.util.Map;
 import org.gwtbootstrap3.client.ui.ListGroup;
 import org.gwtbootstrap3.client.ui.constants.HeadingSize;
-import org.gwtbootstrap3.client.ui.html.Div;
 import org.gwtbootstrap3.client.ui.html.Span;
 import org.sagebionetworks.repo.model.EntityHeader;
 import org.sagebionetworks.repo.model.docker.DockerRepository;
@@ -26,7 +27,7 @@ public class DockerRepoListWidgetViewImpl implements DockerRepoListWidgetView {
   SimplePanel synAlertContainer;
 
   @UiField
-  Div membersContainer;
+  FlowPanel membersContainer;
 
   @UiField
   LoadingSpinner loadingUI;

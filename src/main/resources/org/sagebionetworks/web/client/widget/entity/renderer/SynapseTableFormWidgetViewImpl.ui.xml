@@ -3,15 +3,16 @@
   xmlns:ui="urn:ui:com.google.gwt.uibinder"
   xmlns:b="urn:import:org.gwtbootstrap3.client.ui"
   xmlns:bh="urn:import:org.gwtbootstrap3.client.ui.html"
+  xmlns:g="urn:import:com.google.gwt.user.client.ui"
 >
-  <bh:Div addStyleNames="margin-5">
+  <g:FlowPanel addStyleNames="margin-5">
     <b:Panel ui:field="formUI">
       <b:PanelHeader>
         <bh:Span ui:field="userBadgeContainer" addStyleNames="margin-right-5" />
         <bh:Italic text=" would like to gather some information from you:" />
       </b:PanelHeader>
       <b:PanelBody>
-        <bh:Div ui:field="rowWidgetContainer" />
+        <g:FlowPanel ui:field="rowWidgetContainer" />
         <b:Button ui:field="submitButton" type="PRIMARY" text="Submit" />
       </b:PanelBody>
       <b:PanelFooter>
@@ -24,15 +25,15 @@
         </b:Anchor>
       </b:PanelFooter>
     </b:Panel>
-    <bh:Div ui:field="synAlertContainer" />
+    <g:FlowPanel ui:field="synAlertContainer" />
     <b:Alert type="INFO" ui:field="successMessageUI">
       <bh:Span ui:field="successMessageText" />
-      <bh:Div marginTop="15">
+      <g:FlowPanel addStyleNames="margin-top-15">
         <b:Anchor
           ui:field="submitAnotherResponseLink"
           text="Submit another response"
         />
-      </bh:Div>
+      </g:FlowPanel>
     </b:Alert>
-  </bh:Div>
+  </g:FlowPanel>
 </ui:UiBinder>

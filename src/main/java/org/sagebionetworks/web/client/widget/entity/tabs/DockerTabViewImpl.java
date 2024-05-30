@@ -4,11 +4,11 @@ import com.google.gwt.core.shared.GWT;
 import com.google.gwt.uibinder.client.UiBinder;
 import com.google.gwt.uibinder.client.UiField;
 import com.google.gwt.user.client.ui.FlowPanel;
+import com.google.gwt.user.client.ui.FlowPanel;
 import com.google.gwt.user.client.ui.IsWidget;
 import com.google.gwt.user.client.ui.SimplePanel;
 import com.google.gwt.user.client.ui.Widget;
 import org.gwtbootstrap3.client.ui.Heading;
-import org.gwtbootstrap3.client.ui.html.Div;
 
 public class DockerTabViewImpl implements DockerTabView {
 
@@ -25,7 +25,7 @@ public class DockerTabViewImpl implements DockerTabView {
   SimplePanel synapseAlertContainer;
 
   @UiField
-  Div actionMenuContainer;
+  FlowPanel actionMenuContainer;
 
   @UiField
   Heading title;

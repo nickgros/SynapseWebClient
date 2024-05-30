@@ -15,17 +15,17 @@
     <g:FlowPanel ui:field="mainPanel">
       <g:FlowPanel ui:field="wikiSubpagesPanel" />
       <g:FlowPanel ui:field="wikiPagePanel">
-        <bh:Div addStyleNames="flexcontainer-row margin-bottom-10">
-          <bh:Div
+        <g:FlowPanel addStyleNames="flexcontainer-row margin-bottom-10">
+          <g:FlowPanel
             addStyleNames="flexcontainer-column flexcontainer-column-fill-width"
           />
-          <bh:Div
+          <g:FlowPanel
             addStyleNames="flexcontainer-column flexcontainer-align-items-flex-end min-width-70"
             ui:field="actionMenuContainer"
           />
-        </bh:Div>
+        </g:FlowPanel>
         <w:LoadingSpinner ui:field="loadingPanel" size="31px" />
-        <bh:Div ui:field="wikiHeadingContainer" />
+        <g:FlowPanel ui:field="wikiHeadingContainer" />
         <b:Alert ui:field="diffVersionAlert" visible="false">
           <g:HTMLPanel>
             <bh:Span
@@ -60,7 +60,7 @@
           addStyleNames="margin-top-20 clearleft"
           ui:field="createdModifiedHistoryPanel"
         >
-          <bh:Div>
+          <g:FlowPanel>
             <bh:Italic text="Wiki created on" addStyleNames="margin-right-5" />
             <bh:Italic ui:field="createdOnText" />
             <bh:Italic
@@ -68,7 +68,7 @@
               addStyleNames="margin-left-5 margin-right-5"
             />
             <bh:Italic ui:field="modifiedOnText" />
-          </bh:Div>
+          </g:FlowPanel>
 
           <b:Button
             ui:field="wikiCompareButton"

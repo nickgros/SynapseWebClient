@@ -6,11 +6,11 @@
   xmlns:bh="urn:import:org.gwtbootstrap3.client.ui.html"
   xmlns:t="urn:import:org.sagebionetworks.web.client.view.bootstrap.table"
 >
-  <bh:Div>
-    <bh:Div
+  <g:FlowPanel>
+    <g:FlowPanel
       addStyleNames="margin-top-30 margin-left-35 min-height-400 margin-right-10"
     >
-      <bh:Div ui:field="synAlertContainer" />
+      <g:FlowPanel ui:field="synAlertContainer" />
       <b:Row>
         <b:Column size="SM_12">
           <b:Panel>
@@ -43,6 +43,6 @@
         </b:Column>
       </b:Row>
       <b:Panel ui:field="diffContainer" width="100%" />
-    </bh:Div>
-  </bh:Div>
+    </g:FlowPanel>
+  </g:FlowPanel>
 </ui:UiBinder>

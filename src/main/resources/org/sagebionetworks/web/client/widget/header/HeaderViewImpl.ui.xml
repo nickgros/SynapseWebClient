@@ -6,26 +6,23 @@
   xmlns:bh="urn:import:org.gwtbootstrap3.client.ui.html"
   xmlns:w="urn:import:org.sagebionetworks.web.client.widget"
 >
-  <bh:Div addStyleNames="header" ui:field="header">
+  <g:FlowPanel addStyleNames="header" ui:field="header">
     <w:ReactComponentDiv ui:field="synapseNavDrawerContainer" />
     <g:FocusPanel
       ui:field="editModeNavBarClickBlocker"
       addStyleNames="editModeNavBarClickBlocker"
       visible="false"
     />
-    <bh:Div
+    <g:FlowPanel
       ui:field="portalAlert"
       visible="false"
-      addStyleNames="padding-15 flexcontainer-row background-color-white"
-      marginTop="0"
-      marginRight="0"
-      marginBottom="0"
+      addStyleNames="padding-15 flexcontainer-row background-color-white margin-top-0 margin-right-0 margin-bottom-0"
     >
       <g:FocusPanel
         ui:field="portalLogoFocusPanel"
         addStyleNames="imageButton flexcontainer-column-fill-width"
       >
-        <bh:Div>
+        <g:FlowPanel>
           <b:Icon
             type="ARROW_LEFT"
             addStyleNames="movedown-2 font-size-14 dark-text"
@@ -40,9 +37,9 @@
             addStyleNames="font-size-18 movedown-3"
             marginLeft="10"
           />
-        </bh:Div>
+        </g:FlowPanel>
       </g:FocusPanel>
-      <bh:Div addStyleNames="dark-text" marginTop="5">
+      <g:FlowPanel addStyleNames="dark-text margin-top-5">
         <bh:Span addStyleNames="vertical-align-middle">
           <bh:Paragraph addStyleNames="displayInline smallerText">
             Currently viewing
@@ -59,8 +56,8 @@
           addStyleNames="displayInline letter-spacing-6 dmsans vertical-align-middle"
           text="SYNAPSE"
         />
-      </bh:Div>
-    </bh:Div>
+      </g:FlowPanel>
+    </g:FlowPanel>
     <b:Alert
       ui:field="stagingAlert"
       type="WARNING"
@@ -70,7 +67,7 @@
       marginBottom="0"
       marginTop="0"
     >
-      <bh:Div width="100%" addStyleNames="flexcontainer-row" marginTop="5">
+      <g:FlowPanel width="100%" addStyleNames="flexcontainer-row margin-top-5">
         <bh:Span
           paddingRight="5"
           paddingLeft="10"
@@ -97,7 +94,7 @@
           addStyleNames="flexcontainer-column flexcontainer-justify-flex-end margin-left-5"
           placement="LEFT"
         />
-      </bh:Div>
+      </g:FlowPanel>
     </b:Alert>
     <w:FullWidthAlert
       ui:field="cookieNotificationAlert"
@@ -122,6 +119,6 @@
       primaryCTAHref="https://sagebionetworks.jira.com/servicedesk/customer/portal/9/group/26/create/162"
       addStyleNames="nihNotificationAlert"
     />
-    <bh:Div ui:field="donationBannerContainer" />
-  </bh:Div>
+    <g:FlowPanel ui:field="donationBannerContainer" />
+  </g:FlowPanel>
 </ui:UiBinder>

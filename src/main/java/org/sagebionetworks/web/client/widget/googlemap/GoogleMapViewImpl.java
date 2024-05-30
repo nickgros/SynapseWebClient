@@ -9,12 +9,12 @@ import com.google.gwt.json.client.JSONParser;
 import com.google.gwt.json.client.JSONString;
 import com.google.gwt.uibinder.client.UiBinder;
 import com.google.gwt.uibinder.client.UiField;
+import com.google.gwt.user.client.ui.FlowPanel;
 import com.google.gwt.user.client.ui.Widget;
 import com.google.inject.Inject;
 import java.util.ArrayList;
 import java.util.List;
 import org.gwtbootstrap3.client.ui.Heading;
-import org.gwtbootstrap3.client.ui.html.Div;
 import org.sagebionetworks.web.client.DisplayUtils;
 import org.sagebionetworks.web.client.utils.Callback;
 
@@ -26,19 +26,19 @@ public class GoogleMapViewImpl implements GoogleMapView {
   Presenter presenter;
 
   @UiField
-  Div synAlertContainer;
+  FlowPanel synAlertContainer;
 
   @UiField
-  Div googleMapCanvas;
+  FlowPanel googleMapCanvas;
 
   @UiField
-  Div userBadges;
+  FlowPanel userBadges;
 
   @UiField
-  Div markerPopupContent;
+  FlowPanel markerPopupContent;
 
   @UiField
-  Div googleMapContainer;
+  FlowPanel googleMapContainer;
 
   @UiField
   Heading locationTitle;

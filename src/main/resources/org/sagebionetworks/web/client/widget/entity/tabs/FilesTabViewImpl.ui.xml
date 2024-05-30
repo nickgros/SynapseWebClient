@@ -15,15 +15,15 @@
     />
     <g:SimplePanel ui:field="refreshAlertContainer" />
     <g:SimplePanel ui:field="synapseAlertContainer" />
-    <bh:Div ui:field="modalDialogContainer" />
+    <g:FlowPanel ui:field="modalDialogContainer" />
     <g:SimplePanel ui:field="fileBreadcrumbContainer" />
-    <bh:Div>
+    <g:FlowPanel>
       <g:SimplePanel ui:field="folderTitlebarContainer" visible="false" />
       <g:SimplePanel ui:field="fileTitlebarContainer" visible="false" />
       <g:SimplePanel ui:field="fileMetadataContainer" visible="false" />
-    </bh:Div>
+    </g:FlowPanel>
     <g:SimplePanel ui:field="addToDownloadListWidgetContainer" />
-    <bh:Div addStyleNames="entity-page-side-margins margin-bottom-40">
+    <g:FlowPanel addStyleNames="entity-page-side-margins margin-bottom-40">
       <g:SimplePanel ui:field="fileHistoryContainer" />
       <g:SimplePanel
         ui:field="filesWikiPageContainer"
@@ -34,7 +34,7 @@
       <b:Row addStyleNames="margin-top-10">
         <b:Column size="MD_6" ui:field="filePreviewContainer">
           <g:FlowPanel>
-            <bh:Div addStyleNames="highlight-title">
+            <g:FlowPanel addStyleNames="highlight-title">
               <bh:Text>Preview</bh:Text>
               <w:HelpWidget
                 helpMarkdown="Preview shows a portion of the file content. Content is only visible when the user is logged in and has satisfied all conditions for use."
@@ -48,18 +48,18 @@
                 ui:field="expandPreviewLink"
                 pull="RIGHT"
               />
-            </bh:Div>
+            </g:FlowPanel>
             <g:ScrollPanel
               height="200px"
               addStyleNames="padding-15 whiteBackground"
             >
-              <bh:Div ui:field="filePreviewWidgetContainer" />
+              <g:FlowPanel ui:field="filePreviewWidgetContainer" />
             </g:ScrollPanel>
           </g:FlowPanel>
         </b:Column>
         <b:Column size="MD_6" ui:field="fileProvenanceContainer">
           <g:FlowPanel>
-            <bh:Div addStyleNames="highlight-title">
+            <g:FlowPanel addStyleNames="highlight-title">
               <bh:Text>Provenance</bh:Text>
               <w:HelpWidget
                 helpMarkdown="Provenance tracks the relationship between data, code and analytical results"
@@ -73,8 +73,8 @@
                 ui:field="expandProvenanceLink"
                 pull="RIGHT"
               />
-            </bh:Div>
-            <bh:Div
+            </g:FlowPanel>
+            <g:FlowPanel
               ui:field="fileProvenanceGraphContainer"
               addStyleNames="padding-15 whiteBackground"
             />
@@ -84,14 +84,14 @@
       <b:Row addStyleNames="margin-top-10">
         <b:Column size="MD_12" ui:field="discussionContainer">
           <g:FlowPanel>
-            <bh:Div addStyleNames="highlight-title">
+            <g:FlowPanel addStyleNames="highlight-title">
               <bh:Text ui:field="discussionText" />
-            </bh:Div>
-            <bh:Div ui:field="discussionThreadsContainer" />
+            </g:FlowPanel>
+            <g:FlowPanel ui:field="discussionThreadsContainer" />
           </g:FlowPanel>
         </b:Column>
       </b:Row>
-    </bh:Div>
+    </g:FlowPanel>
     <g:SimplePanel ui:field="fileModifiedAndCreatedContainer" />
   </g:FlowPanel>
 </ui:UiBinder>

@@ -5,6 +5,8 @@ import com.google.gwt.event.dom.client.ClickEvent;
 import com.google.gwt.event.dom.client.ClickHandler;
 import com.google.gwt.uibinder.client.UiBinder;
 import com.google.gwt.uibinder.client.UiField;
+import com.google.gwt.user.client.ui.FlowPanel;
+import com.google.gwt.user.client.ui.FlowPanel;
 import com.google.gwt.user.client.ui.HTML;
 import com.google.gwt.user.client.ui.Widget;
 import java.util.List;
@@ -13,7 +15,6 @@ import org.gwtbootstrap3.client.ui.Button;
 import org.gwtbootstrap3.client.ui.DropDownMenu;
 import org.gwtbootstrap3.client.ui.Modal;
 import org.gwtbootstrap3.client.ui.TextArea;
-import org.gwtbootstrap3.client.ui.html.Div;
 import org.sagebionetworks.web.client.DisplayUtils;
 import org.sagebionetworks.web.client.widget.accessrequirements.AccessRequirementWidget;
 
@@ -35,10 +36,10 @@ public class ApproveUserAccessModalViewImpl
   DropDownMenu arDropdownMenu;
 
   @UiField
-  Div accessRequirementWidgetContainer;
+  FlowPanel accessRequirementWidgetContainer;
 
   @UiField
-  Div synAlertContainer;
+  FlowPanel synAlertContainer;
 
   @UiField
   Button submitButton;
@@ -59,10 +60,10 @@ public class ApproveUserAccessModalViewImpl
   TextArea messageEditArea;
 
   @UiField
-  Div userSelectContainer;
+  FlowPanel userSelectContainer;
 
   @UiField
-  Div loadingEmail;
+  FlowPanel loadingEmail;
 
   @UiField
   Modal previewModal;

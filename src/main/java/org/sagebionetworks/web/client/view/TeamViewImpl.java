@@ -5,6 +5,8 @@ import com.google.gwt.uibinder.client.UiBinder;
 import com.google.gwt.uibinder.client.UiField;
 import com.google.gwt.user.client.Window;
 import com.google.gwt.user.client.ui.Composite;
+import com.google.gwt.user.client.ui.FlowPanel;
+import com.google.gwt.user.client.ui.FlowPanel;
 import com.google.gwt.user.client.ui.HTMLPanel;
 import com.google.gwt.user.client.ui.SimplePanel;
 import com.google.gwt.user.client.ui.Widget;
@@ -15,7 +17,6 @@ import org.gwtbootstrap3.client.ui.Button;
 import org.gwtbootstrap3.client.ui.Heading;
 import org.gwtbootstrap3.client.ui.Icon;
 import org.gwtbootstrap3.client.ui.Modal;
-import org.gwtbootstrap3.client.ui.html.Div;
 import org.sagebionetworks.repo.model.Team;
 import org.sagebionetworks.repo.model.TeamMembershipStatus;
 import org.sagebionetworks.web.client.DisplayUtils;
@@ -41,10 +42,10 @@ public class TeamViewImpl extends Composite implements TeamView {
   HTMLPanel mainContainer;
 
   @UiField
-  Div commandsContainer;
+  FlowPanel commandsContainer;
 
   @UiField
-  Div teamBadgeContainer;
+  FlowPanel teamBadgeContainer;
 
   @UiField
   SimplePanel inviteMemberPanel;
@@ -68,7 +69,7 @@ public class TeamViewImpl extends Composite implements TeamView {
   SimplePanel memberListPanel;
 
   @UiField
-  Div publicJoinField;
+  FlowPanel publicJoinField;
 
   @UiField
   AnchorListItem leaveTeamItem;
@@ -89,7 +90,7 @@ public class TeamViewImpl extends Composite implements TeamView {
   AnchorListItem teamProjectsItem;
 
   @UiField
-  Div mapPanel;
+  FlowPanel mapPanel;
 
   @UiField
   Modal mapModal;
@@ -104,7 +105,7 @@ public class TeamViewImpl extends Composite implements TeamView {
   Icon memberSearchButton;
 
   @UiField
-  Div widgetsContainer;
+  FlowPanel widgetsContainer;
 
   @UiField
   FullWidthAlert teamClosedAlert;

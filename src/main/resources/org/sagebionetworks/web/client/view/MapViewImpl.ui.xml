@@ -13,11 +13,11 @@
     <div class="color-line" />
     <div class="separator margin-top-3" />
     <div class="margin-top-left-10 margin-right-15">
-      <bh:Div ui:field="allUsersTitle">
+      <g:FlowPanel ui:field="allUsersTitle">
         <b:Heading text="All Synapse Users" size="H4" />
-      </bh:Div>
-      <bh:Div ui:field="teamBadgeContainer" />
-      <bh:Div ui:field="mapPanel" />
+      </g:FlowPanel>
+      <g:FlowPanel ui:field="teamBadgeContainer" />
+      <g:FlowPanel ui:field="mapPanel" />
     </div>
   </g:HTMLPanel>
 </ui:UiBinder>

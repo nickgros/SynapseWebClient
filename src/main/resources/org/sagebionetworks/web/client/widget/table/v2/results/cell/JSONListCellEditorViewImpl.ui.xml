@@ -13,7 +13,7 @@
         ui:field="rendererFocusPanel"
         addStyleNames="form-control min-width-140 cursor-pointer"
       >
-        <bh:Div ui:field="rendererContainer" />
+        <g:FlowPanel ui:field="rendererContainer" />
       </g:FocusPanel>
       <b:Icon
         ui:field="editButton"

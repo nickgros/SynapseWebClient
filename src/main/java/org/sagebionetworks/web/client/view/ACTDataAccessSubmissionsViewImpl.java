@@ -5,6 +5,7 @@ import com.google.gwt.event.dom.client.ClickHandler;
 import com.google.gwt.uibinder.client.UiBinder;
 import com.google.gwt.uibinder.client.UiField;
 import com.google.gwt.user.client.Window;
+import com.google.gwt.user.client.ui.FlowPanel;
 import com.google.gwt.user.client.ui.IsWidget;
 import com.google.gwt.user.client.ui.Widget;
 import com.google.inject.Inject;
@@ -17,7 +18,6 @@ import org.gwtbootstrap3.client.ui.DropDownMenu;
 import org.gwtbootstrap3.client.ui.Panel;
 import org.gwtbootstrap3.client.ui.TextBox;
 import org.gwtbootstrap3.client.ui.Well;
-import org.gwtbootstrap3.client.ui.html.Div;
 import org.gwtbootstrap3.client.ui.html.Span;
 import org.gwtbootstrap3.client.ui.html.Strong;
 import org.sagebionetworks.web.client.DisplayUtils;
@@ -33,16 +33,16 @@ public class ACTDataAccessSubmissionsViewImpl
   DropDownMenu stateDropdownMenu;
 
   @UiField
-  Div synAlertContainer;
+  FlowPanel synAlertContainer;
 
   @UiField
-  Div accessRequirementContainer;
+  FlowPanel accessRequirementContainer;
 
   @UiField
-  Div showHideAccessRequirementButtonContainer;
+  FlowPanel showHideAccessRequirementButtonContainer;
 
   @UiField
-  Div tableData;
+  FlowPanel tableData;
 
   @UiField
   Button clearStateFilter;
@@ -66,7 +66,7 @@ public class ACTDataAccessSubmissionsViewImpl
   CheckBox ducCheckbox;
 
   @UiField
-  Div ducTemplateFileContainer;
+  FlowPanel ducTemplateFileContainer;
 
   @UiField
   CheckBox irbCheckbox;
@@ -81,10 +81,10 @@ public class ACTDataAccessSubmissionsViewImpl
   CheckBox iduCheckbox;
 
   @UiField
-  Div teamSubjectsContainer;
+  FlowPanel teamSubjectsContainer;
 
   @UiField
-  Div entitySubjectsContainer;
+  FlowPanel entitySubjectsContainer;
 
   @UiField
   TextBox expirationPeriodTextbox;
@@ -96,10 +96,10 @@ public class ACTDataAccessSubmissionsViewImpl
   Strong expirationDate;
 
   @UiField
-  Div accessorSelectContainer;
+  FlowPanel accessorSelectContainer;
 
   @UiField
-  Div currentAccessorContainer;
+  FlowPanel currentAccessorContainer;
 
   @UiField
   Button clearAccessorFilter;

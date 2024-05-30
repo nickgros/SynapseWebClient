@@ -2,6 +2,7 @@ package org.sagebionetworks.web.client.widget.docker;
 
 import com.google.gwt.i18n.client.DateTimeFormat;
 import com.google.gwt.i18n.client.DateTimeFormat.PredefinedFormat;
+import com.google.gwt.user.client.ui.FlowPanel;
 import org.gwtbootstrap3.client.ui.Anchor;
 import org.gwtbootstrap3.client.ui.Heading;
 import org.gwtbootstrap3.client.ui.LinkedGroupItemText;
@@ -9,7 +10,6 @@ import org.gwtbootstrap3.client.ui.ListGroupItem;
 import org.gwtbootstrap3.client.ui.constants.HeadingSize;
 import org.gwtbootstrap3.client.ui.constants.IconType;
 import org.gwtbootstrap3.client.ui.constants.Pull;
-import org.gwtbootstrap3.client.ui.html.Div;
 import org.sagebionetworks.repo.model.EntityHeader;
 import org.sagebionetworks.repo.model.EntityType;
 import org.sagebionetworks.web.client.DisplayUtils;
@@ -57,7 +57,7 @@ public class DockerRepoListGroupItem extends ListGroupItem {
     anchor.setIcon(IconType.ANGLE_RIGHT);
     anchor.addStyleName("margin-right-10 moveup-2 pull-right h3");
 
-    Div div = new Div();
+    FlowPanel div = new FlowPanel();
     div.add(iconHeading);
     div.add(heading);
     div.add(anchor);

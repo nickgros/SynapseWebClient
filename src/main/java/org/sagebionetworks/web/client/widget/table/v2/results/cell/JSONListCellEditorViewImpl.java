@@ -5,6 +5,8 @@ import com.google.gwt.event.shared.GwtEvent;
 import com.google.gwt.event.shared.HandlerRegistration;
 import com.google.gwt.uibinder.client.UiBinder;
 import com.google.gwt.uibinder.client.UiField;
+import com.google.gwt.user.client.ui.FlowPanel;
+import com.google.gwt.user.client.ui.FlowPanel;
 import com.google.gwt.user.client.ui.FocusPanel;
 import com.google.gwt.user.client.ui.Widget;
 import com.google.inject.Inject;
@@ -12,7 +14,6 @@ import org.gwtbootstrap3.client.ui.FormGroup;
 import org.gwtbootstrap3.client.ui.HelpBlock;
 import org.gwtbootstrap3.client.ui.Icon;
 import org.gwtbootstrap3.client.ui.constants.ValidationState;
-import org.gwtbootstrap3.client.ui.html.Div;
 import org.sagebionetworks.repo.model.table.ColumnType;
 
 /**
@@ -33,7 +34,7 @@ public class JSONListCellEditorViewImpl implements JSONListCellEditorView {
   FocusPanel rendererFocusPanel;
 
   @UiField
-  Div rendererContainer;
+  FlowPanel rendererContainer;
 
   @UiField
   Icon editButton;

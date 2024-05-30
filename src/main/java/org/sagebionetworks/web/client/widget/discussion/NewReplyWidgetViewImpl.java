@@ -7,11 +7,12 @@ import com.google.gwt.event.dom.client.KeyDownEvent;
 import com.google.gwt.uibinder.client.UiBinder;
 import com.google.gwt.uibinder.client.UiField;
 import com.google.gwt.user.client.Window;
+import com.google.gwt.user.client.ui.FlowPanel;
+import com.google.gwt.user.client.ui.FlowPanel;
 import com.google.gwt.user.client.ui.Widget;
 import com.google.inject.Inject;
 import org.gwtbootstrap3.client.ui.Button;
 import org.gwtbootstrap3.client.ui.TextBox;
-import org.gwtbootstrap3.client.ui.html.Div;
 import org.sagebionetworks.web.client.DisplayUtils;
 import org.sagebionetworks.web.client.utils.Callback;
 
@@ -23,10 +24,10 @@ public class NewReplyWidgetViewImpl implements NewReplyWidgetView {
   TextBox replyTextBox;
 
   @UiField
-  Div newReplyContainer;
+  FlowPanel newReplyContainer;
 
   @UiField
-  Div markdownEditorContainer;
+  FlowPanel markdownEditorContainer;
 
   @UiField
   Button cancelButton;
@@ -35,7 +36,7 @@ public class NewReplyWidgetViewImpl implements NewReplyWidgetView {
   Button saveButton;
 
   @UiField
-  Div synAlert;
+  FlowPanel synAlert;
 
   private Presenter presenter;
   private Widget widget;

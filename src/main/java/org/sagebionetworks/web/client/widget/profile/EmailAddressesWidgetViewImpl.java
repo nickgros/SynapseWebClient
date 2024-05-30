@@ -7,6 +7,8 @@ import com.google.gwt.event.dom.client.KeyDownEvent;
 import com.google.gwt.event.dom.client.KeyDownHandler;
 import com.google.gwt.uibinder.client.UiBinder;
 import com.google.gwt.uibinder.client.UiField;
+import com.google.gwt.user.client.ui.FlowPanel;
+import com.google.gwt.user.client.ui.FlowPanel;
 import com.google.gwt.user.client.ui.IsWidget;
 import com.google.gwt.user.client.ui.TextBox;
 import com.google.gwt.user.client.ui.Widget;
@@ -15,7 +17,6 @@ import org.gwtbootstrap3.client.ui.Button;
 import org.gwtbootstrap3.client.ui.constants.ButtonSize;
 import org.gwtbootstrap3.client.ui.constants.ButtonType;
 import org.gwtbootstrap3.client.ui.constants.IconType;
-import org.gwtbootstrap3.client.ui.html.Div;
 import org.gwtbootstrap3.client.ui.html.Span;
 import org.gwtbootstrap3.client.ui.html.Strong;
 import org.sagebionetworks.web.client.widget.HelpWidget;
@@ -39,10 +40,10 @@ public class EmailAddressesWidgetViewImpl implements EmailAddressesWidgetView {
   LoadingSpinner loadingUI;
 
   @UiField
-  Div synapseAlertContainer;
+  FlowPanel synapseAlertContainer;
 
   @UiField
-  Div emailsPanel;
+  FlowPanel emailsPanel;
 
   @Inject
   public EmailAddressesWidgetViewImpl(Binder binder) {
@@ -99,7 +100,7 @@ public class EmailAddressesWidgetViewImpl implements EmailAddressesWidgetView {
 
   @Override
   public void addPrimaryEmail(String email, boolean isQuarantined) {
-    Div emailDiv = new Div();
+    FlowPanel emailDiv = new FlowPanel();
     emailDiv.add(new Strong(email + " (Primary)"));
     if (isQuarantined) {
       HelpWidget helpWidget = new HelpWidget();
@@ -115,7 +116,7 @@ public class EmailAddressesWidgetViewImpl implements EmailAddressesWidgetView {
 
   @Override
   public void addSecondaryEmail(final String email) {
-    Div emailDiv = new Div();
+    FlowPanel emailDiv = new FlowPanel();
     emailDiv.addStyleName("margin-top-5");
     Span emailSpan = new Span();
     emailSpan.setText(email);

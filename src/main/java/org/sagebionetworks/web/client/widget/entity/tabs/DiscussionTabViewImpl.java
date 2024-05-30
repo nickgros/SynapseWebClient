@@ -3,14 +3,15 @@ package org.sagebionetworks.web.client.widget.entity.tabs;
 import com.google.gwt.core.shared.GWT;
 import com.google.gwt.uibinder.client.UiBinder;
 import com.google.gwt.uibinder.client.UiField;
+import com.google.gwt.user.client.ui.FlowPanel;
+import com.google.gwt.user.client.ui.FlowPanel;
 import com.google.gwt.user.client.ui.Widget;
-import org.gwtbootstrap3.client.ui.html.Div;
 import org.sagebionetworks.web.client.DisplayUtils;
 
 public class DiscussionTabViewImpl implements DiscussionTabView {
 
   @UiField
-  Div forumContainer;
+  FlowPanel forumContainer;
 
   private Presenter presenter;
 

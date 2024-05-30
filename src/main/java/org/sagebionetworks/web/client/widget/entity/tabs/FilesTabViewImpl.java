@@ -5,6 +5,8 @@ import com.google.gwt.event.dom.client.ClickHandler;
 import com.google.gwt.event.shared.HandlerRegistration;
 import com.google.gwt.uibinder.client.UiBinder;
 import com.google.gwt.uibinder.client.UiField;
+import com.google.gwt.user.client.ui.FlowPanel;
+import com.google.gwt.user.client.ui.FlowPanel;
 import com.google.gwt.user.client.ui.IsWidget;
 import com.google.gwt.user.client.ui.ScrollPanel;
 import com.google.gwt.user.client.ui.SimplePanel;
@@ -16,7 +18,6 @@ import org.gwtbootstrap3.client.ui.Column;
 import org.gwtbootstrap3.client.ui.Modal;
 import org.gwtbootstrap3.client.ui.ModalBody;
 import org.gwtbootstrap3.client.ui.ModalFooter;
-import org.gwtbootstrap3.client.ui.html.Div;
 import org.gwtbootstrap3.client.ui.html.Text;
 import org.sagebionetworks.web.client.DisplayConstants;
 import org.sagebionetworks.web.client.widget.LoadingSpinner;
@@ -42,13 +43,13 @@ public class FilesTabViewImpl implements FilesTabView {
   Column filePreviewContainer;
 
   @UiField
-  Div filePreviewWidgetContainer;
+  FlowPanel filePreviewWidgetContainer;
 
   @UiField
   Column fileProvenanceContainer;
 
   @UiField
-  Div fileProvenanceGraphContainer;
+  FlowPanel fileProvenanceGraphContainer;
 
   @UiField
   SimplePanel fileModifiedAndCreatedContainer;
@@ -72,7 +73,7 @@ public class FilesTabViewImpl implements FilesTabView {
   SimplePanel refreshAlertContainer;
 
   @UiField
-  Div discussionThreadsContainer;
+  FlowPanel discussionThreadsContainer;
 
   @UiField
   Column discussionContainer;
@@ -87,7 +88,7 @@ public class FilesTabViewImpl implements FilesTabView {
   Anchor expandPreviewLink;
 
   @UiField
-  Div modalDialogContainer;
+  FlowPanel modalDialogContainer;
 
   Widget provenanceGraphWidget, previewWidget;
   HandlerRegistration expandPreviewHandlerRegistration, expandProvHandlerRegistration;
@@ -115,7 +116,7 @@ public class FilesTabViewImpl implements FilesTabView {
       final Modal window = new Modal();
       window.addStyleName("modal-fullscreen");
       final ModalBody body = new ModalBody();
-      final Div oldParent = (Div) w.getParent();
+      final FlowPanel oldParent = (FlowPanel) w.getParent();
       w.removeFromParent();
       body.add(new ScrollPanel(w));
       w.setHeight(

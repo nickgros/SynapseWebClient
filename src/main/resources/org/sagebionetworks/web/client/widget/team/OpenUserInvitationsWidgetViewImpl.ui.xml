@@ -3,17 +3,17 @@
 <ui:UiBinder
   xmlns:ui="urn:ui:com.google.gwt.uibinder"
   xmlns:b="urn:import:org.gwtbootstrap3.client.ui"
-  xmlns:bh="urn:import:org.gwtbootstrap3.client.ui.html"
+  xmlns:g="urn:import:com.google.gwt.user.client.ui"
   xmlns:table="urn:import:org.sagebionetworks.web.client.view.bootstrap.table"
 >
-  <bh:Div>
-    <bh:Div ui:field="synAlertContainer" />
-    <bh:Div ui:field="invitationsContainer">
+  <g:FlowPanel>
+    <g:FlowPanel ui:field="synAlertContainer" />
+    <g:FlowPanel ui:field="invitationsContainer">
       <b:Heading ui:field="title" size="H3" text="Pending Invitations" />
       <table:Table ui:field="invitations" width="100%" />
-      <bh:Div addStyleNames="text-center">
+      <g:FlowPanel addStyleNames="text-center">
         <b:Button ui:field="moreButton" text="More" />
-      </bh:Div>
-    </bh:Div>
-  </bh:Div>
+      </g:FlowPanel>
+    </g:FlowPanel>
+  </g:FlowPanel>
 </ui:UiBinder>

@@ -5,12 +5,12 @@ import static org.sagebionetworks.web.client.DisplayUtils.newWindow;
 
 import com.google.gwt.event.dom.client.ClickHandler;
 import com.google.gwt.event.shared.HandlerRegistration;
+import com.google.gwt.user.client.ui.FlowPanel;
 import com.google.gwt.user.client.ui.FocusPanel;
 import com.google.inject.Inject;
 import java.util.ArrayList;
 import java.util.List;
 import org.gwtbootstrap3.client.ui.constants.Emphasis;
-import org.gwtbootstrap3.client.ui.html.Div;
 import org.gwtbootstrap3.client.ui.html.Paragraph;
 import org.gwtbootstrap3.client.ui.html.Text;
 import org.sagebionetworks.repo.model.UserProfile;
@@ -32,7 +32,7 @@ import org.sagebionetworks.web.client.utils.Callback;
 import org.sagebionetworks.web.client.utils.CallbackP;
 import org.sagebionetworks.web.client.widget.ReactComponentDiv;
 
-public class UserBadgeViewImpl extends Div implements UserBadgeView {
+public class UserBadgeViewImpl extends FlowPanel implements UserBadgeView {
 
   private String userId;
   public static PlaceChanger placeChanger = null;
@@ -69,8 +69,7 @@ public class UserBadgeViewImpl extends Div implements UserBadgeView {
     this.jsniUtils = jsniUtils;
     this.authController = authController;
     this.propsProvider = propsProvider;
-    setMarginRight(2);
-    setMarginLeft(2);
+    addStyleName("margin-left-2 margin-right-2");
     addStyleName("UserBadge");
     addStyleName("vertical-align-middle");
     clickHandlerRegistration =

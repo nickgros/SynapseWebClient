@@ -3,9 +3,10 @@ package org.sagebionetworks.web.client.widget.entity.controller;
 import com.google.gwt.core.shared.GWT;
 import com.google.gwt.uibinder.client.UiBinder;
 import com.google.gwt.uibinder.client.UiField;
+import com.google.gwt.user.client.ui.FlowPanel;
+import com.google.gwt.user.client.ui.FlowPanel;
 import com.google.gwt.user.client.ui.Widget;
 import com.google.inject.Inject;
-import org.gwtbootstrap3.client.ui.html.Div;
 import org.sagebionetworks.web.client.DisplayUtils;
 import org.sagebionetworks.web.client.context.SynapseReactClientFullContextPropsProvider;
 import org.sagebionetworks.web.client.jsinterop.ErrorPageProps;
@@ -26,10 +27,10 @@ public class StuAlertViewImpl implements StuAlertView {
   ReactComponentDiv errorPageContainer;
 
   @UiField
-  Div synAlertContainer;
+  FlowPanel synAlertContainer;
 
   Widget synAlertWidget;
-  Div container = new Div();
+  FlowPanel container = new FlowPanel();
   boolean is404, is403;
 
   @Inject

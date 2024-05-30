@@ -6,7 +6,7 @@
   xmlns:bh="urn:import:org.gwtbootstrap3.client.ui.html"
   xmlns:e="urn:import:org.sagebionetworks.web.client.widget.entity"
 >
-  <bh:Div addStyleNames="entityRefreshAlert" visible="false">
+  <g:FlowPanel addStyleNames="entityRefreshAlert" visible="false">
     <b:Alert type="INFO">
       <bh:Strong text="This view is out of date and needs to be refreshed." />
       <b:Button
@@ -18,5 +18,5 @@
         Refresh
       </b:Button>
     </b:Alert>
-  </bh:Div>
+  </g:FlowPanel>
 </ui:UiBinder>

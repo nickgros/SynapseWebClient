@@ -8,10 +8,10 @@
   xmlns:bh="urn:import:org.gwtbootstrap3.client.ui.html"
   xmlns:b3="urn:import:org.gwtbootstrap3.extras.slider.client.ui"
 >
-  <bh:Div>
-    <bh:Div addStyleNames="margin-top-15 margin-bottom-5">
+  <g:FlowPanel>
+    <g:FlowPanel addStyleNames="margin-top-15 margin-bottom-5">
       <bh:Strong ui:field="columnName" />
-    </bh:Div>
+    </g:FlowPanel>
     <b:Radio ui:field="notSetRadio" name="facetcolumnrange">Not set</b:Radio>
     <b:Radio ui:field="anyRadio" name="facetcolumnrange">Any</b:Radio>
     <b:Radio ui:field="rangeRadio" name="facetcolumnrange">Range</b:Radio>
@@ -30,6 +30,6 @@
         text="Apply"
       />
     </g:HorizontalPanel>
-    <bh:Div ui:field="synAlertContainer" />
-  </bh:Div>
+    <g:FlowPanel ui:field="synAlertContainer" />
+  </g:FlowPanel>
 </ui:UiBinder>

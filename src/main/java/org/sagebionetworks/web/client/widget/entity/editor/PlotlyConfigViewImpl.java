@@ -6,6 +6,8 @@ import com.google.gwt.event.dom.client.ClickEvent;
 import com.google.gwt.event.dom.client.ClickHandler;
 import com.google.gwt.uibinder.client.UiBinder;
 import com.google.gwt.uibinder.client.UiField;
+import com.google.gwt.user.client.ui.FlowPanel;
+import com.google.gwt.user.client.ui.FlowPanel;
 import com.google.gwt.user.client.ui.IsWidget;
 import com.google.gwt.user.client.ui.Widget;
 import com.google.inject.Inject;
@@ -17,7 +19,6 @@ import org.gwtbootstrap3.client.ui.Icon;
 import org.gwtbootstrap3.client.ui.ListBox;
 import org.gwtbootstrap3.client.ui.TextBox;
 import org.gwtbootstrap3.client.ui.constants.IconType;
-import org.gwtbootstrap3.client.ui.html.Div;
 import org.gwtbootstrap3.client.ui.html.Text;
 import org.sagebionetworks.web.client.plotly.AxisType;
 import org.sagebionetworks.web.client.plotly.BarMode;
@@ -46,7 +47,7 @@ public class PlotlyConfigViewImpl implements PlotlyConfigView {
   TextBox tableViewSynId;
 
   @UiField
-  Div yAxisColumnsContainer;
+  FlowPanel yAxisColumnsContainer;
 
   @UiField
   Button entityPickerButton;
@@ -55,19 +56,19 @@ public class PlotlyConfigViewImpl implements PlotlyConfigView {
   TextBox advancedClause;
 
   @UiField
-  Div showHideAdvancedButtonContainer;
+  FlowPanel showHideAdvancedButtonContainer;
 
   @UiField
-  Div advancedUI;
+  FlowPanel advancedUI;
 
   @UiField
   FormGroup barChartModeUI;
 
   @UiField
-  Div synAlertContainer;
+  FlowPanel synAlertContainer;
 
   @UiField
-  Div extraWidgets;
+  FlowPanel extraWidgets;
 
   @UiField
   ListBox xColumnNamesMenu;
@@ -290,7 +291,7 @@ public class PlotlyConfigViewImpl implements PlotlyConfigView {
 
   @Override
   public void addYAxisColumn(final String yColumnName) {
-    final Div yColumnContainer = new Div();
+    final FlowPanel yColumnContainer = new FlowPanel();
     yColumnContainer.addStyleName("margin-bottom-5");
     yColumnContainer.add(new Text(yColumnName));
     Icon deleteButton = new Icon(IconType.TIMES);

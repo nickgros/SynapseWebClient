@@ -9,7 +9,7 @@
   xmlns:bg="urn:import:org.gwtbootstrap3.client.ui.gwt"
   xmlns:bh="urn:import:org.gwtbootstrap3.client.ui.html"
 >
-  <bh:Div>
+  <g:FlowPanel>
     <bh:ClearFix ui:field="clearFix" />
     <bh:UnorderedList
       addStyleNames="pager padding-left-0-imp margin-top-5"
@@ -23,5 +23,5 @@
       </b:ListItem>
     </bh:UnorderedList>
     <bh:ClearFix />
-  </bh:Div>
+  </g:FlowPanel>
 </ui:UiBinder>

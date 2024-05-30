@@ -23,10 +23,10 @@
     addStyleNames="modal-90-percent"
   >
     <b:ModalBody>
-      <bh:Div styleName="margin-bottom-20">
+      <g:FlowPanel styleName="margin-bottom-20">
         <g:SimplePanel ui:field="paramsPanel" />
         <g:SimplePanel ui:field="errorContainer" />
-      </bh:Div>
+      </g:FlowPanel>
     </b:ModalBody>
     <b:ModalFooter>
       <b:Button type="LINK" dataDismiss="MODAL">Cancel</b:Button>

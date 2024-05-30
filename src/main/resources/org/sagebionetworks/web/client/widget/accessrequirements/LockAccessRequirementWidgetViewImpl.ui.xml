@@ -11,7 +11,7 @@
   />
   <b:Panel marginBottom="0">
     <b:PanelBody>
-      <bh:Div styleName="margin-bottom-20">
+      <g:FlowPanel styleName="margin-bottom-20">
         <g:Image
           styleName="displayInline moveup-2 margin-right-5"
           resource='{icons.shieldRed16}'
@@ -25,39 +25,40 @@
           styleName="font-size-18"
           text="Access restricted pending review by Synapse Access and Compliance Team."
         />
-      </bh:Div>
-      <bh:Div ui:field="accessRequirementIDUI" visible="false">
+      </g:FlowPanel>
+      <g:FlowPanel ui:field="accessRequirementIDUI" visible="false">
         <g:InlineLabel
           addStyleNames="boldText margin-right-5"
           text="Access Requirement ID:"
         />
         <g:InlineLabel ui:field="accessRequirementIDField" />
-      </bh:Div>
-      <bh:Div ui:field="coveredEntitiesHeadingUI" styleName="margin-top-10">
+      </g:FlowPanel>
+      <g:FlowPanel
+        ui:field="coveredEntitiesHeadingUI"
+        styleName="margin-top-10"
+      >
         <g:InlineLabel styleName="boldText" text="Entities Covered" />
         <bh:Hr addStyleNames="margin-top-5 margin-bottom-5" />
-      </bh:Div>
-      <bh:Div
+      </g:FlowPanel>
+      <g:FlowPanel
         ui:field="accessRequirementRelatedProjectsListContainer"
         addStyleNames="margin-left-5 margin-right-5 accessRequirementRelatedProjectsListContainer"
       />
-      <bh:Div
+      <g:FlowPanel
         ui:field="entitySubjectsWidgetContainer"
         addStyleNames="margin-left-5 margin-right-5"
       />
       <bh:ClearFix />
-      <bh:Div>
-        <bh:Div
+      <g:FlowPanel>
+        <g:FlowPanel
           ui:field="teamSubjectsWidgetContainer"
-          pull="LEFT"
-          addStyleNames="margin-left-5 margin-right-5"
+          addStyleNames="margin-left-5 margin-right-5 floatleft"
         />
-        <bh:Div
+        <g:FlowPanel
           ui:field="deleteAccessRequirementContainer"
-          pull="RIGHT"
-          addStyleNames="margin-right-5"
+          addStyleNames="margin-right-5 floatright"
         />
-      </bh:Div>
+      </g:FlowPanel>
       <bh:ClearFix />
     </b:PanelBody>
   </b:Panel>

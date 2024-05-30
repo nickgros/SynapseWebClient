@@ -11,6 +11,7 @@ import com.google.gwt.event.logical.shared.ValueChangeHandler;
 import com.google.gwt.event.shared.HandlerRegistration;
 import com.google.gwt.safehtml.shared.SafeHtmlUtils;
 import com.google.gwt.user.client.ui.FlowPanel;
+import com.google.gwt.user.client.ui.FlowPanel;
 import com.google.gwt.user.client.ui.FormPanel;
 import com.google.gwt.user.client.ui.FormPanel.SubmitCompleteEvent;
 import com.google.gwt.user.client.ui.FormPanel.SubmitCompleteHandler;
@@ -50,7 +51,6 @@ import org.gwtbootstrap3.client.ui.constants.ProgressBarType;
 import org.gwtbootstrap3.client.ui.constants.Pull;
 import org.gwtbootstrap3.client.ui.constants.Toggle;
 import org.gwtbootstrap3.client.ui.constants.ValidationState;
-import org.gwtbootstrap3.client.ui.html.Div;
 import org.gwtbootstrap3.client.ui.html.Italic;
 import org.gwtbootstrap3.client.ui.html.Span;
 import org.sagebionetworks.web.client.DisplayConstants;
@@ -111,7 +111,7 @@ public class UploaderViewImpl extends FlowPanel implements UploaderView {
   private ProgressBar progressBar;
   // external link panel
 
-  private Div spinningProgressContainer;
+  private FlowPanel spinningProgressContainer;
   private Input fileUploadInput;
   private Heading fileUploadLabel = new Heading(HeadingSize.H5);
   private Italic uploadSpeedLabel = new Italic();
@@ -151,7 +151,7 @@ public class UploaderViewImpl extends FlowPanel implements UploaderView {
     this.formPanel = new FormPanel();
     this.externalLinkFormPanel = new Form();
 
-    spinningProgressContainer = new Div();
+    spinningProgressContainer = new FlowPanel();
 
     chooseFileButtonGroup = new ButtonGroup();
     chooseSingleFileBtn = new Button("Browse...");

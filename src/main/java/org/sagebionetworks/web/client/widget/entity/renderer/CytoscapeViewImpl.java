@@ -6,9 +6,10 @@ import com.google.gwt.dom.client.Document;
 import com.google.gwt.event.logical.shared.AttachEvent;
 import com.google.gwt.uibinder.client.UiBinder;
 import com.google.gwt.uibinder.client.UiField;
+import com.google.gwt.user.client.ui.FlowPanel;
+import com.google.gwt.user.client.ui.FlowPanel;
 import com.google.gwt.user.client.ui.Widget;
 import com.google.inject.Inject;
-import org.gwtbootstrap3.client.ui.html.Div;
 import org.gwtvisualizationwrappers.client.cytoscape.CytoscapeGraph25;
 import org.sagebionetworks.web.client.SynapseJSNIUtils;
 
@@ -27,10 +28,10 @@ public class CytoscapeViewImpl implements CytoscapeView {
   Widget widget;
 
   @UiField
-  Div visualizationContainer;
+  FlowPanel visualizationContainer;
 
   @UiField
-  Div synAlertContainer;
+  FlowPanel synAlertContainer;
 
   boolean isAttached, isConfigured;
   String cyJS, styleJson;

@@ -9,8 +9,8 @@
 >
   <b:Modal title="Validated Synapse Profile" closable="false" ui:field="modal">
     <b:ModalBody addStyleNames="bg-primary color-white">
-      <bh:Div>
-        <bh:Div height="35px">
+      <g:FlowPanel>
+        <g:FlowPanel height="35px">
           <b:Icon
             type="CHECK_SQUARE_O"
             addStyleNames="color-white displayInline"
@@ -27,24 +27,24 @@
             size="H3"
             addStyleNames="color-white displayInline"
           />
-        </bh:Div>
-        <bh:Div height="22px">
+        </g:FlowPanel>
+        <g:FlowPanel height="22px">
           <b:Icon
             type="BUILDING"
             addStyleNames="color-white margin-left-12"
             width="20px"
           />
           <bh:Span ui:field="currentAffiliation" addStyleNames="color-white" />
-        </bh:Div>
-        <bh:Div height="22px">
+        </g:FlowPanel>
+        <g:FlowPanel height="22px">
           <b:Icon
             type="MAP_MARKER"
             addStyleNames="color-white margin-left-12"
             width="20px"
           />
           <bh:Span ui:field="location" addStyleNames="color-white" />
-        </bh:Div>
-        <bh:Div height="22px">
+        </g:FlowPanel>
+        <g:FlowPanel height="22px">
           <b:Heading
             size="H5"
             addStyleNames="color-white displayInline margin-left-12 margin-right-5"
@@ -56,8 +56,8 @@
             addStyleNames="color-white"
             target="_blank"
           />
-        </bh:Div>
-        <bh:Div height="22px">
+        </g:FlowPanel>
+        <g:FlowPanel height="22px">
           <b:Icon
             type="CLOCK_O"
             addStyleNames="color-white margin-left-12"
@@ -68,8 +68,8 @@
             text="Validated by the ACT on"
           />
           <bh:Span ui:field="dateVerified" addStyleNames="color-white" />
-        </bh:Div>
-      </bh:Div>
+        </g:FlowPanel>
+      </g:FlowPanel>
     </b:ModalBody>
     <b:ModalFooter>
       <b:Button type="DEFAULT" dataDismiss="MODAL">Close</b:Button>

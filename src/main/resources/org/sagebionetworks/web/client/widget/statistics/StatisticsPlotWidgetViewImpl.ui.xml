@@ -4,6 +4,7 @@
   xmlns:b="urn:import:org.gwtbootstrap3.client.ui"
   xmlns:bh="urn:import:org.gwtbootstrap3.client.ui.html"
   xmlns:w="urn:import:org.sagebionetworks.web.client.widget"
+  xmlns:g="urn:import:com.google.gwt.user.client.ui"
 >
   <b:Modal
     ui:field="statsPlotModal"
@@ -15,11 +16,11 @@
   >
     <b:ModalBody>
       <w:ReactComponentDiv ui:field="srcContainer" />
-      <bh:Div>
+      <g:FlowPanel>
         <bh:Paragraph addStyleNames="center">
           This data is collected and processed on a monthly basis.
         </bh:Paragraph>
-      </bh:Div>
+      </g:FlowPanel>
     </b:ModalBody>
     <b:ModalFooter>
       <b:Button ui:field="closeButton" type="DEFAULT" text="Close" />

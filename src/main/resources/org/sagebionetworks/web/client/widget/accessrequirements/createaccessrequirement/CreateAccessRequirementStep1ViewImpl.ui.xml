@@ -10,14 +10,14 @@
   xmlns:bh="urn:import:org.gwtbootstrap3.client.ui.html"
   xmlns:w="urn:import:org.sagebionetworks.web.client.widget"
 >
-  <bh:Div>
-    <bh:Div>
+  <g:FlowPanel>
+    <g:FlowPanel>
       <b:FormGroup>
         <b:FormLabel>Resources</b:FormLabel>
-        <bh:Div ui:field="teamSubjectsContainer" />
-        <bh:Div ui:field="entityUI">
-          <bh:Div ui:field="entitySubjectsContainer" />
-        </bh:Div>
+        <g:FlowPanel ui:field="teamSubjectsContainer" />
+        <g:FlowPanel ui:field="entityUI">
+          <g:FlowPanel ui:field="entitySubjectsContainer" />
+        </g:FlowPanel>
         <b:InputGroup ui:field="teamUI">
           <b:TextBox
             ui:field="teamIds"
@@ -37,7 +37,7 @@
             placement="LEFT"
           />
         </b:InputGroup>
-        <bh:Div marginTop="10">
+        <g:FlowPanel addStyleNames="margin-top-10">
           <b:FormLabel text="Name" />
           <w:HelpWidget
             helpMarkdown="Enter access requirement name. This will also be used when sending notifications for expiring or revoked approval.  For example, 'The approval for the **name** access requirement was revoked...'"
@@ -51,7 +51,7 @@
             autoComplete="false"
             width="100%"
           />
-        </bh:Div>
+        </g:FlowPanel>
       </b:FormGroup>
       <b:FormGroup ui:field="arTypeUI">
         <b:FormLabel>Access requirement type</b:FormLabel>
@@ -73,6 +73,6 @@
           name="accessRequirementType"
         />
       </b:FormGroup>
-    </bh:Div>
-  </bh:Div>
+    </g:FlowPanel>
+  </g:FlowPanel>
 </ui:UiBinder>

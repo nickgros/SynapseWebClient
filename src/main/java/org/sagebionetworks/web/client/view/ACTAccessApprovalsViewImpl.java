@@ -5,6 +5,7 @@ import com.google.gwt.uibinder.client.UiField;
 import com.google.gwt.user.client.Element;
 import com.google.gwt.user.client.Window;
 import com.google.gwt.user.client.rpc.AsyncCallback;
+import com.google.gwt.user.client.ui.FlowPanel;
 import com.google.gwt.user.client.ui.IsWidget;
 import com.google.gwt.user.client.ui.Widget;
 import com.google.inject.Inject;
@@ -18,7 +19,6 @@ import org.gwtbootstrap3.client.ui.Anchor;
 import org.gwtbootstrap3.client.ui.Button;
 import org.gwtbootstrap3.client.ui.Column;
 import org.gwtbootstrap3.client.ui.Panel;
-import org.gwtbootstrap3.client.ui.html.Div;
 import org.gwtbootstrap3.extras.datetimepicker.client.ui.DateTimePicker;
 import org.sagebionetworks.repo.model.UserProfile;
 import org.sagebionetworks.repo.model.dataaccess.AccessorGroup;
@@ -37,16 +37,16 @@ public class ACTAccessApprovalsViewImpl implements ACTAccessApprovalsView {
   DateTimePicker expiresBeforeDatePicker;
 
   @UiField
-  Div synAlertContainer;
+  FlowPanel synAlertContainer;
 
   @UiField
-  Div accessRequirementContainer;
+  FlowPanel accessRequirementContainer;
 
   @UiField
-  Div showHideAccessRequirementButtonContainer;
+  FlowPanel showHideAccessRequirementButtonContainer;
 
   @UiField
-  Div tableData;
+  FlowPanel tableData;
 
   @UiField
   Button clearDateFilter;
@@ -64,16 +64,16 @@ public class ACTAccessApprovalsViewImpl implements ACTAccessApprovalsView {
   Panel accessRequirementUI;
 
   @UiField
-  Div submitterSelectContainer;
+  FlowPanel submitterSelectContainer;
 
   @UiField
-  Div accessorSelectContainer;
+  FlowPanel accessorSelectContainer;
 
   @UiField
-  Div currentSubmitterContainer;
+  FlowPanel currentSubmitterContainer;
 
   @UiField
-  Div currentAccessorContainer;
+  FlowPanel currentAccessorContainer;
 
   @UiField
   Button exportButton;

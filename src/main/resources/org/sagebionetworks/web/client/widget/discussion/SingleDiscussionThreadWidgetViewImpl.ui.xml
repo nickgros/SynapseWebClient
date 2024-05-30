@@ -11,18 +11,18 @@
     field='icons'
     type='org.sagebionetworks.web.client.IconsImageBundle'
   />
-  <bh:Div addStyleNames="discussionThread overflow-x-hidden">
-    <bh:Div ui:field="refreshAlertContainer" />
-    <bh:Div addStyleNames="overflow-x-hidden">
-      <bh:Div
+  <g:FlowPanel addStyleNames="discussionThread overflow-x-hidden">
+    <g:FlowPanel ui:field="refreshAlertContainer" />
+    <g:FlowPanel addStyleNames="overflow-x-hidden">
+      <g:FlowPanel
         ui:field="deletedThread"
         visible="false"
         addStyleNames="highlight-title"
       >
         <bh:Text>Deleted Thread</bh:Text>
-      </bh:Div>
-      <bh:Div addStyleNames="margin-top-10 padding-left-10" width="100%">
-        <bh:Div
+      </g:FlowPanel>
+      <g:FlowPanel addStyleNames="margin-top-10 padding-left-10" width="100%">
+        <g:FlowPanel
           width="100%"
           addStyleNames="flexcontainer-row flexcontainer-align-items-center"
         >
@@ -33,8 +33,8 @@
             visible="false"
             addStyleNames="synapse-accent-primary-bg margin-left-5"
           />
-        </bh:Div>
-        <bh:Div width="100%">
+        </g:FlowPanel>
+        <g:FlowPanel width="100%">
           <b:Container fluid="true">
             <b:Row>
               <b:Column size="XS_12">
@@ -53,10 +53,10 @@
                   visible="false"
                   size="31px"
                 />
-                <bh:Div ui:field="threadMessage" />
+                <g:FlowPanel ui:field="threadMessage" />
               </b:Column>
               <b:Column size="XS_12" addStyleNames="margin-top-3">
-                <bh:Div addStyleNames="margin-left-10 small left">
+                <g:FlowPanel addStyleNames="margin-left-10 small left">
                   <bh:Span ui:field="createdOn" />
                   <b:Label
                     text="Edited"
@@ -64,8 +64,8 @@
                     visible="false"
                     addStyleNames="margin-left-10 moveup-1"
                   />
-                </bh:Div>
-                <bh:Div ui:field="commandsContainer">
+                </g:FlowPanel>
+                <g:FlowPanel ui:field="commandsContainer">
                   <bh:Span
                     ui:field="subscribeButtonContainer"
                     addStyleNames="right"
@@ -118,7 +118,7 @@
                       />
                     </b:IconStack>
                   </b:Tooltip>
-                </bh:Div>
+                </g:FlowPanel>
                 <b:Tooltip title="Restore deleted thread" placement="LEFT">
                   <g:Image
                     resource='{icons.restore24}'
@@ -130,14 +130,14 @@
               </b:Column>
             </b:Row>
           </b:Container>
-        </bh:Div>
-      </bh:Div>
-      <bh:Div
+        </g:FlowPanel>
+      </g:FlowPanel>
+      <g:FlowPanel
         ui:field="newReplyContainer"
         addStyleNames="margin-top-10 margin-left-30"
       />
-      <bh:Div ui:field="replyDetails">
-        <bh:Div addStyleNames="margin-top-10 margin-left-10">
+      <g:FlowPanel ui:field="replyDetails">
+        <g:FlowPanel addStyleNames="margin-top-10 margin-left-10">
           <b:Button
             ui:field="showAllRepliesButton"
             type="DEFAULT"
@@ -148,20 +148,20 @@
           >
             Show all replies
           </b:Button>
-        </bh:Div>
-        <bh:Div
+        </g:FlowPanel>
+        <g:FlowPanel
           ui:field="replyListContainer"
           width="100%"
           addStyleNames="margin-top-10"
         />
-      </bh:Div>
-      <bh:Div
+      </g:FlowPanel>
+      <g:FlowPanel
         ui:field="secondNewReplyContainer"
         addStyleNames="margin-top-10 margin-left-30 margin-bottom-10"
         visible="false"
       />
-    </bh:Div>
+    </g:FlowPanel>
     <g:SimplePanel ui:field="editThreadModalContainer" />
-    <bh:Div ui:field="synAlertContainer" />
-  </bh:Div>
+    <g:FlowPanel ui:field="synAlertContainer" />
+  </g:FlowPanel>
 </ui:UiBinder>

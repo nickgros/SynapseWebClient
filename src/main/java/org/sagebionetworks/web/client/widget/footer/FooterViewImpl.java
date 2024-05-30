@@ -6,6 +6,7 @@ import com.google.gwt.safehtml.shared.SafeUri;
 import com.google.gwt.uibinder.client.UiBinder;
 import com.google.gwt.uibinder.client.UiField;
 import com.google.gwt.user.client.Window;
+import com.google.gwt.user.client.ui.FlowPanel;
 import com.google.gwt.user.client.ui.FocusPanel;
 import com.google.gwt.user.client.ui.Image;
 import com.google.gwt.user.client.ui.IsWidget;
@@ -13,7 +14,6 @@ import com.google.gwt.user.client.ui.Widget;
 import com.google.inject.Inject;
 import java.util.Date;
 import org.gwtbootstrap3.client.ui.Anchor;
-import org.gwtbootstrap3.client.ui.html.Div;
 import org.gwtbootstrap3.client.ui.html.Span;
 import org.sagebionetworks.web.client.DisplayConstants;
 import org.sagebionetworks.web.client.DisplayUtils;
@@ -82,7 +82,7 @@ public class FooterViewImpl implements FooterView {
   private CookieProvider cookies;
   private GlobalApplicationState globalAppState;
   private ToggleACTActionsButton hideACTActionsButton;
-  Div container = new Div();
+  FlowPanel container = new FlowPanel();
 
   @Inject
   public FooterViewImpl(

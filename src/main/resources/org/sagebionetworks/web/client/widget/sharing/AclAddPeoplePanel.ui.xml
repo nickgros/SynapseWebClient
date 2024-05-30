@@ -5,7 +5,7 @@
   xmlns:bh="urn:import:org.gwtbootstrap3.client.ui.html"
   xmlns:g="urn:import:com.google.gwt.user.client.ui"
 >
-  <bh:Div>
+  <g:FlowPanel>
     <b:Heading
       size="H4"
       text="Add More People"
@@ -17,16 +17,15 @@
         name, then adjust their access level above before clicking Save.
       </bh:Italic>
     </bh:Paragraph>
-    <bh:Div>
-      <bh:Div marginBottom="20">
+    <g:FlowPanel>
+      <g:FlowPanel addStyleNames="margin-bottom-20">
         <b:FormGroup>
           <b:FormLabel>Name</b:FormLabel>
-          <bh:Div ui:field="suggestBoxPanel" />
+          <g:FlowPanel ui:field="suggestBoxPanel" />
         </b:FormGroup>
-      </bh:Div>
-      <bh:Div
-        addStyleNames="flexcontainer-row flexcontainer-justify-space-between flexcontainer-align-items-center"
-        marginBottom="20"
+      </g:FlowPanel>
+      <g:FlowPanel
+        addStyleNames="flexcontainer-row flexcontainer-justify-space-between flexcontainer-align-items-center margin-bottom-20"
       >
         <b:Button ui:field="makePublicButton" type="DEFAULT" icon="GLOBE">
           Make Public
@@ -39,7 +38,7 @@
             Notify people via email
           </b:CheckBox>
         </b:Tooltip>
-      </bh:Div>
-    </bh:Div>
-  </bh:Div>
+      </g:FlowPanel>
+    </g:FlowPanel>
+  </g:FlowPanel>
 </ui:UiBinder>

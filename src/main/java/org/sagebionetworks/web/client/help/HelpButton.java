@@ -1,5 +1,6 @@
 package org.sagebionetworks.web.client.help;
 
+import com.google.gwt.user.client.ui.FlowPanel;
 import com.google.gwt.user.client.ui.HasHTML;
 import com.google.gwt.user.client.ui.Widget;
 import org.gwtbootstrap3.client.ui.Icon;
@@ -7,7 +8,6 @@ import org.gwtbootstrap3.client.ui.Popover;
 import org.gwtbootstrap3.client.ui.constants.IconType;
 import org.gwtbootstrap3.client.ui.constants.Placement;
 import org.gwtbootstrap3.client.ui.constants.Trigger;
-import org.gwtbootstrap3.client.ui.html.Div;
 import org.gwtbootstrap3.client.ui.html.Text;
 
 /**
@@ -21,7 +21,7 @@ import org.gwtbootstrap3.client.ui.html.Text;
  * <bh:Text><ui:text from='{help.discussionForum}'/></bh:Text> </h:HelpButton>
  *
  */
-public class HelpButton extends Div implements HasHTML {
+public class HelpButton extends FlowPanel implements HasHTML {
 
   private final Icon helpButton = new Icon(IconType.QUESTION_CIRCLE);
   private final Popover popover = new Popover(helpButton);

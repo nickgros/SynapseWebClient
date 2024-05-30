@@ -33,23 +33,23 @@
         </li>
       </ul>
     </div>
-    <bh:Div
+    <g:FlowPanel
       ui:field="currentContextTabContents"
       addStyleNames="panel margin-top-15"
     >
       <g:SimplePanel ui:field="currentContextContainer" />
-    </bh:Div>
-    <bh:Div
+    </g:FlowPanel>
+    <g:FlowPanel
       ui:field="myProjectsTabContents"
       addStyleNames="panel margin-top-15"
     >
       <g:SimplePanel ui:field="myProjectsContainer" />
-    </bh:Div>
-    <bh:Div
+    </g:FlowPanel>
+    <g:FlowPanel
       ui:field="myFavoritesTabContents"
       addStyleNames="panel margin-top-15"
     >
       <g:SimplePanel ui:field="myFavoritesContainer" />
-    </bh:Div>
+    </g:FlowPanel>
   </g:HTMLPanel>
 </ui:UiBinder>

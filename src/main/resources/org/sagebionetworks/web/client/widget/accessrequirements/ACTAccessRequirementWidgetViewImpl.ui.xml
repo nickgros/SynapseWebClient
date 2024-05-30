@@ -22,18 +22,18 @@
           is Controlled Use
         </bh:Paragraph>
       </b:Heading>
-      <bh:Div ui:field="approvedHeading" visible="false">
+      <g:FlowPanel ui:field="approvedHeading" visible="false">
         <g:InlineLabel
           styleName="boldText"
           text="Access requirements fulfilled:  You have access to these data under the following terms:"
         />
-      </bh:Div>
-      <bh:Div ui:field="unapprovedHeading" visible="false">
+      </g:FlowPanel>
+      <g:FlowPanel ui:field="unapprovedHeading" visible="false">
         <g:InlineLabel
           styleName="boldText"
           text="Access to the data requires that you are a registered Synapse user and fulfill the following requirements:"
         />
-      </bh:Div>
+      </g:FlowPanel>
       <!-- terms -->
       <b:BlockQuote ui:field="wikiTermsUI" visible="false">
         <g:SimplePanel ui:field="wikiContainer" />
@@ -44,7 +44,7 @@
           <g:HTML ui:field="terms" styleName="font-size-14" />
         </bh:Paragraph>
       </b:BlockQuote>
-      <bh:Div>
+      <g:FlowPanel>
         <bh:Text>
           For more information on use conditions, please read about
         </bh:Text>
@@ -55,69 +55,69 @@
           target="_blank"
         />
         <bh:Text>
-          .
-          &nbsp;
-          &nbsp;
+          . &nbsp; &nbsp;
         </bh:Text>
         <bh:Text>
           If you think this data is posted inappropriately or should
 					have different access conditions, please alert the Synapse Access
 					and Compliance Team (ACT) to discuss at act@sagebase.org
         </bh:Text>
-      </bh:Div>
-      <bh:Div ui:field="accessRequirementIDUI" visible="false">
+      </g:FlowPanel>
+      <g:FlowPanel ui:field="accessRequirementIDUI" visible="false">
         <g:InlineLabel
           addStyleNames="boldText margin-right-5"
           text="Access Requirement ID:"
         />
         <g:InlineLabel ui:field="accessRequirementIDField" />
-      </bh:Div>
-      <bh:Div ui:field="subjectsDefinedByAnnotationsUI" visible="false">
+      </g:FlowPanel>
+      <g:FlowPanel ui:field="subjectsDefinedByAnnotationsUI" visible="false">
         <bh:Strong>
           Subjects controlled by this Access Requirement are defined by
           annotations on individual entities.
         </bh:Strong>
-      </bh:Div>
-      <bh:Div ui:field="subjectsDefinedInAccessRequirementUI">
-        <bh:Div ui:field="coveredEntitiesHeadingUI" styleName="margin-top-10">
+      </g:FlowPanel>
+      <g:FlowPanel ui:field="subjectsDefinedInAccessRequirementUI">
+        <g:FlowPanel
+          ui:field="coveredEntitiesHeadingUI"
+          styleName="margin-top-10"
+        >
           <g:InlineLabel styleName="boldText" text="Entities Covered" />
           <bh:Hr addStyleNames="margin-top-5 margin-bottom-5" />
-        </bh:Div>
-        <bh:Div
+        </g:FlowPanel>
+        <g:FlowPanel
           ui:field="accessRequirementRelatedProjectsListContainer"
           addStyleNames="margin-left-5 margin-right-5 accessRequirementRelatedProjectsListContainer"
         />
-        <bh:Div
+        <g:FlowPanel
           ui:field="entitySubjectsWidgetContainer"
           addStyleNames="margin-left-5 margin-right-5"
         />
         <bh:ClearFix />
-        <bh:Div>
-          <bh:Div
+        <g:FlowPanel>
+          <g:FlowPanel
             ui:field="teamSubjectsWidgetContainer"
-            pull="LEFT"
-            addStyleNames="margin-left-5 margin-right-5"
+            addStyleNames="margin-left-5 margin-right-5 floatleft"
           />
-        </bh:Div>
+        </g:FlowPanel>
         <bh:ClearFix />
-      </bh:Div>
-      <bh:Div addStyleNames="margin-top-5" ui:field="controlsContainer">
-        <bh:Div
+      </g:FlowPanel>
+      <g:FlowPanel addStyleNames="margin-top-5" ui:field="controlsContainer">
+        <g:FlowPanel
           ui:field="convertAccessRequirementContainer"
-          pull="RIGHT"
-          addStyleNames="margin-right-5 margin-top-5"
+          addStyleNames="margin-right-5 margin-top-5 floatright"
         />
-        <bh:Div
+        <g:FlowPanel
           ui:field="manageAccessContainer"
-          pull="RIGHT"
-          addStyleNames="margin-right-5 margin-top-5"
+          addStyleNames="margin-right-5 margin-top-5 floatright"
         />
-        <bh:Div
+        <g:FlowPanel
           ui:field="editAccessRequirementContainer"
-          pull="RIGHT"
-          addStyleNames="margin-right-5 margin-top-5"
+          addStyleNames="margin-right-5 margin-top-5 floatright"
         />
-        <bh:Div ui:field="requestAccessButtonContainer" pull="RIGHT">
+        <g:FlowPanel
+          ui:field="requestAccessButtonContainer"
+          addStyleNames="floatright"
+        >
           <b:Button
             ui:field="requestAccessButton"
             type="PRIMARY"
@@ -132,7 +132,7 @@
             visible="false"
             addStyleNames="margin-right-5 margin-top-5"
           />
-        </bh:Div>
+        </g:FlowPanel>
         <b:Alert
           type="SUCCESS"
           ui:field="requestApprovedMessage"
@@ -141,9 +141,9 @@
           visible="false"
           addStyleNames="small-alert margin-top-5 margin-right-2"
         />
-      </bh:Div>
+      </g:FlowPanel>
       <bh:ClearFix />
-      <bh:Div ui:field="synAlertContainer" />
+      <g:FlowPanel ui:field="synAlertContainer" />
     </b:PanelBody>
   </b:Panel>
 </ui:UiBinder>

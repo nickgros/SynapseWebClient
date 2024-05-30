@@ -5,11 +5,11 @@
   xmlns:b="urn:import:org.gwtbootstrap3.client.ui"
   xmlns:bh="urn:import:org.gwtbootstrap3.client.ui.html"
 >
-  <bh:Div width="100%">
-    <bh:Div ui:field="blockUI" width="100%">
-      <bh:Div addStyleNames="margin-bottom-10">
+  <g:FlowPanel width="100%">
+    <g:FlowPanel ui:field="blockUI" width="100%">
+      <g:FlowPanel addStyleNames="margin-bottom-10">
         <b:TextBox ui:field="emailAddressField" height="43px" width="100%" />
-      </bh:Div>
+      </g:FlowPanel>
       <b:Button
         ui:field="registerBtn"
         text="Send registration info"
@@ -17,7 +17,7 @@
         type="SUCCESS"
         width="100%"
       />
-    </bh:Div>
-    <bh:Div ui:field="synAlertContainer" />
-  </bh:Div>
+    </g:FlowPanel>
+    <g:FlowPanel ui:field="synAlertContainer" />
+  </g:FlowPanel>
 </ui:UiBinder>

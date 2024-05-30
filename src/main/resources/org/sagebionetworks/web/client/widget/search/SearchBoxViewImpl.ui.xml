@@ -5,7 +5,7 @@
   xmlns:b="urn:import:org.gwtbootstrap3.client.ui"
   xmlns:bh="urn:import:org.gwtbootstrap3.client.ui.html"
 >
-  <bh:Div addStyleNames="searchBox displayInlineTable">
+  <g:FlowPanel addStyleNames="searchBox displayInlineTable">
     <b:Icon
       ui:field="searchButton"
       type="SEARCH"
@@ -16,5 +16,5 @@
       paddingLeft="6"
     />
     <b:TextBox ui:field="searchField" height="32px" addStyleNames="moveup-3" />
-  </bh:Div>
+  </g:FlowPanel>
 </ui:UiBinder>

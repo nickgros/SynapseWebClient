@@ -7,7 +7,7 @@
   xmlns:bh="urn:import:org.gwtbootstrap3.client.ui.html"
   xmlns:t="urn:import:org.sagebionetworks.web.client.view.bootstrap.table"
 >
-  <bh:Div>
+  <g:FlowPanel>
     <b:Modal
       ui:field="dialog"
       title=""
@@ -44,19 +44,19 @@
         </b:FormGroup>
         <b:FormGroup ui:field="accessorsUI">
           <b:FormLabel>Data Requestors</b:FormLabel>
-          <bh:Div ui:field="accessorsContainer" />
+          <g:FlowPanel ui:field="accessorsContainer" />
         </b:FormGroup>
         <b:FormGroup ui:field="ducUI">
           <b:FormLabel>DUC</b:FormLabel>
-          <bh:Div ui:field="ducContainer" />
+          <g:FlowPanel ui:field="ducContainer" />
         </b:FormGroup>
         <b:FormGroup ui:field="irbUI">
           <b:FormLabel>IRB</b:FormLabel>
-          <bh:Div ui:field="irbContainer" />
+          <g:FlowPanel ui:field="irbContainer" />
         </b:FormGroup>
         <b:FormGroup ui:field="otherAttachmentsUI">
           <b:FormLabel>Other Attachments</b:FormLabel>
-          <bh:Div ui:field="otherAttachmentsContainer" />
+          <g:FlowPanel ui:field="otherAttachmentsContainer" />
         </b:FormGroup>
         <b:FormGroup ui:field="isRenewalUI">
           <b:FormLabel>Is Renewal</b:FormLabel>
@@ -96,7 +96,7 @@
       </b:ModalFooter>
     </b:Modal>
     <bh:Span ui:field="promptModalContainer" />
-    <bh:Div ui:field="synAlertContainer" />
+    <g:FlowPanel ui:field="synAlertContainer" />
     <t:Table
       addStyleNames="table-layout-fixed border-top-1 margin-left-10"
       width="100%"
@@ -118,12 +118,12 @@
           <g:Label ui:field="submittedOnField" />
         </t:TableData>
         <t:TableData width="50%">
-          <bh:Div ui:field="submittedByContainer" />
+          <g:FlowPanel ui:field="submittedByContainer" />
         </t:TableData>
         <t:TableData width="50%">
           <g:Label ui:field="institutionField" />
         </t:TableData>
       </t:TableRow>
     </t:Table>
-  </bh:Div>
+  </g:FlowPanel>
 </ui:UiBinder>

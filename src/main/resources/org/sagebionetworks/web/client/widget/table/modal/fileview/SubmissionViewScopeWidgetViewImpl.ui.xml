@@ -35,7 +35,7 @@
           addStyleNames="light-border padding-10"
         />
         <g:SimplePanel ui:field="editScopeAlertContainer" />
-        <bh:Div ui:field="viewOptionsContainer" />
+        <g:FlowPanel ui:field="viewOptionsContainer" />
       </b:ModalBody>
       <b:ModalFooter>
         <b:Button

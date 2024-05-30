@@ -1,12 +1,12 @@
 package org.sagebionetworks.web.client.widget.team;
 
 import com.google.gwt.user.client.ui.FlowPanel;
+import com.google.gwt.user.client.ui.FlowPanel;
 import com.google.gwt.user.client.ui.SimplePanel;
 import com.google.inject.Inject;
 import java.util.List;
 import org.gwtbootstrap3.client.ui.Icon;
 import org.gwtbootstrap3.client.ui.constants.IconType;
-import org.gwtbootstrap3.client.ui.html.Div;
 import org.gwtbootstrap3.client.ui.html.Span;
 import org.gwtbootstrap3.client.ui.html.Text;
 import org.sagebionetworks.repo.model.UserProfile;
@@ -57,13 +57,13 @@ public class MemberListWidgetViewImpl
   @Override
   public void addMembers(List<TeamMemberBundle> members, boolean isAdmin) {
     for (TeamMemberBundle teamMember : members) {
-      Div singleGridItem = new Div();
+      FlowPanel singleGridItem = new FlowPanel();
       singleGridItem.addStyleName("SRC-grid-item");
       final UserProfile member = teamMember.getUserProfile();
       UserBadge userBadge = portalGinInjector.getUserBadgeWidget();
       userBadge.setBadgeType(BadgeType.MEDIUM_CARD);
 
-      Div userBadgeWrapper = new Div();
+      FlowPanel userBadgeWrapper = new FlowPanel();
       userBadgeWrapper.add(userBadge);
       singleGridItem.add(userBadgeWrapper);
 
@@ -97,7 +97,7 @@ public class MemberListWidgetViewImpl
 
       if (teamMember.getIsTeamAdmin()) {
         // otherwise, indicate that this row user is an admin (via label)
-        Div teamManagerBadge = new Div();
+        FlowPanel teamManagerBadge = new FlowPanel();
         teamManagerBadge.addStyleName(
           "TeamManagerBadge lightGreyBackground border-left-1 border-bottom-1 border-right-1"
         );

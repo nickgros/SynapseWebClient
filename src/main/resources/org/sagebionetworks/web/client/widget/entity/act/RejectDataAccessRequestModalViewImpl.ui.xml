@@ -18,14 +18,14 @@
     size="LARGE"
   >
     <b:ModalBody>
-      <bh:Div>
-        <bh:Div ui:field="reasonsContainer" />
+      <g:FlowPanel>
+        <g:FlowPanel ui:field="reasonsContainer" />
         <b:CheckBox
           addStyleNames="margin-top-20"
           ui:field="customTextOption"
           text="Custom text"
         />
-        <bh:Div>
+        <g:FlowPanel>
           <b:TextArea
             addStyleNames="margin-bottom-20"
             ui:field="customText"
@@ -33,9 +33,9 @@
             visible="false"
             placeholder="Custom text to insert"
           />
-        </bh:Div>
-      </bh:Div>
-      <bh:Div>
+        </g:FlowPanel>
+      </g:FlowPanel>
+      <g:FlowPanel>
         <b:FormGroup>
           <b:Button
             addStyleNames="margin-bottom-5"
@@ -45,7 +45,7 @@
           />
           <b:TextArea ui:field="responseField" visibleLines="9" />
         </b:FormGroup>
-      </bh:Div>
+      </g:FlowPanel>
       <b:Alert ui:field="alert" type="DANGER" visible="false" />
     </b:ModalBody>
     <b:ModalFooter>

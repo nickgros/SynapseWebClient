@@ -14,7 +14,7 @@
     type='org.sagebionetworks.web.client.SageImageBundle'
   />
 
-  <bh:Div>
+  <g:FlowPanel>
     <!-- Dialog for revoking user -->
     <b:Modal
       ui:field="modal"
@@ -24,15 +24,18 @@
       dataKeyboard="true"
     >
       <b:ModalBody>
-        <bh:Div addStyleNames="margin-top-10 margin-bottom-10">
+        <g:FlowPanel addStyleNames="margin-top-10 margin-bottom-10">
           <b:Heading
             size="H5"
             text="User"
             addStyleNames="margin-left-10 margin-right-10 margin-top-20"
           />
-          <bh:Div ui:field="userSelectContainer" />
-        </bh:Div>
-        <bh:Div ui:field="synAlertContainer" addStyleNames="margin-top-10" />
+          <g:FlowPanel ui:field="userSelectContainer" />
+        </g:FlowPanel>
+        <g:FlowPanel
+          ui:field="synAlertContainer"
+          addStyleNames="margin-top-10"
+        />
         <b:Alert type="WARNING" addStyleNames="margin-top-10">
           <bh:Strong text="Note &nbsp;" />
           <bh:Text
@@ -50,5 +53,5 @@
         />
       </b:ModalFooter>
     </b:Modal>
-  </bh:Div>
+  </g:FlowPanel>
 </ui:UiBinder>

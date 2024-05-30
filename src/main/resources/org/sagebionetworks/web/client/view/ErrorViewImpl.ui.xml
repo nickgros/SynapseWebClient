@@ -6,7 +6,7 @@
   xmlns:bh="urn:import:org.gwtbootstrap3.client.ui.html"
 >
   <b:Container marginTop="15" addStyleNames="min-height-400">
-    <bh:Div width="365px" addStyleNames="center-in-div">
+    <g:FlowPanel width="365px" addStyleNames="center-in-div">
       <b:Heading size="H1" text="Error" />
       <b:Lead ui:field="message" />
       <b:Anchor
@@ -14,6 +14,6 @@
         text="&lt; Back"
         addStyleNames="synapse-green"
       />
-    </bh:Div>
+    </g:FlowPanel>
   </b:Container>
 </ui:UiBinder>
