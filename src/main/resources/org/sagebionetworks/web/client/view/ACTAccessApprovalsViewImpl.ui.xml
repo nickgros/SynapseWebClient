@@ -6,6 +6,7 @@
   xmlns:bh="urn:import:org.gwtbootstrap3.client.ui.html"
   xmlns:t="urn:import:org.sagebionetworks.web.client.view.bootstrap.table"
   xmlns:bd="urn:import:org.gwtbootstrap3.extras.datetimepicker.client.ui"
+  xmlns:w="urn:import:org.sagebionetworks.web.client.widget"
 >
   <g:FlowPanel>
     <g:FlowPanel addStyleNames="pageHeader">
@@ -130,7 +131,7 @@
         icon="DOWNLOAD"
         pull="RIGHT"
       />
-      <bh:Hr />
+      <w:Hr />
       <g:FlowPanel addStyleNames="margin-left-5 margin-right-5">
         <!-- table header -->
         <t:Table

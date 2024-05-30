@@ -4,6 +4,7 @@
   xmlns:g="urn:import:com.google.gwt.user.client.ui"
   xmlns:b="urn:import:org.gwtbootstrap3.client.ui"
   xmlns:bh="urn:import:org.gwtbootstrap3.client.ui.html"
+  xmlns:w="urn:import:org.sagebionetworks.web.client.widget"
 >
   <ui:with
     field='icons'
@@ -38,7 +39,7 @@
         styleName="margin-top-10"
       >
         <g:InlineLabel styleName="boldText" text="Entities Covered" />
-        <bh:Hr addStyleNames="margin-top-5 margin-bottom-5" />
+        <w:Hr addStyleNames="margin-top-5 margin-bottom-5" />
       </g:FlowPanel>
       <g:FlowPanel
         ui:field="accessRequirementRelatedProjectsListContainer"

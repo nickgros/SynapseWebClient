@@ -4,7 +4,7 @@
   xmlns:ui="urn:ui:com.google.gwt.uibinder"
   xmlns:g="urn:import:com.google.gwt.user.client.ui"
   xmlns:b="urn:import:org.gwtbootstrap3.client.ui"
-  xmlns:bh="urn:import:org.gwtbootstrap3.client.ui.html"
+  xmlns:w="urn:import:org.sagebionetworks.web.client.widget"
 >
   <g:FlowPanel>
     <g:FlowPanel addStyleNames="form-horizontal">
@@ -47,7 +47,7 @@
             </b:ButtonGroup>
           </g:FlowPanel>
         </b:FormGroup>
-        <bh:Hr />
+        <w:Hr />
         <b:FormGroup>
           <b:FormLabel addStyleNames="col-xs-2" text="Preview" />
           <g:FlowPanel addStyleNames="col-xs-10">

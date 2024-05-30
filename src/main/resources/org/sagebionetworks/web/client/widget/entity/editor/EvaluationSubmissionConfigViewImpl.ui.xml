@@ -4,7 +4,6 @@
   xmlns:ui="urn:ui:com.google.gwt.uibinder"
   xmlns:g="urn:import:com.google.gwt.user.client.ui"
   xmlns:b="urn:import:org.gwtbootstrap3.client.ui"
-  xmlns:bh="urn:import:org.gwtbootstrap3.client.ui.html"
   xmlns:w="urn:import:org.sagebionetworks.web.client.widget"
 >
   <g:FlowPanel>
@@ -50,7 +49,7 @@
       />
     </g:FlowPanel>
     <g:FlowPanel ui:field="submissionTypeOptions">
-      <bh:Hr />
+      <w:Hr />
       <b:Radio
         ui:field="submitEntityOption"
         name="submitType"
@@ -132,7 +131,7 @@
         </b:InputGroup>
       </g:FlowPanel>
     </g:FlowPanel>
-    <bh:Hr />
+    <w:Hr />
     <g:FlowPanel addStyleNames="margin-10">
       <b:FormLabel text="Evaluation Queue unavailable message" />
       <b:TextBox
