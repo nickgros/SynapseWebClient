@@ -5,6 +5,7 @@
   xmlns:b="urn:import:org.gwtbootstrap3.client.ui"
   xmlns:bh="urn:import:org.gwtbootstrap3.client.ui.html"
   xmlns:w="urn:import:org.sagebionetworks.web.client.widget"
+  xmlns:mui="urn:import:org.sagebionetworks.web.client.widget.mui"
 >
   <g:HTMLPanel>
     <g:FlowPanel addStyleNames="profileContainer">
@@ -20,24 +21,24 @@
       <g:FlowPanel
         addStyleNames="profileFormContainer overflowHidden padding-top-40 padding-left-40 padding-right-50"
       >
-        <b:Row>
-          <b:Column size="MD_12,LG_6">
+        <mui:Grid container="true">
+          <mui:Grid md="12" lg="6">
             <b:FormGroup>
               <b:FormLabel for="firstName">First Name</b:FormLabel>
               <b:TextBox name="firstName" ui:field="firstName" />
               <bh:Paragraph ui:field="firstNameRenderer" visible="false" />
             </b:FormGroup>
-          </b:Column>
-          <b:Column size="MD_12,LG_6">
+          </mui:Grid>
+          <mui:Grid md="12" lg="6">
             <b:FormGroup>
               <b:FormLabel for="lastName">Last Name</b:FormLabel>
               <b:TextBox name="lastName" ui:field="lastName" />
               <bh:Paragraph ui:field="lastNameRenderer" visible="false" />
             </b:FormGroup>
-          </b:Column>
-        </b:Row>
-        <b:Row>
-          <b:Column size="MD_12,LG_6">
+          </mui:Grid>
+        </mui:Grid>
+        <mui:Grid>
+          <mui:Grid md="12" lg="6">
             <b:FormGroup>
               <b:FormLabel for="currentPosition">Current Position</b:FormLabel>
               <b:TextBox name="currentPosition" ui:field="currentPosition" />
@@ -46,8 +47,8 @@
                 visible="false"
               />
             </b:FormGroup>
-          </b:Column>
-          <b:Column size="MD_12,LG_6">
+          </mui:Grid>
+          <mui:Grid md="12" lg="6">
             <b:FormGroup>
               <b:FormLabel for="currentAffiliation">
                 Current Affiliation
@@ -61,8 +62,8 @@
                 visible="false"
               />
             </b:FormGroup>
-          </b:Column>
-        </b:Row>
+          </mui:Grid>
+        </mui:Grid>
         <b:Row>
           <b:Column size="XS_12">
             <b:FormGroup>
