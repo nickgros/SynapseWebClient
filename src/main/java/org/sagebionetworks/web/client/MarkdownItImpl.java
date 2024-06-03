@@ -37,13 +37,17 @@ public class MarkdownItImpl implements MarkdownIt {
 					highlight : function(str, lang) {
 						if (lang && $wnd.hljs.getLanguage(lang)) {
 							try {
-								return $wnd.hljs.highlight(lang, str, true).value;
+								return $wnd.hljs.highlight(str, { language: lang }).value;
 							} catch (_err) {
 								console.error(_err);
 							}
 						} else {
-							return $wnd.hljs.highlightAuto(str).value;
-						}						
+                          try {
+                            return $wnd.hljs.highlightAuto(str).value;
+                          } catch (_err) {
+                            console.error(_err);
+                          }
+						}
 						return ''; // use external highlight
 					}
 				});

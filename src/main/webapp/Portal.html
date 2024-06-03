@@ -174,7 +174,6 @@
       loadJs(cdnEndpoint + 'js/jquery.tablesorter.scinot.js')
       loadCss(cdnEndpoint + 'icons/font/synapseicons.css?v=1')
       loadCss(cdnEndpoint + 'generated/font-awesome.css')
-      loadJs(cdnEndpoint + 'js/highlight.pack.js')
       loadJs(cdnEndpoint + 'js/init-nchart.js')
       loadJs(cdnEndpoint + 'generated/markdown-it.js')
       loadJs(cdnEndpoint + 'generated/markdown-it-br.js')
@@ -216,6 +215,21 @@
       loadJs('//cdn.statuspage.io/se-v2.js')
       // loadJs("//kh896k90gyvg.statuspage.io/embed/script.js");
       loadJs(cdnEndpoint + 'generated/papaparse.min.js')
+      loadJs(cdnEndpoint + 'js/highlight.js/highlight.min.js')
+      loadJs(cdnEndpoint + 'js/highlight.js/languages/dockerfile.js')
+      loadCss(cdnEndpoint + 'js/highlight.js/styles/default.css')
+    </script>
+    <script defer>
+      // Add highlight.js custom languages
+      function registerLanguages() {
+        if (hljs && dockerfile) {
+          hljs.registerLanguage('dockerfile', dockerfile)
+        } else {
+          // hljs and dockerfile may not be defined.
+          setTimeout(callFooAddBar, 1000) // Retry after 1 second
+        }
+      }
+      registerLanguages()
     </script>
     <script type="module">
       // react-query only ships ESM. esm.sh is a CDN that will 'bundle' dependencies for us
