@@ -1,10 +1,5 @@
 package org.sagebionetworks.web.client.jsinterop.mui;
 
-import com.google.gwt.core.client.GWT;
-import com.google.gwt.user.client.Element;
-import com.google.gwt.user.client.Timer;
-import com.google.gwt.user.client.ui.Widget;
-import org.sagebionetworks.web.client.jsinterop.ComponentRef;
 import org.sagebionetworks.web.client.jsinterop.React;
 import org.sagebionetworks.web.client.jsinterop.ReactNode;
 import org.sagebionetworks.web.client.jsinterop.SynapseReactClientFullContextProviderProps;
@@ -24,63 +19,8 @@ public class Grid extends ReactComponentDiv {
     renderComponent();
   }
 
-  /**
-   * Adds a child widget.
-   *
-   * @param w the widget to be added
-   * @throws UnsupportedOperationException if this method is not supported (most
-   *           often this means that a specific overload must be called)
-   */
-  @Override
-  public void add(Widget w) {
-    if (w instanceof ReactComponentDiv) {
-      props.children = ((ReactComponentDiv) w).getComponent();
-      renderComponent();
-    } else {
-      Timer timer = new Timer() {
-        @Override
-        public void run() {
-          ComponentRef ref = props.ref;
-          if (ref.current == null) {
-            GWT.log("ref.current is null");
-          } else {
-            Element div = (Element) props.ref.current;
-            div.appendChild(w.getElement());
-          }
-        }
-      };
-      timer.schedule(500);
-    }
-    //    renderComponent();
-  }
-
-  //
-  //  /**
-  //   * Removes all child widgets.
-  //   */
-  //  public void clear() {}
-
-  //  /**
-  //   * Gets an iterator for the contained widgets. This iterator is required to
-  //   * implement {@link Iterator#remove()}.
-  //   */
-  //  Iterator<Widget> iterator();
-  //
-  //  /**
-  //   * Removes a child widget.
-  //   *
-  //   * @param w the widget to be removed
-  //   * @return <code>true</code> if the widget was present
-  //   */
-  //  boolean remove(Widget w);
-
   private void renderComponent() {
-    ReactNode component = React.createElementWithSynapseContext(
-      MaterialUI.Grid,
-      props,
-      contextProps,
-      props.children
-    );
+    ReactNode component = React.createElement(MaterialUI.Grid, props);
     this.render(component);
   }
 
