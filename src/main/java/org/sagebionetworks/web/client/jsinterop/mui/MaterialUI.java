@@ -8,5 +8,5 @@ import org.sagebionetworks.web.client.jsinterop.ReactComponentType;
 public class MaterialUI {
 
   // Ensure each component is loaded via ESM in Portal.html
-  public static ReactComponentType<GridProps> Grid;
+  public static ReactComponentType<GridProps> Unstable_Grid2;
 }

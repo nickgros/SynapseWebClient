@@ -31,6 +31,27 @@ public class React {
   @JsOverlay
   public static <
     P extends ReactComponentProps
+  > ReactNode cloneElementWrappedInThemeContext(ReactNode<P> element) {
+    SynapseReactClientFullContextProviderProps emptyContext =
+      SynapseReactClientFullContextProviderProps.create(
+        SynapseContextJsObject.create(null, false, false),
+        null
+      );
+    ReactNode clonedElement = cloneElement(element);
+    return createElement(
+      SRC.SynapseContext.FullContextProvider,
+      emptyContext,
+      clonedElement
+    );
+  }
+
+  /**
+   * Similar to {@link #createElementWithSynapseContext} but only includes the theme. Any components rendered will NOT get the full Synapse context, including
+   * access token + auth state, experimental mode status, and time display settings.
+   */
+  @JsOverlay
+  public static <
+    P extends ReactComponentProps
   > ReactNode createElementWithThemeContext(
     ReactComponentType<P> component,
     P props

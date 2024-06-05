@@ -11,7 +11,9 @@ import org.sagebionetworks.web.client.jsinterop.ReactComponentProps;
 @JsType(isNative = true, namespace = JsPackage.GLOBAL, name = "Object")
 public class GridProps extends ReactComponentProps {
 
-  boolean item;
+  @JsNullable
+  String id;
+
   boolean container;
 
   @JsNullable
@@ -29,6 +31,27 @@ public class GridProps extends ReactComponentProps {
   @JsNullable
   int xl;
 
+  @JsNullable
+  int xsOffset;
+
+  @JsNullable
+  int smOffset;
+
+  @JsNullable
+  int mdOffset;
+
+  @JsNullable
+  int lgOffset;
+
+  @JsNullable
+  int xlOffset;
+
+  @JsNullable
+  String mt;
+
+  @JsNullable
+  String pl;
+
   @JsOverlay
   public static GridProps create(boolean container) {
     GridProps props = new GridProps();
@@ -36,8 +59,6 @@ public class GridProps extends ReactComponentProps {
     props.__childrenAsList = new ArrayList<>();
     if (container) {
       props.container = true;
-    } else {
-      props.item = true;
     }
     return props;
   }

@@ -12,13 +12,13 @@ import com.google.gwt.user.client.ui.Widget;
 import com.google.inject.Inject;
 import org.gwtbootstrap3.client.ui.Anchor;
 import org.gwtbootstrap3.client.ui.Button;
-import org.gwtbootstrap3.client.ui.Column;
 import org.gwtbootstrap3.client.ui.Modal;
 import org.gwtbootstrap3.client.ui.ModalBody;
 import org.gwtbootstrap3.client.ui.ModalFooter;
 import org.gwtbootstrap3.client.ui.html.Div;
 import org.gwtbootstrap3.client.ui.html.Text;
 import org.sagebionetworks.web.client.DisplayConstants;
+import org.sagebionetworks.web.client.jsinterop.mui.Grid;
 import org.sagebionetworks.web.client.widget.LoadingSpinner;
 import org.sagebionetworks.web.client.widget.user.UserBadge;
 
@@ -39,13 +39,13 @@ public class FilesTabViewImpl implements FilesTabView {
   SimplePanel addToDownloadListWidgetContainer;
 
   @UiField
-  Column filePreviewContainer;
+  Grid filePreviewContainer;
 
   @UiField
   Div filePreviewWidgetContainer;
 
   @UiField
-  Column fileProvenanceContainer;
+  Grid fileProvenanceContainer;
 
   @UiField
   Div fileProvenanceGraphContainer;
@@ -75,7 +75,7 @@ public class FilesTabViewImpl implements FilesTabView {
   Div discussionThreadsContainer;
 
   @UiField
-  Column discussionContainer;
+  Grid discussionContainer;
 
   @UiField
   Text discussionText;

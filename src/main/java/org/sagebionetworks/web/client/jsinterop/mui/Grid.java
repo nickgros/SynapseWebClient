@@ -2,17 +2,13 @@ package org.sagebionetworks.web.client.jsinterop.mui;
 
 import org.sagebionetworks.web.client.jsinterop.React;
 import org.sagebionetworks.web.client.jsinterop.ReactNode;
-import org.sagebionetworks.web.client.jsinterop.SynapseReactClientFullContextProviderProps;
 import org.sagebionetworks.web.client.widget.ReactComponentDiv;
 
 public class Grid extends ReactComponentDiv {
 
-  SynapseReactClientFullContextProviderProps contextProps;
   GridProps props = GridProps.create(true);
 
-  public Grid(SynapseReactClientFullContextProviderProps contextProps) {
-    this.contextProps = contextProps;
-  }
+  public Grid() {}
 
   @Override
   protected void onLoad() {
@@ -20,17 +16,17 @@ public class Grid extends ReactComponentDiv {
   }
 
   private void renderComponent() {
-    ReactNode component = React.createElement(MaterialUI.Grid, props);
+    ReactNode component = React.createElement(MaterialUI.Unstable_Grid2, props);
     this.render(component);
+  }
+
+  public void setId(String id) {
+    props.id = id;
+    renderComponent();
   }
 
   public void setContainer(boolean container) {
     props.container = container;
-    renderComponent();
-  }
-
-  public void setItem(boolean item) {
-    props.item = item;
     renderComponent();
   }
 
@@ -56,6 +52,41 @@ public class Grid extends ReactComponentDiv {
 
   public void setXl(int xl) {
     props.xl = xl;
+    renderComponent();
+  }
+
+  public void setXsOffset(int xsOffset) {
+    props.xsOffset = xsOffset;
+    renderComponent();
+  }
+
+  public void setSmOffset(int smOffset) {
+    props.smOffset = smOffset;
+    renderComponent();
+  }
+
+  public void setMdOffset(int mdOffset) {
+    props.mdOffset = mdOffset;
+    renderComponent();
+  }
+
+  public void setLgOffset(int lgOffset) {
+    props.lgOffset = lgOffset;
+    renderComponent();
+  }
+
+  public void setXlOffset(int xlOffset) {
+    props.xlOffset = xlOffset;
+    renderComponent();
+  }
+
+  public void setMt(String mt) {
+    props.mt = mt;
+    renderComponent();
+  }
+
+  public void setPl(String pl) {
+    props.pl = pl;
     renderComponent();
   }
 }

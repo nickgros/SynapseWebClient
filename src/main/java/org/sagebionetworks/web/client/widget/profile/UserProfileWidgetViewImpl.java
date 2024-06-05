@@ -1,5 +1,8 @@
 package org.sagebionetworks.web.client.widget.profile;
 
+import static org.sagebionetworks.web.client.presenter.ProfilePresenter.IS_CERTIFIED;
+import static org.sagebionetworks.web.client.presenter.ProfilePresenter.IS_VERIFIED;
+
 import com.google.gwt.uibinder.client.UiBinder;
 import com.google.gwt.uibinder.client.UiField;
 import com.google.gwt.user.client.Window;
@@ -8,9 +11,9 @@ import com.google.gwt.user.client.ui.IsWidget;
 import com.google.gwt.user.client.ui.SimplePanel;
 import com.google.gwt.user.client.ui.Widget;
 import com.google.inject.Inject;
+import java.util.List;
 import org.gwtbootstrap3.client.ui.Anchor;
 import org.gwtbootstrap3.client.ui.Button;
-import org.gwtbootstrap3.client.ui.Column;
 import org.gwtbootstrap3.client.ui.FormGroup;
 import org.gwtbootstrap3.client.ui.HelpBlock;
 import org.gwtbootstrap3.client.ui.Tooltip;
@@ -27,13 +30,9 @@ import org.sagebionetworks.web.client.jsinterop.React;
 import org.sagebionetworks.web.client.jsinterop.ReactNode;
 import org.sagebionetworks.web.client.jsinterop.SRC;
 import org.sagebionetworks.web.client.jsinterop.UserProfileLinksProps;
+import org.sagebionetworks.web.client.jsinterop.mui.Grid;
 import org.sagebionetworks.web.client.widget.ReactComponentDiv;
 import org.sagebionetworks.web.shared.WebConstants;
-
-import java.util.List;
-
-import static org.sagebionetworks.web.client.presenter.ProfilePresenter.IS_CERTIFIED;
-import static org.sagebionetworks.web.client.presenter.ProfilePresenter.IS_VERIFIED;
 
 public class UserProfileWidgetViewImpl implements UserProfileWidgetView {
 
@@ -97,13 +96,13 @@ public class UserProfileWidgetViewImpl implements UserProfileWidgetView {
   Anchor changePasswordLink;
 
   @UiField
-  Column orcIDContainer;
+  Grid orcIDContainer;
 
   @UiField
   Anchor orcIdLink;
 
   @UiField
-  Column accountTypeContainer;
+  Grid accountTypeContainer;
 
   @UiField
   ReactComponentDiv accountLevelBadgesContainer;
@@ -115,7 +114,7 @@ public class UserProfileWidgetViewImpl implements UserProfileWidgetView {
   ReactComponentDiv userProfileLinksReactComponentContainer;
 
   @UiField
-  Column emailAddressContainer;
+  Grid emailAddressContainer;
 
   @UiField
   Div commandsContainer;

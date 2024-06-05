@@ -4,20 +4,21 @@
   xmlns:ui="urn:ui:com.google.gwt.uibinder"
   xmlns:g="urn:import:com.google.gwt.user.client.ui"
   xmlns:b="urn:import:org.gwtbootstrap3.client.ui"
+  xmlns:MUI="urn:import:org.sagebionetworks.web.client.jsinterop.mui"
   xmlns:bh="urn:import:org.gwtbootstrap3.client.ui.html"
   xmlns:w="urn:import:org.sagebionetworks.web.client.widget"
 >
-  <b:Row>
-    <b:Column size="XS_12">
-      <b:Row>
+  <MUI:Grid container="true">
+    <MUI:Grid xs="12">
+      <MUI:Grid container="true">
         <bh:Div addStyleNames="margin-left-15 margin-right-15">
           <g:SimplePanel ui:field="dockerTitlebarContainer" />
           <g:SimplePanel ui:field="dockerMetadataContainer" />
         </bh:Div>
-      </b:Row>
+      </MUI:Grid>
       <g:FlowPanel addStyleNames="entity-page-side-margins">
-        <b:Row>
-          <b:Column size="XS_12, MD_6">
+        <MUI:Grid container="true">
+          <MUI:Grid xs="12" md="6">
             <b:Panel>
               <bh:Div addStyleNames="highlight-title">
                 <bh:Text text="Docker Pull Command" />
@@ -34,8 +35,8 @@
             <b:Panel addStyleNames="margin-top-15">
               <b:PanelBody ui:field="dockerRepoWikiPageContainer" />
             </b:Panel>
-          </b:Column>
-          <b:Column size="XS_12, MD_6">
+          </MUI:Grid>
+          <MUI:Grid xs="12" md="6">
             <g:FlowPanel addStyleNames="margin-bottom-15">
               <bh:Div addStyleNames="highlight-title">
                 <bh:Text>Tags</bh:Text>
@@ -66,11 +67,11 @@
               </bh:Div>
               <bh:Div ui:field="dockerRepoProvenanceContainer" />
             </g:FlowPanel>
-          </b:Column>
-        </b:Row>
+          </MUI:Grid>
+        </MUI:Grid>
       </g:FlowPanel>
       <g:SimplePanel ui:field="dockerModifiedAndCreatedContainer" />
-    </b:Column>
+    </MUI:Grid>
     <g:SimplePanel ui:field="synapseAlertContainer" />
-  </b:Row>
+  </MUI:Grid>
 </ui:UiBinder>

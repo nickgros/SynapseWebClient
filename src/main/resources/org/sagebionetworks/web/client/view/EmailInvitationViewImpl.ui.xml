@@ -3,6 +3,7 @@
   xmlns:ui="urn:ui:com.google.gwt.uibinder"
   xmlns:g="urn:import:com.google.gwt.user.client.ui"
   xmlns:b="urn:import:org.gwtbootstrap3.client.ui"
+  xmlns:MUI="urn:import:org.sagebionetworks.web.client.jsinterop.mui"
   xmlns:bh="urn:import:org.gwtbootstrap3.client.ui.html"
   xmlns:w="urn:import:org.sagebionetworks.web.client.widget"
 >
@@ -12,7 +13,7 @@
       size="31px"
       addStyleNames="center-block margin-top-100"
     />
-    <b:Column size="XS_12, MD_6" offset="MD_3">
+    <MUI:Grid xs="12" md="6" mdOffset="3">
       <g:SimplePanel ui:field="synapseAlertContainer" />
       <bh:Div ui:field="notLoggedInContainer" visible="false">
         <b:Heading
@@ -42,6 +43,6 @@
           <b:Anchor text="Sign in" ui:field="loginLink" />
         </bh:Div>
       </bh:Div>
-    </b:Column>
+    </MUI:Grid>
   </b:Container>
 </ui:UiBinder>

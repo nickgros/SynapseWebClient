@@ -79,6 +79,9 @@ public class ReactComponentDiv extends FlowPanel {
 
     // Render the component
     root.render(this.getReactElement());
+    //    root.render(
+    //      React.cloneElementWrappedInThemeContext(this.getReactElement())
+    //    );
 
     // If any GWT child widget is not a ReactNode, inject them into the DOM
     if (!childWidgets.isEmpty() && !allAreReactComponents) {

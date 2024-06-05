@@ -4,6 +4,7 @@
   xmlns:ui="urn:ui:com.google.gwt.uibinder"
   xmlns:g="urn:import:com.google.gwt.user.client.ui"
   xmlns:b="urn:import:org.gwtbootstrap3.client.ui"
+  xmlns:MUI="urn:import:org.sagebionetworks.web.client.jsinterop.mui"
   xmlns:bh="urn:import:org.gwtbootstrap3.client.ui.html"
 >
   <bh:Div>
@@ -27,8 +28,8 @@
     </b:NavTabs>
     <b:TabContent>
       <b:TabPane b:id="tab1" addStyleNames="margin-top-15" ui:field="tab1">
-        <b:Row addStyleNames="margin-10">
-          <b:Column size="XS_12">
+        <MUI:Grid addStyleNames="margin-10">
+          <MUI:Grid xs="12">
             <b:FormLabel>Video File</b:FormLabel>
             <b:InputGroup>
               <b:TextBox
@@ -41,8 +42,8 @@
                 <b:Button ui:field="button" icon="SEARCH" height="34px" />
               </b:InputGroupButton>
             </b:InputGroup>
-          </b:Column>
-          <b:Column size="XS_12">
+          </MUI:Grid>
+          <MUI:Grid xs="12">
             <b:Heading size="H5" ui:field="videoFormatWarning" visible="false">
               <bh:Text>We recommend using the mp4 video format for</bh:Text>
               <b:Anchor
@@ -53,8 +54,8 @@
                 href="http://en.wikipedia.org/wiki/HTML5_video#Browser_support"
               />
             </b:Heading>
-          </b:Column>
-        </b:Row>
+          </MUI:Grid>
+        </MUI:Grid>
       </b:TabPane>
       <b:TabPane b:id="tab2" addStyleNames="margin-top-15" ui:field="tab2">
         <b:FieldSet>
