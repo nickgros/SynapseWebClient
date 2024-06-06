@@ -204,7 +204,7 @@
         />
       </bh:Div>
       <bh:ClearFix />
-      <w:ReactComponentDiv ui:field="requestDataAccessWidget" />
+      <w:ReactComponent ui:field="requestDataAccessWidget" />
       <bh:Div ui:field="synAlertContainer" />
     </b:PanelBody>
   </b:Panel>

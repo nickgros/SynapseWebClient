@@ -28,7 +28,7 @@
     </b:ModalHeader>
     <b:ModalBody>
       <bh:Paragraph ui:field="promptCopy" addStyleNames="fit-within-parent" />
-      <w:ReactComponentDiv ui:field="entityFinderContainer" />
+      <w:ReactComponent ui:field="entityFinderContainer" />
       <g:SimplePanel ui:field="synAlertPanel" addStyleNames="synAlertPanel" />
     </b:ModalBody>
     <b:ModalFooter>

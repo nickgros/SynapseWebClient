@@ -11,11 +11,7 @@
     <w:LoadingSpinner size="16px" ui:field="loadingUI" />
     <bh:Span ui:field="loadingMessage" />
     <bh:Div>
-      <w:ReactComponentDiv
-        ui:field="chartContainer"
-        height="500px"
-        width="100%"
-      />
+      <w:ReactComponent ui:field="chartContainer" height="500px" width="100%" />
     </bh:Div>
     <bh:Div addStyleNames="margin-left-55">
       <b:Anchor

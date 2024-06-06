@@ -2,6 +2,7 @@ package org.sagebionetworks.web.client.jsinterop;
 
 import com.google.gwt.dom.client.Element;
 import jsinterop.annotations.JsFunction;
+import jsinterop.annotations.JsMethod;
 import jsinterop.annotations.JsPackage;
 import jsinterop.annotations.JsType;
 
@@ -17,4 +18,14 @@ public class ReactDOM {
   public static native ReactDOMRoot createRoot(Element container);
 
   public static native boolean unmountComponentAtNode(Element container);
+
+  public static native Object createPortal(
+    ReactNode<?> child,
+    Element container
+  );
+
+  public static native Object createPortal(
+    ReactNode<?>[] children,
+    Element container
+  );
 }

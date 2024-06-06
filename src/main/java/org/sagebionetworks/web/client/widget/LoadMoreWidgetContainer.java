@@ -1,5 +1,6 @@
 package org.sagebionetworks.web.client.widget;
 
+import com.google.gwt.core.client.GWT;
 import com.google.gwt.user.client.ui.HasWidgets;
 import com.google.gwt.user.client.ui.IsWidget;
 import com.google.gwt.user.client.ui.Widget;

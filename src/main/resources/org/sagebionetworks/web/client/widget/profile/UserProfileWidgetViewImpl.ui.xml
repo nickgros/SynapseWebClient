@@ -124,7 +124,7 @@
           <MUI:Grid xs="12" ui:field="accountTypeContainer">
             <b:FormGroup>
               <b:FormLabel for="accountType">Account Type</b:FormLabel>
-              <w:ReactComponentDiv
+              <w:ReactComponent
                 ui:field="accountLevelBadgesContainer"
                 addStyleNames="accountLevelBadgesContainer margin-top-5"
               />
@@ -152,9 +152,7 @@
         addStyleNames="profileLinksContainer"
         ui:field="userProfileLinksUI"
       >
-        <w:ReactComponentDiv
-          ui:field="userProfileLinksReactComponentContainer"
-        />
+        <w:ReactComponent ui:field="userProfileLinksReactComponentContainer" />
       </bh:Div>
     </bh:Div>
   </g:HTMLPanel>

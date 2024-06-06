@@ -2,9 +2,9 @@ package org.sagebionetworks.web.client.jsinterop.mui;
 
 import org.sagebionetworks.web.client.jsinterop.React;
 import org.sagebionetworks.web.client.jsinterop.ReactNode;
-import org.sagebionetworks.web.client.widget.ReactComponentDiv;
+import org.sagebionetworks.web.client.widget.ReactComponent;
 
-public class Grid extends ReactComponentDiv {
+public class Grid extends ReactComponent {
 
   GridProps props = GridProps.create(true);
 

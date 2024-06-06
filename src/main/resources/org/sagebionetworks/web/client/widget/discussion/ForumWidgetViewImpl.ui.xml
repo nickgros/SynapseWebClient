@@ -88,6 +88,7 @@
         <MUI:Grid xs="12">
           <g:SimplePanel
             addStyleNames="margin-top-10 light-border"
+            width="100%"
             ui:field="threadListContainer"
           />
         </MUI:Grid>
@@ -95,6 +96,7 @@
           <bh:Div
             ui:field="singleThreadAndSortContainer"
             addStyleNames="light-border"
+            width="100%"
             paddingTop="15"
             paddingRight="30"
             paddingBottom="15"
@@ -124,6 +126,7 @@
         </MUI:Grid>
         <MUI:Grid xs="12">
           <g:SimplePanel
+            width="100%"
             addStyleNames="margin-top-10 light-border"
             ui:field="defaultThreadContainer"
             visible="false"

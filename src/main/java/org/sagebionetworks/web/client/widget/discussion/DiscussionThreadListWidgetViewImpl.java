@@ -1,7 +1,9 @@
 package org.sagebionetworks.web.client.widget.discussion;
 
+import com.google.gwt.core.client.GWT;
 import com.google.gwt.uibinder.client.UiBinder;
 import com.google.gwt.uibinder.client.UiField;
+import com.google.gwt.user.client.Timer;
 import com.google.gwt.user.client.Window;
 import com.google.gwt.user.client.ui.IsWidget;
 import com.google.gwt.user.client.ui.Widget;
@@ -83,7 +85,7 @@ public class DiscussionThreadListWidgetViewImpl
 
   @Override
   public void setThreadsContainer(IsWidget container) {
-    threadListContainer.clear();
+    threadListContainer.setId("threadListContainer");
     threadListContainer.add(container);
   }
 

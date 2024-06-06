@@ -13,6 +13,6 @@
         size="H3"
       />
     </bh:Div>
-    <w:ReactComponentDiv ui:field="reactComponent" />
+    <w:ReactComponent ui:field="reactComponent" />
   </bh:Div>
 </ui:UiBinder>

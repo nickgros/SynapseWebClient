@@ -461,6 +461,22 @@ public class GlobalApplicationStateImpl implements GlobalApplicationState {
     }
   }
 
+  //
+  //  @Override
+  //  public void initializeReactRoot() {
+  //    if (!isToastContainerInitialized) {
+  //      isToastContainerInitialized = true;
+  //
+  //      Element rootElement = RootPanel.get("reactRoot").getElement();
+  //      ReactDOM.createRoot(rootElement).render(null);
+  //      ReactNode component = React.createElementWithThemeContext(
+  //        SRC.SynapseComponents.SynapseToastContainer,
+  //        null
+  //      );
+  //      ReactDOM.createRoot(rootElement).render(component);
+  //    }
+  //  }
+
   @Override
   public void initializeToastContainer() {
     if (!isToastContainerInitialized) {
