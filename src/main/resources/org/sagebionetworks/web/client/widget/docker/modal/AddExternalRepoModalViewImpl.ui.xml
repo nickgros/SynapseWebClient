@@ -13,16 +13,12 @@
     addStyleNames="modal"
   >
     <b:ModalBody>
-      <MUI:Grid container="true">
-        <MUI:Grid xs="12">
-          <bh:Span addStyleNames="font-size-18">Repository Name</bh:Span>
-          <b:TextBox
-            ui:field="repoName"
-            placeholder="index.docker.io:5000/library/ubuntu"
-            addStyleNames="font-size-24 margin-bottom-10"
-          />
-        </MUI:Grid>
-      </MUI:Grid>
+      <bh:Span addStyleNames="font-size-18">Repository Name</bh:Span>
+      <b:TextBox
+        ui:field="repoName"
+        placeholder="index.docker.io:5000/library/ubuntu"
+        addStyleNames="font-size-24 margin-bottom-10"
+      />
       <bh:Div ui:field="synAlertContainer" />
     </b:ModalBody>
     <b:ModalFooter>

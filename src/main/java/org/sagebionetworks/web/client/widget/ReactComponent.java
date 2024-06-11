@@ -1,6 +1,5 @@
 package org.sagebionetworks.web.client.widget;
 
-import com.google.gwt.core.client.GWT;
 import com.google.gwt.dom.client.DivElement;
 import com.google.gwt.dom.client.Document;
 import com.google.gwt.dom.client.Element;
@@ -8,14 +7,15 @@ import com.google.gwt.event.dom.client.ClickEvent;
 import com.google.gwt.event.dom.client.ClickHandler;
 import com.google.gwt.event.dom.client.HasClickHandlers;
 import com.google.gwt.event.shared.HandlerRegistration;
-import com.google.gwt.user.client.DOM;
 import com.google.gwt.user.client.ui.ComplexPanel;
+import com.google.gwt.user.client.ui.UIObject;
 import com.google.gwt.user.client.ui.Widget;
 import java.util.ArrayList;
 import java.util.List;
 import org.sagebionetworks.web.client.jsinterop.JSON;
 import org.sagebionetworks.web.client.jsinterop.React;
 import org.sagebionetworks.web.client.jsinterop.ReactComponentProps;
+import org.sagebionetworks.web.client.jsinterop.ReactDOM;
 import org.sagebionetworks.web.client.jsinterop.ReactDOMRoot;
 import org.sagebionetworks.web.client.jsinterop.ReactNode;
 
@@ -47,27 +47,30 @@ public class ReactComponent extends ComplexPanel implements HasClickHandlers {
       root = ReactComponentLifecycleUtils.onLoad(this.getElement());
     }
 
-    boolean allAreReactComponents = getChildren().size() > 0;
+    boolean allChildrenAreReactComponents = getChildren().size() > 0;
     for (Widget w : getChildren()) {
       if (!(w instanceof ReactComponent)) {
-        allAreReactComponents = false;
+        allChildrenAreReactComponents = false;
         break;
       }
     }
 
-    if (allAreReactComponents) { // If all widget children are ReactNodes, clone the React component and add them as children
-      ReactNode<?>[] newChildren = new ReactNode<?>[getChildren().size()];
-      for (int i = 0; i < getChildren().size(); i++) {
-        newChildren[i] =
-          ((ReactComponent) getChildren().get(i)).getReactElement();
-      }
+    if (allChildrenAreReactComponents) { // If all widget children are ReactNodes, clone the React component and add them as children
+      List<ReactComponent> childWidgets = new ArrayList<>();
+      getChildren().forEach(w -> childWidgets.add(((ReactComponent) w)));
+
+      ReactNode<?>[] childReactElements = childWidgets
+        .stream()
+        .filter(UIObject::isVisible) // Do not append children that are not visible
+        .map(ReactComponent::getReactElement)
+        .toArray(ReactNode<?>[]::new);
 
       this.reactElement =
         React.cloneElement(
           reactElement,
           // passing null will retain the original props
           null,
-          newChildren
+          childReactElements
         );
     } else if (getChildren().size() > 0) {
       // Create a callback ref that will allow us to inject the GWT children into the DOM
@@ -88,32 +91,49 @@ public class ReactComponent extends ComplexPanel implements HasClickHandlers {
           newProps
         );
     }
-    // Render the component
-    root.render(this.reactElement);
+
+    ReactComponent ancestorReactComponent = null;
+    Widget parentWidget = this.getParent();
+    while (parentWidget != null) {
+      if (parentWidget instanceof ReactComponent) {
+        ancestorReactComponent = (ReactComponent) parentWidget;
+        break;
+      }
+      parentWidget = parentWidget.getParent();
+    }
+    // This component may be a React child of another component. If so, re-render the entire tree
+    // This can resolve issues where e.g. a component was set change visibility
+    if (ancestorReactComponent != null) {
+      ((ReactComponent) this.getParent()).rerender();
+    } else {
+      // Render the component
+      root.render(this.reactElement);
+    }
+  }
+
+  @Override
+  public void setVisible(boolean visible) {
+    super.setVisible(visible);
+    // Re-render the element
+    this.rerender();
   }
 
   @Override
   protected void onLoad() {
     super.onLoad();
     if (root == null) {
-      root = ReactComponentLifecycleUtils.onLoad(this.getElement());
+      root = ReactDOM.createRoot(this.getElement());
     }
     this.rerender();
   }
 
   @Override
   protected void onUnload() {
-    ReactComponentLifecycleUtils.onUnload(root);
-    root = null;
     super.onUnload();
-  }
-
-  @Override
-  public void clear() {
-    // clear doesn't typically call onUnload, but we want to for this element.
-    this.onUnload();
-
-    super.clear();
+    if (root != null) {
+      root.unmount();
+    }
+    root = null;
   }
 
   /**

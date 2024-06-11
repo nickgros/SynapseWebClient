@@ -5,11 +5,5 @@
   xmlns:MUI="urn:import:org.sagebionetworks.web.client.jsinterop.mui"
   xmlns:bh="urn:import:org.gwtbootstrap3.client.ui.html"
 >
-  <bh:Div>
-    <MUI:Grid container="true">
-      <MUI:Grid xs="12">
-        <g:FlowPanel ui:field="mainContainer" addStyleNames="margin-10" />
-      </MUI:Grid>
-    </MUI:Grid>
-  </bh:Div>
+  <g:FlowPanel ui:field="mainContainer" addStyleNames="margin-10" />
 </ui:UiBinder>

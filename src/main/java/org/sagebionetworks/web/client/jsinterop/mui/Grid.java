@@ -1,17 +1,25 @@
 package org.sagebionetworks.web.client.jsinterop.mui;
 
+import org.sagebionetworks.web.client.jsinterop.JSON;
 import org.sagebionetworks.web.client.jsinterop.React;
 import org.sagebionetworks.web.client.jsinterop.ReactNode;
 import org.sagebionetworks.web.client.widget.ReactComponent;
 
 public class Grid extends ReactComponent {
 
-  GridProps props = GridProps.create(true);
+  GridProps props = GridProps.create(false);
 
   public Grid() {}
 
   @Override
   protected void onLoad() {
+    renderComponent();
+  }
+
+  @Override
+  public void setVisible(boolean visible) {
+    props.style =
+      JSON.parse("{\"display\": \"" + (visible ? "block" : "none") + "\"}");
     renderComponent();
   }
 
@@ -87,6 +95,16 @@ public class Grid extends ReactComponent {
 
   public void setPl(String pl) {
     props.pl = pl;
+    renderComponent();
+  }
+
+  public void setRowSpacing(String rowSpacing) {
+    props.rowSpacing = rowSpacing;
+    renderComponent();
+  }
+
+  public void setColumnSpacing(String columnSpacing) {
+    props.columnSpacing = columnSpacing;
     renderComponent();
   }
 }

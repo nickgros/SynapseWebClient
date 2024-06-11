@@ -12,9 +12,9 @@
     <g:SimplePanel ui:field="dockerTitlebarContainer" />
     <g:SimplePanel ui:field="dockerMetadataContainer" />
     <g:FlowPanel addStyleNames="entity-page-side-margins">
-      <MUI:Grid container="true">
+      <MUI:Grid container="true" columnSpacing="15px">
         <MUI:Grid xs="12" md="6">
-          <b:Panel addStyleNames="margin-bottom-15" width="100%">
+          <b:Panel addStyleNames="margin-bottom-15">
             <bh:Div addStyleNames="highlight-title">
               <bh:Text text="Docker Pull Command" />
             </bh:Div>
@@ -29,7 +29,7 @@
           </b:Panel>
         </MUI:Grid>
         <MUI:Grid xs="12" md="6">
-          <g:FlowPanel addStyleNames="margin-bottom-15" width="100%">
+          <g:FlowPanel addStyleNames="margin-bottom-15">
             <bh:Div addStyleNames="highlight-title">
               <bh:Text>Tags</bh:Text>
               <w:HelpWidget
@@ -46,15 +46,14 @@
           </g:FlowPanel>
         </MUI:Grid>
         <MUI:Grid xs="12" md="6">
-          <b:Panel width="100%">
+          <b:Panel>
             <b:PanelBody ui:field="dockerRepoWikiPageContainer" />
           </b:Panel>
         </MUI:Grid>
         <MUI:Grid xs="12" md="6">
           <g:FlowPanel
             ui:field="provenancePanel"
-            addStyleNames="light-border padding-10 margin-bottom-15"
-            width="100%"
+            addStyleNames="margin-bottom-15"
           >
             <bh:Div addStyleNames="highlight-title">
               <bh:Text>Provenance</bh:Text>

@@ -52,11 +52,19 @@ public class GridProps extends ReactComponentProps {
   @JsNullable
   String pl;
 
+  @JsNullable
+  String rowSpacing;
+
+  @JsNullable
+  String columnSpacing;
+
+  @JsNullable
+  Object style;
+
   @JsOverlay
   public static GridProps create(boolean container) {
     GridProps props = new GridProps();
     props.ref = React.createRef();
-    props.__childrenAsList = new ArrayList<>();
     if (container) {
       props.container = true;
     }

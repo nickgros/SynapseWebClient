@@ -5,6 +5,7 @@ import com.google.gwt.event.dom.client.ClickHandler;
 import com.google.gwt.event.shared.HandlerRegistration;
 import com.google.gwt.uibinder.client.UiBinder;
 import com.google.gwt.uibinder.client.UiField;
+import com.google.gwt.user.client.ui.FlowPanel;
 import com.google.gwt.user.client.ui.IsWidget;
 import com.google.gwt.user.client.ui.ScrollPanel;
 import com.google.gwt.user.client.ui.SimplePanel;
@@ -45,7 +46,7 @@ public class FilesTabViewImpl implements FilesTabView {
   Div filePreviewWidgetContainer;
 
   @UiField
-  Grid fileProvenanceContainer;
+  FlowPanel fileProvenanceContainer;
 
   @UiField
   Div fileProvenanceGraphContainer;
@@ -75,7 +76,7 @@ public class FilesTabViewImpl implements FilesTabView {
   Div discussionThreadsContainer;
 
   @UiField
-  Grid discussionContainer;
+  FlowPanel discussionContainer;
 
   @UiField
   Text discussionText;
@@ -235,6 +236,7 @@ public class FilesTabViewImpl implements FilesTabView {
 
   @Override
   public void setPreviewVisible(boolean visible) {
+    GWT.debugger();
     filePreviewContainer.setVisible(visible);
   }
 

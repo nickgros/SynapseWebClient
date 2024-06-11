@@ -32,7 +32,11 @@
         visible="false"
       />
       <g:SimplePanel ui:field="fileBrowserContainer" />
-      <MUI:Grid addStyleNames="margin-top-10">
+      <MUI:Grid
+        container="true"
+        columnSpacing="15px"
+        addStyleNames="margin-top-10"
+      >
         <MUI:Grid md="6" ui:field="filePreviewContainer">
           <g:FlowPanel>
             <bh:Div addStyleNames="highlight-title">
@@ -58,8 +62,8 @@
             </g:ScrollPanel>
           </g:FlowPanel>
         </MUI:Grid>
-        <MUI:Grid md="6" ui:field="fileProvenanceContainer">
-          <g:FlowPanel>
+        <MUI:Grid md="6">
+          <g:FlowPanel ui:field="fileProvenanceContainer">
             <bh:Div addStyleNames="highlight-title">
               <bh:Text>Provenance</bh:Text>
               <w:HelpWidget
@@ -82,16 +86,12 @@
           </g:FlowPanel>
         </MUI:Grid>
       </MUI:Grid>
-      <MUI:Grid addStyleNames="margin-top-10">
-        <MUI:Grid md="12" ui:field="discussionContainer">
-          <g:FlowPanel>
-            <bh:Div addStyleNames="highlight-title">
-              <bh:Text ui:field="discussionText" />
-            </bh:Div>
-            <bh:Div ui:field="discussionThreadsContainer" />
-          </g:FlowPanel>
-        </MUI:Grid>
-      </MUI:Grid>
+      <g:FlowPanel ui:field="discussionContainer" addStyleNames="margin-top-10">
+        <bh:Div addStyleNames="highlight-title">
+          <bh:Text ui:field="discussionText" />
+        </bh:Div>
+        <bh:Div ui:field="discussionThreadsContainer" />
+      </g:FlowPanel>
     </bh:Div>
     <g:SimplePanel ui:field="fileModifiedAndCreatedContainer" />
   </g:FlowPanel>

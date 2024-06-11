@@ -1,10 +1,7 @@
 package org.sagebionetworks.web.client.jsinterop;
 
 import com.google.gwt.dom.client.Element;
-import java.util.ArrayList;
-import java.util.List;
 import jsinterop.annotations.JsFunction;
-import jsinterop.annotations.JsNullable;
 import jsinterop.annotations.JsOverlay;
 import jsinterop.annotations.JsPackage;
 import jsinterop.annotations.JsType;
@@ -17,34 +14,29 @@ public class ReactComponentProps {
     void run(Element element);
   }
 
-  @JsNullable
-  public ReactNode[] children;
-
-  protected List<ReactNode> __childrenAsList;
+  public Array<ReactNode> children;
 
   // ComponentRef or CallbackRef
   public Object ref;
 
   @JsOverlay
   public final void addChild(ReactNode child) {
-    if (__childrenAsList == null) {
-      __childrenAsList = new ArrayList<>();
+    if (children == null) {
+      children = new Array<>();
     }
-    __childrenAsList.add(child);
-    children = __childrenAsList.toArray(new ReactNode[0]);
+    children.push(child);
   }
 
   @JsOverlay
   public final void clearChildren() {
-    __childrenAsList = new ArrayList<>();
-    children = null;
+    children = new Array<>();
   }
 
   @JsOverlay
-  public final List<ReactNode> getChildren() {
-    if (__childrenAsList == null) {
-      __childrenAsList = new ArrayList<>();
+  public final Array<ReactNode> getChildren() {
+    if (children == null) {
+      children = new Array<>();
     }
-    return __childrenAsList;
+    return children;
   }
 }

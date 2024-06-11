@@ -15,20 +15,16 @@
 							carefully choose yours.
             </h4>
             <g:TextBox ui:field="username" addStyleNames="form-control" />
-            <MUI:Grid container="true">
-              <MUI:Grid xs="9">
-                <g:SimplePanel
-                  ui:field="errorContainer"
-                  addStyleNames="left margin-top-10"
-                />
-              </MUI:Grid>
-              <MUI:Grid xs="3">
-                <g:Button
-                  ui:field="changeUsernameButton"
-                  styleName="right btn btn-primary btn-lg margin-top-10"
-                />
-              </MUI:Grid>
-            </MUI:Grid>
+            <g:Button
+              ui:field="changeUsernameButton"
+              styleName="right btn btn-primary btn-lg margin-top-10"
+            />
+
+            <g:SimplePanel
+              ui:field="errorContainer"
+              addStyleNames="left margin-top-10"
+              width="100%"
+            />
           </div>
         </div>
       </div>

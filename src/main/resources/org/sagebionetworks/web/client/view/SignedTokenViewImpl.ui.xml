@@ -75,7 +75,7 @@
             <g:SimplePanel ui:field="synapseAlertContainer" />
           </MUI:Grid>
         </MUI:Grid>
-        <MUI:Grid addStyleNames="margin-top-60">
+        <MUI:Grid container="true" addStyleNames="margin-top-60">
           <MUI:Grid xs="12" md="6" mdOffset="3">
             <b:Button
               ui:field="okButton"

@@ -7,7 +7,7 @@
   xmlns:bh="urn:import:org.gwtbootstrap3.client.ui.html"
 >
   <bh:Div>
-    <MUI:Grid addStyleNames="margin-10">
+    <MUI:Grid container="true" addStyleNames="margin-10">
       <MUI:Grid xs="6">
         <b:FormGroup>
           <b:FormLabel>Cytoscape JS network file</b:FormLabel>
@@ -30,7 +30,7 @@
       </MUI:Grid>
       <MUI:Grid xs="6" />
     </MUI:Grid>
-    <MUI:Grid addStyleNames="margin-10">
+    <MUI:Grid container="true" addStyleNames="margin-10">
       <MUI:Grid xs="6">
         <b:FormGroup>
           <b:FormLabel>Cytoscape JS style file</b:FormLabel>
@@ -53,7 +53,7 @@
       </MUI:Grid>
       <MUI:Grid xs="6" />
     </MUI:Grid>
-    <MUI:Grid addStyleNames="margin-10">
+    <MUI:Grid container="true" addStyleNames="margin-10">
       <MUI:Grid xs="6">
         <b:FormGroup>
           <b:FormLabel>Display height (px)</b:FormLabel>

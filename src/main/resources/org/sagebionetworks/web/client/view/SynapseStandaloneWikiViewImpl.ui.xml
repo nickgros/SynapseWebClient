@@ -13,15 +13,8 @@
   <bh:Div>
     <b:Container>
       <b:Container fluid="true">
-        <MUI:Grid container="true">
-          <MUI:Grid xs="12">
-            <bh:Div
-              ui:field="markdownContainer"
-              addStyleNames="min-height-400"
-            />
-            <bh:Div ui:field="synAlertContainer" />
-          </MUI:Grid>
-        </MUI:Grid>
+        <bh:Div ui:field="markdownContainer" addStyleNames="min-height-400" />
+        <bh:Div ui:field="synAlertContainer" />
       </b:Container>
     </b:Container>
   </bh:Div>
