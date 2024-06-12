@@ -236,7 +236,6 @@ public class FilesTabViewImpl implements FilesTabView {
 
   @Override
   public void setPreviewVisible(boolean visible) {
-    GWT.debugger();
     filePreviewContainer.setVisible(visible);
   }
 

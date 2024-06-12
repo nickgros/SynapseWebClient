@@ -1,25 +1,18 @@
 package org.sagebionetworks.web.client.jsinterop.mui;
 
-import org.sagebionetworks.web.client.jsinterop.JSON;
 import org.sagebionetworks.web.client.jsinterop.React;
 import org.sagebionetworks.web.client.jsinterop.ReactNode;
-import org.sagebionetworks.web.client.widget.ReactComponent;
+import org.sagebionetworks.web.client.jsinterop.react.HasStyle;
 
-public class Grid extends ReactComponent {
+public class Grid extends HasStyle<GridProps> {
 
-  GridProps props = GridProps.create(false);
-
-  public Grid() {}
-
-  @Override
-  protected void onLoad() {
-    renderComponent();
+  public Grid() {
+    super();
+    this.props = GridProps.create(false);
   }
 
   @Override
-  public void setVisible(boolean visible) {
-    props.style =
-      JSON.parse("{\"display\": \"" + (visible ? "block" : "none") + "\"}");
+  protected void onLoad() {
     renderComponent();
   }
 

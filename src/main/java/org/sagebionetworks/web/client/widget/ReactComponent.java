@@ -1,5 +1,6 @@
 package org.sagebionetworks.web.client.widget;
 
+import com.google.gwt.core.client.GWT;
 import com.google.gwt.dom.client.DivElement;
 import com.google.gwt.dom.client.Document;
 import com.google.gwt.dom.client.Element;
@@ -8,21 +9,30 @@ import com.google.gwt.event.dom.client.ClickHandler;
 import com.google.gwt.event.dom.client.HasClickHandlers;
 import com.google.gwt.event.shared.HandlerRegistration;
 import com.google.gwt.user.client.ui.ComplexPanel;
-import com.google.gwt.user.client.ui.UIObject;
 import com.google.gwt.user.client.ui.Widget;
 import java.util.ArrayList;
 import java.util.List;
+import jsinterop.base.Js;
+import jsinterop.base.JsPropertyMap;
 import org.sagebionetworks.web.client.jsinterop.JSON;
 import org.sagebionetworks.web.client.jsinterop.React;
 import org.sagebionetworks.web.client.jsinterop.ReactComponentProps;
-import org.sagebionetworks.web.client.jsinterop.ReactDOM;
+import org.sagebionetworks.web.client.jsinterop.ReactComponentType;
 import org.sagebionetworks.web.client.jsinterop.ReactDOMRoot;
 import org.sagebionetworks.web.client.jsinterop.ReactNode;
 
 /**
  * Automatically unmounts the ReactComponent (if any) inside this div when this container is detached/unloaded.
  */
-public class ReactComponent extends ComplexPanel implements HasClickHandlers {
+public class ReactComponent<T extends ReactComponentProps>
+  extends ComplexPanel
+  implements HasClickHandlers {
+
+  private ReactDOMRoot root;
+  private ReactComponentType<T> reactComponentType;
+  public T props;
+
+  private ReactNode<?> reactElement;
 
   public ReactComponent() {
     this(DivElement.TAG);
@@ -32,21 +42,7 @@ public class ReactComponent extends ComplexPanel implements HasClickHandlers {
     setElement(Document.get().createElement(tag));
   }
 
-  @Override
-  public HandlerRegistration addClickHandler(ClickHandler handler) {
-    return addDomHandler(handler, ClickEvent.getType());
-  }
-
-  private ReactDOMRoot root;
-  private ReactNode<?> reactElement;
-
-  public void render(ReactNode<?> reactNode) {
-    this.reactElement = reactNode;
-    // Create the root (if necessary)
-    if (root == null) {
-      root = ReactComponentLifecycleUtils.onLoad(this.getElement());
-    }
-
+  boolean allChildrenAreReactComponents() {
     boolean allChildrenAreReactComponents = getChildren().size() > 0;
     for (Widget w : getChildren()) {
       if (!(w instanceof ReactComponent)) {
@@ -54,24 +50,66 @@ public class ReactComponent extends ComplexPanel implements HasClickHandlers {
         break;
       }
     }
+    return allChildrenAreReactComponents;
+  }
 
-    if (allChildrenAreReactComponents) { // If all widget children are ReactNodes, clone the React component and add them as children
-      List<ReactComponent> childWidgets = new ArrayList<>();
-      getChildren().forEach(w -> childWidgets.add(((ReactComponent) w)));
+  boolean isRenderedAsReactComponentChild() {
+    return (
+      getParent() instanceof ReactComponent &&
+      ((ReactComponent<?>) getParent()).allChildrenAreReactComponents()
+    );
+  }
+
+  /**
+   * This method
+   * returns the root ReactComponent that should be re-rendered.
+   *
+   * @return
+   */
+  ReactComponent<?> getRootReactComponentWidget() {
+    if (isRenderedAsReactComponentChild()) {
+      return ((ReactComponent<?>) getParent()).getRootReactComponentWidget();
+    } else {
+      return this;
+    }
+  }
+
+  @Override
+  public HandlerRegistration addClickHandler(ClickHandler handler) {
+    return addDomHandler(handler, ClickEvent.getType());
+  }
+
+  private void maybeCreateRoot() {
+    if (root == null && !isRenderedAsReactComponentChild()) {
+      root = ReactComponentLifecycleUtils.onLoad(this.getElement());
+    }
+  }
+
+  /**
+   * Override the current props of the React component.
+   * Because re-rendering the component will use `React.cloneElement`, old props must be explicitly set to `undefined`
+   * to remove them.
+   */
+  public void overrideProps(T props) {
+    this.props = props;
+    this.rerender();
+  }
+
+  public void render(ReactNode<?> reactNode) {
+    this.reactElement = reactNode;
+    maybeCreateRoot();
+
+    if (this.allChildrenAreReactComponents()) { // If all widget children are ReactNodes, clone the React component and add them as children
+      List<ReactComponent<?>> childWidgets = new ArrayList<>();
+      getChildren().forEach(w -> childWidgets.add(((ReactComponent<?>) w)));
 
       ReactNode<?>[] childReactElements = childWidgets
         .stream()
-        .filter(UIObject::isVisible) // Do not append children that are not visible
         .map(ReactComponent::getReactElement)
         .toArray(ReactNode<?>[]::new);
 
       this.reactElement =
-        React.cloneElement(
-          reactElement,
-          // passing null will retain the original props
-          null,
-          childReactElements
-        );
+        React.cloneElement(reactElement, this.props, childReactElements);
     } else if (getChildren().size() > 0) {
       // Create a callback ref that will allow us to inject the GWT children into the DOM
       ReactComponentProps.CallbackRef refCallback = (Element node) -> {
@@ -81,33 +119,26 @@ public class ReactComponent extends ComplexPanel implements HasClickHandlers {
         }
       };
 
-      ReactComponentProps newProps = (ReactComponentProps) JSON.parse("{}");
-      newProps.ref = refCallback;
+      if (this.props == null) {
+        this.props = (T) JsPropertyMap.of();
+      }
+      this.props.ref = refCallback;
 
       this.reactElement =
         React.cloneElement(
           reactElement,
           // Override the ref
-          newProps
+          this.props
         );
     }
 
-    ReactComponent ancestorReactComponent = null;
-    Widget parentWidget = this.getParent();
-    while (parentWidget != null) {
-      if (parentWidget instanceof ReactComponent) {
-        ancestorReactComponent = (ReactComponent) parentWidget;
-        break;
-      }
-      parentWidget = parentWidget.getParent();
-    }
     // This component may be a React child of another component. If so, re-render the entire tree
     // This can resolve issues where e.g. a component was set change visibility
-    if (ancestorReactComponent != null) {
-      ((ReactComponent) this.getParent()).rerender();
-    } else {
-      // Render the component
+    ReactComponent<?> componentToRender = getRootReactComponentWidget();
+    if (componentToRender == this) {
       root.render(this.reactElement);
+    } else {
+      componentToRender.rerender();
     }
   }
 
@@ -121,9 +152,7 @@ public class ReactComponent extends ComplexPanel implements HasClickHandlers {
   @Override
   protected void onLoad() {
     super.onLoad();
-    if (root == null) {
-      root = ReactDOM.createRoot(this.getElement());
-    }
+    maybeCreateRoot();
     this.rerender();
   }
 
@@ -176,7 +205,7 @@ public class ReactComponent extends ComplexPanel implements HasClickHandlers {
       orphan(w);
     } finally {
       // Note - compared to ComplexPanel, we flipped logical and physical detach
-      // This is because our rerender implementation depends on logical attachment
+      // This is because our render implementation depends on logical attachment
 
       // Logical detach.
       getChildren().remove(w);
@@ -187,7 +216,7 @@ public class ReactComponent extends ComplexPanel implements HasClickHandlers {
     return true;
   }
 
-  public ReactNode getReactElement() {
+  public ReactNode<?> getReactElement() {
     return reactElement;
   }
 

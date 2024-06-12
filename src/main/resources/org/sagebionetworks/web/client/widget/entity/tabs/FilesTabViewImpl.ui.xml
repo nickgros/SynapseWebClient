@@ -35,9 +35,10 @@
       <MUI:Grid
         container="true"
         columnSpacing="15px"
+        rowSpacing="15px"
         addStyleNames="margin-top-10"
       >
-        <MUI:Grid md="6" ui:field="filePreviewContainer">
+        <MUI:Grid xs="12" md="6" ui:field="filePreviewContainer">
           <g:FlowPanel>
             <bh:Div addStyleNames="highlight-title">
               <bh:Text>Preview</bh:Text>
@@ -62,7 +63,7 @@
             </g:ScrollPanel>
           </g:FlowPanel>
         </MUI:Grid>
-        <MUI:Grid md="6">
+        <MUI:Grid xs="12" md="6">
           <g:FlowPanel ui:field="fileProvenanceContainer">
             <bh:Div addStyleNames="highlight-title">
               <bh:Text>Provenance</bh:Text>
