@@ -29,7 +29,6 @@ import org.gwtbootstrap3.client.ui.Form;
 import org.gwtbootstrap3.client.ui.FormGroup;
 import org.gwtbootstrap3.client.ui.FormLabel;
 import org.gwtbootstrap3.client.ui.Heading;
-import org.gwtbootstrap3.client.ui.Icon;
 import org.gwtbootstrap3.client.ui.Input;
 import org.gwtbootstrap3.client.ui.NavTabs;
 import org.gwtbootstrap3.client.ui.Progress;
@@ -38,6 +37,7 @@ import org.gwtbootstrap3.client.ui.TabContent;
 import org.gwtbootstrap3.client.ui.TabListItem;
 import org.gwtbootstrap3.client.ui.TabPane;
 import org.gwtbootstrap3.client.ui.TextBox;
+import org.gwtbootstrap3.client.ui.constants.AlertType;
 import org.gwtbootstrap3.client.ui.constants.ButtonSize;
 import org.gwtbootstrap3.client.ui.constants.ButtonType;
 import org.gwtbootstrap3.client.ui.constants.HeadingSize;
@@ -61,6 +61,7 @@ import org.sagebionetworks.web.client.jsinterop.mui.Grid;
 import org.sagebionetworks.web.client.place.Synapse;
 import org.sagebionetworks.web.client.utils.Callback;
 import org.sagebionetworks.web.client.utils.JavaScriptCallback;
+import org.sagebionetworks.web.client.widget.FullWidthAlert;
 import org.sagebionetworks.web.client.widget.entity.SharingAndDataUseConditionWidget;
 
 /**
@@ -97,11 +98,14 @@ public class UploaderViewImpl extends FlowPanel implements UploaderView {
   private FlowPanel formFieldsPanel;
   private FormPanel formPanel;
   private FlowPanel uploadDestinationContainer;
+  private FlowPanel fileInputPanel;
 
   private Form externalLinkFormPanel;
   private FormGroup externalUrlFormGroup;
 
   private FlowPanel uploadPanel;
+
+  private FullWidthAlert closeToLimitAlert, selectionExceedsLimitAlert, currentlyOverLimitAlert;
 
   private Button uploadBtn, cancelBtn, chooseSingleFileBtn;
   private ButtonGroup chooseFileButtonGroup;
@@ -154,15 +158,18 @@ public class UploaderViewImpl extends FlowPanel implements UploaderView {
     spinningProgressContainer = new Div();
 
     chooseFileButtonGroup = new ButtonGroup();
-    chooseSingleFileBtn = new Button("Browse...");
-    chooseSingleFileBtn.setType(ButtonType.INFO);
+    chooseSingleFileBtn = new Button("Click to upload");
+    chooseSingleFileBtn.setType(ButtonType.LINK);
     chooseSingleFileBtn.setSize(ButtonSize.LARGE);
+    chooseSingleFileBtn.addStyleName("clickToUploadButton");
 
-    Button browseDropdownButton = new Button("Browse...");
-    browseDropdownButton.setType(ButtonType.INFO);
+    Button browseDropdownButton = new Button("Click to upload");
+    browseDropdownButton.setType(ButtonType.LINK);
     browseDropdownButton.setSize(ButtonSize.LARGE);
+    browseDropdownButton.addStyleName("clickToUploadButton");
     browseDropdownButton.setToggleCaret(false);
     chooseFileButtonGroup.add(browseDropdownButton);
+    chooseFileButtonGroup.add(chooseSingleFileBtn);
     chooseFilesItem = new AnchorListItem("Files");
     chooseFilesItem.setIcon(IconType.FILES_O);
     chooseFolderItem = new AnchorListItem("Folder");
@@ -590,11 +597,11 @@ public class UploaderViewImpl extends FlowPanel implements UploaderView {
 
   private void initUploadPanel() {
     uploadDestinationContainer = new FlowPanel();
-    uploadDestinationContainer.addStyleName("alert alert-info margin-5");
+    uploadDestinationContainer.addStyleName("margin-top-10 margin-bottom-10");
     formPanel.setEncoding(FormPanel.ENCODING_MULTIPART);
     formPanel.setMethod(FormPanel.METHOD_POST);
-    FlowPanel fileInputPanel = new FlowPanel();
-    fileInputPanel.addStyleName("uploadContainer center");
+    fileInputPanel = new FlowPanel();
+    fileInputPanel.addStyleName("uploadContainer center margin-top-15");
     fileUploadInput = new Input(InputType.FILE);
     fileUploadInput.setId(FILE_FIELD_ID);
     fileUploadInput.setName("uploads[]");
@@ -627,17 +634,24 @@ public class UploaderViewImpl extends FlowPanel implements UploaderView {
       fileUploadInput.getElement().<InputElement>cast().click();
     });
 
+    FlowPanel uploadIllustration = new FlowPanel();
+    uploadIllustration.add(
+      new Image(
+        "https://s3.us-east-1.amazonaws.com/static.synapse.org/images/upload_illustration.svg"
+      )
+    );
+    uploadIllustration.addStyleName("padding-top-15 padding-bottom-15");
+
+    fileInputPanel.add(uploadIllustration);
     fileInputPanel.add(fileUploadInput);
-    Span icon = new Span();
-    icon.add(new Icon(IconType.CLOUD_UPLOAD));
-    icon.addStyleName("margin-right-5 font-size-30 lightGreyText movedown-6");
-    fileInputPanel.add(icon);
-    Span dropText = new Span("Drop files to upload, or");
+    fileInputPanel.add(chooseSingleFileBtn);
+    fileInputPanel.add(chooseFileButtonGroup);
+    Span dropText = new Span("or drag and drop");
     dropText.addStyleName("margin-right-5 font-size-20 movedown-2");
     fileInputPanel.add(dropText);
-    fileInputPanel.add(chooseFileButtonGroup);
-    fileInputPanel.add(chooseSingleFileBtn);
+
     fileInputPanel.add(fileUploadLabel);
+    fileInputPanel.add(uploadDestinationContainer);
     enableMultipleFileUploads(true);
     formFieldsPanel = new FlowPanel();
 
@@ -658,9 +672,53 @@ public class UploaderViewImpl extends FlowPanel implements UploaderView {
 
     configureUploadButton(); // upload tab first by default
 
+    closeToLimitAlert = new FullWidthAlert();
+    closeToLimitAlert.setGlobal(false);
+    closeToLimitAlert.setAlertType(AlertType.WARNING);
+    // TODO: Number should come from API
+    closeToLimitAlert.setMessageTitle("Your storage availability is limited");
+    closeToLimitAlert.setMessage(
+      "Your organization only has XXX MB remaining of available storage left. In order to upload more files, you must edit your file list or upgrade your plan."
+    );
+    closeToLimitAlert.setPrimaryCTAText("Learn more");
+    closeToLimitAlert.setPrimaryCTAHref(
+      "https://help.synapse.org/docs/Sage-Offerings.2965078125.html"
+    );
+    closeToLimitAlert.setVisible(false);
+
+    selectionExceedsLimitAlert = new FullWidthAlert();
+    selectionExceedsLimitAlert.setGlobal(false);
+    selectionExceedsLimitAlert.setAlertType(AlertType.DANGER);
+    // TODO: Appropriately pluralize File is / Files are
+    selectionExceedsLimitAlert.setMessageTitle("File is too large");
+    // TODO: Number should come from API
+    selectionExceedsLimitAlert.setMessage(
+      "You only have 1 MB of storage remaining within this project. In order to upload more files, you must edit your files or upgrade your plan."
+    );
+    selectionExceedsLimitAlert.setPrimaryCTAText("Learn more");
+    selectionExceedsLimitAlert.setPrimaryCTAHref(
+      "https://help.synapse.org/docs/Sage-Offerings.2965078125.html"
+    );
+    selectionExceedsLimitAlert.setVisible(false);
+
+    currentlyOverLimitAlert = new FullWidthAlert();
+    currentlyOverLimitAlert.setGlobal(false);
+    currentlyOverLimitAlert.setAlertType(AlertType.DANGER);
+    currentlyOverLimitAlert.setMessageTitle("You have no data availability");
+    currentlyOverLimitAlert.setMessage(
+      "You do not have any remaining data within this project. In order to upload more files, you must edit your file list or upgrade your plan."
+    );
+    currentlyOverLimitAlert.setPrimaryCTAText("Learn more");
+    currentlyOverLimitAlert.setPrimaryCTAHref(
+      "https://help.synapse.org/docs/Sage-Offerings.2965078125.html"
+    );
+    currentlyOverLimitAlert.setVisible(false);
+
     formPanel.setWidget(formFieldsPanel);
     uploadPanel = new FlowPanel();
-    uploadPanel.add(uploadDestinationContainer);
+    uploadPanel.add(closeToLimitAlert);
+    uploadPanel.add(selectionExceedsLimitAlert);
+    uploadPanel.add(currentlyOverLimitAlert);
     uploadPanel.add(formPanel);
 
     Grid row = new Grid();
@@ -724,19 +782,8 @@ public class UploaderViewImpl extends FlowPanel implements UploaderView {
   public void showUploadingToSynapseStorage() {
     uploadDestinationContainer.clear();
     uploadDestinationContainer.add(
-      new InlineHTML(DisplayConstants.UPLOAD_DESTINATION)
+      new InlineHTML(DisplayConstants.UPLOAD_DESTINATION + " Synapse storage")
     );
-    Image logo = new Image("/images/logo.svg");
-    logo.setSize("35px", "35px");
-    logo.addStyleName("displayInlineBlock margin-right-5 moveup-7");
-    uploadDestinationContainer.add(logo);
-    Heading synapse = new Heading(HeadingSize.H3);
-    synapse.addStyleName(
-      "dmsans notransition letter-spacing-6 displayInlineBlock"
-    );
-    synapse.setText("SYNAPSE");
-    uploadDestinationContainer.add(synapse);
-    uploadDestinationContainer.add(new InlineHTML("storage"));
   }
 
   @Override
@@ -790,6 +837,30 @@ public class UploaderViewImpl extends FlowPanel implements UploaderView {
   @Override
   public void setUploaderLinkNameVisible(boolean visible) {
     externalNameFormGroup.setVisible(visible);
+  }
+
+  @Override
+  public void setShowCloseToLimitAlert(boolean visible) {
+    closeToLimitAlert.setVisible(visible);
+  }
+
+  @Override
+  public void setShowSelectionExceedsLimitAlert(boolean visible) {
+    selectionExceedsLimitAlert.setVisible(visible);
+  }
+
+  @Override
+  public void setShowCurrentlyOverLimitAlert(boolean visible) {
+    currentlyOverLimitAlert.setVisible(visible);
+  }
+
+  @Override
+  public void setUploadEnabled(boolean enabled) {
+    if (enabled) {
+      uploadDestinationContainer.addStyleName("disabled");
+    } else {
+      uploadDestinationContainer.removeStyleName("disabled");
+    }
   }
 
   @Override

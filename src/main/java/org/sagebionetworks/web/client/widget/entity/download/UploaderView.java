@@ -2,7 +2,6 @@ package org.sagebionetworks.web.client.widget.entity.download;
 
 import com.google.gwt.event.logical.shared.HasAttachHandlers;
 import com.google.gwt.user.client.ui.IsWidget;
-import org.sagebionetworks.repo.model.Entity;
 import org.sagebionetworks.web.client.SynapseView;
 import org.sagebionetworks.web.client.utils.Callback;
 
@@ -53,6 +52,14 @@ public interface UploaderView extends IsWidget, SynapseView, HasAttachHandlers {
   void showUploadingToS3DirectStorage(String endpoint, String banner);
 
   void setUploaderLinkNameVisible(boolean visible);
+
+  void setShowCloseToLimitAlert(boolean visible);
+
+  void setShowSelectionExceedsLimitAlert(boolean visible);
+
+  void setShowCurrentlyOverLimitAlert(boolean visible);
+
+  void setUploadEnabled(boolean disabled);
 
   /**
    * SFTP requires username and password, so prompt for it in the upload form.

@@ -45,38 +45,23 @@ public class UploadDialogWidget
     String title,
     Entity entity,
     String parentEntityId,
+    String projectId,
     final CallbackP<String> fileHandleIdCallback,
     boolean isEntity
   ) {
     Widget body = uploader.configure(
       entity,
       parentEntityId,
+      projectId,
       fileHandleIdCallback,
       isEntity
     );
     view.configureDialog(title, body);
 
     // add handlers for closing the window
-    uploader.setSuccessHandler(benefactorId -> {
-      view.hideDialog();
-      if (
-        benefactorId != null &&
-        featureFlagConfig.isFeatureEnabled(
-          FeatureFlagKey.SHOW_SHARING_SETTINGS_AFTER_UPLOAD
-        )
-      ) {
-        entityAclEditor.configure(
-          benefactorId,
-          () -> eventBus.fireEvent(new EntityUpdatedEvent(benefactorId)),
-          true
-        );
-        entityAclEditor.setOpen(true);
-      }
-    });
+    uploader.setSuccessHandler(benefactorId -> view.hideDialog());
 
-    uploader.setCancelHandler(() -> {
-      view.hideDialog();
-    });
+    uploader.setCancelHandler(() -> view.hideDialog());
   }
 
   public void disableMultipleFileUploads() {

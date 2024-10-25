@@ -55,16 +55,30 @@ import org.sagebionetworks.web.shared.exceptions.RestServiceException;
 import org.sagebionetworks.web.shared.exceptions.UnauthorizedException;
 
 /**
- * This Uploader class supports 2 use cases: B. File Entity, newer client browser: Direct multipart
- * upload to S3, using a PUT to presigned URLs. C. Upload to the NCI proxy.
+ * This Uploader class supports 2 use cases: A. File Entity, newer client browser: Direct multipart
+ * upload to S3, using a PUT to presigned URLs. B. Upload to the NCI proxy.
  *
- * Case B will be the most common case.
+ * Case A will be the most common case.
  */
 public class Uploader
   implements
     UploaderView.Presenter,
     SynapseWidgetPresenter,
     ProgressingFileUploadHandler {
+
+  /**
+   * Set of states representing how the uploader behaves as the user approaches a storage limit
+   */
+  public enum LimitState {
+    // There is no limit, or there is enough free space such that a warning should not be shown
+    NO_WARNING,
+    // The user can freely upload files, but should be alerted that they are approaching the limit
+    APPROACHING_LIMIT,
+    // The user can freely upload files, but the user has attempted to upload one or more files that would cause the limit to be exceeded
+    ATTEMPTED_TO_EXCEED_LIMIT,
+    // The limit has been exceeded, so block all uploads.
+    LIMIT_EXCEEDED,
+  }
 
   public static final long OLD_BROWSER_MAX_SIZE =
     (long) ClientProperties.MB * 5; // 5MB
@@ -75,6 +89,8 @@ public class Uploader
   private String parentEntityId, currentFileParentEntityId;
   // set if we are uploading to an existing file entity
   private String entityId;
+  // The project ID will be used to check storage limits
+  private String projectId;
   private CallbackP<String> fileHandleIdCallback;
   private SynapseClientAsync synapseClient;
   private SynapseJSNIUtils synapseJsniUtils;
@@ -99,6 +115,7 @@ public class Uploader
   private SynapseJavascriptClient jsClient;
   private SynapseProperties synapseProperties;
   private EventBus eventBus;
+  private LimitState limitState;
 
   @Inject
   public Uploader(
@@ -136,12 +153,14 @@ public class Uploader
   public Widget configure(
     Entity entity,
     String parentEntityId,
+    String projectId,
     CallbackP<String> fileHandleIdCallback,
     boolean isEntity
   ) {
     this.view.setPresenter(this);
     this.entity = entity;
     this.entityId = entity != null ? entity.getId() : null;
+    this.projectId = projectId;
     this.parentEntityId = parentEntityId;
     this.currentFileParentEntityId = parentEntityId;
     this.fileHandleIdCallback = fileHandleIdCallback;
@@ -244,12 +263,23 @@ public class Uploader
     }
   }
 
+  public void updateStorageLimitWarning() {
+    // 1. Fetch the limits
+    // 2. If storage location is null or Synapse Storage, get the limit on SynapseStorage.
+    //      Maybe do nothing if the storage location is not Synapse Storage
+    // 3. Store the limit and current usage in class variable(s)
+    // 4. If the limit is null do nothing (return)
+    // 5. If < 25% of the storage remains, show a warning
+    // 6. If the limit is exceeded, show an error and disable upload.
+  }
+
   public void queryForUploadDestination() {
     enableMultipleFileUploads();
     storageLocationId = null;
     if (parentEntityId == null && entity == null) {
       currentUploadType = UploadType.S3;
       view.showUploadingToSynapseStorage();
+      updateStorageLimitWarning();
     } else {
       // we have a parent entity, check to see where we are supposed to upload the file(s)
       String uploadDestinationsEntityId = parentEntityId != null
@@ -337,6 +367,9 @@ public class Uploader
                 )
               );
             }
+
+            // After setting the storage limit, sync the warning.
+            updateStorageLimitWarning();
           }
 
           @Override
@@ -352,6 +385,8 @@ public class Uploader
    * Get the upload destination (based on the project settings), and continue the upload.
    */
   public void uploadBasedOnConfiguration() {
+    // precheck file list
+
     // create necessary folders based on webkitRelativePath for the current item, and set parent entity
     // id to correct parent
     // reset the current file parent entity id to the original.
@@ -670,7 +705,7 @@ public class Uploader
         view
       );
     } else {
-      // SWC-6765: Uses react implementation for uploading a file in all cases
+      // SWC-6765: Uses JavaScript implementation for uploading a file in all cases
       multiPartUploader.uploadFile(
         fileName,
         contentType,
@@ -1174,5 +1209,13 @@ public class Uploader
 
     // fallback
     return bannerPrefix + " custom storage";
+  }
+
+  private void disableUploads() {
+    // TODO: should probably never clear drag n drop handler.
+    // drag n drop should open the upload dialog, then the user should be alerted that their file is to big.
+    // so the drag n drop handler should precheck the file/folder against the limit
+    globalAppState.clearDropZoneHandler();
+    view.setUploadEnabled(true);
   }
 }

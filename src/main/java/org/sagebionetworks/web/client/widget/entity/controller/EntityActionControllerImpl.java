@@ -2054,6 +2054,7 @@ public class EntityActionControllerImpl
         DisplayConstants.TEXT_UPLOAD_FILE_OR_LINK,
         null,
         entityBundle.getEntity().getId(),
+        entityBundle.getPath().getPath().get(1).getId(),
         null,
         true
       );
@@ -2127,6 +2128,7 @@ public class EntityActionControllerImpl
       DisplayConstants.TEXT_UPLOAD_FILE_OR_LINK,
       entityBundle.getEntity(),
       null,
+      entityBundle.getPath().getPath().get(1).getId(),
       null,
       true
     );
