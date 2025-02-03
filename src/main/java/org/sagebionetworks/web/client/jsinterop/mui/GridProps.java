@@ -1,10 +1,12 @@
 package org.sagebionetworks.web.client.jsinterop.mui;
 
+import elemental2.core.JsObject;
 import jsinterop.annotations.JsNullable;
 import jsinterop.annotations.JsOverlay;
 import jsinterop.annotations.JsPackage;
 import jsinterop.annotations.JsType;
 import org.sagebionetworks.web.client.jsinterop.PropsWithStyle;
+import org.sagebionetworks.web.client.jsinterop.SxProps;
 
 @JsType(isNative = true, namespace = JsPackage.GLOBAL, name = "Object")
 public class GridProps extends PropsWithStyle {
@@ -15,40 +17,13 @@ public class GridProps extends PropsWithStyle {
   boolean container;
 
   @JsNullable
-  int xs;
+  GridSizeOffset size;
 
   @JsNullable
-  int sm;
+  GridSizeOffset offset;
 
   @JsNullable
-  int md;
-
-  @JsNullable
-  int lg;
-
-  @JsNullable
-  int xl;
-
-  @JsNullable
-  int xsOffset;
-
-  @JsNullable
-  int smOffset;
-
-  @JsNullable
-  int mdOffset;
-
-  @JsNullable
-  int lgOffset;
-
-  @JsNullable
-  int xlOffset;
-
-  @JsNullable
-  String mt;
-
-  @JsNullable
-  String pl;
+  SxProps sx;
 
   @JsNullable
   String rowSpacing;
@@ -59,6 +34,9 @@ public class GridProps extends PropsWithStyle {
   @JsOverlay
   public static GridProps create(boolean container) {
     GridProps props = new GridProps();
+    props.size = new GridSizeOffset();
+    props.offset = new GridSizeOffset();
+    props.sx = new SxProps();
 
     if (container) {
       props.container = true;

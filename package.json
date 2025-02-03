@@ -1,6 +1,13 @@
 {
+  "type": "module",
+  "packageManager": "pnpm@9.15.4",
   "dependencies": {
+    "@mui/material": "^6.3.1",
     "@sage-bionetworks/markdown-it-container": "^4.0.1",
+    "@sage-bionetworks/synapse-types": "0.0.4",
+    "@tanstack/react-query": "5.22.2",
+    "animate.css": "^4.1.1",
+    "bootstrap": "^4.6.2",
     "bootstrap3": "npm:bootstrap@3.4.1",
     "croppie": "2.6.5",
     "font-awesome": "4.7.0",
@@ -15,10 +22,11 @@
     "markdown-it-inline-comments": "^1.0.1",
     "markdown-it-math": "^4.1.1",
     "markdown-it-strikethrough-alt": "^1.0.0",
-    "markdown-it-sub": "^2.0.0",
-    "markdown-it-sup": "^2.0.0",
+    "markdown-it-sub-alt": "^1.0.0",
+    "markdown-it-sup-alt": "^1.0.2",
     "markdown-it-synapse": "^1.1.17",
     "markdown-it-synapse-heading": "^1.0.1",
+    "markdown-it-synapse-math": "^3.0.5",
     "markdown-it-synapse-table": "^1.0.8",
     "moment": "^2.29.4",
     "papaparse": "^5.4.1",
@@ -27,7 +35,6 @@
     "prop-types": "^15.8.1",
     "react": "18.2.0",
     "react-dom": "18.2.0",
-    "react-measure": "2.5.2",
     "react-plotly.js": "^2.6.0",
     "react-transition-group": "2.6.0",
     "sass": "^1.63.6",
@@ -36,11 +43,26 @@
     "universal-cookie": "^4.0.4",
     "xss": "^1.0.15"
   },
+  "resolutions": {
+    "react": "18.2.0",
+    "react-dom": "18.2.0"
+  },
+  "dependenciesMeta": {
+    "react": {
+      "injected": true
+    }
+  },
   "devDependencies": {
     "@playwright/test": "^1.48.0",
     "@prettier/plugin-xml": "^3.1.0",
+    "@rollup/plugin-json": "^6.1.0",
+    "@rollup/plugin-node-resolve": "^16.0.0",
+    "@rollup/plugin-terser": "^0.4.4",
+    "@rollup/plugin-typescript": "^12.1.2",
     "@sage-bionetworks/synapse-types": "^0.0.2",
     "@types/node": "18.6.5",
+    "@types/react": "18.2.64",
+    "@types/react-dom": "18.0.6",
     "@types/uuid": "^9.0.7",
     "@typescript-eslint/eslint-plugin": "^6.4.0",
     "@typescript-eslint/parser": "^6.17.0",
@@ -52,8 +74,14 @@
     "npm-run-all": "^4.1.5",
     "prettier": "^3.2.5",
     "prettier-plugin-java": "2.5.0",
+    "rolldown": "^1.0.0-beta.1",
+    "rollup": "^4.30.1",
+    "rollup-plugin-import-css": "^3.5.8",
+    "tsup": "^8.3.5",
     "typescript": "5.1.6",
     "uuid": "^9.0.0",
+    "vite": "^6.0.11",
+    "vite-plugin-node-polyfills": "0.17.0",
     "wait-on": "^8.0.0"
   },
   "lint-staged": {
@@ -61,20 +89,24 @@
   },
   "scripts": {
     "build": "mvn -B package --file pom.xml",
-    "dev": "concurrently -k -n \"CODESERVER,WATCHER,TOMCAT\" -c \"auto,auto,auto\" \"yarn dev:codeserver\" \"yarn dev:watcher\" \"yarn dev:tomcat\"",
+    "build:js": "pnpm build:js:vite",
+    "build:js:vite": "vite build",
+    "build:js:esbuild": "esbuild js/**.ts --bundle --platform=browser --format=iife --outdir=./src/main/webapp/generated",
+    "build:js:rolldown": "rolldown js/swc-modules.ts --platform browser --format esm --file ./src/main/webapp/generated/swc-modules.js",
+    "dev": "concurrently -k -n \"CODESERVER,WATCHER,TOMCAT\" -c \"auto,auto,auto\" \"pnpm dev:codeserver\" \"pnpm dev:watcher\" \"pnpm dev:tomcat\"",
     "dev:codeserver": "mvn clean gwt:run-codeserver",
     "dev:watcher": "wait-on tcp:127.0.0.1:9876 && mvn fizzed-watcher:run",
     "dev:tomcat": "wait-on tcp:127.0.0.1:9876 && docker pull tomcat:9.0; docker run --name swc-dev --rm -p 8888:8080 -v \"/$(pwd)/target/portal-develop-SNAPSHOT/:/usr/local/tomcat/webapps/ROOT/\" -v \"/$HOME/.m2/settings.xml\":/root/.m2/settings.xml tomcat:9.0",
     "docker:start": "docker pull tomcat:9.0; docker run --name swc-tomcat -d --rm -p 8888:8080 -v \"/$(pwd)/target/portal-develop-SNAPSHOT.war:/usr/local/tomcat/webapps/ROOT.war\" -v \"/$(pwd)/e2e_workflow/settings.xml\":/root/.m2/settings.xml tomcat:9.0",
     "docker:stop": "docker stop swc-tomcat",
     "prepare": "husky install",
-    "e2e": "yarn playwright test",
-    "e2e:chromium": "yarn playwright test --project=chromium",
+    "e2e": "pnpm playwright test",
+    "e2e:chromium": "pnpm playwright test --project=chromium",
     "e2e:lint": "eslint e2e",
-    "e2e:ui": "yarn playwright test --ui",
-    "e2e:codegen": "yarn playwright codegen",
-    "e2e:report": "yarn playwright show-report",
-    "e2e:report:blob": "yarn playwright merge-reports --reporter html ./blob-report && yarn e2e:report",
-    "playwright:update": "yarn add -D @playwright/test@latest; yarn playwright install"
+    "e2e:ui": "pnpm playwright test --ui",
+    "e2e:codegen": "pnpm playwright codegen",
+    "e2e:report": "pnpm playwright show-report",
+    "e2e:report:blob": "pnpm playwright merge-reports --reporter html ./blob-report && pnpm e2e:report",
+    "playwright:update": "pnpm add -D @playwright/test@latest; pnpm playwright install"
   }
 }

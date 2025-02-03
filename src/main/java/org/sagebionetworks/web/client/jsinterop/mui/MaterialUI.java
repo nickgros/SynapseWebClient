@@ -7,5 +7,9 @@ import org.sagebionetworks.web.client.jsinterop.ReactComponentType;
 @JsType(isNative = true, namespace = JsPackage.GLOBAL)
 public class MaterialUI {
 
-  public static ReactComponentType<GridProps> Unstable_Grid2;
+  /**
+   * All MUI components must be manually added to the MaterialUI object in Portal.html before they can be accessed in JsInterop code
+   */
+
+  public static ReactComponentType<GridProps> Grid2;
 }

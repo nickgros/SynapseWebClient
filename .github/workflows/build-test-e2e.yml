@@ -34,7 +34,7 @@ jobs:
         with:
           mvn_goal: package
       - name: Upload build to GitHub Actions Artifacts
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: ${{ env.BUILD_ARTIFACT_NAME }}
           path: '${{ env.BUILD_DIR }}/${{ env.BUILD_NAME }}'

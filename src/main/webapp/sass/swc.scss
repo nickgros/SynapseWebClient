@@ -6,7 +6,7 @@
 // imported in JSX/TSX and loaded through Webpack. The synapse-react-client UMD bundler identifies these loaded CSS files
 // and includes them in this minified CSS file. This is why
 // We **do** use the UMD JavaScript build, so we rely on these styles to be loaded.
-@use 'synapse-react-client/dist/umd/synapse-react-client.production.min.css';
+@use 'synapse-react-client/dist/style.css';
 
 // Load the SCSS build after the minified build so styles with overrides take higher priority
 @use 'synapse-react-client/dist/style/main.scss' with (

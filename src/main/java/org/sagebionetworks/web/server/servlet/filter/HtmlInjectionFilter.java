@@ -14,6 +14,7 @@ import java.net.URLDecoder;
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.regex.Pattern;
 import java.util.zip.GZIPInputStream;
 import javax.servlet.FilterChain;
 import javax.servlet.ServletException;
@@ -61,6 +62,7 @@ public class HtmlInjectionFilter extends OncePerRequestFilter {
   public static final String BOT_HEAD_HTML_KEY = "botHeadHtml";
   public static final String BOT_BODY_HTML_KEY = "botBodyHtml";
   public static final String LOADING_DESCRIPTOR_KEY = "loadingObjectDescriptor";
+  public static final String CDN_ENDPOINT_KEY = "cdnEndpoint";
 
   Template portalHtmlTemplate = null;
   public static final String DEFAULT_PAGE_TITLE = "Synapse | Sage Bionetworks";
@@ -74,6 +76,10 @@ public class HtmlInjectionFilter extends OncePerRequestFilter {
 
   public static final int MAX_PAGE_TITLE_LENGTH = 70;
   public static final int MAX_PAGE_DESCRIPTION_LENGTH = 200;
+
+  Pattern CDN_ORIGINS_REGEX = Pattern.compile(
+    "(www|staging|tst)\\.synapse\\.org$"
+  );
 
   public static final String META_ROBOTS_NOINDEX =
     "<meta name=\"robots\" content=\"noindex\">";
@@ -105,6 +111,7 @@ public class HtmlInjectionFilter extends OncePerRequestFilter {
     dataModel.putIfAbsent(BOT_HEAD_HTML_KEY, "");
     dataModel.putIfAbsent(BOT_BODY_HTML_KEY, "");
     dataModel.putIfAbsent(LOADING_DESCRIPTOR_KEY, "Loading");
+    dataModel.putIfAbsent(CDN_ENDPOINT_KEY, "/");
 
     dataModel.put(
       OG_PAGE_TITLE_KEY,
@@ -149,6 +156,18 @@ public class HtmlInjectionFilter extends OncePerRequestFilter {
     //        return false;
   }
 
+  private void addCdnEndpoint(
+    Map<String, String> dataModel,
+    HttpServletRequest request
+  ) {
+    String origin = request.getHeader("origin");
+    if (origin != null && CDN_ORIGINS_REGEX.matcher(origin).matches()) {
+      dataModel.put(CDN_ENDPOINT_KEY, "//cdn-" + request.getHeader("origin"));
+    } else {
+      dataModel.put(CDN_ENDPOINT_KEY, "");
+    }
+  }
+
   @Override
   protected void doFilterInternal(
     HttpServletRequest request,
@@ -185,6 +204,7 @@ public class HtmlInjectionFilter extends OncePerRequestFilter {
       boolean includeBotHtml = isLikelyBot && !isSynapseTestSite;
       try {
         // customize data model for this particular page
+        addCdnEndpoint(dataModel, request);
         dataModel.put(OG_URL_KEY, url.toString());
         try {
           String accessToken = UserDataProvider.getThreadLocalUserToken(

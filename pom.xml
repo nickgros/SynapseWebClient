@@ -311,8 +311,9 @@
           <touchFile>target/classes/watcher_explode_war.txt</touchFile>
           <watches>
             <watch>
+              <directory>${project.basedir}/js</directory>
               <directory>
-                ${project.basedir}/node_modules/synapse-react-client/dist/umd
+                ${project.basedir}/node_modules/synapse-react-client/dist
               </directory>
             </watch>
             <watch>
@@ -367,25 +368,25 @@
       <plugin>
         <groupId>com.github.eirslett</groupId>
         <artifactId>frontend-maven-plugin</artifactId>
-        <version>1.11.0</version>
+        <version>1.15.1</version>
         <executions>
-          <!--We can install node/yarn as a part of the build process-->
+          <!--We can install node/pnpm as a part of the build process-->
           <execution>
-            <id>Install node and yarn</id>
+            <id>install-node-and-corepack</id>
             <goals>
-              <goal>install-node-and-yarn</goal>
+              <goal>install-node-and-corepack</goal>
             </goals>
             <phase>generate-resources</phase>
           </execution>
 
           <!--Install dependencies specified in package.json, including SRC-->
           <execution>
-            <id>yarn install</id>
+            <id>install</id>
             <goals>
-              <goal>yarn</goal>
+              <goal>corepack</goal>
             </goals>
             <configuration>
-              <arguments>install</arguments>
+              <arguments>pnpm install</arguments>
             </configuration>
             <phase>generate-resources</phase>
           </execution>
@@ -395,10 +396,11 @@
           <execution>
             <id>compile sass</id>
             <goals>
-              <goal>yarn</goal>
+              <goal>corepack</goal>
             </goals>
             <configuration>
               <arguments>
+                pnpm
                 sass --no-source-map --style=compressed --unicode --stop-on-error --update --load-path=node_modules
                 src/main/webapp/sass:src/main/webapp/generated
               </arguments>
@@ -409,7 +411,6 @@
 
         <configuration>
           <nodeVersion>v20.18.2</nodeVersion>
-          <yarnVersion>v1.22.17</yarnVersion>
         </configuration>
       </plugin>
 
@@ -463,29 +464,8 @@
                   tofile="src/main/webapp/generated/moment.min.js"
                 />
                 <copy
-                  file="${project.basedir}/node_modules/@mui/material/umd/material-ui.production.min.js"
-                  tofile="src/main/webapp/generated/material-ui.production.min.js"
-                />
-                <copy todir="src/main/webapp/generated">
-                  <fileset
-                    dir="${project.basedir}/node_modules/synapse-react-client/dist/umd"
-                  />
-                </copy>
-                <copy
-                  file="${project.basedir}/node_modules/react/umd/react.production.min.js"
-                  tofile="src/main/webapp/generated/react.production.min.js"
-                />
-                <copy
-                  file="${project.basedir}/node_modules/react-dom/umd/react-dom.production.min.js"
-                  tofile="src/main/webapp/generated/react-dom.production.min.js"
-                />
-                <copy
                   file="${project.basedir}/node_modules/react-transition-group/dist/react-transition-group.min.js"
                   tofile="src/main/webapp/generated/react-transition-group.min.js"
-                />
-                <copy
-                  file="${project.basedir}/node_modules/react-measure/dist/index.umd.js"
-                  tofile="src/main/webapp/generated/react-measure.js"
                 />
                 <copy
                   file="${project.basedir}/node_modules/universal-cookie/umd/universalCookie.min.js"

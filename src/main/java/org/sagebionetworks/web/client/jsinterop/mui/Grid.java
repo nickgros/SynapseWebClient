@@ -6,7 +6,7 @@ import org.sagebionetworks.web.client.jsinterop.react.HasStyle;
 public class Grid extends HasStyle<ReactComponentType<GridProps>, GridProps> {
 
   public Grid() {
-    super(MaterialUI.Unstable_Grid2, GridProps.create(false));
+    super(MaterialUI.Grid2, GridProps.create(false));
   }
 
   public void setId(String id) {
@@ -20,62 +20,62 @@ public class Grid extends HasStyle<ReactComponentType<GridProps>, GridProps> {
   }
 
   public void setXs(int xs) {
-    props.xs = xs;
+    props.size.xs = xs;
     this.render();
   }
 
   public void setSm(int sm) {
-    props.sm = sm;
+    props.size.sm = sm;
     this.render();
   }
 
   public void setMd(int md) {
-    props.md = md;
+    props.size.md = md;
     this.render();
   }
 
   public void setLg(int lg) {
-    props.lg = lg;
+    props.size.lg = lg;
     this.render();
   }
 
   public void setXl(int xl) {
-    props.xl = xl;
+    props.size.xl = xl;
     this.render();
   }
 
   public void setXsOffset(int xsOffset) {
-    props.xsOffset = xsOffset;
+    props.offset.xs = xsOffset;
     this.render();
   }
 
   public void setSmOffset(int smOffset) {
-    props.smOffset = smOffset;
+    props.offset.sm = smOffset;
     this.render();
   }
 
   public void setMdOffset(int mdOffset) {
-    props.mdOffset = mdOffset;
+    props.offset.md = mdOffset;
     this.render();
   }
 
   public void setLgOffset(int lgOffset) {
-    props.lgOffset = lgOffset;
+    props.offset.lg = lgOffset;
     this.render();
   }
 
   public void setXlOffset(int xlOffset) {
-    props.xlOffset = xlOffset;
+    props.offset.xl = xlOffset;
     this.render();
   }
 
   public void setMt(String mt) {
-    props.mt = mt;
+    props.sx.mt = mt;
     this.render();
   }
 
   public void setPl(String pl) {
-    props.pl = pl;
+    props.sx.pl = pl;
     this.render();
   }
 

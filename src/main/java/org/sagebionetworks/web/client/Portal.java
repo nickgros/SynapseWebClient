@@ -78,7 +78,7 @@ public class Portal implements EntryPoint {
           public void onFailure(Throwable reason) {
             // SWC-2444: if there is a problem getting the code, try to reload the app after some time
             _consoleError(reason.getMessage());
-            reloadApp(CODE_LOAD_DELAY);
+            //            reloadApp(CODE_LOAD_DELAY);
           }
 
           @Override
