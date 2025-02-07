@@ -12,6 +12,7 @@ import ReactDOMClient from 'react-dom/client'
 import * as SRC from 'synapse-react-client'
 import * as ReactQuery from '@tanstack/react-query'
 import Grid2 from '@mui/material/Grid2'
+import * as Moment from 'moment'
 
 self.React = React
 self.ReactDOM = ReactDOM
@@ -19,6 +20,9 @@ self.ReactDOM = ReactDOM
 self.ReactDOMClient = ReactDOMClient
 // @ts-expect-error
 self.ReactQuery = ReactQuery
+
+// @ts-expect-error
+self.Moment = Moment
 
 const MaterialUI = {
   Grid2,
@@ -28,12 +32,3 @@ const MaterialUI = {
 self.MaterialUI = MaterialUI
 // @ts-expect-error
 self.SRC = SRC
-
-// @ts-expect-error
-console.log(
-  'Is React the same? ',
-  // @ts-expect-error
-  self.React === self.SRC_React,
-  // @ts-expect-error
-  self.SRC_React,
-)

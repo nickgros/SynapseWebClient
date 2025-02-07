@@ -460,14 +460,6 @@
                   tofile="src/main/webapp/generated/croppie.css"
                 />
                 <copy
-                  file="${project.basedir}/node_modules/moment/min/moment.min.js"
-                  tofile="src/main/webapp/generated/moment.min.js"
-                />
-                <copy
-                  file="${project.basedir}/node_modules/react-transition-group/dist/react-transition-group.min.js"
-                  tofile="src/main/webapp/generated/react-transition-group.min.js"
-                />
-                <copy
                   file="${project.basedir}/node_modules/universal-cookie/umd/universalCookie.min.js"
                   tofile="src/main/webapp/generated/universalCookie.min.js"
                 />
@@ -494,15 +486,6 @@
                 <copy
                   file="${project.basedir}/node_modules/plotly.js/dist/plotly.min.js"
                   tofile="src/main/webapp/generated/plotly.min.js"
-                />
-                <!-- Copy development versions of some key dependencies for devmode debugging -->
-                <copy
-                  file="${project.basedir}/node_modules/react/umd/react.development.js"
-                  tofile="src/main/webapp/generated/react.development.js"
-                />
-                <copy
-                  file="${project.basedir}/node_modules/react-dom/umd/react-dom.development.js"
-                  tofile="src/main/webapp/generated/react-dom.development.js"
                 />
                 <copy
                   file="${project.basedir}/node_modules/react-plotly.js/dist/create-plotly-component.min.js"
