@@ -459,6 +459,11 @@
                   file="${project.basedir}/node_modules/croppie/croppie.css"
                   tofile="src/main/webapp/generated/croppie.css"
                 />
+                <copy todir="src/main/webapp/generated">
+                  <fileset
+                    dir="${project.basedir}/node_modules/synapse-react-client/dist/umd"
+                  />
+                </copy>
                 <copy
                   file="${project.basedir}/node_modules/universal-cookie/umd/universalCookie.min.js"
                   tofile="src/main/webapp/generated/universalCookie.min.js"
