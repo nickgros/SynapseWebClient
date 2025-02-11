@@ -95,7 +95,7 @@
     "dev": "concurrently -k -n \"CODESERVER,WATCHER,TOMCAT,VITE\" -c \"auto,auto,auto,auto\" \"pnpm dev:codeserver\" \"pnpm dev:watcher\" \"pnpm dev:tomcat\" \"pnpm dev:vite\"",
     "dev:codeserver": "mvn clean gwt:run-codeserver",
     "dev:watcher": "wait-on tcp:127.0.0.1:9876 && mvn fizzed-watcher:run",
-    "dev:tomcat": "wait-on tcp:127.0.0.1:9876 && docker pull tomcat:9.0; docker run --name swc-dev --rm -p 8888:8080 -v \"/$(pwd)/target/portal-develop-SNAPSHOT/:/usr/local/tomcat/webapps/ROOT/\" -v \"/$HOME/.m2/settings.xml\":/root/.m2/settings.xml tomcat:9.0",
+    "dev:tomcat": "wait-on tcp:127.0.0.1:9876 && docker pull tomcat:9.0; docker run --name swc-dev --rm -p 8888:8080 -v \"/$(pwd)/target/portal-develop-SNAPSHOT/:/usr/local/tomcat/webapps/ROOT/\" -v \"/$HOME/.m2/settings.xml\":/root/.m2/settings.xml -e CATALINA_OPTS=\"-Dorg.sagebionetworks.web.client.dev.mode=\"true\" tomcat:9.0",
     "dev:vite": "vite dev",
     "docker:start": "docker pull tomcat:9.0; docker run --name swc-tomcat -d --rm -p 8888:8080 -v \"/$(pwd)/target/portal-develop-SNAPSHOT.war:/usr/local/tomcat/webapps/ROOT.war\" -v \"/$(pwd)/e2e_workflow/settings.xml\":/root/.m2/settings.xml tomcat:9.0",
     "docker:stop": "docker stop swc-tomcat",

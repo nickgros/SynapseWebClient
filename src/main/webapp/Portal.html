@@ -99,9 +99,8 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap" type="text/css" />
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" type="text/css" />
     <link rel="stylesheet" href="${cdnEndpoint}/generated/swc.css" type="text/css" />
-    <!-- if development -->
-    <script type="module" src="http://localhost:5173/@vite/client"></script>
-    <script type="module" src="http://localhost:5173/js/main.ts"></script>
+
+    ${viteImports}
 
 <!--    <script src="${cdnEndpoint}/generated/swc-modules.js" type="module"></script>-->
     <script src="${cdnEndpoint}/generated/synapse-react-client.production.min.js" type="module"></script>

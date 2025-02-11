@@ -7,12 +7,14 @@ import com.google.inject.Provides;
 import com.google.inject.Singleton;
 import com.google.inject.name.Names;
 import com.google.inject.servlet.ServletModule;
+import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.InputStream;
 import java.util.Iterator;
 import java.util.Properties;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import org.json.JSONTokener;
 import org.sagebionetworks.ConfigurationProperties;
 import org.sagebionetworks.ConfigurationPropertiesImpl;
 import org.sagebionetworks.LoggerProvider;
@@ -47,13 +49,24 @@ import org.sagebionetworks.web.server.servlet.SynapseClientImpl;
 import org.sagebionetworks.web.server.servlet.UserAccountServiceImpl;
 import org.sagebionetworks.web.server.servlet.UserProfileClientImpl;
 import org.sagebionetworks.web.server.servlet.VersionsServlet;
+import org.sagebionetworks.web.server.servlet.ViteManifest;
+import org.sagebionetworks.web.server.servlet.ViteManifestProvider;
+import org.sagebionetworks.web.server.servlet.ViteManifestProviderImpl;
 import org.sagebionetworks.web.server.servlet.filter.AmpADFilter;
+import org.sagebionetworks.web.server.servlet.filter.CORSFilter;
 import org.sagebionetworks.web.server.servlet.filter.DigitalHealthFilter;
 import org.sagebionetworks.web.server.servlet.filter.DreamFilter;
+import org.sagebionetworks.web.server.servlet.filter.GWTAllCacheFilter;
+import org.sagebionetworks.web.server.servlet.filter.GWTCacheControlFilter;
+import org.sagebionetworks.web.server.servlet.filter.HSTSFilter;
+import org.sagebionetworks.web.server.servlet.filter.HtmlInjectionFilter;
+import org.sagebionetworks.web.server.servlet.filter.JavaScriptContentTypeFilter;
 import org.sagebionetworks.web.server.servlet.filter.MHealthFilter;
 import org.sagebionetworks.web.server.servlet.filter.RPCValidationFilter;
 import org.sagebionetworks.web.server.servlet.filter.RegisterAccountFilter;
+import org.sagebionetworks.web.server.servlet.filter.SSLFilter;
 import org.sagebionetworks.web.server.servlet.filter.TimingFilter;
+import org.sagebionetworks.web.server.servlet.filter.XFrameOptionsFilter;
 import org.sagebionetworks.web.server.servlet.oauth2.OAuth2AliasServlet;
 import org.sagebionetworks.web.server.servlet.oauth2.OAuth2SessionServlet;
 import org.sagebionetworks.web.shared.WebConstants;
@@ -73,6 +86,36 @@ public class PortalServletModule extends ServletModule {
 
   @Override
   protected void configureServlets() {
+    bind(ViteManifestProvider.class)
+      .to(ViteManifestProviderImpl.class)
+      .in(Singleton.class);
+
+    filter("/*").through(SSLFilter.class);
+    bind(SSLFilter.class).in(Singleton.class);
+
+    filter("*").through(HtmlInjectionFilter.class);
+    bind(HtmlInjectionFilter.class).in(Singleton.class);
+
+    filter("/*").through(GWTCacheControlFilter.class);
+    bind(GWTCacheControlFilter.class).in(Singleton.class);
+
+    filter("/js/*").through(GWTAllCacheFilter.class);
+    filter("/images/*").through(GWTAllCacheFilter.class);
+    filter("/research/*").through(GWTAllCacheFilter.class);
+    bind(GWTAllCacheFilter.class).in(Singleton.class);
+
+    filter("/*").through(JavaScriptContentTypeFilter.class);
+    bind(JavaScriptContentTypeFilter.class).in(Singleton.class);
+
+    filter("/*").through(HSTSFilter.class);
+    bind(HSTSFilter.class).in(Singleton.class);
+
+    filter("/*").through(CORSFilter.class);
+    bind(CORSFilter.class).in(Singleton.class);
+
+    filter("/*").through(XFrameOptionsFilter.class);
+    bind(XFrameOptionsFilter.class).in(Singleton.class);
+
     // filter all call through this filter
     filter("/Portal/*").through(TimingFilter.class);
     bind(TimingFilter.class).in(Singleton.class);
@@ -212,6 +255,26 @@ public class PortalServletModule extends ServletModule {
     // This is also where project aliases are handled.
     bind(ProjectAliasServlet.class).in(Singleton.class);
     serveRegex("^\\/\\w+$").with(ProjectAliasServlet.class);
+  }
+
+  private static final String PATH_TO_MANIFEST =
+    "generated/vite/.vite/manifest.json";
+
+  @Provides
+  ViteManifest provideViteManifest() {
+    try (
+      InputStream stream =
+        PortalServletModule.class.getClassLoader()
+          .getResourceAsStream(PATH_TO_MANIFEST);
+    ) {
+      JSONTokener tokener = new JSONTokener(stream);
+      ViteManifest manifest = new ViteManifest(tokener);
+      return manifest;
+    } catch (FileNotFoundException e) {
+      throw new RuntimeException(e);
+    } catch (IOException e) {
+      throw new RuntimeException(e);
+    }
   }
 
   @Provides

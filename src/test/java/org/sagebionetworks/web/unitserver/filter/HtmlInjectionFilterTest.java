@@ -51,6 +51,8 @@ import org.sagebionetworks.repo.model.wiki.WikiPage;
 import org.sagebionetworks.schema.adapter.JSONObjectAdapterException;
 import org.sagebionetworks.schema.adapter.org.json.EntityFactory;
 import org.sagebionetworks.web.server.servlet.SynapseProvider;
+import org.sagebionetworks.web.server.servlet.ViteManifest;
+import org.sagebionetworks.web.server.servlet.ViteManifestProvider;
 import org.sagebionetworks.web.server.servlet.filter.BotHtml;
 import org.sagebionetworks.web.server.servlet.filter.CrawlFilter;
 import org.sagebionetworks.web.server.servlet.filter.HtmlInjectionFilter;
@@ -133,6 +135,9 @@ public class HtmlInjectionFilterTest {
   @Mock
   BotHtml mockBotHtml;
 
+  @Mock
+  ViteManifestProvider mockViteManifest;
+
   private Template getTemplate(String html)
     throws TemplateNotFoundException, MalformedTemplateNameException, ParseException, IOException {
     Configuration cfg = new Configuration(Configuration.VERSION_2_3_31);
@@ -145,7 +150,7 @@ public class HtmlInjectionFilterTest {
   @Before
   public void setUp()
     throws RestServiceException, IOException, SynapseException, JSONObjectAdapterException {
-    filter = new HtmlInjectionFilter();
+    filter = new HtmlInjectionFilter(mockViteManifest);
     Template pageTitleTemplate = getTemplate(
       "${" +
       HtmlInjectionFilter.PAGE_TITLE_KEY +

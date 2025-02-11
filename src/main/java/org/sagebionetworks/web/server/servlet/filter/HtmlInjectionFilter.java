@@ -1,6 +1,9 @@
 package org.sagebionetworks.web.server.servlet.filter;
 
+import static org.sagebionetworks.web.server.StackEndpoints.IS_DEV_MODE;
+
 import com.google.gwt.safehtml.shared.SimpleHtmlSanitizer;
+import com.google.inject.Inject;
 import freemarker.template.Configuration;
 import freemarker.template.Template;
 import freemarker.template.TemplateException;
@@ -13,6 +16,7 @@ import java.net.URL;
 import java.net.URLDecoder;
 import java.util.Collections;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 import java.util.regex.Pattern;
 import java.util.zip.GZIPInputStream;
@@ -43,6 +47,8 @@ import org.sagebionetworks.web.server.servlet.SynapseClientImpl;
 import org.sagebionetworks.web.server.servlet.SynapseProvider;
 import org.sagebionetworks.web.server.servlet.SynapseProviderImpl;
 import org.sagebionetworks.web.server.servlet.UserDataProvider;
+import org.sagebionetworks.web.server.servlet.ViteHTMLProvider;
+import org.sagebionetworks.web.server.servlet.ViteManifestProvider;
 import org.sagebionetworks.web.shared.SearchQueryUtils;
 import org.sagebionetworks.web.shared.WebConstants;
 import org.springframework.web.filter.OncePerRequestFilter;
@@ -53,6 +59,13 @@ import org.springframework.web.filter.OncePerRequestFilter;
  */
 public class HtmlInjectionFilter extends OncePerRequestFilter {
 
+  ViteManifestProvider viteManifestProvider;
+
+  @Inject
+  public HtmlInjectionFilter(ViteManifestProvider viteManifestProvider) {
+    this.viteManifestProvider = viteManifestProvider;
+  }
+
   public static final String SEARCHING_FOR_TEAM = "Searching for Team: ";
   public static final String OG_URL_KEY = "ogUrl";
   public static final String PAGE_DESCRIPTION_KEY = "pageDescription";
@@ -62,7 +75,10 @@ public class HtmlInjectionFilter extends OncePerRequestFilter {
   public static final String BOT_HEAD_HTML_KEY = "botHeadHtml";
   public static final String BOT_BODY_HTML_KEY = "botBodyHtml";
   public static final String LOADING_DESCRIPTOR_KEY = "loadingObjectDescriptor";
+  // Used to inject the endpoint of the CDN where static resources are hosted
   public static final String CDN_ENDPOINT_KEY = "cdnEndpoint";
+  // Used to inject imports for Vite, which are dynamic based on development/production mode
+  public static final String VITE_IMPORTS_INJECTION_KEY = "viteImports";
 
   Template portalHtmlTemplate = null;
   public static final String DEFAULT_PAGE_TITLE = "Synapse | Sage Bionetworks";
@@ -76,6 +92,11 @@ public class HtmlInjectionFilter extends OncePerRequestFilter {
 
   public static final int MAX_PAGE_TITLE_LENGTH = 70;
   public static final int MAX_PAGE_DESCRIPTION_LENGTH = 200;
+
+  // The set of (unbundled) files that are processed by Vite. These are relative to the project root, since the
+  // Vite dev server runs in the project root. These file paths should also match the keys of the manifest.json file
+  // that Vite generates.
+  public static final List<String> VITE_IMPORTED_FILES = List.of("js/main.ts");
 
   Pattern CDN_ORIGINS_REGEX = Pattern.compile(
     "(www|staging|tst)\\.synapse\\.org$"
@@ -168,6 +189,30 @@ public class HtmlInjectionFilter extends OncePerRequestFilter {
     }
   }
 
+  /**
+   * Adds Vite imports to the data model based on the request origin.
+   * This must be called AFTER the CDN_ENDPOINT_KEY is added to the data model
+   * @param dataModel
+   */
+  private void addViteImports(Map<String, String> dataModel) {
+    boolean isDev = "true".equals(System.getProperty(IS_DEV_MODE));
+    if (isDev) {
+      dataModel.put(
+        VITE_IMPORTS_INJECTION_KEY,
+        ViteHTMLProvider.getViteDevelopmentHTML(VITE_IMPORTED_FILES)
+      );
+    } else {
+      dataModel.put(
+        VITE_IMPORTS_INJECTION_KEY,
+        ViteHTMLProvider.getViteProductionHTML(
+          VITE_IMPORTED_FILES,
+          viteManifestProvider.getManifest(getServletContext()),
+          dataModel.get(CDN_ENDPOINT_KEY) + "/generated/vite/"
+        )
+      );
+    }
+  }
+
   @Override
   protected void doFilterInternal(
     HttpServletRequest request,
@@ -205,6 +250,7 @@ public class HtmlInjectionFilter extends OncePerRequestFilter {
       try {
         // customize data model for this particular page
         addCdnEndpoint(dataModel, request);
+        addViteImports(dataModel);
         dataModel.put(OG_URL_KEY, url.toString());
         try {
           String accessToken = UserDataProvider.getThreadLocalUserToken(

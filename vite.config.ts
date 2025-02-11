@@ -17,6 +17,7 @@ const config = defineConfig({
   // },
   build: {
     manifest: true,
+    outDir: './src/main/webapp/generated/vite',
     // lib: {
     //   entry: 'js/swc-modules.ts',
     //   fileName: 'swc-modules',

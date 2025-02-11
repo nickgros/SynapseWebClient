@@ -407,6 +407,20 @@
             </configuration>
             <phase>process-resources</phase>
           </execution>
+
+          <execution>
+            <id>Vite compile</id>
+            <goals>
+              <goal>corepack</goal>
+            </goals>
+            <configuration>
+              <arguments>
+                pnpm
+                vite build
+              </arguments>
+            </configuration>
+            <phase>process-resources</phase>
+          </execution>
         </executions>
 
         <configuration>
