@@ -14,8 +14,8 @@ jobs:
     if: ${{ github.ref_name == 'develop' || startsWith(github.ref_name, 'release-') || github.actor == github.repository_owner }}
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
-      - uses: actions/setup-node@v3
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
         with:
           node-version: ${{ env.NODE_VERSION }}
       - name: Install dependencies
@@ -28,13 +28,13 @@ jobs:
     if: ${{ github.ref_name == 'develop' || startsWith(github.ref_name, 'release-') || github.actor == github.repository_owner }}
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
       - name: Build SWC
         uses: ./.github/workflows/build
         with:
           mvn_goal: package
       - name: Upload build to GitHub Actions Artifacts
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: ${{ env.BUILD_ARTIFACT_NAME }}
           path: '${{ env.BUILD_DIR }}/${{ env.BUILD_NAME }}'
@@ -68,7 +68,7 @@ jobs:
       id-token: write
       contents: read
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
       - name: Check colima and lima version
         if: runner.os == 'macos'
         run: |
@@ -81,10 +81,20 @@ jobs:
           brew install docker
           colima start
       - name: Download build from GitHub Actions Artifacts
-        uses: actions/download-artifact@v3
+        uses: actions/download-artifact@v4
         with:
           name: ${{ env.BUILD_ARTIFACT_NAME }}
           path: ${{ env.BUILD_DIR }}
+      - name: Download latest SageAccountWeb dev build
+        uses: actions/download-artifact@v4
+        with:
+          name: SageAccountWeb-dev-build
+          repository: Sage-Bionetworks/synapse-web-monorepo
+          path: ./SageAccountWeb/build
+      - name: Run SageAccountWeb on Vite
+        run: |
+          cd ./SageAccountWeb/build
+          pnpm vite preview . --port=3000 --host
       - name: Run SWC on Tomcat
         run: |
           docker run \
@@ -94,7 +104,7 @@ jobs:
             -v "/$(pwd)/${{ env.BUILD_DIR }}/${{ env.BUILD_NAME }}:/usr/local/tomcat/webapps/ROOT.war" \
             -v "/$(pwd)/e2e_workflow/settings.xml":/root/.m2/settings.xml \
             tomcat:9.0
-      - uses: actions/setup-node@v3
+      - uses: actions/setup-node@v4
         with:
           node-version: ${{ env.NODE_VERSION }}
       - name: Install dependencies
@@ -138,7 +148,7 @@ jobs:
         run: yarn playwright test --shard ${{ matrix.shard }} --trace=${{ env.TRACE_TOGGLE }}
       - name: Assume AWS Role
         if: ${{ github.repository_owner == 'Sage-Bionetworks' && always() }}
-        uses: aws-actions/configure-aws-credentials@v2
+        uses: aws-actions/configure-aws-credentials@v4
         with:
           aws-region: us-east-1
           role-to-assume: arn:aws:iam::449435941126:role/sagebase-github-oidc-synapsedev-e2e-infra
@@ -149,7 +159,7 @@ jobs:
         run: |
           aws s3 sync ./blob-report --region us-east-1 s3://${{ env.DESTINATION_BUCKET }}/${{ env.REPORT_ID }}/
       - name: Upload blob report to GitHub Actions Artifacts
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         if: ${{ github.repository_owner != 'Sage-Bionetworks' && always() }}
         with:
           name: ${{ env.PW_ALL_BLOBS_DIR }}
@@ -168,21 +178,21 @@ jobs:
     needs: [playwright-tests]
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
-      - uses: actions/setup-node@v3
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
         with:
           node-version: ${{ env.NODE_VERSION }}
       - name: Install dependencies
         run: yarn install --frozen-lockfile
       - name: Download blob reports from GitHub Actions Artifacts
-        uses: actions/download-artifact@v3
+        uses: actions/download-artifact@v4
         with:
           name: ${{ env.PW_ALL_BLOBS_DIR }}
           path: ${{ env.PW_ALL_BLOBS_DIR }}
       - name: Merge into HTML Report
         run: yarn playwright merge-reports --reporter html ./"${{ env.PW_ALL_BLOBS_DIR }}"
       - name: Upload HTML report
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: html-report--attempt-${{ github.run_attempt }}
           path: playwright-report
