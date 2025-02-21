@@ -67,6 +67,7 @@ jobs:
     permissions:
       id-token: write
       contents: read
+      actions: read
     steps:
       - uses: actions/checkout@v4
       - name: Check colima and lima version
@@ -91,7 +92,7 @@ jobs:
           name: SageAccountWeb-dev-build
           repository: ${{ github.repository_owner }}/synapse-web-monorepo
           path: ./SageAccountWeb/build
-          github-token: ${{ secrets.GITHUB_TOKEN }}
+          github-token: ${{ github.token }}
       - name: Run SageAccountWeb on Vite
         run: |
           cd ./SageAccountWeb/build
