@@ -91,6 +91,7 @@ jobs:
           name: SageAccountWeb-dev-build
           repository: ${{ github.repository_owner }}/synapse-web-monorepo
           path: ./SageAccountWeb/build
+          github-token: ${{ secrets.GITHUB_TOKEN }}
       - name: Run SageAccountWeb on Vite
         run: |
           cd ./SageAccountWeb/build
