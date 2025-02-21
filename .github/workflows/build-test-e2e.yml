@@ -89,7 +89,7 @@ jobs:
         uses: actions/download-artifact@v4
         with:
           name: SageAccountWeb-dev-build
-          repository: Sage-Bionetworks/synapse-web-monorepo
+          repository: ${{ github.repository_owner }}/synapse-web-monorepo
           path: ./SageAccountWeb/build
       - name: Run SageAccountWeb on Vite
         run: |
