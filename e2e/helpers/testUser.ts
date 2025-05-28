@@ -250,9 +250,8 @@ export const expectDiscussionThreadLoaded = async (
       page.getByRole('button', { name: 'Most Recent' }),
     ).toBeVisible()
 
-    const discussionThread = page.locator('.discussionThread:visible')
-    await expect(discussionThread.getByText(threadTitle)).toBeVisible()
-    await expect(discussionThread.getByText(threadBody)).toBeVisible()
+    await expect(page.getByRole('heading', { name: threadTitle })).toBeVisible()
+    await expect(page.getByText(threadBody)).toBeVisible()
   })
 }
 
